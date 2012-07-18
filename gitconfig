@@ -1,0 +1,5 @@
+[user]
+	name = Mathieu Rousseau
+	email = mathieu@400iso.net
+[credential]
+	helper = cache --timeout=3600
