@@ -3,9 +3,7 @@
 autoload -U zfinit
 zfinit
 
-#PATH
-#PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/mathieu/bin"
-#export PATH
+source $HOME/.zshrc.local
 
 #export de variables
 export EDITOR='vim'
