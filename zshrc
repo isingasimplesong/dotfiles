@@ -38,6 +38,7 @@ alias pac-abs-update-db='sudo pacman -Sy && sudo abs'     # Update and refresh t
 alias pac-asdep='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
 alias pac-refresh-force='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pac.d/mirrorlist
 alias pac-reflector="sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo cat /etc/pacman.d/mirrorlist" # met à jour mirrorlist avec les meilleurs mirroirs, puis les affiche
+alias pac-clean-cache="sudo cacheclean -pv 2"  # nettoie le cache en conservant 2 version des paquets
 #types mime
 autoload -U zsh-mime-setup
 autoload -U zsh-mime-handler
