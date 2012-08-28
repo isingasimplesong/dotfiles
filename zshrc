@@ -20,7 +20,7 @@ alias eff='ssh effraie.org'
 alias free='free -m' # free en Mo
 alias path='echo -e ${PATH//:/\\n}'     # affiche le path
 alias tpon='synclient TouchpadOff=0'
-
+alias freq='cpupower -c all frequency-info | grep "fréquence actuelle"'
 #Divers
 # Pacman alias examples
 alias pac-upgrade='yaourt -Syua'            # Synchronize with repositories before upgrading packages that are out of date on the local system.
