@@ -14,7 +14,6 @@ alias path='echo -e ${PATH//:/\\n}'     # affiche le path
 alias 'mkdir=mkdir -p'
 alias logread="tail -f "$0" | ccze"
 alias new-password="openssl rand -base64 6"
-alias monip='wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1'
 
 # Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=30
