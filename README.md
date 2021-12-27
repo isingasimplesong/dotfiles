@@ -1,2 +1,3 @@
-# apt
-ma config pour apt
+# Dotfiles
+Quelques configs utiles
+
