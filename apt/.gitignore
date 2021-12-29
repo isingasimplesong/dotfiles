@@ -1,0 +1,5 @@
+auth.conf.d
+listchanges.conf
+listchanges.conf.d
+trusted.gpg.d
+trusted.gpg
