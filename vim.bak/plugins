@@ -1,0 +1,24 @@
+" PLUGINS
+call plug#begin('~/.vim/plugged')
+
+  Plug 'preservim/nerdtree'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'mattn/emmet-vim'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'mhinz/vim-startify'
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'vim-pandoc/vim-pandoc'
+  Plug 'vim-pandoc/vim-pandoc-syntax'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-surround'
+  Plug 'farmergreg/vim-lastplace'
+  Plug 'junegunn/goyo.vim'
+  Plug 'justinmk/vim-sneak'
+  "Plug 'morhetz/gruvbox'
+  Plug 'ap/vim-css-color'
+
+call plug#end()
