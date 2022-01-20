@@ -1,113 +1,176 @@
-# /etc/zsh/zshrc: system-wide .zshrc file for zsh(1).
-#
-# This file is sourced only for interactive shells. It
-# should contain commands to set up aliases, functions,
-# options, key bindings, etc.
-#
-# Global Order: zshenv, zprofile, zshrc, zlogin
+# Prompt (sans starship)
+# (la couleur n'est pas la même pour le root et les simples utilisateurs)
 
-READNULLCMD=${PAGER:-/usr/bin/pager}
-
-# An array to note missing features to ease diagnosis in case of problems.
-typeset -ga debian_missing_features
-
-if [[ -z "${DEBIAN_PREVENT_KEYBOARD_CHANGES-}" ]] &&
-   [[ "$TERM" != 'emacs' ]]
-then
-
-    typeset -A key
-    key=(
-        BackSpace  "${terminfo[kbs]}"
-        Home       "${terminfo[khome]}"
-        End        "${terminfo[kend]}"
-        Insert     "${terminfo[kich1]}"
-        Delete     "${terminfo[kdch1]}"
-        Up         "${terminfo[kcuu1]}"
-        Down       "${terminfo[kcud1]}"
-        Left       "${terminfo[kcub1]}"
-        Right      "${terminfo[kcuf1]}"
-        PageUp     "${terminfo[kpp]}"
-        PageDown   "${terminfo[knp]}"
-    )
-
-    function bind2maps () {
-        local i sequence widget
-        local -a maps
-
-        while [[ "$1" != "--" ]]; do
-            maps+=( "$1" )
-            shift
-        done
-        shift
-
-        sequence="${key[$1]}"
-        widget="$2"
-
-        [[ -z "$sequence" ]] && return 1
-
-        for i in "${maps[@]}"; do
-            bindkey -M "$i" "$sequence" "$widget"
-        done
-    }
-
-    bind2maps emacs             -- BackSpace   backward-delete-char
-    bind2maps       viins       -- BackSpace   vi-backward-delete-char
-    bind2maps             vicmd -- BackSpace   vi-backward-char
-    bind2maps emacs             -- Home        beginning-of-line
-    bind2maps       viins vicmd -- Home        vi-beginning-of-line
-    bind2maps emacs             -- End         end-of-line
-    bind2maps       viins vicmd -- End         vi-end-of-line
-    bind2maps emacs viins       -- Insert      overwrite-mode
-    bind2maps             vicmd -- Insert      vi-insert
-    bind2maps emacs             -- Delete      delete-char
-    bind2maps       viins vicmd -- Delete      vi-delete-char
-    bind2maps emacs viins vicmd -- Up          up-line-or-history
-    bind2maps emacs viins vicmd -- Down        down-line-or-history
-    bind2maps emacs             -- Left        backward-char
-    bind2maps       viins vicmd -- Left        vi-backward-char
-    bind2maps emacs             -- Right       forward-char
-    bind2maps       viins vicmd -- Right       vi-forward-char
-
-    # Make sure the terminal is in application mode, when zle is
-    # active. Only then are the values from $terminfo valid.
-    if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-        function zle-line-init () {
-            emulate -L zsh
-            printf '%s' ${terminfo[smkx]}
-        }
-        function zle-line-finish () {
-            emulate -L zsh
-            printf '%s' ${terminfo[rmkx]}
-        }
-        zle -N zle-line-init
-        zle -N zle-line-finish
-    else
-        for i in {s,r}mkx; do
-            (( ${+terminfo[$i]} )) || debian_missing_features+=($i)
-        done
-        unset i
-    fi
-
-    unfunction bind2maps
-
-fi # [[ -z "$DEBIAN_PREVENT_KEYBOARD_CHANGES" ]] && [[ "$TERM" != 'emacs' ]]
-
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
-                                           /usr/local/bin  \
-                                           /usr/sbin       \
-                                           /usr/bin        \
-                                           /sbin           \
-                                           /bin            \
-                                           /usr/X11R6/bin
-
-(( ${+aliases[run-help]} )) && unalias run-help
-autoload -Uz run-help
-
-# If you don't want compinit called here, place the line
-# skip_global_compinit=1
-# in your $ZDOTDIR/.zshenv
-if (( ${${(@f)"$(</etc/os-release)"}[(I)ID*=*ubuntu]} )) &&
-   [[ -z "$skip_global_compinit" ]]; then
-  autoload -U compinit
-  compinit
+if [ "`id -u`" -eq 0 ]; then
+  export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
+else
+  export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 fi
+
+# Titre de la fenêtre d'un xterm
+# case $TERM in
+#    xterm*)
+#        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+#        ;;
+# esac
+case $TERM in
+    xterm*)
+      preexec () {
+        print -Pn "\e]0;$1\a"
+      }
+    ;;
+esac
+
+#  Options de zsh (cf 'man zshoptions')
+
+# Je ne veux JAMAIS de beeps
+unsetopt beep
+unsetopt hist_beep
+unsetopt list_beep
+
+# >| doit être utilisés pour pouvoir écraser un fichier déjà existant ;
+# le fichier ne sera pas écrasé avec '>'
+unsetopt clobber
+
+# Ctrl+D est équivalent à 'logout'
+unsetopt ignore_eof
+
+# Affiche le code de sortie si différent de '0'
+setopt print_exit_value
+
+# Demande confirmation pour 'rm *'
+unsetopt rm_star_silent
+
+# Si on utilise des jokers dans une liste d'arguments, retire les jokers
+# qui ne correspondent à rien au lieu de donner une erreur
+setopt nullglob
+
+# Schémas de complétion
+
+# - Schéma A :
+# 1ère tabulation : complète jusqu'au bout de la partie commune
+# 2ème tabulation : propose une liste de choix
+# 3ème tabulation : complète avec le 1er item de la liste
+# 4ème tabulation : complète avec le 2ème item de la liste, etc...
+# -> c'est le schéma de complétion par défaut de zsh.
+
+# Schéma B :
+# 1ère tabulation : propose une liste de choix et complète avec le 1er item
+#                   de la liste
+# 2ème tabulation : complète avec le 2ème item de la liste, etc...
+# Si vous voulez ce schéma, décommentez la ligne suivante :
+#setopt menu_complete
+
+# Schéma C :
+# 1ère tabulation : complète jusqu'au bout de la partie commune et
+#                   propose une liste de choix
+# 2ème tabulation : complète avec le 1er item de la liste
+# 3ème tabulation : complète avec le 2ème item de la liste, etc...
+# Si vous voulez ce schéma, décommentez la ligne suivante :
+unsetopt list_ambiguous
+
+# Options de complétion
+# Quand le dernier caractère d'une complétion est '/' et que l'on
+# tape 'espace' après, le '/' est effacé
+setopt auto_remove_slash
+
+# Ne fait pas de complétion sur les fichiers et répertoires cachés
+unsetopt glob_dots
+
+# Traite les liens symboliques comme il faut
+setopt chase_links
+
+# Quand l'utilisateur commence sa commande par '!' pour faire de la
+# complétion historique, il n'exécute pas la commande immédiatement
+# mais il écrit la commande dans le prompt
+setopt hist_verify
+
+# Si la commande est invalide mais correspond au nom d'un sous-répertoire
+# exécuter 'cd sous-répertoire'
+setopt auto_cd
+
+# L'exécution de "cd" met le répertoire d'où l'on vient sur la pile
+setopt auto_pushd
+
+# Ignore les doublons dans la pile
+setopt pushd_ignore_dups
+
+# N'affiche pas la pile après un "pushd" ou "popd"
+setopt pushd_silent
+
+# "pushd" sans argument = "pushd $HOME"
+setopt pushd_to_home
+
+# Les jobs qui tournent en tâche de fond sont nicé à '0'
+unsetopt bg_nice
+
+# N'envoie pas de "HUP" aux jobs qui tourent quand le shell se ferme
+unsetopt hup
+
+# Conf de l'historique
+# Nombre d'entrées
+export HISTORY=10000
+export SAVEHIST=10000
+export HISTSIZE=10000
+# Fichier où est stocké l'historique
+export HISTFILE=$HOME/.history
+
+# Ajoute l'historique à la fin de l'ancien fichier
+#setopt append_history
+
+# Chaque ligne est ajoutée dans l'historique à mesure qu'elle est tapée
+setopt inc_append_history
+
+# Ne stocke pas  une ligne dans l'historique si elle  est identique à la
+# précédente
+setopt hist_ignore_dups
+
+# Supprime les  répétitions dans le fichier  d'historique, ne conservant
+# que la dernière occurrence ajoutée
+setopt hist_ignore_all_dups
+
+# Supprime les  répétitions dans l'historique lorsqu'il  est plein, mais
+# pas avant
+setopt hist_expire_dups_first
+
+# N'enregistre  pas plus d'une fois  une même ligne, quelles  que soient
+# les options fixées pour la session courante
+#setopt hist_save_no_dups
+
+# La recherche dans  l'historique avec l'éditeur de commandes  de zsh ne
+# montre  pas  une même  ligne  plus  d'une fois,  même  si  elle a  été
+# enregistrée
+setopt hist_find_no_dups
+
+# activer reverse-search
+#bindkey '^R' history-incremental-search-backward
+#fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+# Complétion des options des commandes
+
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' use-compctl false
+
+
+# vérification de la syntaxe
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Auto-suggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Command not found handler
+[[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
+
+# Fichiers externes
+source ~/.zsh/aliases
+source ~/.zsh/env
+
+autoload -Uz compinit
+compinit
+
+autoload -U promptinit; promptinit
+## Starship prompt
+eval "$(starship init zsh)"
+#nfetch

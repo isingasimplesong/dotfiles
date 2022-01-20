@@ -1,0 +1,7 @@
+# Variables d'environement
+
+export PAGER="less"
+export EDITOR="vim"
+
+# Pour obtenir STDOUT et STDERR en anglais
+#export LC_ALL=C
