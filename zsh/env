@@ -1,6 +1,6 @@
 # Variables d'environement
 
-export PAGER="less"
+export PAGER="most"
 export EDITOR="vim"
 
 # Pour obtenir STDOUT et STDERR en anglais
