@@ -72,7 +72,7 @@ endif
 
 " Theme
 syntax on
-colorscheme molokai
+colorscheme monokai
 "set background=dark
 let &t_ut=''
 

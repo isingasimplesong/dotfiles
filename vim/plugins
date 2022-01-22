@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/goyo.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'rakr/vim-one'
-  Plug 'ap/vim-css-color'
+"  Plug 'ap/vim-css-color'
+  Plug 'gko/vim-coloresque'
 
 call plug#end()
