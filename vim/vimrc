@@ -68,20 +68,20 @@ if (empty($TMUX))
   if (has("termguicolors"))
     set termguicolors
   endif
-endif
+ endif
 
 " Theme
 syntax on
-colorscheme monokai
 "set background=dark
 let &t_ut=''
-
-" Transparence
-highlight Normal     ctermbg=NONE guibg=NONE
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
 
 " Mappings
 source /home/mathieu/dotfiles/vim/mappings
 " Plugins
 source /home/mathieu/dotfiles/vim/plugins
+
+colorscheme molokai
+" Transparence
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE

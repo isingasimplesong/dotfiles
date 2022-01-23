@@ -1,14 +1,14 @@
 #! /bin/sh
-$HOME/.screenlayout/default.sh &
+xrandr --output eDP-1 --mode 1920x1080 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --above eDP-1 --rotate normal &
 sxhkd &
 lxpolkit &
 nitrogen --restore &
 nm-applet &
 picom &
-numlockx &
+setxkbmap -option caps:swapescape &
+#numlockx &
 unclutter &
 
-$HOME/.config/polybar/launch.sh
 
 bspc monitor HDMI-1 -d 1 2 3 4 5
 bspc monitor eDP-1 -d 6 7 8 9 0
@@ -32,3 +32,4 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+$HOME/.config/polybar/launch.sh
