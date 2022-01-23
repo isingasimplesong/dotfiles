@@ -6,15 +6,15 @@ add_newline = false
 #success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [username]
-style_user = "bold red"
-style_root = "bold blue"
+style_user = "red"
+style_root = "blue"
 format = "[$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format =  "@[$hostname](bold white) "
+format =  "@[$hostname](white) "
 disabled = false
 
 [sudo]
