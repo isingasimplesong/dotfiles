@@ -1,3 +1,8 @@
+" Mappings
+source /home/mathieu/dotfiles/vim/mappings
+" Plugins
+source /home/mathieu/dotfiles/vim/plugins
+
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 " Enable plugins and load plugin for the detected file type.
@@ -50,6 +55,24 @@ set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set termguicolors
+
+" Vim default
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+
+" All possible highlighters
+"let g:Hexokinase_highlighters = [
+"   'virtual',
+"   'sign_column',
+"   'background',
+"   'backgroundfull',
+"   'foreground',
+"   'foregroundfull'
+" ]
+" Patterns to match for all filetypes
+" Can be a comma separated string or a list of strings
+" Default value:
+let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
 
 " True colors
 
@@ -75,12 +98,8 @@ syntax on
 "set background=dark
 let &t_ut=''
 
-" Mappings
-source /home/mathieu/dotfiles/vim/mappings
-" Plugins
-source /home/mathieu/dotfiles/vim/plugins
-
-colorscheme molokai
+let g:airline_theme="base16_nord"
+colorscheme nord
 " Transparence
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE

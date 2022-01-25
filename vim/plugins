@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'flazz/vim-colorschemes'
+  Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
   Plug 'vim-airline/vim-airline'
   Plug 'airblade/vim-gitgutter'
   Plug 'mattn/emmet-vim'
