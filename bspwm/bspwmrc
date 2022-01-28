@@ -1,6 +1,10 @@
 #! /bin/sh
-xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal &
 sxhkd &
+xrandr --output eDP-1 --mode 1920x1080 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --rotate normal --above eDP-1
+nitrogen --restore &
+$HOME/.config/polybar/launch.sh &
+
+
 lxpolkit &
 picom &
 setxkbmap -option caps:swapescape &
@@ -8,12 +12,8 @@ numlockx &
 unclutter &
 xset +fp /home/mathieu/.local/share/fonts
 xset fp rehash
-$HOME/.config/polybar/launch.sh &
-nitrogen --restore &
 xrdb -merge .Xressources &
 xsetroot -cursor_name left_ptr
-killall connman-gtk && connman-gtk &
-
 bspc monitor HDMI-1 -d 1 2 3 4 5
 bspc monitor eDP-1 -d 6 7 8 9 0
 
@@ -35,3 +35,8 @@ bspc rule -a firefox desktop='^5'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+#xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal &
+#sleep 2 &&
+#xrandr --output eDP-1 --mode 1920x1080 --pos 225x1440 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal &
+

@@ -21,12 +21,17 @@ background = #2e3440
 background-alt = #434c5e
 foreground = #d8dee9
 foreground-alt = #5a657d
-primary = #a3be8c
-secondary = #bf616a
-third = #81a1c1
-forth = #d08770
-alert = #ebcb8b
-
+; primary = #a3be8c
+; secondary = #bf616a
+; third = #81a1c1
+; forth = #d08770
+alert = #f92672
+dimred = #b48ead
+vert = #a3be8c
+jaune = #ebcb8b
+orang = #d08770
+rouge = #bf616a
+bleu = #5e81ac
 [bar/master]
 width = 100%
 height = 27
@@ -94,16 +99,16 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.third}
+format-prefix-underline = ${colors.dimred}
 
 label-layout = %layout%
-label-layout-underline = ${colors.third}
+label-layout-underline = ${colors.dimred}
 label-font = 3
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.primary}
-label-indicator-underline = ${colors.primary}
+label-indicator-background = ${colors.alert}
+label-indicator-underline = ${colors.alert}
 
 [module/filesystem]
 type = internal/fs
@@ -113,18 +118,19 @@ mount-0 = /
 ;mount-1 = /home
 ;mount-2 = /videos
 
-;label-mounted = %{F#ab9df2}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = %mountpoint% %percentage_used%%
+label-mounted = %{F#5e81ac}%mountpoint%%{F-}: %percentage_used%%
+;label-mounted = %mountpoint% %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-foreground = ${colors.foreground-alt}
 label-mounted-font = 3
+label-mounted-underline =${colors.dimred}
 
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = false
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.secondary}
+label-focused-underline= ${colors.jaune}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -282,7 +288,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-underline = ${colors.rouge}
 label = %percentage:2%%
 label-font = 3
 
@@ -291,7 +297,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-underline = ${colors.bleu}
 label = %percentage_used%%
 label-font = 3
 
@@ -302,7 +308,7 @@ interval = 3.0
 label-font = 3
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.primary}
+format-connected-underline = ${colors.jaune}
 label-connected = %essid%
 
 format-disconnected =
@@ -348,7 +354,7 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-underline = ${colors.rouge}
 
 label = %date% %time%
 
@@ -416,7 +422,7 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.forth}
+format-charging-underline = ${colors.vert}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -448,7 +454,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.alert}
+format-underline = ${colors.orang}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 

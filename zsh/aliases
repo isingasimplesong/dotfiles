@@ -8,8 +8,11 @@ alias rm='rm --interactive'
 # Apt
 #alias up='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean;'
 # avec snap & flatpacks
-alias up='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo snap refresh;'
-
+alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo snap refresh;'
+alias ai="sudo apt install"
+alias ap="sudo apt purge"
+alias ar="sudo apt remove"
+alias as="apt search"
 # Git Alias Commands
 alias g="git status"
 alias ga="git add"
