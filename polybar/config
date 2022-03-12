@@ -82,12 +82,12 @@ cursor-scroll = ns-resize
 [bar/eDP-1]
 inherit = bar/master
 monitor = eDP-1
-modules-right = pulseaudio backlight filesystem cpu memory temperature xkeyboard battery eth wlan date
+modules-right = pulseaudio filesystem xkeyboard battery eth wlan date
 
 [bar/HDMI-1]
 inherit = bar/master
 monitor = HDMI-1
-modules-right = pulseaudio filesystem cpu memory temperature xkeyboard battery eth wlan date
+modules-right = pulseaudio filesystem xkeyboard battery eth wlan date
 
 [module/xwindow]
 type = internal/xwindow
@@ -99,10 +99,10 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.dimred}
+format-prefix-underline = ${colors.bleu}
 
 label-layout = %layout%
-label-layout-underline = ${colors.dimred}
+label-layout-underline = ${colors.bleu}
 label-font = 3
 
 label-indicator-padding = 2
@@ -308,7 +308,7 @@ interval = 3.0
 label-font = 3
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.jaune}
+format-connected-underline = ${colors.rouge}
 label-connected = %essid%
 
 format-disconnected =
@@ -354,7 +354,7 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.rouge}
+format-underline = ${colors.jaune}
 
 label = %date% %time%
 
