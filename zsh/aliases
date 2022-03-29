@@ -50,6 +50,8 @@ alias gx="ign = ls-files -o -i --exclude-standard"
 # Untrack Files without deleting them
 alias grmc="git rm -r --cached"
 
+# xmrig
+alias xmrig="sudo xmrig"
 # Utiliser exa pour ls
 alias ls='exa --group-directories-first --icons'
 
@@ -80,3 +82,4 @@ alias date-human='date +"%A %d %B %Y, %H:%M"'
 alias top="bpytop"
 # Allow aliasess tu be sudo'ed
 #alias sudo='sudo '
+alias xmr-rt="curl -s cad.rate.sx/3.8808xmr | cut -c 1-7"

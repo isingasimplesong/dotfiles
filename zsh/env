@@ -2,6 +2,6 @@
 
 export PAGER="most"
 export EDITOR="vim"
-
+export PATH="$HOME/.local/bin:$PATH"
 # Pour obtenir STDOUT et STDERR en anglais
 #export LC_ALL=C

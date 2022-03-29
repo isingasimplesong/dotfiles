@@ -180,3 +180,10 @@ super + r
 # Newsboat
 super + b
     kitty -e newsboat -r
+# Vim
+super + v
+    kitty -e vim
+# Météo
+super + e
+    google-chrome-stable --new-window "https://fr.wttr.in/Montreal?QF"
+

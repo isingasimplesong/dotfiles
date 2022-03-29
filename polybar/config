@@ -17,10 +17,10 @@
 ;==========================================================
 
 [colors]
-background = #2e3440
-background-alt = #434c5e
+background = #353535
+background-alt = #454545
 foreground = #d8dee9
-foreground-alt = #5a657d
+foreground-alt = #808080
 ; primary = #a3be8c
 ; secondary = #bf616a
 ; third = #81a1c1
@@ -41,7 +41,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 0
 line-color = ${colors.primary}
 
 border-size = 0
@@ -82,12 +82,13 @@ cursor-scroll = ns-resize
 [bar/eDP-1]
 inherit = bar/master
 monitor = eDP-1
-modules-right = pulseaudio filesystem xkeyboard battery eth wlan date
+modules-right = pulseaudio xkeyboard battery eth wlan date
 
 [bar/HDMI-1]
 inherit = bar/master
 monitor = HDMI-1
-modules-right = pulseaudio filesystem xkeyboard battery eth wlan date
+modules-right = pulseaudio xkeyboard battery eth wlan date
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -115,10 +116,10 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-;mount-1 = /home
-;mount-2 = /videos
+mount-1 = /home
+;mount-2 = /
 
-label-mounted = %{F#5e81ac}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#808080}%mountpoint%%{F-}: %percentage_used%%
 ;label-mounted = %mountpoint% %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-mounted-foreground = ${colors.foreground-alt}
@@ -127,7 +128,7 @@ label-mounted-underline =${colors.dimred}
 
 [module/bspwm]
 type = internal/bspwm
-pin-workspaces = false
+pin-workspaces = true
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.jaune}
