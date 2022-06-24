@@ -6,7 +6,8 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      JetBrainsMono Nerd Font
+
+font_family      JetBrains Mono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -58,6 +59,7 @@ adjust_column_width 0
 #: artifacts).
 
 # symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
+#
 
 #: Map the specified unicode codepoints to a particular font. Useful
 #: if you need special rendering for some symbols, such as for
@@ -535,7 +537,7 @@ confirm_os_window_close 0
 
 #: Tab bar {{{
 
-tab_bar_edge bottom
+tab_bar_edge top
 
 #: Which edge to show the tab bar on, top or bottom
 
@@ -631,7 +633,7 @@ inactive_tab_font_style normal
 
 #: The foreground and background colors
 
-background_opacity 0.8
+background_opacity 0.9
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1310,6 +1312,6 @@ map kitty_mod+delete clear_terminal reset active
 
 
 # BEGIN_KITTY_THEME
-# Jet Brains Darcula
+# One Dark
 include current-theme.conf
 # END_KITTY_THEME

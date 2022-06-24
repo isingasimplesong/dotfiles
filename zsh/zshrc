@@ -145,8 +145,8 @@ setopt hist_find_no_dups
 # activer reverse-search
 #bindkey '^R' history-incremental-search-backward
 #fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 # Complétion des options des commandes
 
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
@@ -155,10 +155,10 @@ zstyle ':completion:*' use-compctl false
 
 
 # vérification de la syntaxe
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Auto-suggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Command not found handler
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found

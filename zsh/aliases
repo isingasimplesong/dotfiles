@@ -5,6 +5,8 @@ alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
 
+#ssh avec kitty
+alias ssk="kitty +kitten ssh"
 # Apt
 #alias up='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean;'
 # avec snap & flatpacks
