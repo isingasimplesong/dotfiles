@@ -85,3 +85,7 @@ alias top="btop"
 # Allow aliasess tu be sudo'ed
 #alias sudo='sudo '
 alias xmr-rt="curl -s cad.rate.sx/3.8808xmr | cut -c 1-7"
+alias media-mount='sudo mount tnc.local.2027a.net:/mnt/storage0/video Vidéos'
+alias media-umount='sudo umount tnc.local.2027a.net:/mnt/storage0/video'
+alias bkp-mount='sudo mount tnc.local.2027a.net:/mnt/storage0/backups Sauvegardes'
+alias bkp-umount='sudo umount tnc.local.2027a.net:/mnt/storage0/backups'
