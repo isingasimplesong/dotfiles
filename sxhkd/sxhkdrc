@@ -28,9 +28,12 @@ super + shift + p
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+# Power menu
+super + alt + q
+    rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
+# restart bspwm
+super + alt + r
+	bspc wm -r
 
 # close and kill
 super + {_,shift + }q
@@ -183,7 +186,7 @@ super + alt + v
 super + alt + e
     firefox --new-window "https://fr.wttr.in/Montreal?QF"
 # pulse mixer
-super + alt + p
+super + alt + m
     kitty --class Pulsemixer -e pulsemixer
 # Discord
 super + alt + d

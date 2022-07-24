@@ -1,26 +1,28 @@
 #! /bin/sh
-xrdb -merge .Xressources &
+xrdb -merge ~/.Xressources &
 sxhkd &
 lxpolkit &
-ssh-agent &
-#xrandr --output eDP-1 --mode 1920x1080 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --rotate normal --above eDP-1
-xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal
-nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
 picom --experimental-backends &
 nm-applet &
 blueman-applet &
+killall dunst && dunst &
 setxkbmap -option compose:rwin
 unclutter &
-killall dunst && dunst &
 xsetroot -cursor_name left_ptr
+
 #setxkbmap -option caps:swapescape &
+
+#xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal
+feh --bg-fill ~/Images/walls/wall
+
 #bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
 #bspc monitor eDP-1 -d 8 9 0
+
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
 
 bspc config border_width         0
-bspc config window_gap           15
+bspc config window_gap           16
 bspc config top_padding          27
 
 bspc config normal_border_color "#3b4252"
@@ -38,9 +40,5 @@ bspc config gapless_monocle      true
 bspc rule -a Galculator state=floating
 bspc rule -a Pulsemixer state=floating
 
-#xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal &
-#sleep 2 &&
-#xrandr --output eDP-1 --mode 1920x1080 --pos 225x1440 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal &
-
-killall pasystray && pasystray &
+killall pasystray & sleep 2; pasystray &
 insync quit && insync start &
