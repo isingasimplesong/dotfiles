@@ -167,7 +167,7 @@ super + w
 #    pcmanfm
 # Thunar
 super + p
-    thunar
+    nautilus
 # Show notifications
 super + n
     dunstctl history-pop
