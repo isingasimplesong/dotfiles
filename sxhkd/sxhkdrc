@@ -12,7 +12,7 @@ super + shift + d
 
 # program launcher (Apps)
 super + Escape
-	rofi -show drun -icon-theme "Papirus" -show-icons -font "cantarell 11"
+	rofi -show drun -icon-theme "Papirus-Dark" -show-icons -font "cantarell 14"
 
 # make sxhkd reload its configuration files:
 super + +shift+ Escape
@@ -158,14 +158,10 @@ super + x
 
 # Applications
 
-# Chrome
+# Browser
 super + w
     firefox --new-window
-
-# PCmanFM
-#super + p
-#    pcmanfm
-# Thunar
+# File manager
 super + p
     nautilus
 # Show notifications
