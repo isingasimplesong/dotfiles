@@ -99,6 +99,7 @@ syntax on
 let &t_ut=''
 
 let g:airline_theme="base16_nord"
+"colorscheme gruvbox
 colorscheme nord
 " Transparence
 highlight Normal     ctermbg=NONE guibg=NONE

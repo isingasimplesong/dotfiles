@@ -1,7 +1,9 @@
 # Variables d'environement
 
 export PAGER="most"
-export EDITOR="vim"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+export VISUAL="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 # Pour obtenir STDOUT et STDERR en anglais
 #export LC_ALL=C
