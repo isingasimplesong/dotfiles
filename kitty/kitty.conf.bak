@@ -1312,6 +1312,6 @@ map kitty_mod+delete clear_terminal reset active
 
 
 # BEGIN_KITTY_THEME
-# Monokai
+# Nord
 include current-theme.conf
 # END_KITTY_THEME
