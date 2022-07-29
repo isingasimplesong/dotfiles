@@ -44,6 +44,8 @@ end
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]]
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to workspace
+vim.cmd([[let g:airline_theme='base16_nord']])
+vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
 vim.cmd([[
 " Vim default
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
