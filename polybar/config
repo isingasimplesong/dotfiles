@@ -17,8 +17,8 @@
 ;==========================================================
 
 [colors]
-background = #353535
-background-alt = #454545
+background = #2a2f3a
+background-alt = #3b4252
 foreground = #d8dee9
 foreground-alt = #808080
 ; primary = #a3be8c
@@ -111,7 +111,7 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.alert}
 label-indicator-underline = ${colors.alert}
 
-[module/filesystem]
+[module/]
 type = internal/fs
 interval = 25
 
@@ -345,7 +345,7 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-label-font = 3
+label-font = 2
 
 date =
 date-alt = " %d/%m/%Y "
