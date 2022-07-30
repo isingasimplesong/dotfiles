@@ -20,11 +20,13 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
--- Toggle transparency
-keymap("n", "<leader>b", ":TransparentToggle<cr>", opts)
+-- alternate theme
+keymap("n", "<leader>s", ":colorscheme sonokai<cr>", opts)
+keymap("n", "<leader>n", ":colorscheme nord<cr>", opts)
 
 -- vsplit
 keymap("n", "<leader>\\", ":vsplit<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

@@ -56,14 +56,13 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
 	use("folke/which-key.nvim")
-    use("farmergreg/vim-lastplace")
-    use({"rrethy/vim-hexokinase", run = "make"})
-    use("vim-airline/vim-airline")
-    use("vim-airline/vim-airline-themes")
+  use("farmergreg/vim-lastplace")
+  use({"rrethy/vim-hexokinase", run = "make"})
+  use("vim-airline/vim-airline")
+  use("vim-airline/vim-airline-themes")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
-	use("lunarvim/darkplus.nvim")
   use("shaunsingh/nord.nvim")
   use("navarasu/onedark.nvim")
   use("dracula/vim")
@@ -71,11 +70,13 @@ return packer.startup(function(use)
   use("sainnhe/sonokai")
   use("sainnhe/edge")
   use("sainnhe/gruvbox-material")
+	use("lunarvim/darkplus.nvim")
 	
   -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 
