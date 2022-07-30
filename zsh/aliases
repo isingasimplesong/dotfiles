@@ -1,5 +1,6 @@
 # Aliases
 
+alias v="vim"
 # Neovim is the best vim
 alias vim="nvim"
 # Demande confirmation avant d'écraser un fichier

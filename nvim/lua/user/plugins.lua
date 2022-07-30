@@ -67,8 +67,13 @@ return packer.startup(function(use)
 	use("lunarvim/darkplus.nvim")
   use("shaunsingh/nord.nvim")
   use("navarasu/onedark.nvim")
-
-	-- cmp plugins
+  use("dracula/vim")
+  use("mhartington/oceanic-next")
+  use("sainnhe/sonokai")
+  use("sainnhe/edge")
+  use("sainnhe/gruvbox-material")
+	
+  -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
@@ -85,9 +90,15 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-	-- Treesitter
+  -- FZF
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
 	
   -- Git

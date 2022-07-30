@@ -164,6 +164,9 @@ super + x
 # Browser
 super + w
     firefox --new-window
+# alacritty
+super + a
+    alacritty
 # File manager
 super + p
     nautilus
@@ -180,8 +183,8 @@ super + alt + g
 super + alt + b
     kitty -e newsboat -r
 # Vim
-super + alt + v
-    kitty -e vim
+super + v
+    alacritty -e nvim
 # Météo
 super + alt + e
     firefox --new-window "https://fr.wttr.in/Montreal?QF"

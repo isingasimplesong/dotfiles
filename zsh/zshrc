@@ -174,3 +174,5 @@ autoload -U promptinit; promptinit
 ## Starship prompt
 eval "$(starship init zsh)"
 #nfetch
+# Dircolors
+test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)

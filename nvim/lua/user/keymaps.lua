@@ -21,7 +21,8 @@ vim.g.maplocalleader = " "
 -- Normal --
 
 -- Toggle transparency
-keymap("n", "<Leader>w", ":TransparentToggle<CR>", opts)
+keymap("n", "<leader>b", ":TransparentToggle<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

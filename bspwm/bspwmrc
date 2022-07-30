@@ -14,7 +14,8 @@ xsetroot -cursor_name left_ptr
 #setxkbmap -option caps:swapescape &
 
 #xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal
-feh --bg-fill ~/Images/walls/wall
+# feh --bg-fill ~/Images/walls/wall
+~/.fehbg &
 
 #bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
 #bspc monitor eDP-1 -d 8 9 0

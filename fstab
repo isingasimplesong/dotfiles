@@ -13,14 +13,3 @@ UUID=8C58-1C32  /boot/efi       vfat    umask=0077      0       1
 UUID=2fbff0a1-fb41-4314-a513-84c31454c42a /home           ext4    defaults        0       2
 # swap was on /dev/nvme0n1p2 during installation
 UUID=1fc86dba-da93-425c-81d6-8fd768319251 none            swap    sw              0       0
-# GlusterFS
-#oxygen:/gv0 /home/mathieu/gluster glusterfs defaults,_netdev 0 0
-
-# Externes
-
-# EXT1
-UUID=ba57375c-e047-4001-9308-3bd75f324c2e /home/mathieu/EXT1 ext4 defaults 0 2
-/home/mathieu/EXT1/transmission /home/mathieu/Videos none bind 0 0
-
-#VAR
-/home/newvar 	/var none bind 0 0
