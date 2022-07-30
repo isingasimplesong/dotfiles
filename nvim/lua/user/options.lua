@@ -65,7 +65,7 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
 ]])
 -- vim.cmd ([[let g:transparent_enabled = v:true]])
-require("transparent").setup({
+--[[ require("transparent").setup({
   enable = true, -- boolean: enable transparent
   extra_groups = { -- table/string: additional groups that should be cleared
     -- In particular, when you set it to 'all', that means all available groups
@@ -78,4 +78,4 @@ require("transparent").setup({
     -- "BufferLineIndicatorSelected",
   },
   exclude = {}, -- table: groups you don't want to clear
-})
+})]]

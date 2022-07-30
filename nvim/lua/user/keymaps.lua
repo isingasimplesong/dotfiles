@@ -23,6 +23,8 @@ vim.g.maplocalleader = " "
 -- Toggle transparency
 keymap("n", "<leader>b", ":TransparentToggle<cr>", opts)
 
+-- vsplit
+keymap("n", "<leader>\\", ":vsplit<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -45,7 +47,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
