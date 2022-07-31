@@ -35,7 +35,26 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-      lualine_a = {'buffers'},
+      lualine_a = {
+      { 
+        'buffers',
+        show_filename_only = false,
+        show_modified_status = true,
+        mode = 0, -- 0 : buffer name
+                  -- 1 : buffer index
+                  -- 2 : name + index
+                  -- 3 : number
+                  -- 4 : name + number
+        filetype_names = { 
+          TelescopePrompt = 'Telescope',
+          dashboard = 'Dashboard',
+          packer = 'Packer',
+          fzf = 'FZF',
+          alpha = 'Alpha'
+        }
+
+      }
+    },
       lualine_b = {},
       lualine_c = {},
       lualine_x = {},

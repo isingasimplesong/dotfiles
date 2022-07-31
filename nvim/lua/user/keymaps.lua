@@ -20,6 +20,9 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
+-- Toggle transparency
+keymap("n", "<leader>1", ":TransparentToggle<cr>", opts)
+
 -- alternate theme
 keymap("n", "<leader>2", ":colorscheme sonokai<cr>", opts)
 keymap("n", "<leader>3", ":colorscheme dracula<cr>", opts)
@@ -27,9 +30,8 @@ keymap("n", "<leader>4", ":colorscheme edge<cr>", opts)
 keymap("n", "<leader>5", ":colorscheme tokyonight<cr>", opts)
 keymap("n", "<leader>6", ":colorscheme nord<cr>", opts)
 
--- Toggle transparency
-keymap("n", "<leader>1", ":TransparentToggle<cr>", opts)
-
+-- toggle relative numbers
+keymap("n", "<leader>=", ":set relativenumber!<cr>", opts)
 -- vsplit
 keymap("n", "<leader>\\", ":vsplit<cr>", opts)
 
