@@ -67,7 +67,6 @@ return packer.startup(function(use)
   -- use("vim-airline/vim-airline-themes")
 
 	-- Colorschemes
-  -- use("RRethy/nvim-base16")
 	use("folke/tokyonight.nvim")
   use("shaunsingh/nord.nvim")
   use("navarasu/onedark.nvim")
