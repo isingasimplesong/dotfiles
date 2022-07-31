@@ -63,10 +63,11 @@ return packer.startup(function(use)
 
   -- Status line 
   use("nvim-lualine/lualine.nvim")
-  use("vim-airline/vim-airline")
-  use("vim-airline/vim-airline-themes")
+  -- use("vim-airline/vim-airline")
+  -- use("vim-airline/vim-airline-themes")
 
 	-- Colorschemes
+  -- use("RRethy/nvim-base16")
 	use("folke/tokyonight.nvim")
   use("shaunsingh/nord.nvim")
   use("navarasu/onedark.nvim")

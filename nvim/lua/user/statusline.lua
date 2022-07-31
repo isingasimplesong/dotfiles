@@ -1,10 +1,10 @@
 -- status line
 
 -- Airline
-vim.cmd([[let g:airline_theme='base16_nord']])
-vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
+-- vim.cmd([[let g:airline_theme='base16_nord']])
+-- vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
 
---[[ -- Lualine (commenter une des deux config) 
+-- Lualine (commenter une des deux config) 
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -71,4 +71,4 @@ require('lualine').setup {
   winbar = {},
   inactive_winbar = {},
   extensions = {}
-} ]]
+}
