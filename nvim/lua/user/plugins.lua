@@ -69,14 +69,8 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
   use("shaunsingh/nord.nvim")
-  use("navarasu/onedark.nvim")
-  use("dracula/vim")
-  use("mhartington/oceanic-next")
-  use("sainnhe/sonokai")
-  use("sainnhe/edge")
-  use("sainnhe/gruvbox-material")
-	use("lunarvim/darkplus.nvim")
-	
+  use("RRethy/nvim-base16")	
+
   -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
