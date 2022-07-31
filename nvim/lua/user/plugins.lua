@@ -58,8 +58,9 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
   use("farmergreg/vim-lastplace")
   use({"rrethy/vim-hexokinase", run = "make"})
-  use("vim-airline/vim-airline")
-  use("vim-airline/vim-airline-themes")
+  use("nvim-lualine/lualine.nvim")
+  use({"akinsho/bufferline.nvim", tag = "v2.*"})
+  use("xiyaowong/nvim-transparent")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")

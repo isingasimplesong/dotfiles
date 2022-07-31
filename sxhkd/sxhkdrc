@@ -169,7 +169,13 @@ super + a
     alacritty
 # File manager
 super + p
-    nautilus
+    pcmanfm
+# VIfm
+super + shift + v
+    kitty -e vifm
+# change wallpaper
+super + b
+    feh --bg-fill --randomize ~/Images/walls/*
 # Show notifications
 super + n
     dunstctl history-pop
@@ -184,10 +190,7 @@ super + alt + b
     kitty -e newsboat -r
 # Vim
 super + v
-    alacritty -e nvim
-# Météo
-super + alt + e
-    firefox --new-window "https://fr.wttr.in/Montreal?QF"
+    kitty -e nvim
 # pulse mixer
 super + alt + m
     kitty --class Pulsemixer -e pulsemixer

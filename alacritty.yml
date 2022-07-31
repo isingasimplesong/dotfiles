@@ -29,8 +29,8 @@ window:
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
   dimensions:
-    columns: 145
-    lines: 45
+    columns: 0
+    lines: 0
 
   # Window position (changes require restart)
   #
@@ -45,8 +45,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 4
-    y: 4
+    x: 6
+    y: 6
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -71,7 +71,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  startup_mode: Maximized
 
   # Window title
   #title: Alacritty
@@ -280,7 +280,8 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-window.opacity: 1
+window:
+  opacity: 0.9
 
 #selection:
   # This string contains all characters that are used as separators for

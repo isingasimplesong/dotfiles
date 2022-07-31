@@ -41,11 +41,9 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]]
--- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to workspace
-vim.cmd([[let g:airline_theme='sonokai']])
-vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
+-- vim.cmd([[let g:airline_theme='sonokai']])
+-- vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
+
 vim.cmd([[
 " Vim default
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
@@ -64,7 +62,7 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 " Default value:
 let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
 ]])
--- vim.cmd ([[let g:transparent_enabled = v:true]])
+vim.cmd ([[let g:transparent_enabled = v:true]])
 --[[ require("transparent").setup({
   enable = true, -- boolean: enable transparent
   extra_groups = { -- table/string: additional groups that should be cleared

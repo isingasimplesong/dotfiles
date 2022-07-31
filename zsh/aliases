@@ -1,5 +1,7 @@
 # Aliases
 
+# restaurer bt
+alias bt="sudo systemctl restart bluetooth.service"
 alias v="vim"
 # Neovim is the best vim
 alias vim="nvim"
