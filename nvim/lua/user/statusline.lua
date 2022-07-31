@@ -10,8 +10,10 @@ require('lualine').setup {
     icons_enabled = true,
     theme = 'auto',
     -- theme = 'material',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    --[[ component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''}, ]]
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -31,7 +33,7 @@ require('lualine').setup {
     lualine_c = {'filename'},
     lualine_x = {'encoding'},
     lualine_y = {'filetype'},
-    lualine_z = {'location','progress', 'fileformat'}
+    lualine_z = {'fileformat','hostname'}
   },
   inactive_sections = {
     lualine_a = {},
@@ -66,7 +68,7 @@ require('lualine').setup {
       lualine_c = {},
       lualine_x = {},
       lualine_y = {},
-      lualine_z = {'hostname'}
+      lualine_z = {'location', 'progress'}
   },
   winbar = {},
   inactive_winbar = {},
