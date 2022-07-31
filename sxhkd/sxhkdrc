@@ -190,7 +190,7 @@ super + alt + b
     kitty -e newsboat -r
 # Vim
 super + v
-    kitty -e nvim
+    kitty -e nvim 
 # pulse mixer
 super + alt + m
     kitty --class Pulsemixer -e pulsemixer
