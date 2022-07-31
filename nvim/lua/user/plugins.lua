@@ -40,6 +40,7 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
+
 	-- My plugins here
 
 	use("wbthomason/packer.nvim") -- Have packer manage itself
@@ -49,7 +50,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("moll/vim-bbye")
+	use("moll/vim-bbye")  --  meilleur :Belete (buffer delete) 
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -58,8 +59,12 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
   use("farmergreg/vim-lastplace")
   use({"rrethy/vim-hexokinase", run = "make"})
-  use("nvim-lualine/lualine.nvim")
   use("xiyaowong/nvim-transparent")
+
+  -- Status line 
+  use("nvim-lualine/lualine.nvim")
+  use("vim-airline/vim-airline")
+  use("vim-airline/vim-airline-themes")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
@@ -99,12 +104,12 @@ return packer.startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Treesitter
-	use("nvim-treesitter/nvim-treesitter")
+	use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({with_sync = true })end, }
 	
   -- Git
 	use("lewis6991/gitsigns.nvim")
 
-	-- Automatically set up your configuration after cloning packer.nvim
+	-- Automatically set up your configuration after cloning packer.nvim 
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

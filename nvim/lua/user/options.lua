@@ -41,7 +41,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- vim.cmd([[let g:airline_theme='sonokai']])
+-- vim.cmd([[let g:airline_theme='base16_nord']])
 -- vim.cmd([[let g:airline#extensions#tabline#enabled = 1]])
 
 vim.cmd([[
