@@ -59,7 +59,6 @@ return packer.startup(function(use)
   use("farmergreg/vim-lastplace")
   use({"rrethy/vim-hexokinase", run = "make"})
   use("nvim-lualine/lualine.nvim")
-  use({"akinsho/bufferline.nvim", tag = "v2.*"})
   use("xiyaowong/nvim-transparent")
 
 	-- Colorschemes
