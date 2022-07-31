@@ -29,9 +29,9 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {'encoding', 'fileformat', 'filetype'},
-    lualine_z = {'progress'}
+    lualine_x = {'encoding'},
+    lualine_y = {'filetype'},
+    lualine_z = {'location','progress', 'fileformat'}
   },
   inactive_sections = {
     lualine_a = {},
@@ -45,7 +45,7 @@ require('lualine').setup {
       lualine_a = {
       { 
         'buffers',
-        show_filename_only = false,
+        show_filename_only = true,
         show_modified_status = true,
         mode = 0, -- 0 : buffer name
                   -- 1 : buffer index
