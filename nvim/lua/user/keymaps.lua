@@ -25,7 +25,7 @@ keymap("n", "<leader>1", ":TransparentToggle<cr>", opts)
 
 -- alternate theme
 keymap("n", "<leader>2", ":colorscheme tokyonight<cr>", opts)
-keymap("n", "<leader>3", ":colorscheme nord<cr>", opts)
+keymap("n", "<leader>3", ":colorscheme onenord<cr>", opts)
 keymap("n", "<leader>4", ":colorscheme base16-onedark<cr>", opts)
 
 -- toggle relative numbers

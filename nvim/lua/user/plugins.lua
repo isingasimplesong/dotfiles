@@ -50,7 +50,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("moll/vim-bbye")  --  meilleur :Belete (buffer delete) 
+	use("moll/vim-bbye")  --  meilleur :Bdelete (buffer delete) 
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
@@ -68,8 +68,8 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
-  use("shaunsingh/nord.nvim")
   use("RRethy/nvim-base16")
+  use("rmehri01/onenord.nvim")
 
   -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

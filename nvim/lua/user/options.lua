@@ -62,7 +62,7 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 " Default value:
 let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
 ]])
-vim.cmd ([[let g:transparent_enabled = v:true]])
+vim.cmd ([[let g:transparent_enabled = v:false]])
 --[[ require("transparent").setup({
   enable = true, -- boolean: enable transparent
   extra_groups = { -- table/string: additional groups that should be cleared
