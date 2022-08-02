@@ -34,6 +34,9 @@ keymap("n", "<leader>=", ":set relativenumber!<cr>", opts)
 keymap("n", "<leader>\\", ":vsplit<cr>", opts)
 keymap("n", "<leader>-", ":split<cr>", opts)
 
+-- Zen mode
+keymap("n", "<leader>z", ":ZenMode<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

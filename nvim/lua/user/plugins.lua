@@ -60,16 +60,15 @@ return packer.startup(function(use)
   use("farmergreg/vim-lastplace")
   use({"rrethy/vim-hexokinase", run = "make"})
   use("xiyaowong/nvim-transparent")
+  use("folke/zen-mode.nvim")
 
   -- Status line 
   use("nvim-lualine/lualine.nvim")
-  -- use("vim-airline/vim-airline")
-  -- use("vim-airline/vim-airline-themes")
 
 	-- Colorschemes
+  use("rmehri01/onenord.nvim")
 	use("folke/tokyonight.nvim")
   use("RRethy/nvim-base16")
-  use("rmehri01/onenord.nvim")
 
   -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
