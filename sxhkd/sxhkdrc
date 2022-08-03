@@ -59,10 +59,6 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-# switch layouts
-
-super + ctrl + {comma,period}
-  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
 
 # preselect
 
@@ -92,9 +88,9 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# resize windows
-super + ctrl {Left,Down,Up,Right}
-  bspwm_resize {west,south,north,east} 50
+# # resize windows
+# super + ctrl {Left,Down,Up,Right}
+#   bspwm_resize {west,south,north,east} 50
 
 # Smart resize, will grow or shrink depending on location.
 # Will always grow for floating nodes.
@@ -111,6 +107,10 @@ super + alt + {Left,Down,Up,Right}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# switch layouts
+super + ctrl + {comma,period}
+  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
 
 # Generics hotkeys
 # terminal emulator
