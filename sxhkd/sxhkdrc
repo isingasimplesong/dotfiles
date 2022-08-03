@@ -153,8 +153,8 @@ super + x
 	betterlockscreen -l
 
 # Show notifications
-super + n
-    dunstctl history-pop
+super + n; {h,c,x,m}
+    dunstctl {history-pop,close,close-all,context}
 
 # change wallpaper
 super + b
@@ -169,8 +169,21 @@ super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
 # Applications
-super + a; {w,a,p,v,s,c,m,d,t,y,b}
-  {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop}
+super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
+  {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+
+   # w : firefox --new-window
+   # a : alacritty
+   # p : pcmanfm
+   # v : kitty -e vifm 
+   # s : flameshot gui
+   # c : galculator 
+   # m : kitty --class Pulsemixer -e pulsemixer
+   # d : discord
+   # t : telegram-desktop
+   # y : youtube-music 
+   # b : bitwarden-desktop
+   # g : chromium  
 # Vim
 super + v
     kitty -e nvim 
