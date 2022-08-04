@@ -17,7 +17,7 @@ super + m
 # 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-super + g
+super + w
 	bspc node -s biggest.window
 
 # state/flags
@@ -110,7 +110,11 @@ super + {Left,Down,Up,Right}
 
 # switch layouts
 super + ctrl + {comma,period}
-  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
+  bsp-layout {previous,next} --layouts tall,rtall,tiled
+
+# set gaps
+super + g; {y,u,i,o,p}
+    bspc config window_gap {0, 8, 16, 32, 64}
 
 # Generics hotkeys
 # terminal emulator
@@ -119,7 +123,7 @@ super + Return
 
 # program launcher
 super + shift + Return
-	rofi -show drun -icon-theme "Papirus-Dark" -show-icons -font "cantarell 14"
+	rofi -show drun -icon-theme "Papirus-Dark" -show-icons
 
 # make sxhkd reload its configuration files:
 super + +shift+ Escape
@@ -172,18 +176,18 @@ super + alt + b
 super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
   {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
-   # w : firefox --new-window
-   # a : alacritty
-   # p : pcmanfm
-   # v : kitty -e vifm 
-   # s : flameshot gui
-   # c : galculator 
-   # m : kitty --class Pulsemixer -e pulsemixer
-   # d : discord
-   # t : telegram-desktop
-   # y : youtube-music 
-   # b : bitwarden-desktop
-   # g : chromium  
+   # --   w : firefox --new-window
+   # --   a : alacritty
+   # --   p : pcmanfm
+   # --   v : kitty -e vifm 
+   # --   s : flameshot gui
+   # --   c : galculator 
+   # --   m : kitty --class Pulsemixer -e pulsemixer
+   # --   d : discord
+   # --   t : telegram-desktop
+   # --   y : youtube-music 
+   # --   b : bitwarden-desktop
+   # --   g : chromium  
 # Vim
 super + v
     kitty -e nvim 
