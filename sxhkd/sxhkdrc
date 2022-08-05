@@ -109,8 +109,8 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # switch layouts
-super + ctrl + {comma,period}
-  bsp-layout {previous,next} --layouts tall,rtall,tiled
+super + period
+  bsp-layout next --layouts rtall,tall,tiled
 
 # set gaps
 super + g; {y,u,i,o,p}
@@ -125,6 +125,8 @@ super + Return
 super + shift + Return
 	rofi -show drun -icon-theme "Papirus-Dark" -show-icons
 
+super + Escape
+  dmenu_run
 # make sxhkd reload its configuration files:
 super + +shift+ Escape
 	pkill -USR1 -x sxhkd

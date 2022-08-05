@@ -1,6 +1,7 @@
 # Variables d'environement
 
-export PAGER="most"
+# export PAGER="most"
+export PAGER='nvim +Man!'
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
