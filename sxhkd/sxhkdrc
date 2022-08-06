@@ -1,3 +1,94 @@
+# Generics hotkeys
+
+# terminal emulator
+super + Return
+   kitty
+
+# program launcher
+super + space
+	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
+
+# Rofi
+super + p; {r,a,e,c,f,w,q,x}
+  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
+
+# Rofi streams
+super + r
+  ~/.local/bin/rofi-beats-linux
+
+# Rofi exit menu 
+super + s
+  rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
+
+# Rofi switch windows
+super + w
+  rofi -show window
+
+# make sxhkd reload its configuration files:
+super + +shift+ Escape
+	pkill -USR1 -x sxhkd
+
+
+# Disabling compositor
+ ## find a way to toggle it
+super + shift + p
+    killall picom
+
+# volume control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+	amixer set Master toggle
+
+# # brightness control
+# XF86MonBrightnessDown
+# 	sudo xbacklight -dec 5
+# XF86MonBrightnessUp
+# 	sudo xbacklight -inc 5
+
+# lock screen
+super + x
+	betterlockscreen -l
+
+# Show notifications
+super + n; {h,c,x,m}
+    dunstctl {history-pop,close,close-all,context}
+
+# change wallpaper
+super + b
+    feh --bg-fill --randomize ~/Images/walls/*
+    
+# Paru update all
+super + alt + u
+    kitty -e paru
+
+# restore bluetooth
+super + alt + b
+  kitty -e sudo systemctl restart bluetooth.service
+
+# Applications
+super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
+  {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+
+   # --   w : firefox --new-window
+   # --   a : alacritty
+   # --   p : pcmanfm
+   # --   v : kitty -e vifm 
+   # --   s : flameshot gui
+   # --   c : galculator 
+   # --   m : kitty --class Pulsemixer -e pulsemixer
+   # --   d : discord
+   # --   t : telegram-desktop
+   # --   y : youtube-music 
+   # --   b : bitwarden-desktop
+   # --   g : chromium  
+   # --   r : tdrop -am -w 50%  -h 50% -y 20% -x 30% kitty -e pyradio
+# Vim
+super + v
+    kitty -e nvim 
+
 # bspwm hotkeys
 
 # restart bspwm
@@ -12,12 +103,8 @@ super + {_,shift + }q
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-# super + y
-# 	bspc node newest.marked.local -n newest.!automatic.local
-
 # swap the current node and the biggest window
-super + w
+super + g
 	bspc node -s biggest.window
 
 # state/flags
@@ -88,10 +175,6 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# # resize windows
-# super + ctrl {Left,Down,Up,Right}
-#   bspwm_resize {west,south,north,east} 50
-
 # Smart resize, will grow or shrink depending on location.
 # Will always grow for floating nodes.
 
@@ -116,80 +199,3 @@ super + period
 super + g; {y,u,i,o,p}
     bspc config window_gap {0, 8, 16, 32, 64}
 
-# Generics hotkeys
-# terminal emulator
-super + Return
-   kitty
-
-# program launcher
-super + shift + Return
-	rofi -show drun -icon-theme "Papirus-Dark" -show-icons
-
-super + Escape
-  dmenu_run
-# make sxhkd reload its configuration files:
-super + +shift+ Escape
-	pkill -USR1 -x sxhkd
-
-# Power menu
-super + alt + q
-    rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
-
-# Disabling compositor
-
-super + shift + p
-    killall picom
-
-# volume control
-XF86AudioLowerVolume
-	amixer set Master 5%-
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-XF86AudioMute
-	amixer set Master toggle
-
-# brightness control
-XF86MonBrightnessDown
-	sudo xbacklight -dec 5
-XF86MonBrightnessUp
-	sudo xbacklight -inc 5
-
-# lock screen
-super + x
-	betterlockscreen -l
-
-# Show notifications
-super + n; {h,c,x,m}
-    dunstctl {history-pop,close,close-all,context}
-
-# change wallpaper
-super + b
-    feh --bg-fill --randomize ~/Images/walls/*
-    
-# Paru update all
-super + alt + u
-    kitty -e paru
-
-# restore bluetooth
-super + alt + b
-  kitty -e sudo systemctl restart bluetooth.service
-
-# Applications
-super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
-  {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
-
-   # --   w : firefox --new-window
-   # --   a : alacritty
-   # --   p : pcmanfm
-   # --   v : kitty -e vifm 
-   # --   s : flameshot gui
-   # --   c : galculator 
-   # --   m : kitty --class Pulsemixer -e pulsemixer
-   # --   d : discord
-   # --   t : telegram-desktop
-   # --   y : youtube-music 
-   # --   b : bitwarden-desktop
-   # --   g : chromium  
-# Vim
-super + v
-    kitty -e nvim 

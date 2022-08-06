@@ -79,7 +79,6 @@ alias lrt='ls -1Fcrt'
 alias f="find / -type f | fzf"
 alias c='clear'
 alias z='source ~/.zshrc'
-alias vimz='$EDITOR ~/.zshrc'
 alias less='less --quiet'
 alias ..='cd ..'
 alias df='df --human-readable'
@@ -87,7 +86,7 @@ alias du='du --human-readable'
 alias nfetch='neofetch --config ~/dotfiles/neofetch'
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
-alias top="btop"
+# alias top="btop"
 # Allow aliasess tu be sudo'ed
 #alias sudo='sudo '
 alias xmr-rt="curl -s cad.rate.sx/3.8808xmr | cut -c 1-7"

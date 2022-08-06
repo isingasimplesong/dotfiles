@@ -6,6 +6,7 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 export PATH="$HOME/.local/bin:$PATH"
+export QT_STYLE_OVERRIDe="gtk2"
 # Pour obtenir STDOUT et STDERR en anglais
 #export LC_ALL=C
 # ssh-agent
