@@ -1,40 +1,90 @@
-# Generics hotkeys
+# --1  Generics hotkeys
 
-# terminal emulator
+# --1.2 terminal emulator
+# --1.3 program launcher
+# --1.4 Rofi shortcuts
+# --1.5 Rofi streams
+# --1.6 Rofi exit menu 
+# --1.7 Rofi switch windows
+# --1.8 sxhkd reload config
+# --1.9 Disabling compositor
+# --1.10 volume control
+# --1.11 brightness control
+# --1.12 lock screen
+# --1.13 Manage notifications
+# --1.14 change wallpaper
+# --1.15 update all
+# --1.16 restore bluetooth
+# --1.17 Applications
+# --1.18 Scratchpads
+# --1.19 Scratchpads :current:
+# --1.20 Youtube Music (sp)
+# --1.21 Clear current Scratchpad
+# --1.22 Vim
+
+# --2 bspwm hotkeys
+
+# --2.1 restart bspwm
+# --2.2 close and kill node
+# --2.3 alternate between the tiled and monocle layout
+# --2.4 swap the current node and the biggest window
+# --2.5 set the window state
+# --2.6 set the node flags
+# --2.7 focus the node in the given direction
+# --2.8 focus the next/previous window in the current desktop
+# --2.9 focus the next/previous desktop in the current monitor
+# --2.10 focus the last node/desktop
+# --2.11 focus the older or newer node in the focus history
+# --2.12 focus or send to the given desktop
+# --2.13 preselect the direction
+# --2.14 preselect the ratio
+# --2.15 cancel the preselection for the focused node
+# --2.16 cancel the preselection for the focused desktop
+# --2.17 expand a window by moving one of its side outward
+# --2.18 contract a window by moving one of its side inward
+# --2.19 Smart resize 
+# --2.20 move a floating window
+# --2.21 switch layouts
+# --2.22 gaps presets
+
+
+
+# --1  Generics hotkeys
+# --1.2 terminal emulator
 super + Return
    kitty
 
-# program launcher
+# --1.3 program launcher
 super + space
 	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
 
-# Rofi
+# --1.4 Rofi shortcuts
 super + p; {r,a,e,c,f,w,q,x}
   {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
 
-# Rofi streams
+# --1.5 Rofi streams
 super + r
   ~/.local/bin/rofi-beats-linux
 
-# Rofi exit menu 
+# --1.6 Rofi exit menu 
 super + o
   rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
 
-# Rofi switch windows
+# --1.7 Rofi switch windows
 super + w
   rofi -show window
 
-# make sxhkd reload its configuration files:
+# --1.8 sxhkd reload config
 super + +shift+ Escape
 	pkill -USR1 -x sxhkd
 
 
-# Disabling compositor
+# --1.9 Disabling compositor
  ## find a way to toggle it
 super + shift + p
     killall picom
 
-# volume control
+# --1.10 volume control
 XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioRaiseVolume
@@ -42,33 +92,33 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	amixer set Master toggle
 
-# # brightness control
+# # --1.11 brightness control
 # XF86MonBrightnessDown
 # 	sudo xbacklight -dec 5
 # XF86MonBrightnessUp
 # 	sudo xbacklight -inc 5
 
-# lock screen
+# --1.12 lock screen
 super + x
 	betterlockscreen -l
 
-# Show notifications
+# --1.13 Manage notifications
 super + n; {h,c,x,m}
     dunstctl {history-pop,close,close-all,context}
 
-# change wallpaper
+# --1.14 change wallpaper
 super + b
     feh --bg-fill --randomize ~/Images/walls/*
     
-# Paru update all
+# --1.15 update all
 super + alt + u
     kitty -e paru
 
-# restore bluetooth
+# --1.16 restore bluetooth
 super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
-# Applications
+# --1.17 Applications
 super + a; {w,a,p,v,f,c,m,d,t,y,b,g}
   {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
@@ -85,115 +135,115 @@ super + a; {w,a,p,v,f,c,m,d,t,y,b,g}
    # --   b : bitwarden-desktop
    # --   g : chromium  
 
-# Scratchpads
+# --1.18 Scratchpads
 # Terminal a droite
 super + s
   tdrop -am -w 800 -h 1053  -y 27 -x 1120 kitty
 
-# Youtube Music
-super + y
-  tdrop -am -w 800 -h 1053  -y 27 -x 1120 youtube-music
-
-# Scratchpads a volonté
+# --1.19 Scratchpads :current:
 super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
   tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
-  # tdrop -am -w 1200 -h 800 -y 150 -x 350 -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
 
-# Clear current Scratchpad
-super + z; shift + c
-  tdrop --clear 'current'
+# --1.20 Youtube Music (sp)
+super + y
+  tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
 
-# Vim
+
+# # --1.21 Clear current Scratchpad
+# super + z; shift + c
+#   tdrop --clear 'current'
+
+# --1.22 Vim
 super + v
     kitty -e nvim 
 
-# bspwm hotkeys
+# --2 bspwm hotkeys
 
-# restart bspwm
+# --2.1 restart bspwm
 super + alt + r
 	bspc wm -r
 
-# close and kill node
+# --2.2 close and kill node
 super + {_,shift + }q
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+# --2.3 alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# # swap the current node and the biggest window
+# # --2.4 swap the current node and the biggest window
 # super + 
 # 	bspc node -s biggest.window
 
 # state/flags
 
-# set the window state
+# --2.5 set the window state
 super + {t,shift + t,f,shift + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {m,x,y,z}
+# --2.6 set the node flags
+super + ctrl + {m,x,s,p}
 	bspc node -g {marked,locked,sticky,private}
 
 
 # focus/swap
 
-# focus the node in the given direction
+# --2.7 focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the next/previous window in the current desktop
+# --2.8 focus the next/previous window in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
+# --2.9 focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
+# --2.10 focus the last node/desktop
 super + {grave,Tab}
  	bspc {node,desktop} -f last
 
-# # focus the older or newer node in the focus history
+# # --2.11 focus the older or newer node in the focus history
 # super + {o,i}
 # 	bspc wm -h off; \
 # 	bspc node {older,newer} -f; \
 # 	bspc wm -h on
 
-# focus or send to the given desktop
+# --2.12 focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-
 # preselect
 
-# preselect the direction
+# --2.13 preselect the direction
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
-# preselect the ratio
+# --2.14 preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+# --2.15 cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+# --2.16 cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # move/resize
 
-# expand a window by moving one of its side outward
+# --2.17 expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-#
-# contract a window by moving one of its side inward
+
+# --2.18 contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# Smart resize, will grow or shrink depending on location.
+# --2.19 Smart resize 
+#will grow or shrink depending on location.
 # Will always grow for floating nodes.
 
 super + alt + {Left,Down,Up,Right}
@@ -205,15 +255,15 @@ super + alt + {Left,Down,Up,Right}
   } \
   bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
 
-# move a floating window
+# --2.20 move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# switch layouts
+# --2.21 switch layouts
 super + period
   bsp-layout next --layouts rtall,tall,tiled
 
-# set gaps
+# --2.22 gaps presets
 super + g; {y,u,i,o,p}
     bspc config window_gap {0, 8, 16, 32, 64}
 
