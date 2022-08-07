@@ -17,7 +17,7 @@ super + r
   ~/.local/bin/rofi-beats-linux
 
 # Rofi exit menu 
-super + s
+super + o
   rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
 
 # Rofi switch windows
@@ -69,14 +69,14 @@ super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
 # Applications
-super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
+super + a; {w,a,p,v,f,c,m,d,t,y,b,g}
   {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   w : firefox --new-window
    # --   a : alacritty
    # --   p : pcmanfm
    # --   v : kitty -e vifm 
-   # --   s : flameshot gui
+   # --   f : flameshot gui
    # --   c : galculator 
    # --   m : kitty --class Pulsemixer -e pulsemixer
    # --   d : discord
@@ -84,7 +84,25 @@ super + a; {w,a,p,v,s,c,m,d,t,y,b,g}
    # --   y : youtube-music 
    # --   b : bitwarden-desktop
    # --   g : chromium  
-   # --   r : tdrop -am -w 50%  -h 50% -y 20% -x 30% kitty -e pyradio
+
+# Scratchpads
+# Terminal a droite
+super + s
+  tdrop -am -w 800 -h 1053  -y 27 -x 1120 kitty
+
+# Youtube Music
+super + y
+  tdrop -am -w 800 -h 1053  -y 27 -x 1120 youtube-music
+
+# Scratchpads a volonté
+super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
+  tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
+  # tdrop -am -w 1200 -h 800 -y 150 -x 350 -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
+
+# Clear current Scratchpad
+super + z; shift + c
+  tdrop --clear 'current'
+
 # Vim
 super + v
     kitty -e nvim 
@@ -103,9 +121,9 @@ super + {_,shift + }q
 super + m
 	bspc desktop -l next
 
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
+# # swap the current node and the biggest window
+# super + 
+# 	bspc node -s biggest.window
 
 # state/flags
 
