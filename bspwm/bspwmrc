@@ -36,7 +36,7 @@ do
 done
 
 
-bspc config window_gap           16
+bspc config window_gap           8
 bspc config top_padding          27
 
 bspc config border_width         0
