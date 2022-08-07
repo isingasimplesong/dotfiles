@@ -18,9 +18,8 @@
 # --1.17 Applications
 # --1.18 Scratchpads
 # --1.19 Scratchpads :current:
-# --1.20 Youtube Music (sp)
-# --1.21 Clear current Scratchpad
-# --1.22 Vim
+# --1.20 Clear current Scratchpad
+# --1.21 Vim
 
 # --2 bspwm hotkeys
 
@@ -119,13 +118,13 @@ super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
 # --1.17 Applications
-super + a; {w,a,p,v,f,c,m,d,t,y,b,g}
-  {firefox --new-window,alacritty,pcmanfm,kitty -e vifm,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+super + a; {w,x,p,r,f,c,m,d,t,y,b,g}
+  {firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   w : firefox --new-window
    # --   a : alacritty
    # --   p : pcmanfm
-   # --   v : kitty -e vifm 
+   # --   r : kitty -e ranger 
    # --   f : flameshot gui
    # --   c : galculator 
    # --   m : kitty --class Pulsemixer -e pulsemixer
@@ -139,21 +138,24 @@ super + a; {w,a,p,v,f,c,m,d,t,y,b,g}
 # Terminal a droite
 super + s
   tdrop -am -w 800 -h 1053  -y 27 -x 1120 kitty
+# horloge
+super + 0
+  tdrop -am -w 385 -h 200 -x 1535 -y 0 kitty -e tty-clock
+# Youtube Music (sp)
+super + y
+  tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
 
 # --1.19 Scratchpads :current:
 super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
   tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
 
-# --1.20 Youtube Music (sp)
-super + y
-  tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
 
 
-# # --1.21 Clear current Scratchpad
+# # --1.20 Clear current Scratchpad
 # super + z; shift + c
 #   tdrop --clear 'current'
 
-# --1.22 Vim
+# --1.21 Vim
 super + v
     kitty -e nvim 
 
@@ -260,8 +262,8 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # --2.21 switch layouts
-super + period
-  bsp-layout next --layouts rtall,tall,tiled
+super + {comma,period}
+  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
 
 # --2.22 gaps presets
 super + g; {y,u,i,o,p}
