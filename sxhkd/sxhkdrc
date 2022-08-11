@@ -138,9 +138,6 @@ super + a; {w,x,p,r,f,c,m,d,t,y,b,g}
 # Terminal a droite
 super + s
   tdrop -am -w 800 -h 1053  -y 27 -x 1120 kitty
-# horloge
-super + 0
-  tdrop -am -w 385 -h 200 -x 1535 -y 0 kitty -e tty-clock
 # Youtube Music (sp)
 super + y
   tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
