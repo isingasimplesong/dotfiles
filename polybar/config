@@ -36,7 +36,7 @@ bleu = #5e81ac
 width = 100%
 height = 27
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,15 +47,16 @@ line-color = ${colors.primary}
 border-size = 0
 border-color = #00000000
 
+
 padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "cantarell:pixelsize=11:antialias=true;0"
-font-1 = "Siji:pixelsize=11;1"
-font-2 = "JetBrains Mono Nerd Font:pixelsize=12:antialias=true;2"
+font-0 = "cantarell:pixelsize=12:antialias=true;2"
+font-1 = "Siji:pixelsize=12;2"
+font-2 = "JetBrains Mono Nerd Font:pixelsize=12:antialias=true;0"
 
 modules-left = bspwm i3 xwindow
 modules-center =

@@ -31,8 +31,8 @@
     # screen width minus the width defined in within the geometry option.
     width = (300,600) 
     height = (100,600) 
-    offset = 10x37 
-    origin = top-right
+    offset = 20x20 
+    origin = bottom-right 
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -44,7 +44,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 10
+    transparency = 0
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -67,7 +67,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-   frame_color = "#4C566A"
+   frame_color = "#d8dee9"
 
     # Define a color for the separator.
     # possible values are:
@@ -89,7 +89,7 @@
 
     ### Text ###
 
-    font = JetBrains Mono Nerd Font 12
+    font = JetBrains Mono Nerd Font 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -129,8 +129,9 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
 
+    format = "%s\n%b"
+    # format = "<b>%s</b>\n%b"
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
     alignment = left
@@ -225,7 +226,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 4
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
