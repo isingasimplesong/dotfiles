@@ -73,6 +73,10 @@ super + o
 super + w
   rofi -show window
 
+# --1.7.1 Rofi emoji
+super + e
+  rofi -show emoji
+
 # --1.8 sxhkd reload config
 super + +shift+ Escape
 	pkill -USR1 -x sxhkd
