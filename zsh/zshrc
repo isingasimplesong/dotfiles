@@ -177,3 +177,4 @@ eval "$(starship init zsh)"
 # Dircolors
 test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 bindkey -v
+# pfetch 

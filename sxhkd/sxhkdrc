@@ -141,7 +141,7 @@ super + a; {w,x,p,r,f,c,m,d,t,y,b,g}
 # --1.18 Scratchpads
 # Terminal a droite
 super + s
-  tdrop -am -w 800 -h 1053  -y 27 -x 1120 kitty
+  tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
 # Youtube Music (sp)
 super + y
   tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
