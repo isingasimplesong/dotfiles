@@ -4,7 +4,7 @@
 alias bt="sudo systemctl restart bluetooth.service"
 alias v="vim"
 # Neovim is the best vim
-alias vim="nvim"
+# alias vim="nvim"
 # Demande confirmation avant d'écraser un fichier
 alias cp='cp --interactive'
 alias mv='mv --interactive'

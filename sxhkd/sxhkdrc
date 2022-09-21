@@ -270,3 +270,9 @@ super + {comma,period}
 super + g; {y,u,i,o,p}
     bspc config window_gap {0, 8, 16, 32, 64}
 
+# --2.23 dynamic gaps
+super + shift + bracket{right,left}
+    { bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) + 5 )), \
+    [ $(bspc config -d focused window_gap) -ge 5 ] && \
+    bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) - 5 )) }
+

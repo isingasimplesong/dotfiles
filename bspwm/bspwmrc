@@ -16,7 +16,7 @@ unclutter &
 xsetroot -cursor_name left_ptr
 ~/.fehbg & 
 #feh --no-fehbg --bg-fill --randomize ~/Images/walls/* &
-#setxkbmap -option caps:swapescape &
+# setxkbmap -option caps:swapescape &
 xinput set-prop 13 328 1
 
 ### Set monitors
@@ -60,4 +60,5 @@ bspc rule -a Pulsemixer state=floating
 killall pasystray & sleep 2; pasystray &
 nm-applet &
 blueman-applet &
+powerkit &
 insync quit && insync start &
