@@ -122,8 +122,8 @@ super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
 # --1.17 Applications
-super + a; {w,x,p,r,f,c,m,d,t,y,b,g}
-  {firefox --new-window,xterm,nautilus -w,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+super + a; {t,w,x,p,r,f,c,m,d,t,y,b,g}
+  {transmission-remote-gtk,firefox --new-window,xterm,nautilus -w,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   w : firefox --new-window
    # --   a : alacritty

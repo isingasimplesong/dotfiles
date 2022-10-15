@@ -86,6 +86,7 @@ alias du='du --human-readable'
 alias nfetch='neofetch --config ~/dotfiles/neofetch'
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
+# alias history-top='history 0 | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -20"'
 # alias top="btop"
 # Allow aliasess tu be sudo'ed
 #alias sudo='sudo '
