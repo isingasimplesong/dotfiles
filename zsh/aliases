@@ -24,8 +24,6 @@ alias ple='pacman -Qe'
 alias pc='sudo pacman -Scc'
 
 # Apt
-#alias up='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean;'
-# avec snap & flatpacks
 alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
 alias ai="sudo apt install"
 alias ap="sudo apt purge"
