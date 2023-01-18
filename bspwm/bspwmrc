@@ -9,7 +9,7 @@ xrdb -merge ~/.Xressources &
 sxhkd &
 lxpolkit &
 $HOME/.config/polybar/launch.sh &
-picom --experimental-backends &
+picom &
 killall dunst && dunst &
 unclutter &
 xsetroot -cursor_name left_ptr

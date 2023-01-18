@@ -123,7 +123,7 @@ super + alt + b
 
 # --1.17 Applications
 super + a; {t,w,x,p,r,f,c,m,d,t,y,b,g}
-  {transmission-remote-gtk,firefox --new-window,xterm,nautilus -w,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+  {transmission-remote-gtk,firefox --new-window,xterm,thunar,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   w : firefox --new-window
    # --   a : alacritty

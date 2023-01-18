@@ -1,17 +1,28 @@
 # Aliases
 
-# restaurer bt
-alias bt="sudo systemctl restart bluetooth.service"
 alias v="vim"
-# Neovim is the best vim
-# alias vim="nvim"
-# Demande confirmation avant d'écraser un fichier
+# Demande de confirmation avant d'écraser un fichier
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
 
 #ssh avec kitty
 alias ssk="kitty +kitten ssh"
+
+# Pacman
+# update & install
+alias pu='paru'
+# info
+alias pi='paru -Si'
+# remove
+alias pr='paru -Rs'
+# list
+alias pl='pacman -Q'
+# List explicit
+alias ple='pacman -Qe'
+# clean cache
+alias pc='sudo pacman -Scc'
+
 # Apt
 #alias up='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean;'
 # avec snap & flatpacks
@@ -20,6 +31,7 @@ alias ai="sudo apt install"
 alias ap="sudo apt purge"
 alias ar="sudo apt remove"
 alias as="apt search"
+
 # Git Alias Commands
 alias dotg="ga . && gc && gps"
 alias g="git status"
@@ -58,8 +70,6 @@ alias gx="ign = ls-files -o -i --exclude-standard"
 # Untrack Files without deleting them
 alias grmc="git rm -r --cached"
 
-# xmrig
-alias xmrig="sudo xmrig"
 # Utiliser exa pour ls
 alias ls='exa --group-directories-first --icons'
 
@@ -76,9 +86,12 @@ alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 
 # Quelques alias pratiques
+alias clock='tty-clock -c'
+alias untar='tar xvf'
 alias f="find / -type f | fzf"
 alias c='clear'
 alias z='source ~/.zshrc'
+alias pwd='pwd && pwd | xclip -sel primary'
 alias less='less --quiet'
 alias ..='cd ..'
 alias df='df --human-readable'
@@ -86,12 +99,3 @@ alias du='du --human-readable'
 alias nfetch='neofetch --config ~/dotfiles/neofetch'
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
-# alias history-top='history 0 | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -20"'
-# alias top="btop"
-# Allow aliasess tu be sudo'ed
-#alias sudo='sudo '
-alias xmr-rt="curl -s cad.rate.sx/3.8808xmr | cut -c 1-7"
-alias media-mount='sudo mount tnc.local.2027a.net:/mnt/storage0/video Vidéos'
-alias media-umount='sudo umount tnc.local.2027a.net:/mnt/storage0/video'
-alias bkp-mount='sudo mount tnc.local.2027a.net:/mnt/storage0/backups Sauvegardes'
-alias bkp-umount='sudo umount tnc.local.2027a.net:/mnt/storage0/backups'
