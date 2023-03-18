@@ -97,3 +97,4 @@ alias du='du --human-readable'
 alias nfetch='neofetch --config ~/dotfiles/neofetch'
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
+alias swapesc="setxkbmap -option caps:swapescape"
