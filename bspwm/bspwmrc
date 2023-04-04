@@ -17,7 +17,7 @@ xsetroot -cursor_name left_ptr
 #feh --no-fehbg --bg-fill --randomize ~/Images/walls/* &
 setxkbmap -option caps:swapescape &
 setxkbmap -option compose:rwin
-xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 328 1
+xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 330 1
 
 ### Set monitors
 
