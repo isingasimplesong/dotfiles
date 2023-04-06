@@ -15,9 +15,8 @@ unclutter &
 xsetroot -cursor_name left_ptr
 ~/.fehbg & 
 #feh --no-fehbg --bg-fill --randomize ~/Images/walls/* &
-setxkbmap -option caps:swapescape &
 setxkbmap -option compose:rwin
-xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 330 1
+xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 336 1
 
 ### Set monitors
 
@@ -62,3 +61,4 @@ nm-applet &
 blueman-applet &
 powerkit &
 insync quit && insync start &
+setxkbmap -option caps:swapescape &
