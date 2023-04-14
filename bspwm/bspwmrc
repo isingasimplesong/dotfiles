@@ -16,7 +16,7 @@ xsetroot -cursor_name left_ptr
 ~/.fehbg & 
 #feh --no-fehbg --bg-fill --randomize ~/Images/walls/* &
 setxkbmap -option compose:rwin
-xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 336 1
+xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1
 
 ### Set monitors
 
@@ -28,14 +28,14 @@ bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
 
 ### Windows management
 
-# set layout on all desktops 
+ set layout on all desktops 
 for i in 1 2 3 4 5 6 7 8 9 0 
 do
    bsp-layout set tall $i
 done
 
 
-bspc config window_gap           8
+bspc config window_gap           6
 bspc config top_padding          27
 
 bspc config border_width         0

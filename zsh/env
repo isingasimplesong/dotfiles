@@ -8,6 +8,7 @@ export VISUAL="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 export QT_STYLE_OVERRIDe="gtk2"
 export QT_QPA_PLATFORMTHEME=qt5ct
+export OPENAI_KEY=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
 # Pour obtenir STDOUT et STDERR en anglais
 #export LC_ALL=C
 # ssh-agent
