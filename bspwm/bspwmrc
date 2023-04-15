@@ -54,6 +54,7 @@ bspc config gapless_monocle      true
 
 bspc config ignore_ewmh_focus true
 bspc rule -a Galculator state=floating
+bspc rule -a Gcolor3 state=floating
 bspc rule -a Pulsemixer state=floating
 
 killall pasystray & sleep 2; pasystray &

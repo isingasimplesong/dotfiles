@@ -267,7 +267,7 @@ super + {Left,Down,Up,Right}
 
 # --2.21 switch layouts
 super + {comma,period}
-  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid
+  bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
 
 # --2.22 gaps presets
 super + g; {y,u,i,o,p}
