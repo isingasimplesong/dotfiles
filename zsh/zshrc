@@ -144,9 +144,14 @@ setopt hist_find_no_dups
 
 # activer reverse-search
 #bindkey '^R' history-incremental-search-backward
-#fzf
+
+##fzf
+# Arch
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+# Debian
+#source /usr/share/doc/fzf/examples/key-bindings.zsh
+#source /usr/share/doc/fzf/examples/completion.zsh
 
 # Complétion des options des commandes
 
