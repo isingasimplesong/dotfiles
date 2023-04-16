@@ -172,6 +172,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Fichiers externes
 source /home/mathieu/dotfiles/zsh/aliases
 source /home/mathieu/dotfiles/zsh/env
+source /home/mathieu/dotfiles/zsh/env-secrets
 
 autoload -Uz compinit
 compinit
