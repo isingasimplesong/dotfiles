@@ -10,6 +10,17 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- no arrows keys allowed
+keymap("n", "<Up>", "<Nop>", {})
+keymap("n", "<Down>", "<Nop>", {})
+keymap("n", "<Left>", "<Nop>", {})
+keymap("n", "<Right>", "<Nop>", {})
+
+--keymap("i", "<Up>", "<Nop>", {})
+--keymap("i", "<Down>", "<Nop>", {})
+--keymap("i", "<Left>", "<Nop>", {})
+--keymap("i", "<Right>", "<Nop>", {})
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -24,13 +35,14 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>1", ":TransparentToggle<cr>", opts)
 
 -- alternate theme
-keymap("n", "<leader>2", ":colorscheme tokyonight<cr>", opts)
-keymap("n", "<leader>3", ":colorscheme onenord<cr>", opts)
-keymap("n", "<leader>4", ":colorscheme base16-onedark<cr>", opts)
+keymap("n", "<leader>2", ":colorscheme onenord<cr>", opts)
+keymap("n", "<leader>3", ":colorscheme catppuccin-frappe<cr>", opts)
+keymap("n", "<leader>4", ":colorscheme catppuccin-macchiato<cr>", opts)
+keymap("n", "<leader>5", ":colorscheme catppuccin-mocha<cr>", opts)
 
 -- toggle relative numbers
 keymap("n", "<leader>=", ":set relativenumber!<cr>", opts)
--- vsplit
+-- split
 keymap("n", "<leader>\\", ":vsplit<cr>", opts)
 keymap("n", "<leader>-", ":split<cr>", opts)
 
@@ -42,7 +54,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -53,8 +64,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- Move text up and down
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --

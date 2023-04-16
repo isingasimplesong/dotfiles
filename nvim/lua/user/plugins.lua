@@ -67,8 +67,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
   use("rmehri01/onenord.nvim")
-	use("folke/tokyonight.nvim")
-  use("RRethy/nvim-base16")
+  use("catppuccin/nvim")
 
   -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
