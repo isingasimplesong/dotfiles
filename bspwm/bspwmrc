@@ -54,8 +54,9 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc config ignore_ewmh_focus true
-bspc rule -a Galculator state=floating
 bspc rule -a Gcolor3 state=floating
+bspc rule -a Galculator state=floating
+bspc rule -a Pavucontrol state=floating
 bspc rule -a Pulsemixer state=floating
 bspc rule -a org.gnome.DejaDup state=floating
 
