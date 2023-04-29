@@ -57,19 +57,19 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
 	use("folke/which-key.nvim")
-  use("farmergreg/vim-lastplace")
-  use({"rrethy/vim-hexokinase", run = "make"})
-  use("xiyaowong/nvim-transparent")
-  use("folke/zen-mode.nvim")
+    use("farmergreg/vim-lastplace")
+    use({"rrethy/vim-hexokinase", run = "make"})
+    use("xiyaowong/nvim-transparent")
+    use("folke/zen-mode.nvim")
 
-  -- Status line 
-  use("nvim-lualine/lualine.nvim")
+    -- Status line 
+    use("nvim-lualine/lualine.nvim")
 
 	-- Colorschemes
-  use("rmehri01/onenord.nvim")
-  use("catppuccin/nvim")
+    use("rmehri01/onenord.nvim")
+    use("AlexvZyl/nordic.nvim")
 
-  -- cmp plugins
+    -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- snippets
-  use("L3MON4D3/LuaSnip") --snippet engine
+    use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
@@ -87,18 +87,18 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
 	-- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-  -- FZF
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- FZF
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  -- Treesitter
+    -- Treesitter
 	use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({with_sync = true })end, }
 	
-  -- Git
+    -- Git
 	use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim 
