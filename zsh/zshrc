@@ -170,9 +170,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
 # Fichiers externes
-source /home/mathieu/dotfiles/zsh/aliases
-source /home/mathieu/dotfiles/zsh/env
-source /home/mathieu/dotfiles/zsh/env-secrets
+source /home/mathieu/Projets/dotfiles/zsh/aliases
+source /home/mathieu/Projets/dotfiles/zsh/env
+source /home/mathieu/Projets/dotfiles/zsh/env-secrets
 
 autoload -Uz compinit
 compinit
