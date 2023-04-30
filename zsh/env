@@ -9,7 +9,7 @@ export PATH="$HOME/.local/bin/:$PATH"
 export QT_STYLE_OVERRIDe="gtk2"
 export QT_QPA_PLATFORMTHEME=qt5ct
 # Pour obtenir STDOUT et STDERR en anglais
-#export LC_ALL=C
+export LC_ALL=C
 # ssh-agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # pfetch
