@@ -122,8 +122,8 @@ super + alt + b
   kitty -e sudo systemctl restart bluetooth.service
 
 # --1.17 Applications
-super + a; {t,w,x,p,r,f,c,m,d,t,y,b,g}
-  {transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+super + a; {a,t,w,x,p,r,f,c,m,d,t,y,b,g}
+  {alacritty,transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   w : firefox --new-window
    # --   a : alacritty
@@ -143,8 +143,8 @@ super + a; {t,w,x,p,r,f,c,m,d,t,y,b,g}
 super + s
   tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
 # Youtube Music (sp)
-super + y
-  tdrop -am -w 800 -h 1053  -y 27 -x 1120 --debug youtube-music
+super + g
+  tdrop -am -w 800 -h 1053  -y 27 -x 1120 firefox --new-window https://chat.openai.com
 
 # --1.19 Scratchpads :current:
 super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
