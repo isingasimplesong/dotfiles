@@ -31,12 +31,11 @@ alias ar="sudo apt remove"
 alias as="apt search"
 
 # Git Alias Commands
-alias dotg="ga . && gc && gps"
+# alias dotg="ga . && gc && gps"
 alias g="git status"
 alias ga="git add"
 alias gaa="git add ."
 alias gau="git add -u"
-alias gc="git commit -m '<blank>'"
 alias gca="git commit -am"
 alias gb="git branch"
 alias gbd="git branch -d"
