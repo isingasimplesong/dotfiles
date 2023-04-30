@@ -1,3 +1,3 @@
 # Dotfiles
-Quelques configs utiles
 
+Personal configs. Use at your own risks
