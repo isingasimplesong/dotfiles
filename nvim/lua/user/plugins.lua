@@ -70,6 +70,10 @@ return packer.startup(function(use)
     use("sainnhe/sonokai")
     use("olimorris/onedarkpro.nvim")
     use("Mofiqul/dracula.nvim")
+    use("catppuccin/nvim")
+    use("sainnhe/gruvbox-material")
+    -- use("RRethy/nvim-base16")
+
     -- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions

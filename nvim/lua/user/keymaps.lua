@@ -36,9 +36,11 @@ keymap("n", "<leader>0", ":TransparentToggle<cr>", opts)
 
 -- alternate theme
 keymap("n", "<leader>1", ":colorscheme onenord<cr>", opts)
-keymap("n", "<leader>2", ":colorscheme sonokai<cr>", opts)
-keymap("n", "<leader>3", ":colorscheme onedark<cr>", opts)
-keymap("n", "<leader>4", ":colorscheme dracula<cr>", opts)
+keymap("n", "<leader>2", ":colorscheme onedark<cr>", opts)
+keymap("n", "<leader>3", ":colorscheme catppuccin-frappe<cr>", opts)
+keymap("n", "<leader>4", ":colorscheme gruvbox-material<cr>", opts)
+keymap("n", "<leader>5", ":colorscheme sonokai<cr>", opts)
+keymap("n", "<leader>6", ":colorscheme dracula<cr>", opts)
 
 -- toggle relative numbers
 keymap("n", "<leader>=", ":set relativenumber!<cr>", opts)
