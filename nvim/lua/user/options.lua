@@ -74,3 +74,4 @@ vim.cmd ([[let g:transparent_enabled = v:false]])
   },
   exclude = {}, -- table: groups you don't want to clear
 })]]
+vim.o.autochdir = true
