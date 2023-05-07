@@ -20,18 +20,21 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-}
+	use({
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	})
 	use({ "rmehri01/onenord.nvim" })
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("ThePrimeagen/harpoon")
 	use("mbbill/undotree")
+	use("kyazdani42/nvim-tree.lua")
 	use("tpope/vim-fugitive")
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("nvim-lualine/lualine.nvim")
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
