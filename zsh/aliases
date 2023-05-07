@@ -1,37 +1,45 @@
-# Aliases
-
+# Éditeur et terminal
 alias v="vim"
-# Demande de confirmation avant d'écraser un fichier
+alias ssk="kitty +kitten ssh"
+alias c='clear'
+alias z='source ~/.zshrc'
+
+# Commandes de base
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
+alias pwd='pwd && pwd | xclip -sel primary'
+alias less='less --quiet'
+alias ..='cd ..'
+alias df='df --human-readable'
+alias du='du --human-readable'
 
-#ssh avec kitty
-alias ssk="kitty +kitten ssh"
+# Gestion du temps
+alias clock='tty-clock -c'
+alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
+alias date-human='date +"%A %d %B %Y, %H:%M"'
 
-# Pacman
-# update & install
-alias pu='paru'
-# info
-alias pi='paru -Si'
-# remove
-alias pr='paru -Rs'
-# list
-alias pl='pacman -Q'
-# List explicit
-alias ple='pacman -Qe'
-# clean cache
-alias pc='sudo pacman -Scc'
+# Gestion des fichiers et répertoires avec 'exa' et 'find'
+alias ls='exa --group-directories-first --icons'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias l='ls -lFh'
+alias lr='ls -tRFh'
+alias lt='ls -ltFh'
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
+alias f="find / -type f | fzf"
 
-# Apt
-alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
-alias ai="sudo apt install"
-alias ap="sudo apt purge"
-alias ar="sudo apt remove"
-alias as="apt search"
+# Compression et décompression
+alias untar='tar xvf'
 
-# Git Alias Commands
-# alias dotg="ga . && gc && gps"
+# Clavier
+alias swapesc="setxkbmap -option caps:swapescape"
+
+# Git
 alias g="git status"
 alias ga="git add"
 alias gaa="git add ."
@@ -49,52 +57,32 @@ alias gr="git rebase"
 alias gl="git log --oneline --decorate --graph"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias glga="git log --graph --oneline --all --decorate"
-alias gb="git branch"
 alias gs="git show"
 alias gd="diff --color --color-words --abbrev"
 alias gdc="git diff --cached"
 alias gbl="git blame"
 alias gps="git push"
 alias gpl="git pull"
-alias gb="git branch"
-alias gd="git diff"
 alias go="git checkout "
 alias gk="gitk --all&"
 alias gx="gitx --all"
-
-# show ignored files by git
 alias gx="ign = ls-files -o -i --exclude-standard"
-
-# Untrack Files without deleting them
 alias grmc="git rm -r --cached"
 
-# Utiliser exa pour ls
-alias ls='exa --group-directories-first --icons'
+# Pacman (Arch Linux)
+alias pu='paru'
+alias pi='paru -Si'
+alias pr='paru -Rs'
+alias pl='pacman -Q'
+alias ple='pacman -Qe'
+alias pc='sudo pacman -Scc'
 
-# Raccourcis pour 'ls'
-alias la='ls -a'
-alias ll='ls -l'      #long list
-alias lla='ls -la'
-alias l='ls -lFh'     #size,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
+# Apt (Debian/Ubuntu)
+alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
+alias ai="sudo apt install"
+alias ap="sudo apt purge"
+alias ar="sudo apt remove"
+alias as="apt search"
 
-# Quelques alias pratiques
-alias clock='tty-clock -c'
-alias untar='tar xvf'
-alias f="find / -type f | fzf"
-alias c='clear'
-alias z='source ~/.zshrc'
-alias pwd='pwd && pwd | xclip -sel primary'
-alias less='less --quiet'
-alias ..='cd ..'
-alias df='df --human-readable'
-alias du='du --human-readable'
-alias nfetch='neofetch --config ~/dotfiles/neofetch'
-alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
-alias date-human='date +"%A %d %B %Y, %H:%M"'
-alias swapesc="setxkbmap -option caps:swapescape"
+# Neofetch
+alias nfetch='neofetch --config ~/Projets/dotfiles/neofetch'

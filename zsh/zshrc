@@ -2,9 +2,9 @@
 # (la couleur n'est pas la même pour le root et les simples utilisateurs)
 
 if [ "`id -u`" -eq 0 ]; then
-  export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
+    export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 else
-  export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
+    export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 fi
 
 # Titre de la fenêtre d'un xterm
@@ -15,10 +15,10 @@ fi
 # esac
 case $TERM in
     xterm*)
-      preexec () {
-        print -Pn "\e]0;$1\a"
-      }
-    ;;
+        preexec () {
+            print -Pn "\e]0;$1\a"
+        }
+        ;;
 esac
 
 #  Options de zsh (cf 'man zshoptions')

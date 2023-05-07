@@ -1,18 +1,32 @@
-# Variables d'environement
+# =========================
+# Environment Variables
+# =========================
 
-# export PAGER="most"
-export PAGER='nvim +Man!'
+# Editor settings
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
-export PATH="$HOME/.local/bin/:$PATH"
-export QT_STYLE_OVERRIDe="gtk2"
-export QT_QPA_PLATFORMTHEME=qt5ct
-# Pour obtenir STDOUT et STDERR en anglais
+
+# PAGER settings
+# export PAGER="most"
+export PAGER='nvim +Man!'
+
+# Go programming language settings
+export GOPATH="$HOME/.local/share/go"
+
+# Localization settings for output and error messages
 export LC_ALL=C
-# ssh-agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-# pfetch
+
+# Path settings
+export PATH="$HOME/.local/bin/:$PATH"
+
+# pfetch settings
 export PF_INFO="ascii os kernel wm editor shell uptime memory"
-# ranger le bazar de Go :
-export GOPATH=$HOME/.local/share/go
+
+# Qt theme settings
+export QT_STYLE_OVERRIDE="gtk2"
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# ssh-agent settings
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
