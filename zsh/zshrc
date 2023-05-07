@@ -1,18 +1,12 @@
-# Prompt (sans starship)
-# (la couleur n'est pas la même pour le root et les simples utilisateurs)
-
+# =========================
+# General Settings
+# =========================
 if [ "`id -u`" -eq 0 ]; then
     export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 else
     export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 fi
 
-# Titre de la fenêtre d'un xterm
-# case $TERM in
-#    xterm*)
-#        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-#        ;;
-# esac
 case $TERM in
     xterm*)
         preexec () {
@@ -21,155 +15,63 @@ case $TERM in
         ;;
 esac
 
-#  Options de zsh (cf 'man zshoptions')
-
-# Je ne veux JAMAIS de beeps
+# =========================
+# Zsh Options
+# =========================
 unsetopt beep
 unsetopt hist_beep
 unsetopt list_beep
-
-# >| doit être utilisés pour pouvoir écraser un fichier déjà existant ;
-# le fichier ne sera pas écrasé avec '>'
 unsetopt clobber
-
-# Ctrl+D est équivalent à 'logout'
 unsetopt ignore_eof
-
-# Affiche le code de sortie si différent de '0'
 setopt print_exit_value
-
-# Demande confirmation pour 'rm *'
 unsetopt rm_star_silent
-
-# Si on utilise des jokers dans une liste d'arguments, retire les jokers
-# qui ne correspondent à rien au lieu de donner une erreur
 setopt nullglob
 
-# Schémas de complétion
-
-# - Schéma A :
-# 1ère tabulation : complète jusqu'au bout de la partie commune
-# 2ème tabulation : propose une liste de choix
-# 3ème tabulation : complète avec le 1er item de la liste
-# 4ème tabulation : complète avec le 2ème item de la liste, etc...
-# -> c'est le schéma de complétion par défaut de zsh.
-
-# Schéma B :
-# 1ère tabulation : propose une liste de choix et complète avec le 1er item
-#                   de la liste
-# 2ème tabulation : complète avec le 2ème item de la liste, etc...
-# Si vous voulez ce schéma, décommentez la ligne suivante :
-#setopt menu_complete
-
-# Schéma C :
-# 1ère tabulation : complète jusqu'au bout de la partie commune et
-#                   propose une liste de choix
-# 2ème tabulation : complète avec le 1er item de la liste
-# 3ème tabulation : complète avec le 2ème item de la liste, etc...
-# Si vous voulez ce schéma, décommentez la ligne suivante :
+# =========================
+# Completion Settings
+# =========================
 unsetopt list_ambiguous
-
-# Options de complétion
-# Quand le dernier caractère d'une complétion est '/' et que l'on
-# tape 'espace' après, le '/' est effacé
 setopt auto_remove_slash
-
-# Ne fait pas de complétion sur les fichiers et répertoires cachés
 unsetopt glob_dots
-
-# Traite les liens symboliques comme il faut
 setopt chase_links
-
-# Quand l'utilisateur commence sa commande par '!' pour faire de la
-# complétion historique, il n'exécute pas la commande immédiatement
-# mais il écrit la commande dans le prompt
 setopt hist_verify
-
-# Si la commande est invalide mais correspond au nom d'un sous-répertoire
-# exécuter 'cd sous-répertoire'
 setopt auto_cd
-
-# L'exécution de "cd" met le répertoire d'où l'on vient sur la pile
 setopt auto_pushd
-
-# Ignore les doublons dans la pile
 setopt pushd_ignore_dups
-
-# N'affiche pas la pile après un "pushd" ou "popd"
 setopt pushd_silent
-
-# "pushd" sans argument = "pushd $HOME"
 setopt pushd_to_home
-
-# Les jobs qui tournent en tâche de fond sont nicé à '0'
 unsetopt bg_nice
-
-# N'envoie pas de "HUP" aux jobs qui tourent quand le shell se ferme
 unsetopt hup
 
-# Conf de l'historique
-# Nombre d'entrées
+# =========================
+# History Settings
+# =========================
 export HISTORY=10000
 export SAVEHIST=10000
 export HISTSIZE=10000
-# Fichier où est stocké l'historique
 export HISTFILE=$HOME/.history
 
-# Ajoute l'historique à la fin de l'ancien fichier
 setopt append_history
-
-# Chaque ligne est ajoutée dans l'historique à mesure qu'elle est tapée
 setopt inc_append_history
-
-# Ne stocke pas  une ligne dans l'historique si elle  est identique à la
-# précédente
 setopt hist_ignore_dups
-
-# Supprime les  répétitions dans le fichier  d'historique, ne conservant
-# que la dernière occurrence ajoutée
 setopt hist_ignore_all_dups
-
-# Supprime les  répétitions dans l'historique lorsqu'il  est plein, mais
-# pas avant
 setopt hist_expire_dups_first
-
-# N'enregistre  pas plus d'une fois  une même ligne, quelles  que soient
-# les options fixées pour la session courante
-#setopt hist_save_no_dups
-
-# La recherche dans  l'historique avec l'éditeur de commandes  de zsh ne
-# montre  pas  une même  ligne  plus  d'une fois,  même  si  elle a  été
-# enregistrée
 setopt hist_find_no_dups
 
-# activer reverse-search
-#bindkey '^R' history-incremental-search-backward
-
-##fzf
-# Arch
+# =========================
+# Plugins
+# =========================
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-# Debian
-#source /usr/share/doc/fzf/examples/key-bindings.zsh
-#source /usr/share/doc/fzf/examples/completion.zsh
 
-# Complétion des options des commandes
-
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
-zstyle ':completion:*' max-errors 3 numeric
-zstyle ':completion:*' use-compctl false
-
-
-# vérification de la syntaxe
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Auto-suggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Command not found handler
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
-# Fichiers externes
+# =========================
+# External Files and Initialization
+# =========================
 source /home/mathieu/Projets/dotfiles/zsh/aliases
 source /home/mathieu/Projets/dotfiles/zsh/env
 source /home/mathieu/Projets/dotfiles/zsh/env-secrets
@@ -178,9 +80,22 @@ autoload -Uz compinit
 compinit
 
 autoload -U promptinit; promptinit
-## Starship prompt
 eval "$(starship init zsh)"
-# Dircolors
+
 test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 bindkey -v
-# pfetch 
+
+# =========================
+# OS-Specific Settings
+# =========================
+if [[ "$(uname)" == "Linux" ]]; then
+    if [ -f /etc/os-release ]; then
+        source /etc/os-release
+        if [[ "$ID" == "arch" ]]; then
+            # Arch-specific settings
+        elif [[ "$ID" == "debian" ]]; then
+            # Debian-specific settings
+        fi
+    fi
+fi
+
