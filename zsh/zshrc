@@ -1,12 +1,17 @@
 # =========================
 # General Settings
 # =========================
+
+# Set the prompt based on user privilege level
 if [ "`id -u`" -eq 0 ]; then
+    # Root user prompt
     export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 else
+    # Non-root user prompt
     export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
 fi
 
+# Update the terminal title with the current command for xterm-compatible terminals
 case $TERM in
     xterm*)
         preexec () {
@@ -18,39 +23,72 @@ esac
 # =========================
 # Zsh Options
 # =========================
+
+# Disable beeping on various events
 unsetopt beep
 unsetopt hist_beep
 unsetopt list_beep
+
+# Prevent overwriting of existing files with redirection
 unsetopt clobber
+
+# Require explicit `exit` command to exit the shell
 unsetopt ignore_eof
+
+# Display exit status of the last command when non-zero
 setopt print_exit_value
+
+# Ask for confirmation before using 'rm *'
 unsetopt rm_star_silent
+
+# Make sure that pathname patterns that do not match any files expand to a null string
 setopt nullglob
 
 # =========================
 # Completion Settings
 # =========================
+
+# Disable listing of ambiguous completions
 unsetopt list_ambiguous
+
+# Remove trailing slash from directories upon completion
 setopt auto_remove_slash
+
+# Don't consider hidden files for completion
 unsetopt glob_dots
+
+# Resolve symlinks for completion
 setopt chase_links
+
+# Verify history expansion result
 setopt hist_verify
+
+# Change to directories without `cd` command
 setopt auto_cd
+
+# Automatically push directories onto directory stack
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushd_silent
 setopt pushd_to_home
+
+# Don't run background jobs at lower priority
 unsetopt bg_nice
+
+# Don't send SIGHUP to running jobs on exit
 unsetopt hup
 
 # =========================
 # History Settings
 # =========================
+
+# Set the maximum number of history entries
 export HISTORY=10000
 export SAVEHIST=10000
 export HISTSIZE=10000
 export HISTFILE=$HOME/.history
 
+# Configure history saving options
 setopt append_history
 setopt inc_append_history
 setopt hist_ignore_dups
@@ -61,38 +99,56 @@ setopt hist_find_no_dups
 # =========================
 # Plugins
 # =========================
+
+# Enable fzf key bindings and completion
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+# Enable syntax highlighting and autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Handle "command not found" errors
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
 
 # =========================
 # External Files and Initialization
 # =========================
+
+# Source alias, environment variables and secret environment variables files
 source /home/mathieu/Projets/dotfiles/zsh/aliases
 source /home/mathieu/Projets/dotfiles/zsh/env
 source /home/mathieu/Projets/dotfiles/zsh/env-secrets
 
+# Load and initialize the completion system
 autoload -Uz compinit
 compinit
 
+# Load and initialize the prompt system
 autoload -U promptinit; promptinit
+
+# Initialize the Starship prompt
 eval "$(starship init zsh)"
 
+# Load and apply the 'dir_colors' configuration, if available
 test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
+
+# Set the keymap to vi mode
 bindkey -v
 
 # =========================
 # OS-Specific Settings
 # =========================
+
+# Check for Linux OS
 if [[ "$(uname)" == "Linux" ]]; then
+    # If the os-release file is available, source it
     if [ -f /etc/os-release ]; then
         source /etc/os-release
+        # Check for Arch Linux distribution
         if [[ "$ID" == "arch" ]]; then
             # Arch-specific settings
+        # Check for Debian distribution
         elif [[ "$ID" == "debian" ]]; then
             # Debian-specific settings
         fi
