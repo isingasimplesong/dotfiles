@@ -13,10 +13,25 @@ return require("packer").startup(function(use)
   augroup end
 ]])
 
+	-- Use a protected call so we don't error out on first use
+	local status_ok, packer = pcall(require, "packer")
+	if not status_ok then
+		return
+	end
+
+	-- Have packer use a popup window
+	packer.init({
+		display = {
+			open_fn = function()
+				return require("packer.util").float({ border = "rounded" })
+			end,
+		},
+	})
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		-- or                            , branch = '0.1.x',
+		-- or  asdedeg                          , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -27,13 +42,30 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "rmehri01/onenord.nvim" })
+    use("sainnhe/sonokai")
+    use("olimorris/onedarkpro.nvim")
+    use("Mofiqul/dracula.nvim")
+    use("catppuccin/nvim")
+    use("sainnhe/gruvbox-material")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("ThePrimeagen/harpoon")
 	use("mbbill/undotree")
 	use("kyazdani42/nvim-tree.lua")
+	use("farmergreg/vim-lastplace")
 	use("tpope/vim-fugitive")
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("moll/vim-bbye") --  meilleur :Bdelete (buffer delete)
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use("lewis6991/gitsigns.nvim")
+	use("akinsho/toggleterm.nvim")
+	use("ahmedkhalf/project.nvim")
+	use("lewis6991/impatient.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("folke/which-key.nvim")
+	use({ "rrethy/vim-hexokinase", run = "make" })
+	use("xiyaowong/nvim-transparent")
+	use("folke/zen-mode.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use({
 		"VonHeikemen/lsp-zero.nvim",
