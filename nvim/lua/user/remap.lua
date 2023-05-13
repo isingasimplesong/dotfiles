@@ -8,11 +8,11 @@ vim.keymap.set("n", "<Left>", "<Nop>", {})
 vim.keymap.set("n", "<Right>", "<Nop>", {})
 -- alternate theme
 vim.keymap.set("n", "<leader>1", ":colorscheme onenord<cr>", opts)
-vim.keymap.set("n", "<leader>2", ":colorscheme onedark<cr>", opts)
-vim.keymap.set("n", "<leader>3", ":colorscheme catppuccin-frappe<cr>", opts)
-vim.keymap.set("n", "<leader>4", ":colorscheme gruvbox-material<cr>", opts)
-vim.keymap.set("n", "<leader>5", ":colorscheme sonokai<cr>", opts)
-vim.keymap.set("n", "<leader>6", ":colorscheme dracula<cr>", opts)
+vim.keymap.set("n", "<leader>2", ":colorscheme catppuccin-frappe<cr>", opts)
+vim.keymap.set("n", "<leader>3", ":colorscheme dracula<cr>", opts)
+-- vim.keymap.set("n", "<leader>4", ":colorscheme onedark<cr>", opts)
+-- vim.keymap.set("n", "<leader>5", ":colorscheme gruvbox-material<cr>", opts)
+-- vim.keymap.set("n", "<leader>6", ":colorscheme sonokai<cr>", opts)
 
 -- toggle relative numbers
 vim.keymap.set("n", "<leader>=", ":set relativenumber!<cr>", opts)
