@@ -65,4 +65,5 @@ nm-applet &
 blueman-applet &
 powerkit &
 insync quit && insync start &
-setxkbmap -option caps:swapescape &
+setxkbmap -option &
+#setxkbmap -option caps:swapescape &
