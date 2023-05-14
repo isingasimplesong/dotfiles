@@ -1,6 +1,3 @@
--- Leader key
-vim.g.mapleader = " "
-
 -- File and backup settings
 vim.opt.backup = false                      -- does not create a backup file
 vim.opt.swapfile = false                    -- does not create a swapfile

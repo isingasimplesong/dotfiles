@@ -1,18 +1,16 @@
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
 -- no arrows keys allowed
 vim.keymap.set("n", "<Up>", "<Nop>", {})
 vim.keymap.set("n", "<Down>", "<Nop>", {})
 vim.keymap.set("n", "<Left>", "<Nop>", {})
 vim.keymap.set("n", "<Right>", "<Nop>", {})
--- alternate theme
+
+-- alternate colorschemes
 vim.keymap.set("n", "<leader>1", ":colorscheme onenord<cr>", opts)
 vim.keymap.set("n", "<leader>2", ":colorscheme catppuccin-frappe<cr>", opts)
 vim.keymap.set("n", "<leader>3", ":colorscheme dracula<cr>", opts)
--- vim.keymap.set("n", "<leader>4", ":colorscheme onedark<cr>", opts)
--- vim.keymap.set("n", "<leader>5", ":colorscheme gruvbox-material<cr>", opts)
--- vim.keymap.set("n", "<leader>6", ":colorscheme sonokai<cr>", opts)
 
 -- toggle relative numbers
 vim.keymap.set("n", "<leader>=", ":set relativenumber!<cr>", opts)
