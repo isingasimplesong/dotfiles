@@ -1,7 +1,0 @@
-FROM jupyter/tensorflow-notebook:latest
-
-RUN pip install --upgrade pip
-
-RUN pip install torch torchvision torchaudio
-
-RUN pip install 'python-lsp-server[all]'
