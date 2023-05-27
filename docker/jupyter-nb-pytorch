@@ -1,9 +1,7 @@
-# Utilise l'image de base avec Jupyter et TensorFlow
 FROM jupyter/tensorflow-notebook:latest
 
-# Met à jour pip
 RUN pip install --upgrade pip
 
-# Installe PyTorch
 RUN pip install torch torchvision torchaudio
+
 RUN pip install 'python-lsp-server[all]'
