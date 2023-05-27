@@ -110,7 +110,7 @@ super + n; {h,c,x,m}
     dunstctl {history-pop,close,close-all,context}
 
 # --1.14 change wallpaper
-super + b
+super + v
     feh --bg-fill --randomize ~/Images/walls/*
     
 # --1.15 update all
@@ -155,10 +155,6 @@ super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
 # # --1.20 Clear current Scratchpad
 # super + z; shift + c
 #   tdrop --clear 'current'
-
-# --1.21 Vim
-super + v
-    kitty -e nvim 
 
 # --2 bspwm hotkeys
 
