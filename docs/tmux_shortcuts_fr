@@ -1,0 +1,60 @@
+
+       C-b         Envoyer la touche de préfixe (C-b) à l'application.
+       C-o         Faire tourner les volets dans la fenêtre actuelle vers l'avant.
+       C-z         Suspendre le client tmux.
+       !           Détacher le volet actuel de la fenêtre.
+       "           Diviser le volet actuel en deux, haut et bas.
+       #           Lister tous les tampons de collage.
+       $           Renommer la session actuelle.
+       %           Diviser le volet actuel en deux, gauche et droite.
+       &           Tuer la fenêtre actuelle.
+       '           Demander un index de fenêtre à sélectionner.
+       (           Passer le client attaché à la session précédente.
+       )           Passer le client attaché à la session suivante.
+       ,           Renommer la fenêtre actuelle.
+       -           Supprimer le tampon de texte le plus récemment copié.
+       .           Demander un index pour déplacer la fenêtre actuelle.
+       0 à 9       Sélectionner les fenêtres de 0 à 9.
+       :           Entrer dans l'invite de commande tmux.
+       ;           Aller au volet précédemment actif.
+       =           Choisir interactivement quel tampon coller à partir d'une liste.
+       ?           Lister tous les raccourcis clavier.
+       D           Choisir un client à détacher.
+       L           Passer le client attaché à la dernière session.
+       [           Entrer en mode copie pour copier du texte ou afficher l'historique.
+       ]           Coller le tampon de texte le plus récemment copié.
+       c           Créer une nouvelle fenêtre.
+       d           Détacher le client actuel.
+       f           Demander de chercher du texte dans les fenêtres ouvertes.
+       i           Afficher des informations sur la fenêtre actuelle.
+       l           Aller à la fenêtre précédemment sélectionnée.
+       m           Marquer le volet actuel (voir select-pane -m).
+       M           Effacer le volet marqué.
+       n           Passer à la fenêtre suivante.
+       o           Sélectionner le volet suivant dans la fenêtre actuelle.
+       p           Passer à la fenêtre précédente.
+       q           Afficher brièvement les index des volets.
+       r           Forcer le redessin du client attaché.
+       s           Sélectionner une nouvelle session pour le client attaché de manière interactive.
+       t           Afficher l'heure.
+       w           Choisir la fenêtre actuelle de manière interactive.
+       x           Tuer le volet actuel.
+       z           Basculer l'état de zoom du volet actuel.
+       {           Échanger le volet actuel avec le volet précédent.
+       }           Échanger le volet actuel avec le volet suivant.
+       ~           Afficher les messages précédents de tmux, s'il y en a.
+       Page Up     Entrer en mode copie et faire défiler d'une page vers le haut.
+       Haut, Bas
+       Gauche, Droite
+                   Changer pour le volet au-dessus, en dessous, à gauche, ou à droite du volet actuel.
+       M-1 à M-5  Organiser les volets dans l'une des cinq dispositions prédéfinies : even-horizontal, even-vertical, main-horizontal, main-vertical, or tiled.
+       Espace      Organiser la fenêtre actuelle dans la disposition prédéfinie suivante.
+       M-n         Aller à la fenêtre suivante avec un marqueur de sonnerie ou d'activité.
+       M-o         Faire tourner les volets dans la fenêtre actuelle vers l'arrière.
+       M-p         Aller à la fenêtre précédente avec un marqueur de sonnerie ou d'activité.
+       C-Haut, C-Bas
+       C-Gauche, C-Droite
+                   Redimensionner le volet actuel par pas d'une cellule.
+       M-Haut, M-Bas
+       M-Gauche, M-Droite
+                   Redimensionner le volet actuel par pas de cinq cellules.
