@@ -85,5 +85,6 @@ alias ap="sudo apt purge"
 alias ar="sudo apt remove"
 alias as="apt search"
 
-# Neofetch
-alias nfetch='neofetch --config ~/Projets/dotfiles/neofetch'
+# swap esc & caps lock
+alias se="setxkbmap -option caps:swapescape"
+alias sb="setxkbmap -option" 
