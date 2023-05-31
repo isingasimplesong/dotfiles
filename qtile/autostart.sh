@@ -1,13 +1,13 @@
-:q
+#!/bin/sh
 
 xrdb -merge ~/.Xressources &
-sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common
+sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common &
 lxpolkit &
 picom &
 dunst &
 ~/.fehbg & 
-setxkbmap -option caps:swapescape &
 setxkbmap -option compose:rwin &
+setxkbmap -option caps:swapescape & 
 xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1 &
 pasystray &
 nm-applet &

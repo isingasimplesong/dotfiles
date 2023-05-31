@@ -8,7 +8,7 @@ start_app() {
 }
 
 # some services
-sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common ~/Projets/dotfiles/sxhkd/sxhkdrc_bspwm&
+sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common ~/Projets/dotfiles/sxhkd/sxhkdrc_bspwm &
 xrdb -merge ~/.Xresources &
 $HOME/.config/polybar/launch.sh &
 picom &
