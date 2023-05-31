@@ -1,2 +1,3 @@
 zsh/env-secrets
 nvim/plugin
+__pycache__/

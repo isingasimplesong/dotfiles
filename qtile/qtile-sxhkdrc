@@ -1,0 +1,131 @@
+
+# --1  Generics hotkeys
+
+# --1.2 terminal emulator
+# --1.3 program launcher
+# --1.4 Rofi shortcuts
+# --1.5 Rofi streams
+# --1.6 Rofi exit menu 
+# --1.7 Rofi switch windows
+# --1.8 sxhkd reload config
+# --1.9 Disabling compositor
+# --1.10 volume control
+# --1.11 brightness control
+# --1.12 lock screen
+# --1.13 Manage notifications
+# --1.14 change wallpaper
+# --1.15 update all
+# --1.16 restore bluetooth
+# --1.17 Applications
+# --1.18 Scratchpads
+# --1.19 Scratchpads :current:
+# --1.20 Clear current Scratchpad
+# --1.21 Vim
+
+# --1  Generics hotkeys
+# --1.2 terminal emulator
+super + Return
+   kitty
+
+# --1.3 program launcher
+super + space
+	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
+
+# --1.4 Rofi shortcuts
+super + p; {r,a,e,c,f,w,q,x}
+  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
+
+# --1.5 Rofi streams
+super + r
+  ~/.local/bin/rofi-beats-linux
+
+# --1.6 Rofi exit menu 
+super + o
+  rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
+
+# --1.7 Rofi switch windows
+super + w
+  rofi -show window
+
+# --1.7.1 Rofi emoji
+super + e
+  rofi -show emoji
+
+# --1.8 sxhkd reload config
+super + +shift+ Escape
+	pkill -USR1 -x sxhkd
+
+
+# --1.9 Disabling compositor
+ ## find a way to toggle it
+super + shift + p
+    killall picom
+
+# --1.10 volume control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+	amixer set Master toggle
+
+# # --1.11 brightness control
+# XF86MonBrightnessDown
+# 	sudo xbacklight -dec 5
+# XF86MonBrightnessUp
+# 	sudo xbacklight -inc 5
+
+# --1.12 lock screen
+super + x
+	betterlockscreen -l
+
+# --1.13 Manage notifications
+super + n; {h,c,x,m}
+    dunstctl {history-pop,close,close-all,context}
+
+# --1.14 change wallpaper
+super + v
+    feh --bg-fill --randomize ~/Images/walls/*
+    
+# --1.15 update all
+super + alt + u
+    kitty -e paru
+
+# --1.16 restore bluetooth
+super + alt + b
+  kitty -e sudo systemctl restart bluetooth.service
+
+# --1.17 Applications
+super + a; {a,t,w,x,p,r,f,c,m,d,t,y,b,g}
+  {alacritty,transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+
+   # --   w : firefox --new-window
+   # --   a : alacritty
+   # --   p : pcmanfm
+   # --   r : kitty -e ranger 
+   # --   f : flameshot gui
+   # --   c : galculator 
+   # --   m : kitty --class Pulsemixer -e pulsemixer
+   # --   d : discord
+   # --   t : telegram-desktop
+   # --   y : youtube-music 
+   # --   b : bitwarden-desktop
+   # --   g : chromium  
+
+# --1.18 Scratchpads
+# Terminal a droite
+super + s
+  tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
+# ChatGPT 
+super + g
+  tdrop -am -w 1500 -h 950  -y 210 -x 65 firefox --new-window https://chat.openai.com
+
+# --1.19 Scratchpads :current:
+super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
+  tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
+
+
+
+# # --1.20 Clear current Scratchpad
+# super + z; shift + c
+#   tdrop --clear 'current'
