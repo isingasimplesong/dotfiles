@@ -1,5 +1,5 @@
 from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 import os
 import subprocess
@@ -117,15 +117,13 @@ screens = [
                     ),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                #widget.StatusNotifier(),
+                # widget.StatusNotifier(),
+                widget.TextBox("", padding=7, fontsize=11,),
                 widget.Clock(format="%H:%M"),
+                widget.TextBox("󰃮", padding=7, fontsize=13,),
+                widget.Clock(format="%A %d %B"),
+                widget.Spacer(5),
                 widget.Systray(),
                 widget.Battery(format="{percent:1.0%}"),
             ],

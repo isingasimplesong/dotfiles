@@ -1,7 +1,7 @@
 #!/bin/sh
 
 xrdb -merge ~/.Xressources &
-sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common &
+sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common ~/Projets/dotfiles/sxhkd/sxhkdrc_tdrop &
 lxpolkit &
 picom &
 dunst &
