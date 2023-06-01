@@ -35,6 +35,10 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod], "right", lazy.layout.grow()),
+    Key([mod], "left", lazy.layout.shrink()),
+    Key([mod], "m", lazy.layout.maximize()),
+    Key([mod, "shift"], "space", lazy.layout.flip()),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -47,8 +51,9 @@ keys = [
     ),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "f", lazy.window.toggle_floating()),
 
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
@@ -82,24 +87,14 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=0, margin=[8, 4, 4, 4]),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.MonadTall(border_width=0, ratio=0.6, margin=8,),
+    layout.MonadWide(border_width=0, ratio=0.6, margin=8,),
+    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=0, margin=4,),
 ]
 
 widget_defaults = dict(
-    font="JetBrains Mono Nerd Font",
-    fontsize=14,
+    font="Cantarell",
+    fontsize=15,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -109,7 +104,17 @@ screens = [
         top=bar.Bar(
             [
                 # widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.CurrentLayoutIcon(
+                    scale=.7,
+                    ),
+                widget.GroupBox(
+                    highlight_method='block',
+                    this_current_screen_border="#a3be8c",
+                    block_highlight_text_color="#2e3440",
+                    disable_drag=True,
+                    inactive="#4c566a",
+                    active="#81a1c1"
+                    ),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -119,16 +124,17 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
+                #widget.StatusNotifier(),
                 widget.Clock(format="%H:%M"),
                 widget.Systray(),
+                widget.Battery(format="{percent:1.0%}"),
             ],
             27,
             background="#2a2f3a",
         ),
-        right=bar.Gap(4),
-        left=bar.Gap(4),
-        bottom=bar.Gap(4),
+        right=bar.Gap(0),
+        left=bar.Gap(0),
+        bottom=bar.Gap(0),
     ),
 ]
 
