@@ -85,19 +85,3 @@ super + a; {a,t,w,x,p,r,f,c,m,d,t,y,b,g}
    # --   b : bitwarden-desktop
    # --   g : chromium  
 
-# Scratchpads
-super + s
-  tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
-# ChatGPT 
-super + g
-  tdrop -am -w 1500 -h 950  -y 210 -x 65 firefox --new-window https://chat.openai.com
-
-# Scratchpads :current:
-super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
-  tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
-
-
-
-# # Clear current Scratchpad
-# super + z; shift + c
-#   tdrop --clear 'current'
