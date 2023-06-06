@@ -8,7 +8,7 @@ dunst &
 ~/.fehbg & 
 xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1 &
 powerkit &
-pasystray &
+# pasystray &
 nm-applet &
 blueman-applet &
 #setxkbmap -option &
