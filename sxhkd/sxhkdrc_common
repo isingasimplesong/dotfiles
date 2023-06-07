@@ -30,7 +30,6 @@ super + e
 super + +shift+ Escape
 	pkill -USR1 -x sxhkd
 
-
 # Disabling compositor
 ## find a way to toggle it
 super + shift + p
@@ -84,4 +83,3 @@ super + a; {a,t,w,x,p,r,f,c,m,d,t,y,b,g}
    # --   y : youtube-music 
    # --   b : bitwarden-desktop
    # --   g : chromium  
-
