@@ -7,6 +7,25 @@ import subprocess
 mod = "mod4"
 terminal = "kitty"
 
+colors = [
+    "#2E3440",  # 0
+    "#3B4252",  # 1
+    "#434C5E",  # 2
+    "#4C566A",  # 3
+    "#D8deE9",  # 4
+    "#E5E9F0",  # 5
+    "#ECEFF4",  # 6
+    "#8FBCBB",  # 7
+    "#88C0D0",  # 8
+    "#81A1C1",  # 9
+    "#5E81AC",  # 10
+    "#BF616A",  # 11
+    "#D08770",  # 12
+    "#EBCB8B",  # 13
+    "#A3BE8C",  # 14
+    "#B48EAD"   # 15
+]
+
 
 @hook.subscribe.startup_once
 def autostart():
@@ -105,7 +124,7 @@ layouts = [
     layout.MonadWide(border_width=0, ratio=0.6, margin=8,),
     layout.RatioTile(border_width=0, margin=8,),
     layout.Max(border_width=0, margin=8,),
-    # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=0, margin=4,),
+    # layout.Columns(border_focus_stack=[colors[11], colors[12]], border_width=0, margin=4,),
 ]
 
 widget_defaults = dict(
@@ -124,31 +143,40 @@ screens = [
                 ),
                 widget.GroupBox(
                     highlight_method='block',
-                    this_current_screen_border="#a3be8c",
-                    block_highlight_text_color="#2e3440",
+                    this_current_screen_border=colors[14],
+                    block_highlight_text_color=colors[1],
                     disable_drag=True,
-                    inactive="#4c566a",
-                    active="#81a1c1",
+                    inactive=colors[3],
+                    active=colors[4],
                     hide_unused=True,
                 ),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Spacer(lenght=1),
-                widget.Wlan(),
+                # widget.Wlan(),
                 widget.TextBox("", padding=8, fontsize=12,),
                 widget.PulseVolume(),
                 widget.TextBox("", padding=8, fontsize=12,),
                 widget.Battery(
-                    format="{char} {percent:1.0%}", charge_char="+", discharge_char="",),
+                    format="{char} {percent:1.0%}",
+                    charge_char="+",
+                    discharge_char="",
+                    low_percentage=0.15,
+                    low_foreground=colors[11],
+                    notify_below=15,
+                    ),
                 widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
                 widget.Spacer(length=5),
                 widget.WidgetBox(
+                    close_button_location="right",
                     widgets=[
-                        widget.Spacer(length=5),
-                        widget.Wttr(location={'Montreal': 'Montréal'}),
                         widget.TextBox("󰃮", padding=7,),
                         widget.Clock(format="%A %d %B"),
+                        widget.Wttr(
+                            format="1",
+                            location={'Montreal': 'Montréal'},
+                            ),
                         widget.Systray(),
                         ]
                     ),
