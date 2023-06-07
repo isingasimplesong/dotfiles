@@ -154,7 +154,7 @@ screens = [
                 widget.WindowName(),
                 widget.Spacer(lenght=1),
                 # widget.Wlan(),
-                widget.TextBox("", padding=8, fontsize=12,),
+                widget.TextBox("", padding=8, fontsize=14,),
                 widget.PulseVolume(),
                 widget.TextBox("", padding=8, fontsize=12,),
                 widget.Battery(
