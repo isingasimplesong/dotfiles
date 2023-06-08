@@ -51,4 +51,5 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod], "i", lazy.widget["widgetbox"].toggle(), desc="toggle WidgetBox"),
 ]
