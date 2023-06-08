@@ -28,7 +28,7 @@ screens = [
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Spacer(length=1),
-                widget.TextBox("", padding=8, fontsize=14,),
+                widget.TextBox("", padding=8,),
                 widget.PulseVolume(),
                 widget.TextBox("", padding=8, fontsize=12,),
                 widget.Battery(
