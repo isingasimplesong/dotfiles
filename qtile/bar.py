@@ -22,7 +22,7 @@ screens = [
                     block_highlight_text_color=colors[1],
                     disable_drag=True,
                     inactive=colors[3],
-                    active=colors[4],
+                    active=colors[9],
                     hide_unused=True,
                 ),
                 widget.Prompt(),
