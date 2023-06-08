@@ -2,7 +2,7 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from colors import colors
-from bar import screens
+from bar import screens, widget_defaults
 from keys import keys, mod
 from layouts import layouts
 from floating_layout import floating_layout
