@@ -46,6 +46,7 @@ screens = [
                 widget.Spacer(length=5),
                 widget.WidgetBox(
                     close_button_location="right",
+                    fontsize=15,
                     widgets=[
                         widget.TextBox("󰃮", padding=7,),
                         widget.Clock(format="%A %d %B", fontsize=15,),
