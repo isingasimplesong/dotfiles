@@ -5,7 +5,8 @@ sxhkd -c ~/Projets/dotfiles/sxhkd/sxhkdrc_common &
 lxpolkit &
 picom &
 dunst &
-~/.fehbg & 
+#~/.fehbg & 
+nitrogen --restore &
 xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1 &
 powerkit &
 # pasystray &
