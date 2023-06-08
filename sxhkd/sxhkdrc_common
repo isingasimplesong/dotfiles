@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-   kitty
+   kitty -e zsh
 
 # program launcher
 super + space
@@ -66,8 +66,8 @@ super + v
 #  kitty -e sudo systemctl restart bluetooth.service
 
 # Applications
-super + a; {a,t,w,x,p,r,f,c,m,d,t,y,b,g}
-  {alacritty,transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+super + a; {k,a,t,w,x,p,r,f,c,m,d,t,y,b,g}
+  {kitty,alacritty,transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
 
    # --   a : alacritty
    # --   t : transmission 
