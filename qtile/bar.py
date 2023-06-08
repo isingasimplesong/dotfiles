@@ -4,7 +4,7 @@ from colors import colors  # Importation de colors depuis colors.py
 
 widget_defaults = dict(
     font="Cantarell",
-    fontsize=15,
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -24,7 +24,6 @@ screens = [
                     inactive=colors[3],
                     active=colors[4],
                     hide_unused=True,
-                    fontsize=14,
                     padding=2,
                 ),
                 widget.Prompt(
@@ -33,7 +32,7 @@ screens = [
                     foreground=colors[6],
                               ),
                 widget.WindowName(),
-                widget.Spacer(length=1),
+                widget.Spacer(),
                 widget.TextBox("", padding=8,),
                 widget.PulseVolume(),
                 widget.TextBox("", padding=8, fontsize=12,),
@@ -65,8 +64,5 @@ screens = [
             24,
             background=colors[2],
         ),
-        right=bar.Gap(0),
-        left=bar.Gap(0),
-        bottom=bar.Gap(0),
     ),
 ]
