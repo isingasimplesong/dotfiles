@@ -30,7 +30,6 @@ screens = [
                     background=colors[11],
                     foreground=colors[6],
                               ),
-                # widget.WindowName(),
                 widget.TaskList(
                     icon_size=0,
                     border=colors[0],
