@@ -1,6 +1,6 @@
 from libqtile import bar, widget
 from libqtile.config import Screen
-from colors import colors  # Importation de colors depuis colors.py
+from colors import colors
 
 widget_defaults = dict(
     font="Cantarell",
@@ -66,6 +66,11 @@ screens = [
                         widget.Wttr(
                             format="1",
                             location={'Montreal': 'Montréal'},
+                            ),
+                        widget.CheckUpdates(
+                            distro="Arch_paru_Sup",
+                            execute="kitty -e paru",
+                            initial_text="Updates: ?"
                             ),
                         widget.Systray(),
                         ]
