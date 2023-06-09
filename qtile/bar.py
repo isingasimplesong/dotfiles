@@ -67,11 +67,6 @@ screens = [
                             format="1",
                             location={'Montreal': 'Montréal'},
                             ),
-                        widget.CheckUpdates(
-                            distro="Arch_paru_Sup",
-                            execute="kitty -e paru",
-                            initial_text="Updates: ?"
-                            ),
                         widget.Systray(),
                         ]
                     ),

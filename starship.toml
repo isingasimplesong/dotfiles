@@ -3,12 +3,12 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[*](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[*](bold red)"
-vimcmd_symbol =	"[v](bold green)" 	# The format string used before the text input if the shell is in vim normal mode.
-vimcmd_replace_one_symbol = "[v](bold purple)" 	# The format string used before the text input if the shell is in vim replace_one mode.
-vimcmd_replace_symbol = "[v](bold purple)" 	# The format string used before the text input if the shell is in vim replace mode.
-vimcmd_visual_symbol = "[v](bold yellow)" 	# The format string used before the text input if the shell is in vim visual mode.
+success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol =	"[](bold green)" 	# The format string used before the text input if the shell is in vim normal mode.
+vimcmd_replace_one_symbol = "[](bold purple)" 	# The format string used before the text input if the shell is in vim replace_one mode.
+vimcmd_replace_symbol = "[](bold purple)" 	# The format string used before the text input if the shell is in vim replace mode.
+vimcmd_visual_symbol = "[](bold yellow)" 	# The format string used before the text input if the shell is in vim visual mode.
 
 [username]
 style_user = "red"
