@@ -30,6 +30,7 @@ screens = [
                     background=colors[11],
                     foreground=colors[6],
                               ),
+                widget.Spacer(5),
                 widget.TaskList(
                     icon_size=12,
                     border=colors[3],
@@ -43,7 +44,6 @@ screens = [
                     rounded=True,
                     txt_floating="~ ",
                     ),
-                widget.Spacer(),
                 widget.TextBox("", padding=8,),
                 widget.PulseVolume(),
                 widget.TextBox("", padding=8, fontsize=12,),
