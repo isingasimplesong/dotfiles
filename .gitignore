@@ -1,3 +1,4 @@
 zsh/env-secrets
 nvim/plugin
 __pycache__/
+qtile/keymap.txt

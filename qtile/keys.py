@@ -1,4 +1,3 @@
-# keys.py
 from libqtile.config import Key
 from libqtile.lazy import lazy
 
