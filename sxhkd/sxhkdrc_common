@@ -7,8 +7,8 @@ super + space
 	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
 
 # Rofi shortcuts
-super + p; {r,a,e,c,f,w,q,x}
-  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
+#super + p; {r,a,e,c,f,w,q,x}
+#  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
 
 # Rofi streams
 super + r
