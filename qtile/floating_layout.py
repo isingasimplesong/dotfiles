@@ -11,6 +11,7 @@ floating_layout = layout.Floating(
         Match(wm_class="gcolor3"),
         Match(wm_class="org.gnome.DejaDup"),
         Match(wm_class="nitrogen"),
+        Match(wm_class="Tor Browser"),
     ],
     border_width=0,
 )

@@ -1,9 +1,16 @@
-from libqtile.config import Group, ScratchPad
+from libqtile.config import Group, ScratchPad, Match
 from libqtile.lazy import lazy
 from keys import mod, Key
 from scratchpad import scratchpads
 
-groups = [Group(i) for i in "1234567890"]
+# groups = [Group(i) for i in "1234567890"]
+
+match_dict = {
+    "0": [Match(wm_class=["discord"])],
+    # ajoutez d'autres groupes avec matches ici si nécessaire
+}
+
+groups = [Group(i, matches=match_dict.get(i)) for i in "1234567890"]
 
 groups.extend(scratchpads)  # Add scratchpad to groups list
 
