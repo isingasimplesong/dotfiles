@@ -65,11 +65,11 @@ screens = [
                     widgets=[
                         widget.TextBox("󰃮", padding=7,),
                         widget.Clock(format="%A %d %B"),
+                        widget.Systray(),
                         widget.Wttr(
                             format="1",
                             location={'Montreal': 'Montréal'},
                             ),
-                        widget.Systray(),
                         ]
                     ),
                 widget.Spacer(length=5),
