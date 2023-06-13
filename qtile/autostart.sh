@@ -7,7 +7,7 @@ picom &
 dunst &
 #~/.fehbg & 
 nitrogen --restore &
-xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1 &
+xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 310 1 &
 powerkit &
 # pasystray &
 nm-applet &
