@@ -17,7 +17,7 @@ scratchpads = [
         DropDown("ranger", "kitty -e ranger", x=0.15, y=0.06, height=0.85,
                  width=0.7, opacity=1, on_focus_lost_hide=False),
     ],
-               single=True,
+               single=False,
                ),
 ]
 
