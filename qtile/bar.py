@@ -55,6 +55,9 @@ screens = [
                     low_foreground=colors[11],
                     notify_below=15,
                     ),
+                widget.BatteryIcon(
+                    theme_path='/home/mathieu/Projets/dotfiles/qtile/battery-icons',
+                    ),
                 widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
                 widget.Spacer(length=5),
