@@ -32,6 +32,7 @@ screens = [
                               ),
                 widget.Spacer(5),
                 widget.TaskList(
+                    fontsize=16,
                     icon_size=12,
                     border=colors[3],
                     foreground=colors[6],
@@ -46,21 +47,11 @@ screens = [
                     ),
                 widget.TextBox("", padding=8,),
                 widget.PulseVolume(),
-                widget.BatteryIcon(
-                    theme_path='/usr/share/icons/Papirus-Dark/24x24/panel/',
-                    ),
-                widget.Battery(
-                    format="{char} {percent:1.0%}",
-                    charge_char="",
-                    discharge_char="",
-                    low_percentage=0.15,
-                    low_foreground=colors[11],
-                    notify_below=15,
-                    ),
                 widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
-                widget.Spacer(length=5),
                 widget.WidgetBox(
+                    text_closed="",
+                    text_open="",
                     close_button_location="right",
                     widgets=[
                         widget.TextBox("󰃮", padding=7,),
@@ -72,7 +63,18 @@ screens = [
                             ),
                         ]
                     ),
-                widget.Spacer(length=5),
+                widget.BatteryIcon(
+                    theme_path='/usr/share/icons/Papirus-Dark/24x24/panel/',
+                    ),
+                widget.Battery(
+                    format="{char} {percent:1.0%}",
+                    charge_char="",
+                    discharge_char="",
+                    low_percentage=0.15,
+                    low_foreground=colors[11],
+                    padding=0,
+                    ),
+                widget.Spacer(5),
             ],
             24,
             background=colors[0],
