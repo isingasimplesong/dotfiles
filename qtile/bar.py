@@ -33,7 +33,7 @@ screens = [
                 widget.Spacer(5),
                 widget.TaskList(
                     fontsize=16,
-                    icon_size=12,
+                    icon_size=16,
                     border=colors[3],
                     foreground=colors[6],
                     highlight_method="block",
@@ -63,13 +63,20 @@ screens = [
                             ),
                         ]
                     ),
+                # widget.Wlan(
+                #         interface="wlo1",
+                #         format="󰤨   {essid} {percent:2.0%}",
+                #         ),
                 widget.BatteryIcon(
                     theme_path='/usr/share/icons/Papirus-Dark/24x24/panel/',
                     ),
                 widget.Battery(
                     format="{char} {percent:1.0%}",
                     charge_char="",
+                    unknown_char="",
                     discharge_char="",
+                    full_char="",
+                    empty_char="",
                     low_percentage=0.15,
                     low_foreground=colors[11],
                     padding=0,
