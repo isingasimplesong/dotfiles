@@ -81,7 +81,6 @@ screens = [
                     low_foreground=colors[11],
                     padding=0,
                     ),
-                widget.Spacer(5),
             ],
             25,
             background=colors[0],
