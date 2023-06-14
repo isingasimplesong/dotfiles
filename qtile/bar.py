@@ -83,7 +83,7 @@ screens = [
                     ),
                 widget.Spacer(5),
             ],
-            24,
+            25,
             background=colors[0],
         ),
     ),
