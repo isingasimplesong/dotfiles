@@ -8,7 +8,7 @@ super + space
 
 # Rofi shortcuts
 #super + p; {r,a,e,c,f,w,q,x}
-#  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
+  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
 
 # Rofi streams
 super + r
@@ -66,8 +66,8 @@ super + v
 #  kitty -e sudo systemctl restart bluetooth.service
 
 # Applications
-super + a; {k,a,t,w,x,p,r,f,c,m,d,t,y,b,g}
-  {kitty,alacritty,transmission-remote-gtk,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,telegram-desktop,youtube-music,bitwarden-desktop,chromium}
+super + a; {k,a,t,w,x,p,r,f,c,m,d,b,g}
+  {kitty,alacritty,torbrowser-launcher,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor}
 
    # --   a : alacritty
    # --   t : transmission 
