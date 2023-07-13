@@ -21,7 +21,7 @@ setxkbmap -option caps:swapescape
 setxkbmap -option compose:rwin
 
 # mouse & touchpad
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 xinput set-prop "ELAN1401:00 04F3:30DC Touchpad" 337 1
 
 # clean old rules

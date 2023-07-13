@@ -13,5 +13,5 @@ powerkit &
 nm-applet &
 blueman-applet &
 #setxkbmap -option &
-setxkbmap -option compose:rwin &
-sleep 5; setxkbmap -option caps:swapescape & 
+#setxkbmap -option compose:rwin &
+#sleep 5; setxkbmap -option caps:swapescape & 

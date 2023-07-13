@@ -30,7 +30,6 @@ super + e
 super + +shift+ Escape
 	pkill -USR1 -x sxhkd
 
-# Disabling compositor
 ## find a way to toggle it
 super + shift + p
     killall picom
@@ -58,8 +57,8 @@ super + n; {h,c,x,m}
     dunstctl {history-pop,close,close-all,context}
 
 # change wallpaper
-super + v
-    feh --bg-fill --randomize ~/Images/walls/*
+#super + v
+#    feh --bg-fill --randomize ~/Images/walls/*
     
 # restore bluetooth
 #super + alt + b
@@ -67,7 +66,7 @@ super + v
 
 # Applications
 super + a; {k,a,t,w,x,p,r,f,c,m,d,b,g}
-  {kitty,alacritty,torbrowser-launcher,firefox --new-window,xterm,pcmanfm,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor}
+  {kitty,alacritty,torbrowser-launcher,firefox --new-window,xterm,thunar,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor}
 
    # --   a : alacritty
    # --   t : transmission 

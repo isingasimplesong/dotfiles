@@ -43,4 +43,5 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 # lie for some java UI programs
-wmname = "LG3D"
+wmname = "Millenium Falcon"
+#wmname = "LG3D"

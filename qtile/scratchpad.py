@@ -14,6 +14,8 @@ scratchpads = [
                  height=0.85, width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("yt-music", "youtube-music", x=0.15, y=0.06, height=0.85,
                  width=0.7, opacity=1, on_focus_lost_hide=False),
+        DropDown("keepassxc", "keepassxc %f", x=0.15, y=0.06, height=0.85,
+                 width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("ranger", "kitty -e ranger", x=0.15, y=0.06, height=0.85,
                  width=0.7, opacity=1, on_focus_lost_hide=False),
     ],
@@ -28,4 +30,5 @@ scratchpad_keys = [
     Key([mod], "b", lazy.group["scratchpad"].dropdown_toggle("bitwarden")),
     Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("yt-music")),
     Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("ranger")),
+    Key([mod], "k", lazy.group["scratchpad"].dropdown_toggle("keepassxc")),
 ]

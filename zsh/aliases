@@ -2,6 +2,8 @@
 alias ssk="kitty +kitten ssh"
 alias c='clear'
 alias z='source ~/.zshrc'
+#alias vim=nvim
+alias v=vim
 
 # Commandes de base
 alias cp='cp --interactive'
@@ -79,11 +81,21 @@ alias pc='sudo pacman -Scc'
 alias pf="paruz"
 
 # Apt (Debian/Ubuntu)
-alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
-alias ai="sudo apt install"
-alias ap="sudo apt purge"
-alias ar="sudo apt remove"
-alias as="apt search"
+#alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
+#alias ai="sudo apt install"
+#alias ap="sudo apt purge"
+#alias ar="sudo apt remove"
+#alias as="apt search"
+
+alias ni="sudo nala install"
+alias nr="sudo nala remove"
+alias np="sudo nala purge"
+alias nu="sudo nala upgrade"
+alias na="sudo nala autoremove"
+alias nf="sudo nala fetch"
+alias nh="sudo nala history"
+alias ns="sudo nala search"
+
 
 # swap esc & caps lock
 alias se="setxkbmap -option caps:swapescape"

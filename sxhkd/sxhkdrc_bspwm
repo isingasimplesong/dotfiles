@@ -106,8 +106,8 @@ super + {comma,period}
   bsp-layout {previous,next} --layouts tall,rtall,wide,rwide,grid,tiled
 
 # gaps presets
-super + g; {y,u,i,o,p}
-    bspc config window_gap {0, 8, 16, 32, 64}
+#super + g; {y,u,i,o,p}
+#    bspc config window_gap {0, 8, 16, 32, 64}
 
 # dynamic gaps
 super + shift + bracket{right,left}
