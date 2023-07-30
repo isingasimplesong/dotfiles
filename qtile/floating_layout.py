@@ -8,7 +8,7 @@ floating_layout = layout.Floating(
         *layout.Floating.default_float_rules,
         Match(wm_class="galculator"),
         Match(wm_class="pulsemixer"),
-        Match(wm_class="gcolor3"),
+        Match(wm_class="gpick"),
         Match(wm_class="org.gnome.DejaDup"),
         Match(wm_class="nitrogen"),
         Match(wm_class="protonvpn"),
