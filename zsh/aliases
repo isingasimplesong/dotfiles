@@ -4,7 +4,7 @@ alias c='clear'
 alias z='source ~/.zshrc'
 #alias vim=nvim
 alias v=vim
-
+alias cointop='flatpak run com.github.miguelmota.Cointop'
 # Commandes de base
 alias cp='cp --interactive'
 alias mv='mv --interactive'
@@ -16,7 +16,6 @@ alias df='df --human-readable'
 alias du='du --human-readable'
 
 # Gestion du temps
-alias clock='tty-clock -c'
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
 
@@ -36,9 +35,6 @@ alias f="find / -type f | fzf"
 
 # Compression et décompression
 alias untar='tar xvf'
-
-# Clavier
-alias swapesc="setxkbmap -option caps:swapescape"
 
 # Git
 alias g="git status"
@@ -90,12 +86,15 @@ alias pf="paruz"
 alias ni="sudo nala install"
 alias nr="sudo nala remove"
 alias np="sudo nala purge"
-alias nu="sudo nala upgrade"
+alias nu="sudo nala upgrade && flatpak update"
 alias na="sudo nala autoremove"
 alias nf="sudo nala fetch"
 alias nh="sudo nala history"
 alias ns="sudo nala search"
 
+# Flatpak
+
+alias fp='flatpak'
 
 # swap esc & caps lock
 alias se="setxkbmap -option caps:swapescape"

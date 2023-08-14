@@ -19,7 +19,7 @@ screens = [
                 widget.GroupBox(
                     highlight_method='block',
                     this_current_screen_border=colors[14],
-                    block_highlight_text_color=colors[1],
+                    block_highlight_text_color=colors[3],
                     disable_drag=True,
                     active=colors[4],
                     hide_unused=True,
