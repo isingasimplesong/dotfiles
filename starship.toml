@@ -35,7 +35,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " 󰌾"
 style = "green"
 
 [docker_context]
@@ -63,7 +63,7 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
 symbol = " "
@@ -72,7 +72,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏔 "
 
 [perl]
 symbol = " "
@@ -82,6 +82,7 @@ symbol = " "
 
 [python]
 symbol = " "
+disabled = true
 
 [ruby]
 symbol = " "
@@ -96,4 +97,4 @@ symbol = " "
 symbol = " "
 
 [swift]
-symbol = "ﯣ "
+symbol = " "

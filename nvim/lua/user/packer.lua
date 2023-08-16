@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
     use("ThePrimeagen/harpoon")
     use("mbbill/undotree")
     use("kyazdani42/nvim-tree.lua")
+    use("nvim-tree/nvim-web-devicons")
     use("farmergreg/vim-lastplace")
     use("tpope/vim-fugitive")
     use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter

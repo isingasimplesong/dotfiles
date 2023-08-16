@@ -3,13 +3,13 @@
 # =========================
 
 # Editor settings
-export EDITOR="vim"
-export SUDO_EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+export VISUAL="nvim"
 
 # PAGER settings
-export PAGER="most"
-#export PAGER='nvim +Man!'
+#export PAGER="most"
+export PAGER='nvim +Man!'
 
 # term 
 export TERM=xterm-256color

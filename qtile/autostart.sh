@@ -12,6 +12,7 @@ powerkit &
 # pasystray &
 nm-applet &
 blueman-applet &
+flatpak run com.github.vladimiry.ElectronMail &
 #setxkbmap -option &
 #setxkbmap -option compose:rwin &
 #sleep 5; setxkbmap -option caps:swapescape & 

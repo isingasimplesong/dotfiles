@@ -1,5 +1,4 @@
 **/__pycache__/
 applications/
 zsh/env-secrets
-nvim/plugin
 qtile/keymap.txt
