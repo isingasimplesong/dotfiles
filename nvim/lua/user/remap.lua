@@ -1,8 +1,6 @@
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
--- toggle term
-vim.keymap.set("n", "<leader>4", ":ToggleTerm:<cr>", opts)
 -- no arrows keys allowed
 vim.keymap.set("n", "<Up>", "<Nop>", {})
 vim.keymap.set("n", "<Down>", "<Nop>", {})
