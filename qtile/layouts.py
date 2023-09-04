@@ -10,5 +10,5 @@ layouts = [
         border_width=0,
         margin=8,
         ),
-    layout.Max(border_width=0, margin=8,),
+    layout.Max(border_width=0, margin=0,),
 ]
