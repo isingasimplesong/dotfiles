@@ -2,3 +2,4 @@
 applications/
 zsh/env-secrets
 qtile/keymap.txt
+nvim/.*
