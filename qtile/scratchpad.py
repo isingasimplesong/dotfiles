@@ -6,20 +6,20 @@ from keys import mod
 scratchpads = [
     ScratchPad("scratchpad", [
         DropDown("term", "kitty", x=0.15, y=0.06, height=0.85,
-                 width=0.7, opacity=1, on_focus_lost_hide=True),
+                 width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("gpt", "firefox --new-instance https://chat.openai.com",
                  x=0.15, y=0.06, height=0.85, width=0.7,
-                 opacity=1, on_focus_lost_hide=True),
+                 opacity=1, on_focus_lost_hide=False),
         DropDown("bitwarden", "bitwarden", x=0.15, y=0.06,
-                 height=0.85, width=0.7, opacity=1, on_focus_lost_hide=True),
+                 height=0.85, width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("ytmusic", "flatpak run app.ytmdesktop.ytmdesktop", x=0.15, y=0.06, height=0.85,
-                 width=0.7, opacity=1, on_focus_lost_hide=True),
+                 width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("keepassxc", "keepassxc %f", x=0.15, y=0.06, height=0.85,
-                 width=0.7, opacity=1, on_focus_lost_hide=True),
+                 width=0.7, opacity=1, on_focus_lost_hide=False),
         DropDown("ranger", "kitty -e ranger", x=0.15, y=0.06, height=0.85,
-                 width=0.7, opacity=1, on_focus_lost_hide=True),
+                 width=0.7, opacity=1, on_focus_lost_hide=False),
     ],
-               single=False,
+               single=True,
                ),
 ]
 
