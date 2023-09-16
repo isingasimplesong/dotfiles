@@ -6,7 +6,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- set the undo directory
 vim.opt.undofile = true                     -- enable persistent undo
 vim.opt.writebackup = false                 -- disallow editing a file that is being edited by another program or has been written to file while editing with another program
 
--- Indentation settings
+-- Indentatiot settings
 vim.opt.tabstop = 4                         -- insert 4 spaces for a tab
 vim.opt.softtabstop = 4                     -- insert 4 spaces for a soft tab
 vim.opt.shiftwidth = 4                      -- the number of spaces inserted for each indentation
@@ -49,7 +49,7 @@ vim.opt.updatetime = 50                     -- update interval for 'cursorline',
 vim.opt.shortmess:append "c"                -- append "c" to 'shortmess' option to avoid showing ins-completion-menu messages
 
 -- Directory settings
-vim.opt.autochdir = true                    -- automatically changes the current directory to the directory of the open file
+vim.opt.autochdir = false                    -- automatically changes the current directory to the directory of the open file
 
 -- File reload settings
 vim.opt.autoread = true                     -- automatically reloads a file if it was changed outside of the editor
