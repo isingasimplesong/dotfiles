@@ -18,13 +18,13 @@ import subprocess
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([home])
 
 
 @hook.subscribe.startup
 def autorestart():
-    home = os.path.expanduser('~/.config/qtile/autorestart.sh')
+    home = os.path.expanduser("~/.config/qtile/autorestart.sh")
     subprocess.Popen([home])
 
 
@@ -44,4 +44,4 @@ auto_minimize = True
 wl_input_rules = None
 # lie for some java UI programs
 wmname = "Millenium Falcon"
-#wmname = "LG3D"
+# wmname = "LG3D"

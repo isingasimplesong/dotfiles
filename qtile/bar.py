@@ -14,10 +14,10 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(
-                    scale=.7,
+                    scale=0.7,
                 ),
                 widget.GroupBox(
-                    highlight_method='block',
+                    highlight_method="block",
                     this_current_screen_border=colors[14],
                     block_highlight_text_color=colors[3],
                     disable_drag=True,
@@ -29,7 +29,7 @@ screens = [
                     prompt=">>> ",
                     background=colors[11],
                     foreground=colors[6],
-                              ),
+                ),
                 widget.Spacer(5),
                 widget.TaskList(
                     fontsize=15,
@@ -45,7 +45,7 @@ screens = [
                     theme_mod="prefered",
                     rounded=True,
                     txt_floating="󰍝 ",
-                    ),
+                ),
                 # widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
                 widget.WidgetBox(
@@ -53,24 +53,30 @@ screens = [
                     text_open="",
                     close_button_location="right",
                     widgets=[
-                        widget.TextBox("󰃮", padding=7,),
+                        widget.TextBox(
+                            "󰃮",
+                            padding=7,
+                        ),
                         widget.Clock(format="%A %d %B"),
                         widget.Wttr(
-                           format="1",
-                           location={'Montreal': 'Montréal'},
-                           ),
-                        widget.TextBox("󰕾", padding=8,),
+                            format="1",
+                            location={"Montreal": "Montréal"},
+                        ),
+                        widget.TextBox(
+                            "󰕾",
+                            padding=8,
+                        ),
                         widget.Volume(),
-                        ]
-                    ),
+                    ],
+                ),
                 widget.Systray(),
                 # widget.Wlan(
                 #         interface="wlo1",
                 #         format="󰤨   {essid} {percent:2.0%}",
                 #         ),
                 widget.BatteryIcon(
-                    theme_path='/usr/share/icons/Papirus-Dark/24x24/panel/',
-                    ),
+                    theme_path="/usr/share/icons/Papirus-Dark/24x24/panel/",
+                ),
                 widget.Battery(
                     format="{char} {percent:1.0%}",
                     charge_char="",
@@ -81,7 +87,7 @@ screens = [
                     low_percentage=0.15,
                     low_foreground=colors[11],
                     padding=0,
-                    ),
+                ),
                 widget.Spacer(6),
             ],
             27,
