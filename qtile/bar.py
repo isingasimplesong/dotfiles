@@ -46,9 +46,7 @@ screens = [
                     rounded=True,
                     txt_floating="󰍝 ",
                     ),
-                #widget.TextBox("", padding=8,),
-                #widget.PulseVolume(),
-                #widget.TextBox("", padding=7, fontsize=12,),
+                # widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
                 widget.WidgetBox(
                     text_closed="",
@@ -57,10 +55,12 @@ screens = [
                     widgets=[
                         widget.TextBox("󰃮", padding=7,),
                         widget.Clock(format="%A %d %B"),
-                 #       widget.Wttr(
-                 #           format="1",
-                 #           location={'Montreal': 'Montréal'},
-                 #           ),
+                        widget.Wttr(
+                           format="1",
+                           location={'Montreal': 'Montréal'},
+                           ),
+                        widget.TextBox("󰕾", padding=8,),
+                        widget.Volume(),
                         ]
                     ),
                 widget.Systray(),
