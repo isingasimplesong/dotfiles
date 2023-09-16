@@ -6,7 +6,7 @@ M.ui = {
   theme = 'onenord',
   statusline = {
     theme = "default",
-    separator_style = "arrow",
+    separator_style = "round",
   },
   nvdash = {
     load_on_startup = true,
@@ -21,4 +21,6 @@ M.ui = {
   }
 }
 
+M.plugins = "custom.plugins"
+-- Atest
 return M
