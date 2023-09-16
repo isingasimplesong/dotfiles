@@ -22,5 +22,6 @@ M.ui = {
 }
 
 M.plugins = "custom.plugins"
--- Atest
+M.mappings = require "custom.mappings"
+
 return M
