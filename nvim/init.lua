@@ -36,18 +36,18 @@ require('lazy').setup({
 
   {
     'navarasu/onedark.nvim',
-    --    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    priority = 1000,
+    --    config = function()
+    --      vim.cmd.colorscheme 'onedark'
+    --    end,
   },
 
   {
     'rmehri01/onenord.nvim',
-    --  priority = 1000,
-    --   config = function()
-    --     vim.cmd.colorscheme 'onenord'
-    --   end,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'onenord'
+    end,
   },
 
   {
@@ -137,7 +137,7 @@ vim.o.termguicolors = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Toggle Neotree
-vim.keymap.set('n', '<leader>f', '<cmd>Neotree toggle reveal<cr>', { silent = true })
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle reveal<cr>', { silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Neotree toggle<cr>', { noremap = true, silent = true })
 
 -- Remap for dealing with word wrap
@@ -259,7 +259,7 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
