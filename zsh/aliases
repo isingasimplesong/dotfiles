@@ -99,3 +99,7 @@ alias fp='flatpak'
 # swap esc & caps lock
 alias se="setxkbmap -option caps:swapescape"
 alias sb="setxkbmap -option" 
+
+# shortcuts & quick navigation
+alias df="vim $DOTPATH"
+alias cf="cd $DOTPATH"
