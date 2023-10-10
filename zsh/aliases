@@ -37,6 +37,7 @@ alias f="find / -type f | fzf"
 alias untar='tar xvf'
 
 # Git
+alias lg="lazygit"
 alias g="git status"
 alias ga="git add"
 alias gaa="git add ."
