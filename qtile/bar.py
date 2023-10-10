@@ -33,19 +33,19 @@ screens = [
                 widget.Spacer(5),
                 widget.TaskList(
                     fontsize=15,
-                    icon_size=16,
+                    icon_size=15,
                     border=colors[3],
                     foreground=colors[6],
                     highlight_method="block",
                     margin=2,
-                    padding_y=2,
+                    padding=2,
                     padding_x=5,
-                    spacing=10,
+                    spacing=2,
                     theme_mod="prefered",
                     rounded=True,
                     txt_floating="󰍝 ",
                 ),
-                # widget.TextBox("", padding=7, fontsize=12,),
+                widget.TextBox("", padding=7, fontsize=12,),
                 widget.Clock(format="%H:%M"),
                 widget.WidgetBox(
                     text_closed="",
@@ -69,10 +69,10 @@ screens = [
                     ],
                 ),
                 widget.Systray(),
-                # widget.Wlan(
-                #         interface="wlo1",
-                #         format="󰤨   {essid} {percent:2.0%}",
-                #         ),
+                #widget.Wlan(
+                #        interface="wlo1",
+                #        format="󰤨   {essid} {percent:2.0%}",
+                #        ),
                 widget.BatteryIcon(
                     theme_path="/usr/share/icons/Papirus-Dark/24x24/panel/",
                 ),
