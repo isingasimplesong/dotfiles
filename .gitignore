@@ -3,4 +3,5 @@ applications/
 zsh/env-secrets
 qtile/keymap.txt
 nvim/.*
+nvim/lazy-lock.json
 nvim/plugin/.*
