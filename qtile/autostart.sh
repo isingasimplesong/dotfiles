@@ -12,7 +12,7 @@ powerkit &
 # pasystray &
 nm-applet &
 blueman-applet &
-flatpak run com.github.vladimiry.ElectronMail &
+flatpak run org.mozilla.Thunderbird &
 #setxkbmap -option &
 #setxkbmap -option compose:rwin &
 #sleep 5; setxkbmap -option caps:swapescape & 

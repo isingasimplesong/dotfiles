@@ -9,7 +9,7 @@ match_dict = {
     "7": [Match(wm_class=["obsidian"])],
     "8": [Match(wm_class=["Gfeeds"])],
     "9": [Match(wm_class=["discord"])],
-    "0": [Match(wm_class=["electron-mail"])],
+    "0": [Match(wm_class=["thunderbird"])],
     # ajoutez d'autres groupes avec matches ici si nécessaire
 }
 
