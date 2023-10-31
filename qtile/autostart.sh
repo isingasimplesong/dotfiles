@@ -12,7 +12,8 @@ powerkit &
 # pasystray &
 nm-applet &
 blueman-applet &
-flatpak run org.mozilla.Thunderbird &
+flatpak run ch.protonmail.protonmail-bridge &
+sleep 10 && flatpak run org.mozilla.Thunderbird & 
 #setxkbmap -option &
 #setxkbmap -option compose:rwin &
 #sleep 5; setxkbmap -option caps:swapescape & 
