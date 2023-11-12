@@ -7,7 +7,7 @@ scratchpads = [
     ScratchPad("scratchpad", [
         DropDown("term", "kitty", x=0.15, y=0.06, height=0.85,
                  width=0.7, opacity=1, on_focus_lost_hide=False),
-        DropDown("gpt", "firefox https://chat.openai.com https://messenger.com https://2027a.net/m/notes",
+        DropDown("gpt", "firefox https://chat.openai.com https://messenger.com https://2027a.net/m/notes https://keep.google.com/",
                  x=0.15, y=0.06, height=0.85, width=0.7,
                  opacity=1, on_focus_lost_hide=False),
         DropDown("bitwarden", "bitwarden", x=0.15, y=0.06,
