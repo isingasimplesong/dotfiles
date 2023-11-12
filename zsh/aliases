@@ -4,7 +4,7 @@ alias c='clear'
 alias z='source ~/.zshrc'
 #alias vim=nvim
 alias v=vim
-alias cointop='flatpak run com.github.miguelmota.Cointop'
+#alias cointop='flatpak run com.github.miguelmota.Cointop'
 # Commandes de base
 alias cp='cp --interactive'
 alias mv='mv --interactive'
