@@ -58,6 +58,14 @@ screens = [
                         ),
                         widget.Clock(format="%A %d %B"),
                         widget.TextBox(
+                        "| VA :",
+                            padding=2,
+                        ),
+                        widget.Clock(
+                            format="%H:%M",
+                            timezone="America/Vancouver",
+                        ),
+                        widget.TextBox(
                         "| UTC :",
                             padding=2,
                         ),
