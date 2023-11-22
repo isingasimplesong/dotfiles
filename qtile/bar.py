@@ -102,9 +102,9 @@ screens = [
                             padding=8,
                         ),
                         widget.Volume(),
+                        widget.Systray(),
                     ],
                 ),
-                widget.Systray(),
                 #widget.Wlan(
                 #        interface="wlo1",
                 #        format="󰤨   {essid} {percent:2.0%}",
