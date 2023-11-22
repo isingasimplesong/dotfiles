@@ -105,12 +105,9 @@ screens = [
                         widget.Systray(),
                     ],
                 ),
-                #widget.Wlan(
-                #        interface="wlo1",
-                #        format="󰤨   {essid} {percent:2.0%}",
-                #        ),
                 widget.BatteryIcon(
                     theme_path="/usr/share/icons/Papirus-Dark/24x24/panel/",
+                    scale=1.25,
                 ),
                 widget.Battery(
                     format="{char} {percent:1.0%}",
