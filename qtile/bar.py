@@ -57,42 +57,18 @@ screens = [
                             padding=7,
                         ),
                         widget.Clock(format="%A %d %B"),
-                        widget.TextBox(
-                        "| VA :",
-                            padding=2,
-                        ),
-                        widget.Clock(
-                            format="%H:%M",
-                            timezone="America/Vancouver",
-                        ),
-                        widget.TextBox(
-                        "| UTC :",
-                            padding=2,
-                        ),
-                        widget.Clock(
-                            format="%H:%M",
-                            timezone="UTC",
-                        ),
-                        widget.TextBox(
-                        "| Paris :",
-                            padding=2,
-                        ),
-                        widget.Clock(
-                            format="%H:%M",
-                            timezone="Europe/Paris",
-                        ),
-                        widget.TextBox(
-                        "| Gaza :",
-                            padding=2,
-                        ),
-                        widget.Clock(
-                            format="%H:%M",
-                            timezone="Asia/Gaza",
-                        ),
-                        widget.TextBox(
-                        "|",
-                            padding=2,
-                        ),
+#                        widget.TextBox(
+#                        "| VA :",
+#                            padding=2,
+#                        ),
+#                       widget.Clock(
+#                           format="%H:%M",
+#                            timezone="America/Vancouver",
+#                        ),
+#                        widget.TextBox(
+#                        "| UTC :",
+#                            padding=2,
+#                        ),
                         widget.Wttr(
                             format="1",
                             location={"Montreal": "Montréal"},
