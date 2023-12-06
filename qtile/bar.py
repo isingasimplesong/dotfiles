@@ -69,10 +69,10 @@ screens = [
 #                        "| UTC :",
 #                            padding=2,
 #                        ),
-                        widget.Wttr(
-                            format="1",
-                            location={"Montreal": "Montréal"},
-                        ),
+#                        widget.Wttr(
+#                            format="1",
+#                            location={"Montreal": "Montréal"},
+#                        ),
                         widget.TextBox(
                             "󰕾",
                             padding=8,
