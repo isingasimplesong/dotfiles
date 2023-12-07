@@ -7,7 +7,7 @@ scratchpads = [
     ScratchPad("scratchpad", [
         DropDown("term", "kitty", x=0.15, y=0.06, height=0.85,
                  width=0.7, opacity=1, on_focus_lost_hide=False),
-        DropDown("gpt", "firefox https://chat.openai.com https://messenger.com https://2027a.net/m/notes https://keep.google.com/",
+        DropDown("web", "firefox https://chat.openai.com https://bard.google.com https://messenger.com https://2027a.net/m/notes https://keep.google.com/",
                  x=0.15, y=0.06, height=0.85, width=0.7,
                  opacity=1, on_focus_lost_hide=False),
         DropDown("bitwarden", "bitwarden", x=0.15, y=0.06,
@@ -26,7 +26,7 @@ scratchpads = [
 scratchpad_keys = [
     # ScratchPads
     Key([mod], "s", lazy.group["scratchpad"].dropdown_toggle("term")),
-    Key([mod], "g", lazy.group["scratchpad"].dropdown_toggle("gpt")),
+    Key([mod], "g", lazy.group["scratchpad"].dropdown_toggle("web")),
     Key([mod], "b", lazy.group["scratchpad"].dropdown_toggle("bitwarden")),
     Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("keepassxc")),
     Key([mod], "t", lazy.group["scratchpad"].dropdown_toggle("thunar")),
