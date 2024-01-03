@@ -12,6 +12,7 @@ powerkit &
 # pasystray &
 nm-applet &
 blueman-applet &
+nextcloud &
 flatpak run com.discordapp.Discord &
 flatpak run ch.protonmail.protonmail-bridge --no-window &
 sleep 10 && flatpak run org.mozilla.Thunderbird & 
