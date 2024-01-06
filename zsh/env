@@ -8,8 +8,8 @@ export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
 # PAGER settings
-# export PAGER="most"
-export PAGER='nvim +Man!'
+export PAGER="most"
+#export PAGER='/usr/local/bin/nvim +Man!'
 
 # term 
 export TERM=xterm-256color
