@@ -9,7 +9,7 @@ alias v=vim
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
-alias pwd='pwd && pwd | xclip -sel primary'
+#alias pwd='pwd && pwd | xclip -sel primary'
 alias less='less --quiet'
 alias ..='cd ..'
 alias df='df --human-readable'
@@ -100,6 +100,10 @@ alias fp='flatpak'
 # swap esc & caps lock
 alias se="setxkbmap -option caps:swapescape"
 alias sb="setxkbmap -option" 
+
+# distrobox
+
+alias db="distrobox"
 
 # shortcuts & quick navigation
 alias df="vim $DOTPATH"

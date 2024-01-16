@@ -1,18 +1,15 @@
-# =========================
-# Environment Variables
-# =========================
-
 # Editor settings
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
 # PAGER settings
-export PAGER="most"
+export PAGER="less"
 #export PAGER='/usr/local/bin/nvim +Man!'
 
 # term 
 export TERM=xterm-256color
+
 # Go programming language settings
 export GOPATH="$HOME/.local/share/go"
 
@@ -23,9 +20,6 @@ export LC_ALL=fr_FR.UTF-8
 # Path settings
 export PATH="$HOME/.local/bin/:$PATH"
 
-# pfetch settings
-export PF_INFO="ascii os kernel wm editor shell uptime memory"
-
 # Qt theme settings
 export QT_STYLE_OVERRIDE="gtk2"
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -35,4 +29,4 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # passe-plats
 
-export DOTPATH="~/Projets/dotfiles/"
+export dot_path="~/dotfiles/"
