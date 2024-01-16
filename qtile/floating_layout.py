@@ -7,10 +7,11 @@ floating_layout = layout.Floating(
         # Run `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="galculator"),
-#        Match(wm_class="feather"),
-#        Match(wm_class="electrum"),
+        #        Match(wm_class="feather"),
+        #        Match(wm_class="electrum"),
         Match(wm_class="pulsemixer"),
         Match(wm_class="gpick"),
+        Match(wm_class="gcolor3"),
         Match(wm_class="org.gnome.DejaDup"),
         Match(wm_class="nitrogen"),
         Match(wm_class="protonvpn"),
