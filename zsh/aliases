@@ -104,6 +104,7 @@ alias sb="setxkbmap -option"
 # distrobox
 
 alias db="distrobox"
+alias dba="distrobox enter archbox"
 
 # shortcuts & quick navigation
 alias df="vim $DOTPATH"
