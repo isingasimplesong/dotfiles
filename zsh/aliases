@@ -107,5 +107,5 @@ alias db="distrobox"
 alias dba="distrobox enter archbox"
 
 # shortcuts & quick navigation
-alias df="vim $DOTPATH"
+alias dp="vim $DOTPATH"
 alias cf="cd $DOTPATH"
