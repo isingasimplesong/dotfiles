@@ -166,3 +166,7 @@ fi
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+#if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+#    tmux attach || tmux
+#fi
