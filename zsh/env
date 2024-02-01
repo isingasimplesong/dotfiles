@@ -5,7 +5,6 @@ export VISUAL="nvim"
 
 # PAGER settings
 #export PAGER="less"
-#export PAGER='/usr/local/bin/nvim +Man!'
 export PAGER='nvim +Man!'
 
 # term 
