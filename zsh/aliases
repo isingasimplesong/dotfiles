@@ -15,6 +15,9 @@ alias ..='cd ..'
 alias df='df --human-readable'
 alias du='du --human-readable'
 
+# Python
+alias p="python3"
+
 # Gestion du temps
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
