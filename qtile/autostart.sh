@@ -14,7 +14,8 @@ nm-applet &
 blueman-applet &
 nextcloud &
 flatpak run com.discordapp.Discord &
-protonmail-bridge &
+flatpak run md.obsidian.Obsidian &
+protonmail-bridge --no-window &
 #flatpak run ch.protonmail.protonmail-bridge --no-window &
 sleep 10 && flatpak run org.mozilla.Thunderbird &
 #setxkbmap -option &
