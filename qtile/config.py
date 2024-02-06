@@ -33,7 +33,7 @@ keys.extend(group_keys)  # add group keys to key list
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = True
 cursor_warp = False
 auto_fullscreen = True
