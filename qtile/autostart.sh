@@ -13,7 +13,7 @@ powerkit &
 nm-applet &
 blueman-applet &
 nextcloud &
-flatpak run com.discordapp.Discord &
+#flatpak run com.discordapp.Discord &
 flatpak run md.obsidian.Obsidian &
 protonmail-bridge --no-window &
 #flatpak run ch.protonmail.protonmail-bridge --no-window &

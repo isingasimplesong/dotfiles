@@ -6,7 +6,7 @@ from scratchpad import scratchpads
 # groups = [Group(i) for i in "1234567890"]
 
 match_dict = {
-    "8": [Match(wm_class=["discord"])],
+    #"8": [Match(wm_class=["discord"])],
     "9": [Match(wm_class=["obsidian"])],
     "0": [Match(wm_class=["thunderbird"])],
     # ajoutez d'autres groupes avec matches ici si nécessaire
