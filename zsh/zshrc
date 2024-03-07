@@ -95,7 +95,7 @@ source /home/mathieu/dotfiles/zsh/env
 
 # Load and initialize the completion system
 autoload -Uz compinit
-compinit
+compinit -C
 
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
