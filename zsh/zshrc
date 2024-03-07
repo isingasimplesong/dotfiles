@@ -1,8 +1,5 @@
-# =========================
-# General Settings
-# =========================
-
 # Set the prompt based on user privilege level
+# (starship override this)
 if [ "`id -u`" -eq 0 ]; then
     # Root user prompt
     export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
@@ -19,10 +16,6 @@ case $TERM in
         }
         ;;
 esac
-
-# =========================
-# Zsh Options
-# =========================
 
 # Disable beeping on various events
 unsetopt beep
@@ -44,9 +37,9 @@ unsetopt rm_star_silent
 # Make sure that pathname patterns that do not match any files expand to a null string
 setopt nullglob
 
-# =========================
-# Completion Settings
-# =========================
+# Completion
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
 
 # Disable listing of ambiguous completions
 unsetopt list_ambiguous
@@ -78,10 +71,6 @@ unsetopt bg_nice
 # Don't send SIGHUP to running jobs on exit
 unsetopt hup
 
-# =========================
-# History Settings
-# =========================
-
 # Set the maximum number of history entries
 export HISTORY=10000
 export SAVEHIST=10000
@@ -96,36 +85,13 @@ setopt hist_ignore_all_dups
 setopt hist_expire_dups_first
 setopt hist_find_no_dups
 
-# =========================
-# Plugins
-# =========================
-
-# Enable fzf key bindings and completion
-# arch path
-#source /usr/share/fzf/key-bindings.zsh
-#source /usr/share/fzf/completion.zsh
-# deb path
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
-
-# Enable syntax highlighting and autosuggestions
-# Arch path
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Deb path
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Handle "command not found" errors
 [[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
-
-# =========================
-# External Files and Initialization
-# =========================
 
 # Source alias, environment variables and secret environment variables files
 source /home/mathieu/dotfiles/zsh/aliases
 source /home/mathieu/dotfiles/zsh/env
+#source /home/mathieu/dotfiles/zsh/env-secrets
 
 # Load and initialize the completion system
 autoload -Uz compinit
@@ -155,17 +121,25 @@ if [[ "$(uname)" == "Linux" ]]; then
         # Check for Arch Linux distribution
         if [[ "$ID" == "arch" ]]; then
             # Arch-specific settings
+            source /usr/share/fzf/key-bindings.zsh
+            source /usr/share/fzf/completion.zsh
+            source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+            source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
         # Check for Debian distribution
         elif [[ "$ID" == "debian" ]]; then
             # Debian-specific settings
+            source /usr/share/doc/fzf/examples/key-bindings.zsh
+            source /usr/share/doc/fzf/examples/completion.zsh
+            source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+            source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         fi
     fi
 fi
 
 
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
 
+
+# Tmux if ssh
 if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
     tmux attach || tmux
 fi
