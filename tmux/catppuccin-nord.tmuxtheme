@@ -1,7 +1,7 @@
 # NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
 # WARNING: hex colors can't contain capital letters
 
-# --> Catppuccin (Frappe)
+# --> Catppuccin (Nord)
 thm_bg="#2C323C"
 thm_fg="#e5e9f0"
 thm_cyan="#88c0d0"
