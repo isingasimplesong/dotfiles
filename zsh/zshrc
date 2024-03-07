@@ -126,7 +126,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Source alias, environment variables and secret environment variables files
 source /home/mathieu/Projets/dotfiles/zsh/aliases
 source /home/mathieu/Projets/dotfiles/zsh/env
-source /home/mathieu/Projets/dotfiles/zsh/env-secrets
+#source /home/mathieu/Projets/dotfiles/zsh/env-secrets
 
 # Load and initialize the completion system
 autoload -Uz compinit
