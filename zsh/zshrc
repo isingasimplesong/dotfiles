@@ -109,10 +109,6 @@ test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 # Set the keymap to vi mode
 bindkey -v
 
-# =========================
-# OS-Specific Settings
-# =========================
-
 # Check for Linux OS
 if [[ "$(uname)" == "Linux" ]]; then
     # If the os-release file is available, source it
