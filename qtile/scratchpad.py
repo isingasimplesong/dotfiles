@@ -19,7 +19,7 @@ scratchpads = [
             ),
             DropDown(
                 "web",
-                "firefox https://gemini.google.com https://chat.openai.com https://messenger.com",
+                "firefox https://ai.2027a.net https://messenger.com",
                 x=0.15,
                 y=0.06,
                 height=0.85,
