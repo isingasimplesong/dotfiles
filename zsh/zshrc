@@ -141,3 +141,9 @@ fi
 if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
     tmux attach || tmux
 fi
+
+ssh() {
+    tmux rename-window "$(echo $@ | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+}
