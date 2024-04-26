@@ -82,7 +82,7 @@ symbol = " "
 
 [python]
 symbol = " "
-disabled = true
+#disabled = true
 
 [ruby]
 symbol = " "
