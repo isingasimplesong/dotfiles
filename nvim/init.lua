@@ -14,8 +14,6 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -141,7 +139,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -164,8 +162,7 @@ require('lazy').setup({
         icons_enabled = true,
         theme = 'onenord',
         component_separators = '',
-        section_separators = { left = '', right = '' },
-        --section_separators = '',
+        section_separators = { left = '', right = '' },
       },
     },
   },
