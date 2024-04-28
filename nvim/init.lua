@@ -9,9 +9,6 @@ vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 --  See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -73,6 +70,7 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- toogle file explorer tree
 vim.keymap.set('n', '<leader>r', '<cmd>Neotree toggle<CR>')
 
 -- Diagnostic keymaps
@@ -104,6 +102,9 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- splits
+vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
+vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
