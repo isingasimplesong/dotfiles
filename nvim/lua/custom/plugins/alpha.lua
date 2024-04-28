@@ -1,3 +1,4 @@
+-- TODO: configure proper shortcuts for alpha
 return {
   'goolord/alpha-nvim',
   dependencies = {
