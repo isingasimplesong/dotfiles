@@ -105,6 +105,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- splits
 vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
+
+-- buffer delete
+vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
