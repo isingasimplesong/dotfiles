@@ -73,7 +73,10 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- toogle file explorer tree
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<CR>')
+
+-- Oil explorer
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 
 -- toogle text wrap
 vim.keymap.set('n', '<leader>w', '<cmd>set wrap!<CR>')
