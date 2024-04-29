@@ -75,6 +75,12 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- toogle file explorer tree
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>')
 
+-- toogle text wrap
+vim.keymap.set('n', '<leader>w', '<cmd>set wrap!<CR>')
+
+-- save
+vim.keymap.set('n', '<leader>s', '<cmd>write<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
