@@ -112,6 +112,7 @@ alias dba="distrobox enter archbox"
 # shortcuts & quick navigation
 alias dp="vim $DOTPATH"
 alias cf="cd $DOTPATH"
-alias venv-mk="python3 -m venv venv"
+
+# Python
+alias venv-mk="python3.12 -m venv venv"
 alias venv-activate="source venv/bin/activate"
-alias lazyvim="NVIM_APPNAME=lazyvim nvim"
