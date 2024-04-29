@@ -45,8 +45,12 @@ screens = [
                     rounded=True,
                     txt_floating="󰍝 ",
                 ),
-                widget.TextBox("", padding=7, fontsize=12,),
-                widget.Clock(format="%H:%M"),   
+                widget.TextBox(
+                    "",
+                    padding=7,
+                    fontsize=12,
+                ),
+                widget.Clock(format="%H:%M"),
                 widget.WidgetBox(
                     text_closed="",
                     text_open="",
@@ -57,22 +61,22 @@ screens = [
                             padding=7,
                         ),
                         widget.Clock(format="%A %d %B"),
-#                        widget.TextBox(
-#                        "| VA :",
-#                            padding=2,
-#                        ),
-#                       widget.Clock(
-#                           format="%H:%M",
-#                            timezone="America/Vancouver",
-#                        ),
-#                        widget.TextBox(
-#                        "| UTC :",
-#                            padding=2,
-#                        ),
-#                        widget.Wttr(
-#                            format="1",
-#                            location={"Montreal": "Montréal"},
-#                        ),
+                        #                        widget.TextBox(
+                        #                        "| VA :",
+                        #                            padding=2,
+                        #                        ),
+                        #                       widget.Clock(
+                        #                           format="%H:%M",
+                        #                            timezone="America/Vancouver",
+                        #                        ),
+                        #                        widget.TextBox(
+                        #                        "| UTC :",
+                        #                            padding=2,
+                        #                        ),
+                        #                        widget.Wttr(
+                        #                            format="1",
+                        #                            location={"Montreal": "Montréal"},
+                        #                        ),
                         widget.TextBox(
                             "󰕾",
                             padding=8,
@@ -81,7 +85,7 @@ screens = [
                         widget.Systray(),
                     ],
                 ),
-#                widget.Wlan(),
+                #                widget.Wlan(),
                 widget.BatteryIcon(
                     theme_path="/usr/share/icons/Papirus-Dark/24x24/panel/",
                     scale=1.25,
