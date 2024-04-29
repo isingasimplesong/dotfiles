@@ -105,8 +105,6 @@ compinit -C
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
 
-# Initialize the Starship prompt
-eval "$(starship init zsh)"
 
 # Load and apply the 'dir_colors' configuration, if available
 test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
@@ -148,3 +146,8 @@ ssh() {
     command ssh "$@"
     tmux set-window-option automatic-rename "on" 1>/dev/null
 }
+
+# Initialize the Starship prompt
+eval "$(starship init zsh)"
+# Initialize zoxide
+eval "$(zoxide init --cmd cd zsh)"

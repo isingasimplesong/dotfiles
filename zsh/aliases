@@ -1,7 +1,7 @@
 # Éditeur et terminal
 alias ssk="kitty +kitten ssh"
 alias c='clear'
-alias z='source ~/.zshrc'
+alias s='source ~/.zshrc'
 #alias vim=nvim
 alias v=vim
 #alias cointop='flatpak run com.github.miguelmota.Cointop'
