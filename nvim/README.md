@@ -10,7 +10,7 @@ My neovim configuration:
 - File management with [Oil.nvim](https://github.com/stevearc/oil.nvim)
 - Version management with [LazyGit](https://github.com/kdheepak/lazygit.nvim)
 - Powerfull [undotree](https://github.com/mbbill/undotree)
-- Search everything with [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- Search everything with [Telescope](https://github.com/nvim-telescope/telescope.nvim) and [fz](https://github.com/junegunn/fzf)
 
 I basically splitted [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 into pieces, added my favorites plugins, a Nord theme, and a pretty dashboard
