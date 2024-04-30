@@ -27,6 +27,3 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # ssh-agent settings
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-# passe-plats
-export DOTPATH="$HOME/dotfiles"
