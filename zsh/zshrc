@@ -96,7 +96,7 @@ setopt hist_find_no_dups
 # Source alias, environment variables and secret environment variables files
 source /home/mathieu/dotfiles/zsh/aliases
 source /home/mathieu/dotfiles/zsh/env
-#source /home/mathieu/dotfiles/zsh/env-secrets
+source /home/mathieu/dotfiles/zsh/secrets
 
 # Load and initialize the completion system
 autoload -Uz compinit
