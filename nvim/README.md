@@ -8,4 +8,3 @@ My neovim configuration
 ![Neovim](./misc/neovim4.png "Neovim")
 ![Neovim](./misc/neovim5.png "Neovim")
 ![Neovim](./misc/neovim6.png "Neovim")
-![Neovim](./misc/neovim7.png "Neovim")
