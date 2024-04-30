@@ -85,7 +85,6 @@ screens = [
                         widget.Systray(),
                     ],
                 ),
-                #                widget.Wlan(),
                 widget.BatteryIcon(
                     theme_path="/usr/share/icons/Papirus-Dark/24x24/panel/",
                     scale=1.25,
