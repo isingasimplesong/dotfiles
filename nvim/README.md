@@ -4,7 +4,7 @@ My neovim configuration:
 
 - Based on [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 - Lazy for plugins management
-- LSP, code completion, linting, DAP...
+- LSP, code completion, linting, DAP... with [Mason.nvim](https://github.com/williamboman/mason.nvim)
 - A better [nord](https://www.nordtheme.com/) theme, with [onenord](https://github.com/rmehri01/onenord.nvim)
 - Keymap discoverability with [Wich-key](https://github.com/folke/which-key.nvim)
 - File management with [Oil.nvim](https://github.com/stevearc/oil.nvim)
