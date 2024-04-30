@@ -1,4 +1,4 @@
-## Neovim FTW
+# Neovim FTW
 
 My neovim configuration
 
