@@ -12,7 +12,7 @@ My neovim configuration:
 - Powerfull [undotree](https://github.com/mbbill/undotree)
 - Search everything with [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
-I basically splitted [Kickstart](https://github.com/nvim-lua/kickstart.nvim) \
+I basically splitted [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 into pieces, added my favorites plugins, a Nord theme, and a pretty dashboard
 
 ![Neovim](./misc/neovim.png "Neovim")
