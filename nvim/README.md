@@ -12,6 +12,7 @@ My neovim configuration:
 - Powerfull [undotree](https://github.com/mbbill/undotree)
 - Search everything with [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
+
 ![Neovim](./misc/neovim.png "Neovim")
 
 ![Neovim](./misc/neovim2.png "Neovim")
