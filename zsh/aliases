@@ -4,6 +4,7 @@ alias c='clear'
 alias s='source ~/.zshrc'
 #alias vim=nvim
 alias v=vim
+alias lazyvim='NVIM_APPNAME="lazyvim" nvim'
 #alias cointop='flatpak run com.github.miguelmota.Cointop'
 # Commandes de base
 alias cp='cp --interactive'
