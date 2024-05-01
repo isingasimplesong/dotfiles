@@ -56,6 +56,10 @@ vim.opt.cursorline = true
 -- Show a vertical line at 80 characters
 vim.opt.colorcolumn = '80'
 
+-- theme stuff
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
 
