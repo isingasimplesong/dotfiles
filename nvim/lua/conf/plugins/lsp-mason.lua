@@ -71,7 +71,7 @@ return { -- LSP Configuration & Plugins
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('<leader>wD', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
@@ -87,7 +87,7 @@ return { -- LSP Configuration & Plugins
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+        map('<leader>wa', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
@@ -125,7 +125,7 @@ return { -- LSP Configuration & Plugins
         if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
           map('<leader>th', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-          end, '[T]oggle Inlay [H]ints')
+          end, 'Toggle Inlay [H]ints')
         end
       end,
     })
