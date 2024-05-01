@@ -60,6 +60,7 @@ vim.opt.colorcolumn = '80'
 -- theme stuff
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
+vim.g.transparent_enabled = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
