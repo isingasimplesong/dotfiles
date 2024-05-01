@@ -1,4 +1,5 @@
 -- [[ Setting options ]]
+vim.g.have_nerd_font = true
 --  See `:help vim.opt`
 vim.opt.number = true
 vim.opt.relativenumber = true
