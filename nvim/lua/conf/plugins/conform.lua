@@ -3,12 +3,12 @@ return { -- Autoformat
   lazy = false,
   keys = {
     {
-      '<leader>f',
+      '<leader>wf',
       function()
         require('conform').format { async = true, lsp_fallback = true }
       end,
       mode = '',
-      desc = '[F]ormat buffer',
+      desc = '[F]ormat',
     },
   },
   opts = {

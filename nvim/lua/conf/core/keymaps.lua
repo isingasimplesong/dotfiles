@@ -1,3 +1,4 @@
+--
 -- [[ Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.g.mapleader = ' '
@@ -7,19 +8,19 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Oil explorer
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Explorer' })
 
 -- toogle text wrap
-vim.keymap.set('n', '<leader>w', '<cmd>set wrap!<CR>')
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
 
 -- save
 vim.keymap.set('n', '<leader>s', '<cmd>write<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, { desc = 'previous diagnostic' })
+vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, { desc = 'next diagnostic' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
@@ -45,9 +46,9 @@ vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 
 -- buffer delete
-vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>')
+vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
 
 -- undotree toggle
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>')
+vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Undo tree' })
 
 -- vim: ts=4 sts=4 sw=4 et
