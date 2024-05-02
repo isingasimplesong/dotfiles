@@ -7,6 +7,8 @@ vim.opt.relativenumber = true
 -- set nowrap
 vim.opt.wrap = false
 
+-- conceal
+vim.opt.conceallevel = 1
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
