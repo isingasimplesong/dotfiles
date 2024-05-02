@@ -2,13 +2,16 @@
 -- [[ Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\\'
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Oil explorer
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Explorer' })
+
+-- Local keymap
+-- vim.keymap.set('n', '<localleader>1', '<cmd>Mason<CR>', { desc = 'test' })
 
 -- toogle text wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
@@ -27,10 +30,10 @@ vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = '[Q]uickfi
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Nope!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Nope!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Nope!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Nope!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
