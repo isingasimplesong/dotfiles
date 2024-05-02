@@ -11,10 +11,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Création d'un groupe d'autocmd nommé TrimWhiteSpace pour y mettre nos autocmds
+-- Crée un groupe et ajoute un autocmd qui supprime les espaces de fin
 local group = vim.api.nvim_create_augroup('TrimWhiteSpace', { clear = true })
 
--- Ajoute un autocmd dans le groupe créé qui supprime les espaces de fin lors de l'enregistrement des fichiers
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*', -- s'applique à tous les fichiers
   callback = function()

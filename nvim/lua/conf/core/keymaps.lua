@@ -1,17 +1,15 @@
---
 -- [[ Keymaps ]]
 --  See `:help vim.keymap.set()`
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Oil explorer
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Explorer' })
-
--- Local keymap
--- vim.keymap.set('n', '<localleader>1', '<cmd>Mason<CR>', { desc = 'test' })
 
 -- toogle text wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
@@ -51,7 +49,7 @@ vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 -- buffer delete
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
 
--- undotree toggle
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Undo tree' })
+-- Local keymap
+-- vim.keymap.set('n', '<localleader>1', '<cmd>Mason<CR>', { desc = 'test' })
 
 -- vim: ts=4 sts=4 sw=4 et
