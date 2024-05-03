@@ -11,8 +11,11 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Oil explorer
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Explorer' })
 
--- toogle text wrap
+-- toggle text wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
+
+-- toggle Cloack
+vim.keymap.set('n', '<leader>tc', '<cmd>CloakToggle<CR>', { desc = '[T]oggle [C]loack' })
 
 -- save
 vim.keymap.set('n', '<leader>s', '<cmd>write<CR>')
@@ -50,6 +53,6 @@ vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
 
 -- Local keymap
--- vim.keymap.set('n', '<localleader>1', '<cmd>Mason<CR>', { desc = 'test' })
+-- vim.keymap.set('n', '<localleader>tc', '<cmd>CloakToggle<CR>', { desc = '[T]oggle [C]loack' })
 
 -- vim: ts=4 sts=4 sw=4 et
