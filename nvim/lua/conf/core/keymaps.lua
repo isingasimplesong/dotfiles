@@ -20,6 +20,9 @@ vim.keymap.set('n', '<leader>tc', '<cmd>CloakToggle<CR>', { desc = '[T]oggle [C]
 -- save
 vim.keymap.set('n', '<leader>s', '<cmd>write<CR>')
 
+-- ChatGPT
+vim.keymap.set('n', '<leader>a', '<cmd>ChatGPT<CR>', { desc = 'ChatGPT' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, { desc = 'previous diagnostic' })
 vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, { desc = 'next diagnostic' })
