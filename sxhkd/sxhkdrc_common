@@ -65,8 +65,8 @@ super + n; {h,c,x,m}
 #  kitty -e sudo systemctl restart bluetooth.service
 
 # Applications
-super + a; {k,a,w,x,p,r,f,c,m,d,b,g,t}
-  {kitty,alacritty,firefox --new-window,xterm,thunar,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor,torbrowser-launcher}
+super + a; {a,w,x,p,r,f,c,m,d,b,g,t}
+  {alacritty,firefox --new-window,xterm,thunar,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor,torbrowser-launcher}
 
    # --   a : alacritty
    # --   t : transmission
