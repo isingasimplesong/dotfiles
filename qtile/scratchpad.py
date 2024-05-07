@@ -9,7 +9,8 @@ scratchpads = [
         [
             DropDown(
                 "term",
-                "kitty -e tmux new-session -A -s main",
+                "kitty -e zellij",
+                # "kitty -e tmux new-session -A -s main",
                 x=0.15,
                 y=0.06,
                 height=0.85,
