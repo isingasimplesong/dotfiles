@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-   kitty -e zsh
+   kitty
 
 # program launcher
 super + space
@@ -14,7 +14,7 @@ super + space
 super + r
   ~/.local/bin/rofi-beats-linux
 
-# Rofi exit menu 
+# Rofi exit menu
 super + o
   rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
 
@@ -59,7 +59,7 @@ super + n; {h,c,x,m}
 # change wallpaper
 #super + v
 #    feh --bg-fill --randomize ~/Images/walls/*
-    
+
 # restore bluetooth
 #super + alt + b
 #  kitty -e sudo systemctl restart bluetooth.service
@@ -69,16 +69,16 @@ super + a; {k,a,w,x,p,r,f,c,m,d,b,g,t}
   {kitty,alacritty,firefox --new-window,xterm,thunar,kitty -e ranger,flameshot gui,galculator,kitty --class Pulsemixer -e pulsemixer,discord,brave,brave --tor,torbrowser-launcher}
 
    # --   a : alacritty
-   # --   t : transmission 
+   # --   t : transmission
    # --   w : firefox --new-window
    # --   x : xterm
    # --   p : pcmanfm
-   # --   r : kitty -e ranger 
+   # --   r : kitty -e ranger
    # --   f : flameshot gui
-   # --   c : galculator 
+   # --   c : galculator
    # --   m : kitty --class Pulsemixer -e pulsemixer
    # --   d : discord
    # --   t : telegram-desktop
-   # --   y : youtube-music 
+   # --   y : youtube-music
    # --   b : bitwarden-desktop
-   # --   g : chromium  
+   # --   g : chromium
