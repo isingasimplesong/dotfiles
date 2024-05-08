@@ -20,6 +20,10 @@ vim.keymap.set('n', '<leader>tc', '<cmd>CloakToggle<CR>', { desc = '[T]oggle [C]
 -- save
 vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
 
+-- folds open
+vim.keymap.set('n', '<leader>f', '<cmd>foldopen<CR>')
+
+-- chatGPT
 vim.keymap.set('n', '<leader>a', '<cmd>ChatGPT<CR>', { desc = 'ChatGPT' })
 
 -- Diagnostic keymaps
