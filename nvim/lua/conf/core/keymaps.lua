@@ -18,9 +18,8 @@ vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text 
 vim.keymap.set('n', '<leader>tc', '<cmd>CloakToggle<CR>', { desc = '[T]oggle [C]loack' })
 
 -- save
-vim.keymap.set('n', '<leader>s', '<cmd>write<CR>')
+vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
 
--- ChatGPT
 vim.keymap.set('n', '<leader>a', '<cmd>ChatGPT<CR>', { desc = 'ChatGPT' })
 
 -- Diagnostic keymaps
