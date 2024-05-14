@@ -66,7 +66,7 @@ alias gdc="git diff --cached"
 alias gbl="git blame"
 alias gps="git push"
 alias gpl="git pull"
-alias go="git checkout "
+# alias go="git checkout "
 alias gk="gitk --all&"
 alias gx="gitx --all"
 alias gx="ign = ls-files -o -i --exclude-standard"
@@ -104,7 +104,7 @@ alias fp='flatpak'
 
 # swap esc & caps lock
 alias se="setxkbmap -option caps:swapescape"
-alias sb="setxkbmap -option" 
+alias sb="setxkbmap -option"
 
 # distrobox
 

@@ -148,7 +148,7 @@ ssh() {
     tmux set-window-option automatic-rename "on" 1>/dev/null
 }
 
-# Initialize the Starship prompt
-eval "$(starship init zsh)"
 # Initialize zoxide
 eval "$(zoxide init --cmd cd zsh)"
+# Initialize the Starship prompt
+eval "$(starship init zsh)"
