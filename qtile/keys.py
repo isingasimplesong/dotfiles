@@ -41,7 +41,7 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     # divers
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),

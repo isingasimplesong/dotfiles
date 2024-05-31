@@ -1,4 +1,3 @@
-# Éditeur et terminal
 alias ssk="kitty +kitten ssh"
 alias c='clear'
 alias s='source ~/.zshrc'
@@ -6,6 +5,7 @@ alias s='source ~/.zshrc'
 alias v=vim
 alias lazyvim='NVIM_APPNAME="lazyvim" nvim'
 alias e='nvim .'
+alias rr='ranger'
 #alias cointop='flatpak run com.github.miguelmota.Cointop'
 # Commandes de base
 alias cp='cp --interactive'
