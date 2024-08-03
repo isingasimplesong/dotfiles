@@ -50,7 +50,8 @@ screens = [
                     padding=7,
                     fontsize=12,
                 ),
-                widget.Clock(format="%H:%M"),
+                widget.Clock(format="%H:%M",
+                             timezone="Europe/Paris"),
                 widget.WidgetBox(
                     text_closed="",
                     text_open="",

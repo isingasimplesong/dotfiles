@@ -118,3 +118,7 @@ alias cf="cd $DOTPATH"
 # Python
 alias venv-mk="python3.12 -m venv venv"
 alias venv-activate="source venv/bin/activate"
+
+# pbcopy/paste like
+alias cbcopy='xsel --clipboard --input'
+alias cbpaste='xsel --clipboard --output'
