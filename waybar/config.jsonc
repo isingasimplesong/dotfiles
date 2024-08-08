@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
+     "layer": "bottom", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -9,29 +9,39 @@
     "modules-left": [
         "hyprland/workspaces"
         //"wlr/taskbar"
-        // "hyprland/window",
         //"custom/media"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
-       // "mpd",
         //"idle_inhibitor",
-        "tray",
-        "pulseaudio",
-        //"network",
         //"power-profiles-daemon",
         //"cpu",
         //"memory",
         //"temperature",
-        "backlight",
         //"keyboard-state",
+        //"custom/power",
+        "tray",
+        //"bluetooth",
+        "pulseaudio",
+        //"backlight",
         "battery",
+        "network",
         "clock"
-        //"custom/power"
     ],
     // Modules configuration
+    "bluetooth": {
+        "format": "{} 󰂯"
+    },
+    "wlr/taskbar": {
+        "format": "{icon} {title}",
+        "all-outputs" : "false",
+        "all_workspaces" : "false",
+        "icon-size": 14,
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -84,9 +94,6 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -106,7 +113,8 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
