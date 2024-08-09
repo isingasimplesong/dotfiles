@@ -15,7 +15,16 @@ command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "60% 70%"
 margin = 60
-unfocus = "hide"
+#unfocus = "hide"
+lazy = true
+
+[scratchpads.yazi]
+animation = ""
+command = "kitty --class kitty-yazy -e yazi"
+class = "kitty-yazy"
+size = "60% 70%"
+margin = 60
+#unfocus = "hide"
 lazy = true
 
 [scratchpads.thunar]

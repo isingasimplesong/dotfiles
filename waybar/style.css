@@ -1,13 +1,14 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, JetBrainsMono Nerd Font, Helvetica, Arial, sans-serif;
+    font-family: JetBrainsMono Nerd Font;
+    /*font-family: FontAwesome, JetBrainsMono Nerd Font, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
 }
 
 window#waybar {
     background-color: rgba(59,66,82,1);
-    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    /*border-bottom: 0px solid rgba(100, 114, 125, 0.5);*/
+    color: #81a1c1;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -42,12 +43,12 @@ button:hover {
 #workspaces button {
     padding: 0 2px;
     background-color: transparent;
-    color: #ffffff;
+    color: #81a1c1;
 }
 
 #workspaces button.active {
     background-color: #81a1c1;
-    color: #2e3440;
+    color: #3b4252;
     box-shadow: inset 0 -0px #ffffff;
 }
 
@@ -83,7 +84,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: #2e3440;
 }
 
 #window,
@@ -102,20 +103,21 @@ button:hover {
 }
 
 #clock {
-    /* background-color: #64727D; */
+    color: #3b4252;
+    background-color: #81a1c1;
 }
 
-/* #battery {
-    background-color: #ffffff;
-    color: #000000;
+#battery {
+    color: #3b4252;
+    background-color: #81a1c1;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+/*#battery.charging, #battery.plugged {
+    color: #4c566a;
+    background-color: #a3be8c;
 }*/
 #battery.warning {
-    color: #ffffff;
+    color: #3b4252;
     background-color: #d08770;
 }
 
@@ -129,7 +131,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #bf616a;
-    color: #ffffff;
+    color: #3b4252;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -160,13 +162,21 @@ label:focus {
     background-color: #000000;
 }
 
+#network {
+    background-color: #81a1c1;
+}
+
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #b48ead;
+}
+#pulseaudio {
+    background-color: #81a1c1;
+    color: #3b4252;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: #b48ead;
+    color: #3b4252;
 }
 
 #wireplumber {
@@ -199,6 +209,11 @@ label:focus {
 #temperature.critical {
     background-color: #eb4d4b;
 }
+
+/*#tray {
+    background-color: #81a1c1;
+    color: #3b4252;
+}*/
 
 #tray > .passive {
     -gtk-icon-effect: dim;
