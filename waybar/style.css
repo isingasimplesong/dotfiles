@@ -107,6 +107,11 @@ button:hover {
     background-color: #81a1c1;
 }
 
+#custom-pacman {
+    color: #3b4252;
+    background-color: #81a1c1;
+}
+
 #battery {
     color: #3b4252;
     background-color: #81a1c1;
@@ -210,10 +215,10 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-/*#tray {
-    background-color: #81a1c1;
-    color: #3b4252;
-}*/
+#tray {
+/*    background-color: #81a1c1;*/
+/*    color: #3b4252;*/
+}
 
 #tray > .passive {
     -gtk-icon-effect: dim;

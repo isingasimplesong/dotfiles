@@ -27,7 +27,7 @@ margin = 60
 #unfocus = "hide"
 lazy = true
 
-[scratchpads.thunar]
+[scratchpads.explorer]
 animation = ""
 command = "thunar"
 class = "thunar"

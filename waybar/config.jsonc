@@ -9,7 +9,6 @@
         "hyprland/workspaces"
         //"wlr/taskbar"
         //"custom/media"
-        //"custom/updates"
     ],
     "modules-center": [
         "hyprland/window"
@@ -23,6 +22,7 @@
         //"keyboard-state",
         //"custom/power",
         "tray",
+        "custom/pacman",
         //"bluetooth",
         "pulseaudio",
         //"backlight",
@@ -31,6 +31,14 @@
         "clock"
     ],
     // Modules configuration
+    "custom/pacman": {
+    "format": " {}    ",
+    "interval": 3600,                     // every hour
+    "exec": "checkupdates | wc -l",       // # of updates
+    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+    "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8
+},
     "bluetooth": {
         "format": "{} 󰂯"
     },
