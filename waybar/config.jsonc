@@ -57,7 +57,7 @@
         "timezone": "America/Montreal",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"tooltip": "false",
-         "format": "{:%H:%M}  ",
+         "format": "{:%H:%M} ",
         "format-alt": "{:%Y-%m-%d}  "
     },
     "cpu": {
@@ -86,15 +86,15 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}% {icon} ",
+        "format-full": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
+        "format-alt": "{time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        //"format-icons": ["", "", "", "", ""]
-        "format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
+        "format-icons": ["", "", "", "", ""]
+        //"format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -109,7 +109,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "{essid}  ",
         //"format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -120,7 +120,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{volume}% {icon} ",
        // "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
