@@ -21,18 +21,18 @@
         //"temperature",
         //"keyboard-state",
         //"custom/power",
-        "tray",
-        "custom/pacman",
         //"bluetooth",
+       // "backlight",
+        "custom/pacman",
+        //"tray",
         "pulseaudio",
-        //"backlight",
         "battery",
         "network",
         "clock"
     ],
     // Modules configuration
     "custom/pacman": {
-    "format": " {}    ",
+    "format": " 󰣇 {} ",
     "interval": 3600,                     // every hour
     "exec": "checkupdates | wc -l",       // # of updates
     "exec-if": "exit 0",                  // always run; consider advanced run conditions
@@ -59,13 +59,13 @@
     },
     "tray": {
          "icon-size": 14,
-         "spacing": 4
+         "spacing": 8
     },
     "clock": {
         "timezone": "America/Montreal",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"tooltip": "false",
-         "format": "{:%H:%M} ",
+         "format": "{:%H:%M}  ",
         "format-alt": "{:%Y-%m-%d}  "
     },
     "cpu": {
@@ -96,8 +96,8 @@
         },
         "format": "{capacity}% {icon} ",
         "format-full": "{capacity}% {icon} ",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}%  ",
+        "format-charging": "{capacity}% 󰂄 ",
+        "format-plugged": "{capacity}% 󰂄 ",
         "format-alt": "{time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",

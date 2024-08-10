@@ -117,13 +117,14 @@ button:hover {
     background-color: #81a1c1;
 }
 
-/*#battery.charging, #battery.plugged {
-    color: #4c566a;
-    background-color: #a3be8c;
-}*/
 #battery.warning {
     color: #3b4252;
     background-color: #d08770;
+}
+
+#battery.charging, #battery.plugged {
+    color: #4c566a;
+    background-color: #81a1c1;
 }
 
 @keyframes blink {
@@ -216,7 +217,7 @@ label:focus {
 }
 
 #tray {
-/*    background-color: #81a1c1;*/
+    background-color: #81a1c1;
 /*    color: #3b4252;*/
 }
 
