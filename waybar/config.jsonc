@@ -15,24 +15,24 @@
     ],
     "modules-right": [
         //"idle_inhibitor",
-        //"power-profiles-daemon",
+        //"tray",
+        "power-profiles-daemon",
         //"cpu",
         //"memory",
         //"temperature",
-        //"keyboard-state",
-        //"custom/power",
-        //"bluetooth",
-       // "backlight",
+        "keyboard-state",
+        //"backlight",
         "custom/pacman",
-        //"tray",
         "pulseaudio",
         "battery",
+        //"bluetooth",
         "network",
         "clock"
+        //"custom/power"
     ],
     // Modules configuration
     "custom/pacman": {
-    "format": " 󰣇 {} ",
+    "format": " {} 󰣇 ",
     "interval": 3600,                     // every hour
     "exec": "checkupdates | wc -l",       // # of updates
     "exec-if": "exit 0",                  // always run; consider advanced run conditions
@@ -45,13 +45,12 @@
     "wlr/taskbar": {
         "format": "{icon} {title}",
         "all-outputs" : "false",
-        "all_workspaces" : "false",
         "icon-size": 14,
         "tooltip-format": "{title}",
         "on-click": "activate"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -65,7 +64,7 @@
         "timezone": "America/Montreal",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"tooltip": "false",
-         "format": "{:%H:%M}  ",
+         "format": "{:%H:%M} ",
         "format-alt": "{:%Y-%m-%d}  "
     },
     "cpu": {
@@ -73,7 +72,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -94,11 +93,11 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{capacity}% {icon} ",
-        "format-full": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% 󰂄 ",
-        "format-plugged": "{capacity}% 󰂄 ",
-        "format-alt": "{time} {icon} ",
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -117,7 +116,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}  ",
+        "format-wifi": "{essid} ",
         //"format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -128,7 +127,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} ",
+        "format": "{volume}% {icon}",
        // "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -159,7 +158,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "⏻",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/hypr/session-menu.sh",
