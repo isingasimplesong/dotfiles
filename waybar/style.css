@@ -6,9 +6,9 @@
 }
 
 window#waybar {
-    background-color: rgba(59,66,82,1);
+    background-color: #3b4252; /* rgba(59,66,82,1); */
     /*border-bottom: 0px solid rgba(100, 114, 125, 0.5);*/
-    color: #81a1c1;
+    color: #d8dee9;
     transition-property: background-color;
     transition-duration: .5s;
 }
