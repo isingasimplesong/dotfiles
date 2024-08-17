@@ -10,6 +10,10 @@ export PAGER='nvim +Man!'
 # term
 export TERM=xterm-256color
 
+#sudo
+#export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo] password for : "
+export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) password for %p: "
+
 # Go programming language settings
 export GOPATH="$HOME/.local/share/go"
 
