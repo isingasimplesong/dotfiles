@@ -13,11 +13,7 @@ powerkit &
 nm-applet &
 blueman-applet &
 nextcloud &
-#flatpak run com.discordapp.Discord &
-flatpak run md.obsidian.Obsidian &
 protonmail-bridge --no-window &
-#flatpak run ch.protonmail.protonmail-bridge --no-window &
-sleep 10 && flatpak run org.mozilla.Thunderbird &
 #setxkbmap -option &
 #setxkbmap -option compose:rwin &
 #sleep 5; setxkbmap -option caps:swapescape &
