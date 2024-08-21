@@ -30,7 +30,7 @@ scratchpads = [
             ),
             DropDown(
                 "bitwarden",
-                "bitwarden",
+                "bitwarden-desktop",
                 x=0.15,
                 y=0.06,
                 height=0.85,
@@ -75,9 +75,9 @@ scratchpads = [
 
 scratchpad_keys = [
     # ScratchPads
-    Key([mod], "s", lazy.group["scratchpad"].dropdown_toggle("term")),
+    Key([mod], "w", lazy.group["scratchpad"].dropdown_toggle("term")),
     Key([mod], "g", lazy.group["scratchpad"].dropdown_toggle("web")),
-    Key([mod], "b", lazy.group["scratchpad"].dropdown_toggle("bitwarden")),
-    Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("keepassxc")),
-    Key([mod], "t", lazy.group["scratchpad"].dropdown_toggle("thunar")),
+    #Key([mod], "o", lazy.group["scratchpad"].dropdown_toggle("bitwarden")),
+    #Key([mod], "p", lazy.group["scratchpad"].dropdown_toggle("keepassxc")),
+    Key([mod], "e", lazy.group["scratchpad"].dropdown_toggle("thunar")),
 ]

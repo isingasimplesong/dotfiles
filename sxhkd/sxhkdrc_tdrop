@@ -1,7 +1,7 @@
 # Scratchpads
-super + s
+super +
   tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
-# ChatGPT 
+# ChatGPT
 super + g
   tdrop -am -w 1500 -h 950  -y 210 -x 65 firefox --new-window https://chat.openai.com
 
