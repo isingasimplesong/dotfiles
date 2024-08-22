@@ -4,7 +4,6 @@ alias s='source ~/.zshrc'
 alias v=vim
 alias e='nvim .'
 alias pkglist="rm -f ~/Dev/paclist.txt && paru -Qqe > ~/Dev/paclist.txt"
-alias z="zellij attach || zellij"
 
 # Commandes de base
 alias cp='cp --interactive'
@@ -30,6 +29,9 @@ alias ldot='ls -ld .*'
 # Compression et décompression
 alias untar='tar xvf'
 
+alias z="zellij attach || zellij"
+alias zl="zellij list-sessions"
+alias zs="zellij --session"
 # Git
 alias lg="lazygit"
 alias g="git status"
