@@ -29,7 +29,8 @@ alias ldot='ls -ld .*'
 # Compression et décompression
 alias untar='tar xvf'
 
-alias z="zellij attach || zellij"
+alias z="zellij attach 1 || zellij --session 1"
+alias za="zellij attach"
 alias zl="zellij list-sessions"
 alias zs="zellij --session"
 # Git

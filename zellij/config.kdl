@@ -232,7 +232,7 @@ pane_frames false
 
 ui {
     pane_frames {
-        hide_session_name true
+        hide_session_name false
     }
 }
 
