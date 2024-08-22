@@ -181,7 +181,7 @@ keybinds {
         bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
+        bind "Ctrl Space" { SwitchToMode "Tmux"; }
     }
 }
 
@@ -304,7 +304,7 @@ theme "nord"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "disable-status-bar"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
