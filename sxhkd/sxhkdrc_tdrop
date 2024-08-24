@@ -1,5 +1,5 @@
 # Scratchpads
-super +
+super + w
   tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
 # ChatGPT
 super + g
