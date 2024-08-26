@@ -61,6 +61,7 @@ bspc rule -a Nitrogen state=floating
 bspc rule -a Galculator state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Pulsemixer state=floating
+bspc rule -a thunderbird desktop=^10
 
 # autostart
 start_app "pasystray"
@@ -73,3 +74,4 @@ start_app "unclutter"
 start_app "nextcloud"
 start_app "nitrogen --restore"
 start_app "protonmail-bridge --no-window"
+sleep 5 && start_app "thunderbird"

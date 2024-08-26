@@ -1,9 +1,9 @@
 # Scratchpads
 super + w
   tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
-# ChatGPT
+# Claude
 super + g
-  tdrop -am -w 1500 -h 950  -y 210 -x 65 firefox --new-window https://chat.openai.com
+  tdrop -am -w 1500 -h 950  -y 210 -x 65 firefox --new-window https://claude.ai
 
 # Scratchpads :current:
 super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
