@@ -15,7 +15,6 @@
     ],
     "modules-right": [
         //"idle_inhibitor",
-"tray",
         //"power-profiles-daemon",
         //"cpu",
         //"memory",
