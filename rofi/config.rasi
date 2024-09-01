@@ -184,4 +184,6 @@ configuration {
 
 //@theme "/usr/share/rofi/themes/nord-oneline.rasi"
 
-@theme "/usr/share/rofi/themes/squared-nord.rasi"
+//@theme "/usr/share/rofi/themes/squared-nord.rasi"
+
+@theme "/usr/share/rofi/themes/rounded-nord-dark.rasi"

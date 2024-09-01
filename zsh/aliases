@@ -7,6 +7,8 @@ alias pkglist="rm -f ~/Dev/paclist.txt && paru -Qqe > ~/Dev/paclist.txt"
 alias bkp="~/.local/bin/btrfs-backup.sh"
 alias etc-bkp="sudo tar -czf ~/Dev/etc/etc_backup-$(date +%F).tar.gz /etc"
 alias t="tmux attach || tmux new -s main"
+#alias nas-mount="sudo systemctl start home-mathieu-NAS.mount"
+#alias backups-mount="sudo systemctl start mnt-backups.mount"
 # Commandes de base
 alias cp='cp --interactive'
 alias mv='mv --interactive'
