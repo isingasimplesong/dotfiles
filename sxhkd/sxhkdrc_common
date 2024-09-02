@@ -5,7 +5,7 @@ super + Return
 # program launcher
 super + space
 	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
-	 #~/.config/rofi/launchers/type-2/launcher.sh
+	#/home/mathieu/.config/rofi/scripts/launcher_t1
 
 # Rofi shortcuts
 #super + p; {r,a,e,c,f,w,q,x}
@@ -16,7 +16,7 @@ super + r
   ~/.local/bin/rofi-beats-linux
 
 # Rofi exit menu
-super + o
+super + shift + m
   ~/.config/rofi/powermenu/type-3/powermenu.sh
   #rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
 
@@ -66,3 +66,5 @@ super + n; {h,c,x,m}
 super + a; {b,c,d,e,f,g,i,k,l,m,o,p,t,v,w,x,y}
   {brave,galculator,transmission-remote-gtk,thunar,firefox --new-window https://facebook.com/,gimp,firefox --new-window https://claude.ai/,gcolor3,gcolor3,firefox --new-window https://messenger.com/,obsidian,bitwarden-desktop,torbrowser-launcher,kitty -e vim,firefox,firefox --new-window https://x.com/,kitty -e yazi}
 
+super + p
+	flameshot gui

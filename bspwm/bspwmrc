@@ -34,7 +34,6 @@ bspc rule -r "*"
 # bspc monitor eDP-1 -d 8 9 0
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
 
-# set layout on each desktop
 for i in 1 2 3 4 5 6 7 8 9 0; do
     bsp-layout set tall $i
 done
@@ -74,4 +73,4 @@ start_app "unclutter"
 start_app "nextcloud"
 start_app "nitrogen --restore"
 start_app "protonmail-bridge --no-window"
-sleep 5 && start_app "thunderbird"
+#sleep 5 && start_app "thunderbird"
