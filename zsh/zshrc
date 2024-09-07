@@ -107,7 +107,6 @@ compinit -C
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
 
-
 # Load and apply the 'dir_colors' configuration, if available
 test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 
@@ -119,16 +118,20 @@ if [[ "$(uname)" == "Linux" ]]; then
     # If the os-release file is available, source it
     if [ -f /etc/os-release ]; then
         source /etc/os-release
-        # Check for Arch Linux distribution
         if [[ "$ID" == "arch" ]]; then
             # Arch-specific settings
             source /usr/share/fzf/key-bindings.zsh
             source /usr/share/fzf/completion.zsh
             source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
             source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-        # Check for Debian distribution
         elif [[ "$ID" == "debian" ]]; then
             # Debian-specific settings
+            source /usr/share/doc/fzf/examples/key-bindings.zsh
+            source /usr/share/doc/fzf/examples/completion.zsh
+            source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+            source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        elif [[ "$ID" == "ubuntu" ]]; then
+            # Ubuntu-specific settings
             source /usr/share/doc/fzf/examples/key-bindings.zsh
             source /usr/share/doc/fzf/examples/completion.zsh
             source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -138,9 +141,9 @@ if [[ "$(uname)" == "Linux" ]]; then
 fi
 
 # Tmux if ssh
-#if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
-#    tmux attach || tmux
-#fi
+if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+    tmux attach || tmux
+fi
 
 # rename tmux window to ssh hostname if relevant
 #ssh() {
