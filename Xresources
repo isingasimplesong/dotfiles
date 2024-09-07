@@ -1,0 +1,51 @@
+! Nord theme for xterm
+
+! Special colors
+xterm*foreground: #D8DEE9
+xterm*background: #2E3440
+xterm*cursorColor: #D8DEE9
+
+! Black
+xterm*color0: #3B4252
+xterm*color8: #4C566A
+
+! Red
+xterm*color1: #BF616A
+xterm*color9: #BF616A
+
+! Green
+xterm*color2: #A3BE8C
+xterm*color10: #A3BE8C
+
+! Yellow
+xterm*color3: #EBCB8B
+xterm*color11: #EBCB8B
+
+! Blue
+xterm*color4: #81A1C1
+xterm*color12: #81A1C1
+
+! Magenta
+xterm*color5: #B48EAD
+xterm*color13: #B48EAD
+
+! Cyan
+xterm*color6: #88C0D0
+xterm*color14: #8FBCBB
+
+! White
+xterm*color7: #E5E9F0
+xterm*color15: #ECEFF4
+
+! Font settings
+xterm*faceName: JetBrainsMono Nerd Font
+!xterm*faceName: DejaVu Sans Mono
+xterm*faceSize: 13
+
+! Other settings
+xterm*saveLines: 4096
+xterm*scrollBar: false
+xterm*rightScrollBar: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*toolBar: false
