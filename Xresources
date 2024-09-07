@@ -1,5 +1,4 @@
-! Nord theme for xterm
-
+! Nord theme
 ! Special colors
 xterm*foreground: #D8DEE9
 xterm*background: #2E3440
@@ -39,7 +38,6 @@ xterm*color15: #ECEFF4
 
 ! Font settings
 xterm*faceName: JetBrainsMono Nerd Font
-!xterm*faceName: DejaVu Sans Mono
 xterm*faceSize: 13
 
 ! Other settings
