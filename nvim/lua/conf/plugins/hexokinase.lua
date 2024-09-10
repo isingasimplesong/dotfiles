@@ -1,4 +1,4 @@
 return {
-  'RRethy/vim-hexokinase',
-  build = 'make hexokinase',
+	"RRethy/vim-hexokinase",
+	build = "make hexokinase",
 }

@@ -1,1 +1,1 @@
-return { 'vladdoster/remember.nvim', opts = {} }
+return { "vladdoster/remember.nvim", opts = {} }
