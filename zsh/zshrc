@@ -142,7 +142,7 @@ fi
 
 # Tmux if ssh
 if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
-    tmux attach || tmux
+    tmux -u attach || tmux -u new -s $(uname --nodename)
 fi
 
 # rename tmux window to ssh hostname if relevant
