@@ -24,7 +24,7 @@ export LC_ALL=C
 
 # Path settings
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/Dev/scripts:$PATH"
+export PATH="$HOME/Projets/scripts:$PATH"
 
 # Qt theme settings
 export QT_STYLE_OVERRIDE="gtk2"
