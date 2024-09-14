@@ -1,0 +1,15 @@
+return {
+  "navarasu/onedark.nvim",
+  "rose-pine/neovim",
+  "catppuccin/nvim",
+  "folke/tokyonight.nvim",
+  "Mofiqul/dracula.nvim",
+  "sainnhe/sonokai",
+  "rmehri01/onenord.nvim",
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "onenord",
+    },
+  },
+}
