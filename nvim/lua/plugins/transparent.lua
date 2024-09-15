@@ -1,4 +1,4 @@
 return {
-	"xiyaowong/transparent.nvim",
-	opts = {},
+  'xiyaowong/transparent.nvim',
+  opts = {},
 }
