@@ -64,8 +64,8 @@
         "timezone": "America/Montreal",
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"tooltip": "false",
-         "format": "{:%H:%M} ",
-        "format-alt": "{:%Y-%m-%d}  "
+         "format": "{:%Y-%m-%d 󰃭 %H:%M} ",
+        //"format-alt": "{:%Y-%m-%d}  "
     },
     "cpu": {
         "format": "{usage}% ",
