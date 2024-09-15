@@ -11,6 +11,7 @@ plugins = ["scratchpads"]
 
 [scratchpads.term]
 animation = ""
+#command = "~/.local/bin/tmux-run.sh"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "60% 70%"
