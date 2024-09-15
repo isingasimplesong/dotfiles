@@ -17,6 +17,12 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- set nowrap
+vim.opt.wrap = false
+
+-- conceal
+vim.opt.conceallevel = 1
+
 -- Enable mouse mode
 vim.opt.mouse = 'a'
 
@@ -66,8 +72,16 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
+-- Show a vertical line at 80 characters
+vim.opt.colorcolumn = '80'
+
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
+
+-- theme stuff
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.g.transparent_enabled = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -84,6 +98,9 @@ vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Op[e]n Oil' })
 
 -- Close buffer
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' })
+
+-- quit/close window/split
+vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = '[C]lose Buffer' })
 
 -- toggle text wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
@@ -841,28 +858,12 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
-  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
-
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  { import = 'custom.plugins' },
+  --  Uncomment the following line and add your plugins to `lua/plugins/*.lua` to get going.
+  --  For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  { import = 'plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
