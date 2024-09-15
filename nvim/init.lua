@@ -6,7 +6,7 @@
 -- See `:help mapleader`
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\\'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -103,17 +103,17 @@ vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' }
 vim.keymap.set('n', 'qq', '<cmd>q<CR>', { desc = 'Quit' })
 
 -- toggle text wrap
-vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
+vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle text [W]rap' })
 
 -- save
 vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
 
--- folds open
-vim.keymap.set('n', '<leader>f', '<cmd>foldopen<CR>')
-
 -- splits
 vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
+
+-- notifications
+vim.keymap.set('n', '<localleader>d', '<cmd>NoiceDismiss<CR>')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -180,7 +180,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
+  'ibhagwan/fzf-lua',
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -362,6 +362,9 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+      -- telescope maison
+      vim.keymap.set('n', '<leader>sn', '<cmd>NoiceFzf<CR>', { desc = '[S]earch [N]otifications' })
+
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -381,9 +384,9 @@ require('lazy').setup({
       end, { desc = '[S]earch [/] in Open Files' })
 
       -- Shortcut for searching your Neovim configuration files
-      vim.keymap.set('n', '<leader>sn', function()
+      vim.keymap.set('n', '<leader>sv', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]earch [N]eovim files' })
+      end, { desc = '[S]earch Neo[v]im files' })
     end,
   },
 
