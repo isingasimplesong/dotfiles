@@ -100,7 +100,7 @@ vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Op[e]n Oil' })
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' })
 
 -- quit/close window/split
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = '[C]lose Buffer' })
+vim.keymap.set('n', 'qq', '<cmd>q<CR>', { desc = 'Quit' })
 
 -- toggle text wrap
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
