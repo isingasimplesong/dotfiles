@@ -147,11 +147,11 @@ if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
 fi
 
 # rename tmux window to ssh hostname if relevant
-#ssh() {
-#    tmux rename-window "$(echo $@ | cut -d . -f 1)"
-#    command ssh "$@"
-#    tmux set-window-option automatic-rename "on" 1>/dev/null
-#}
+ssh() {
+    tmux rename-window "$(echo $@ | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+}
 
 function current_dir() {
     local current_dir=$PWD
