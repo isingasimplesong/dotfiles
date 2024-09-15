@@ -10,10 +10,9 @@ plugins = ["scratchpads"]
 #prev2 = "movefocus u"
 
 [scratchpads.term]
-animation = ""
-#command = "~/.local/bin/tmux-run.sh"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
+animation = ""
 size = "60% 70%"
 margin = 60
 #unfocus = "hide"
