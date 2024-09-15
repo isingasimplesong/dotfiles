@@ -83,8 +83,8 @@ export HISTSIZE=10000
 export HISTFILE=$HOME/.history
 
 # Configure history saving options
-setopt SHARE_HISTORY
-setopt INC_APPEND_HISTORY
+setopt share_history
+setopt inc_append_history
 setopt append_history
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
