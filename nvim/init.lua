@@ -79,6 +79,25 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Oil.nvim
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Op[e]n Oil' })
+
+-- Close buffer
+vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' })
+
+-- toggle text wrap
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>', { desc = '[T]oggle text [W]rap' })
+
+-- save
+vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
+
+-- folds open
+vim.keymap.set('n', '<leader>f', '<cmd>foldopen<CR>')
+
+-- splits
+vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
+vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -112,6 +131,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
   end,
+})
+
+-- Crée un groupe et ajoute un autocmd qui supprime les espaces de fin
+local group = vim.api.nvim_create_augroup('TrimWhiteSpace', { clear = true })
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*', -- s'applique à tous les fichiers
+  callback = function()
+    local save_cursor = vim.api.nvim_win_get_cursor(0) -- Sauvegarde la position du curseur
+    vim.cmd [[%s/\s\+$//e]] -- Exécute la commande de substitution pour supprimer les espaces de fin
+    vim.api.nvim_win_set_cursor(0, save_cursor) -- Restaure la position du curseur
+  end,
+  group = group,
 })
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -822,8 +854,8 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
