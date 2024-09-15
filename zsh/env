@@ -6,6 +6,8 @@ export VISUAL="nvim"
 # PAGER settings
 #export PAGER="less"
 export PAGER='nvim +Man!'
+#export BAT_PAGER='less'
+#export BAT_THEME='Nord'
 
 # term
 export TERM=xterm-256color
