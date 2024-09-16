@@ -77,6 +77,7 @@ alias ple='pacman -Qe'
 alias pla='pacman -Qem'
 alias pc='sudo pacman -Scc'
 alias pf="paruz"
+alias mon-ip="wget -qO- ifconfig.me"
 
 # Apt (Debian/Ubuntu)
 alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
