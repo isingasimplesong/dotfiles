@@ -196,3 +196,4 @@ fi
 eval "$(starship init zsh)"
 # start fabric
 #if [ -f "/home/mathieu/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mathieu/.config/fabric/fabric-bootstrap.inc"; fi
+neofetch
