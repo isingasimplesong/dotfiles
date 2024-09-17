@@ -118,8 +118,9 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
         //"format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "{ifname} 󱚿",
+        "tooltip-format": "{ipaddr}/{cidr} ({gwaddr})",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}",
