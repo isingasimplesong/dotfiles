@@ -124,6 +124,9 @@ vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { desc 
 vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { desc = 'Set [T]erminal to [v]ertical' })
 vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set [T]erminal to [h]orizontal' })
 
+-- undotree
+vim.keymap.set('n', '<leader>tu', '<cmd>UndotreeToggle<CR>', { desc = '[T]oggle to [U]ndoTree' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
