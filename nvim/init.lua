@@ -125,7 +125,7 @@ vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { de
 vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set [T]erminal to [h]orizontal' })
 
 -- undotree
-vim.keymap.set('n', '<leader>tu', '<cmd>UndotreeToggle<CR>', { desc = '[T]oggle to [U]ndoTree' })
+vim.keymap.set('n', '<localleader>u', '<cmd>UndotreeToggle<CR>', { desc = '[T]oggle to [U]ndoTree' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -281,7 +281,7 @@ require('lazy').setup({
         { '<leader>g', group = '[G]it' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t', group = '[T]erminal & [T]oggle' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
