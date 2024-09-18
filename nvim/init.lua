@@ -115,6 +115,10 @@ vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 -- notifications
 vim.keymap.set('n', '<localleader>d', '<cmd>NoiceDismiss<CR>')
 
+-- git stuff
+vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', { desc = '[G]it [p]review hunk' })
+vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame <CR>', { desc = 'Toggle [G]it [B]lame' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -266,10 +270,11 @@ require('lazy').setup({
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>g', group = '[G]it' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
+        { '<leader>t', group = '[T]oggle' },
         { '<leader>w', group = '[W]orkspace' },
-        { 'leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
