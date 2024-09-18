@@ -102,7 +102,7 @@ vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' }
 -- quit/close window/split
 vim.keymap.set('n', 'qq', '<cmd>q<CR>', { desc = 'Quit' })
 
--- toggle text wrap
+-- text wrap
 vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle text [W]rap' })
 
 -- save
@@ -118,6 +118,11 @@ vim.keymap.set('n', '<localleader>d', '<cmd>NoiceDismiss<CR>')
 -- git stuff
 vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', { desc = '[G]it [p]review hunk' })
 vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame <CR>', { desc = 'Toggle [G]it [B]lame' })
+
+-- toggle term
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { desc = 'Set [T]erminal to [f]loat' })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { desc = 'Set [T]erminal to [v]ertical' })
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set [T]erminal to [h]orizontal' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -539,9 +544,9 @@ require('lazy').setup({
           --
           -- This may be unwanted, since they displace some of your code
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map('<leader>th', function()
+            map('<leader>ti', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
+            end, '[T]oggle Inlay H[i]nts')
           end
         end,
       })
