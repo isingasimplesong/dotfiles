@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'ibhagwan/fzf-lua',
-  -- Use `opts = {}` to force a plugin to be loaded.
-
   { import = 'plugins' },
 }, {
   ui = {
