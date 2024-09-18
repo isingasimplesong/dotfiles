@@ -1,5 +1,0 @@
-require("conf.core.options")
-require("conf.core.autocommands")
-require("conf.core.keymaps")
-require("conf.core.lazy-bootstrap")
-require("conf.core.lazy-plugins")
