@@ -45,6 +45,7 @@ return {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>n', group = '[N]otifications' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]erminal & [T]oggle' },
