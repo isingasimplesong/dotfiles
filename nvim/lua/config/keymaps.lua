@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = '[E]xplorateur' })
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' })
 
 -- quit/close window/split
-vim.keymap.set('n', '<leader>z', '<cmd>q<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', { desc = 'Quit' })
 
 -- text wrap
 vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle text [W]rap' })
