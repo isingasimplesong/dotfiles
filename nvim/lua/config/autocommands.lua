@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank {
       higroup = 'YankHighlight', -- Groupe personnalisé
       timeout = 250, -- Durée du highlight en millisecondes
-      on_visual = false,
+      on_visual = true,
     }
   end,
 })
