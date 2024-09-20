@@ -8,8 +8,8 @@ return {
         theme = 'auto',
         component_separators = '',
         -- component_separators = { left = '', right = '' },
-        section_separators = '',
-        -- section_separators = { left = '', right = '' },
+        -- section_separators = '',
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = {},
           winbar = {},
@@ -47,7 +47,14 @@ return {
         -- lualine_y = {},
         -- lualine_z = { 'tabs' },
       },
-      winbar = {},
+      winbar = {
+        -- lualine_a = { 'mode' },
+        -- lualine_b = { 'branch', 'diff', 'diagnostics' },
+        -- lualine_c = { 'filename' },
+        -- lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        -- lualine_y = { 'progress' },
+        -- lualine_z = { 'location' },
+      },
       inactive_winbar = {},
       extensions = { 'man', 'oil' },
     }
