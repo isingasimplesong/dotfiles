@@ -1,41 +1,41 @@
-! Nord theme for xterm
+! Onenord color scheme for Xresources (xterm, rxvt, ...)
 
-! Special colors
-xterm*foreground: #D8DEE9
-xterm*background: #2E3440
-xterm*cursorColor: #D8DEE9
+*foreground:     #E5E9F0
+*background:     #2E3440
+*highlightColor: #3F4758
+*cursorColor:    #81A1C1
 
-! Black
-xterm*color0: #3B4252
-xterm*color8: #4C566A
+! black
+*color0:         #3B4252
+*color8:         #4C566A
 
-! Red
-xterm*color1: #BF616A
-xterm*color9: #BF616A
+! red
+*color1:         #E06C75
+*color9:         #E06C75
 
-! Green
-xterm*color2: #A3BE8C
-xterm*color10: #A3BE8C
+! green
+*color2:         #9EC183
+*color10:        #9EC183
 
-! Yellow
-xterm*color3: #EBCB8B
-xterm*color11: #EBCB8B
+! yellow
+*color3:         #EBCB8B
+*color11:        #EBCB8B
 
-! Blue
-xterm*color4: #81A1C1
-xterm*color12: #81A1C1
+! blue
+*color4:         #81A1C1
+*color12:        #81A1C1
 
-! Magenta
-xterm*color5: #B48EAD
-xterm*color13: #B48EAD
+! magenta
+*color5:         #B988B0
+*color13:        #B988B0
 
-! Cyan
-xterm*color6: #88C0D0
-xterm*color14: #8FBCBB
+! cyan
+*color6:         #88C0D0
+*color14:        #8FBCBB
 
-! White
-xterm*color7: #E5E9F0
-xterm*color15: #ECEFF4
+! white
+*color7:         #E5E9F0
+*color15:        #ECEFF4
 
 ! Font settings
 xterm*faceName: JetBrainsMono Nerd Font
