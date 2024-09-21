@@ -1,6 +1,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-
+vim.opt.spelllang = 'fr'
+vim.opt.spell = true
 -- set nowrap
 vim.opt.wrap = false
 
