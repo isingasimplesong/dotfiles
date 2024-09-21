@@ -10,7 +10,10 @@ return {
     -- 'sainnhe/sonokai',
     opts = {
       disable = {
-        float_background = true, -- Disable setting the background color for floating windows
+        float_background = true,
+      },
+      enable = {
+        cursorline = true,
       },
     },
     priority = 1000, -- Make sure to load this before all the other start plugins.
