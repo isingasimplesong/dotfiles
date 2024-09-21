@@ -1,3 +1,1 @@
-return {
-  'j-morano/buffer_manager.nvim',
-}
+return { 'j-morano/buffer_manager.nvim' }
