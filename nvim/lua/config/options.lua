@@ -2,7 +2,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- spellcheck
-vim.opt.spelllang = 'fr'
+vim.opt.spelllang = { 'fr', 'en' }
 vim.opt.spell = false
 
 -- set nowrap

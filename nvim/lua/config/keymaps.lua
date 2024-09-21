@@ -4,6 +4,11 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Spellcheck
+vim.keymap.set('n', '<localleader>sc', '<cmd>setlocal spell!<CR>', { desc = 'Toggle [S]pell check' })
+vim.keymap.set('n', '<localleader>sf', '<cmd>set spelllang=fr<CR>', { desc = '[S]pell check [F]R' })
+vim.keymap.set('n', '<localleader>se', '<cmd>set spelllang=en<CR>', { desc = '[S]pell check [E]N' })
+
 -- Oil.nvim
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = '[E]xplorateur' })
 
