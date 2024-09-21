@@ -52,6 +52,7 @@ return {
         { '<leader>t', group = '[T]erminal & [T]oggle' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<localleader>s', group = '[S]pellcheck' },
       },
     },
   },

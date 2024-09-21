@@ -29,7 +29,6 @@ vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
 
 -- notifications
-vim.keymap.set('n', '<localleader>d', '<cmd>NoiceDismiss<CR>')
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = '[N]otifications [D]ismiss' })
 vim.keymap.set('n', '<leader>nh', '<cmd>Noice<CR>', { desc = '[N]otifications [H]istory' })
 
@@ -43,7 +42,7 @@ vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { de
 vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set [T]erminal to [h]orizontal' })
 
 -- undotree
-vim.keymap.set('n', '<localleader>u', '<cmd>UndotreeToggle<CR>', { desc = '[T]oggle to [U]ndoTree' })
+vim.keymap.set('n', '<localleader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle to [U]ndoTree' })
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
