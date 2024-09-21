@@ -1,7 +1,10 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+-- spellcheck
 vim.opt.spelllang = 'fr'
-vim.opt.spell = true
+vim.opt.spell = false
+
 -- set nowrap
 vim.opt.wrap = false
 
@@ -54,11 +57,15 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
+-- highlight cursor
+vim.opt.cursorline = true
+-- vim.opt.cursorcolumn = true
+
 -- Show a vertical line at 80 characters
 vim.opt.colorcolumn = '80'
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 15
+vim.opt.scrolloff = 10
 
 -- theme stuff
 vim.opt.termguicolors = true
