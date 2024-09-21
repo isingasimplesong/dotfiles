@@ -1,0 +1,1 @@
+return { 'mateuszwieloch/automkdir.nvim' }
