@@ -24,6 +24,7 @@ return {
       dashboard.button('/', '  Chercher', ':Telescope find_files  <CR>'),
       dashboard.button('.', '󰋚  Récents', ':Telescope oldfiles <CR>'),
       dashboard.button('e', '  Nouveau', ':ene <BAR> startinsert <CR>'),
+      dashboard.button('\\', '󰱼  Live grep', ':Telescope live_grep  <CR>'),
       dashboard.button('l', '  Mettre à jour', ':Lazy update<CR>'),
       dashboard.button('q', '󰅚  Quitter', ':qa<CR>'),
     }
