@@ -4,19 +4,15 @@ export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
 # PAGER settings
-#export PAGER="less"
 export PAGER='nvim +Man!'
-#export BAT_PAGER='less'
-#export BAT_THEME='Nord'
 
 # term
 export TERM=xterm-256color
 
 #sudo
-#export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo] password for : "
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) password for %p: "
 
-# Go programming language settings
+# Go
 export GOPATH="$HOME/.local/share/go"
 
 # Localization settings for output and error messages
@@ -26,7 +22,6 @@ export LC_ALL=en_US.UTF-8
 
 # Path settings
 export PATH="$HOME/.local/bin:$PATH"
-#export PATH="$HOME/Projets/scripts:$PATH"
 
 # Qt theme settings
 export QT_STYLE_OVERRIDE="gtk2"
