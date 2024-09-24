@@ -65,7 +65,7 @@
         "tooltip-format": "{:L%A %d %B %Y}",
         "timezones": [
         "America/Toronto",
-        "Europe/Paris"
+        "Europe/Paris",
     ],
         "actions":{
             "on-click": "tz_down"
