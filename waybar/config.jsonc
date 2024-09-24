@@ -61,12 +61,15 @@
          "spacing": 8
     },
     "clock": {
-        "timezone": "America/Montreal",
-        "tooltip-format": "{:L%A %x}",
-        //"tooltip": "false",
         "format": "{:%H:%M  }",
-        //"format": "{:%H:%M   %d/%m 󰃭}",
-        //"format-alt": "{:%Y-%m-%d 󰃭}"
+        "tooltip-format": "{:L%A %d %B %Y}",
+        "timezones": [
+        "America/Toronto",
+        "Europe/Paris"
+    ],
+        "actions":{
+            "on-click": "tz_down"
+        }
     },
     "cpu": {
         "format": "{usage}% ",
