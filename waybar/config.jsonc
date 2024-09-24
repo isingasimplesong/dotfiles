@@ -62,11 +62,11 @@
     },
     "clock": {
         "timezone": "America/Montreal",
-        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:L%A %x}",
         //"tooltip": "false",
         "format": "{:%H:%M  }",
         //"format": "{:%H:%M   %d/%m 󰃭}",
-        "format-alt": "{:%Y-%m-%d 󰃭 }"
+        //"format-alt": "{:%Y-%m-%d 󰃭}"
     },
     "cpu": {
         "format": "{usage}% ",
