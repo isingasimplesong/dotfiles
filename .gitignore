@@ -1,0 +1,9 @@
+**/__pycache__/
+applications/
+zsh/env-secrets
+qtile/keymap.txt
+nvim/.*
+nvim/lazy-lock.json
+nvim/plugin/.*
+.nextcloudsync.log
+.sync*

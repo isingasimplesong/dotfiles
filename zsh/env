@@ -1,0 +1,33 @@
+# Editor settings
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+export VISUAL="nvim"
+
+# PAGER settings
+export PAGER="nvim +Man!"
+
+# term
+# export TERM=xterm-kitty
+export TERM=xterm-256color
+
+#sudo
+export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) password for %p: "
+
+# Go
+export GOPATH="$HOME/.local/share/go"
+
+# Localization settings for output and error messages
+#export LC_ALL=C
+
+# Path settings
+export PATH="$HOME/.local/bin:$PATH"
+
+# Qt theme settings
+export QT_STYLE_OVERRIDE="gtk2"
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# ssh-agent settings
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# Say how long a command took, if it took more than 30 seconds
+export REPORTTIME=30

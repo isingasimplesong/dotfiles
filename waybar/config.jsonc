@@ -1,0 +1,177 @@
+// -*- mode: jsonc -*-
+{
+     "layer": "bottom",
+     "position": "top",
+    "height": 20,
+    // "width": 1280,
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": [
+        "hyprland/workspaces"
+        //"wlr/taskbar"
+        //"custom/media"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        //"idle_inhibitor",
+//"tray",
+        //"power-profiles-daemon",
+        //"cpu",
+        //"memory",
+        //"temperature",
+       // "keyboard-state",
+        //"backlight",
+        //"custom/pacman",
+        "pulseaudio",
+        "battery",
+        //"bluetooth",
+        "network",
+        "clock"
+        //"custom/power"
+    ],
+    // Modules configuration
+    "custom/pacman": {
+    "format": " {} 󰣇 ",
+    "interval": 3600,                     // every hour
+    "exec": "checkupdates | wc -l",       // # of updates
+    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+    "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8
+},
+    "bluetooth": {
+        "format": "{} 󰂯"
+    },
+    "wlr/taskbar": {
+        "format": "{icon} {title}",
+        "all-outputs" : "false",
+        "icon-size": 14,
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+         "icon-size": 14,
+         "spacing": 8
+    },
+    "clock": {
+        "format": "{:%H:%M  }",
+        "tooltip-format": "{:L%A %d %B %Y}",
+        "timezones": [
+        "America/Toronto",
+        "Europe/Paris",
+    ],
+        "actions":{
+            "on-click": "tz_down"
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+        //"format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ",
+        //"format-wifi": "{essid} ({signalStrength}%) ",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "{ifname} 󱚿",
+        "tooltip-format": "{ipaddr}/{cidr} ({gwaddr})",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+       // "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format" : "⏻",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/hypr/session-menu.sh",
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    }
+}

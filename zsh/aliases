@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+
+alias c='clear'
+alias s='source ~/.zshrc'
+alias w='which'
+alias ..='cd ..'
+alias cp='cp --interactive'
+alias mv='mv --interactive'
+alias rm='rm --interactive'
+alias less='less --quiet'
+alias df='df --human-readable'
+alias du='du --human-readable'
+alias ls='exa --group-directories-first --icons'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias ldot='ls -ld .*'
+alias untar='tar xvf'
+
+alias vim=nvim
+alias v=nvim
+alias e='nvim .'
+
+# obsidian
+alias td="nvim ~/Notes/all/Todo.md"
+alias nh="nvim ~/Notes/all/Home.md"
+alias or="nvim ~/Notes/inbox/*"
+alias on="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianNew' all/Todo.md"
+alias oj="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianToday' all/Todo.md"
+alias ow="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianDailies' all/Todo.md"
+alias oq="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianQuickSwitch' all/Todo.md"
+alias os="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianSearch' all/Todo.md"
+alias ot="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianNewFromTemplate' all/Todo.md"
+alias oa="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianTags' all/Todo.md"
+
+alias pkglist="rm -f ~/Projets/paclist.txt && paru -Qqe > ~/Projets/paclist.txt"
+alias bkp="~/.local/bin/btrfs-backup.sh"
+alias etc-bkp="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
+
+alias t="tmux attach || tmux new -s $(uname --nodename)"
+alias z="zellij attach || zellij"
+alias za="zellij attach"
+alias zl="zellij list-sessions"
+alias zs="zellij --session"
+
+alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
+alias date-human='date +"%A %d %B %Y, %H:%M"'
+
+alias lg="lazygit"
+alias g="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gau="git add -u"
+alias gc="git commit -m"
+alias gca="git commit -am"
+alias gb="git branch"
+alias gbd="git branch -d"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gt="git stash"
+alias gta="git stash apply"
+alias gm="git merge"
+alias gr="git rebase"
+alias gl="git log --oneline --decorate --graph"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias glga="git log --graph --oneline --all --decorate"
+alias gs="git show"
+alias gd="diff --color --color-words --abbrev"
+alias gdc="git diff --cached"
+alias gbl="git blame"
+alias gps="git push"
+alias gpl="git pull"
+alias gk="gitk --all&"
+alias gx="gitx --all"
+alias gx="ign = ls-files -o -i --exclude-standard"
+alias grmc="git rm -r --cached"
+
+# Pacman
+alias pu='paru'
+alias pi='paru -Si'
+alias pr='paru -Rs'
+alias pl='pacman -Q'
+alias ple='pacman -Qe'
+alias pla='pacman -Qem'
+alias pc='sudo pacman -Scc'
+alias pf="paruz"
+alias mon-ip="wget -qO- ifconfig.me"
+
+# Apt
+alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
+alias ai="sudo apt install"
+alias ap="sudo apt purge"
+alias ar="sudo apt remove"
+alias as="apt search"
+
+# Flatpak
+alias fp='flatpak'
+
+# swap esc & caps lock
+alias se="setxkbmap -option caps:swapescape"
+alias sb="setxkbmap -option"
+
+# Python
+alias venv-mk="python3 -m venv venv"
+alias venv-activate="source venv/bin/activate"
+
+# pbcopy/paste like
+# alias cbcopy='xsel --clipboard --input'
+# alias cbpaste='xsel --clipboard --output'

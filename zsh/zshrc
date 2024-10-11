@@ -1,0 +1,198 @@
+# Set the prompt based on user privilege level
+# (starship override this)
+if [ "`id -u`" -eq 0 ]; then
+    # Root user prompt
+    export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
+else
+    # Non-root user prompt
+    export PS1="%{[36;1m%}%T %{[31m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
+fi
+
+# Mise à jour du titre du terminal avec la commande actuelle pour les terminaux compatibles xterm
+case "$TERM" in
+    xterm*|rxvt*)
+        # Exécuté avant chaque commande
+        preexec() {
+            print -Pn "\e]0;$1\a"
+        }
+        # Exécuté avant l'affichage de l'invite de commande
+        precmd() {
+            print -Pn "\e]0;%n@%m: %~\a"
+        }
+        ;;
+esac
+
+# Disable beeping on various events
+unsetopt beep
+unsetopt hist_beep
+unsetopt list_beep
+
+# Prevent overwriting of existing files with redirection
+unsetopt clobber
+
+# Require explicit `exit` command to exit the shell
+unsetopt ignore_eof
+
+# Display exit status of the last command when non-zero
+setopt print_exit_value
+
+# Ask for confirmation before using 'rm *'
+unsetopt rm_star_silent
+
+# Make sure that pathname patterns that do not match any files expand to a null string
+setopt nullglob
+
+# Completion
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+# Disable listing of ambiguous completions
+unsetopt list_ambiguous
+
+# Remove trailing slash from directories upon completion
+setopt auto_remove_slash
+
+# Don't consider hidden files for completion
+unsetopt glob_dots
+
+# Resolve symlinks for completion
+setopt chase_links
+
+# Verify history expansion result
+setopt hist_verify
+
+# Change to directories without `cd` command
+setopt auto_cd
+
+# Automatically push directories onto directory stack
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_silent
+setopt pushd_to_home
+
+# Don't run background jobs at lower priority
+unsetopt bg_nice
+
+# Don't send SIGHUP to running jobs on exit
+unsetopt hup
+
+# Set the maximum number of history entries
+export HISTORY=10000
+export SAVEHIST=10000
+export HISTSIZE=10000
+export HISTFILE=$HOME/.history
+
+# Configure history saving options
+setopt share_history
+setopt inc_append_history
+setopt append_history
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+
+# Handle "command not found" errors
+[[ -r /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
+
+# Source alias, environment variables and secret environment variables files
+export DOTPATH="$HOME/dotfiles"
+source $DOTPATH/zsh/aliases
+source $DOTPATH/zsh/env
+#source $DOTPATH/zsh/zellij-completion
+#source $DOTPATH/zsh/secrets
+
+# Load and initialize the completion system
+autoload -Uz compinit
+compinit -C
+
+# Load and initialize the prompt system
+autoload -U promptinit; promptinit
+
+# Load and apply the 'dir_colors' configuration, if available
+test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
+
+# Set the keymap to vi mode
+bindkey -v
+
+# Check for Linux OS
+if [[ "$(uname)" == "Linux" ]]; then
+    # If the os-release file is available, source it
+    if [ -f /etc/os-release ]; then
+        source /etc/os-release
+        if [[ "$ID" == "arch" ]]; then
+            # Arch-specific settings
+            source /usr/share/fzf/key-bindings.zsh
+            source /usr/share/fzf/completion.zsh
+            source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+            source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+            # Initialize zoxide
+            eval "$(zoxide init --cmd cd zsh)"
+        elif [[ "$ID" == "debian" || "$ID" == "ubuntu" ]]; then
+            # Debian-specific settings
+            source /usr/share/doc/fzf/examples/key-bindings.zsh
+            source /usr/share/doc/fzf/examples/completion.zsh
+            source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+            source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        fi
+    fi
+fi
+
+# Tmux if ssh
+if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+    tmux -u attach || tmux -u new -s $(uname --nodename)
+fi
+
+# rename tmux window to ssh hostname if relevant
+ssh() {
+    tmux rename-window "$(echo $@ | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+}
+
+function current_dir() {
+    local current_dir=$PWD
+    if [[ $current_dir == $HOME ]]; then
+        current_dir="~"
+    else
+        current_dir=${current_dir##*/}
+    fi
+
+    echo $current_dir
+}
+
+function change_tab_title() {
+    local title=$1
+    command nohup zellij action rename-tab $title >/dev/null 2>&1
+}
+
+function set_tab_to_working_dir() {
+    local result=$?
+    local title=$(current_dir)
+    # uncomment the following to show the exit code after a failed command
+    # if [[ $result -gt 0 ]]; then
+    #     title="$title [$result]"
+    # fi
+
+    change_tab_title $title
+}
+
+function set_tab_to_command_line() {
+    local cmdline=$1
+    change_tab_title $cmdline
+}
+
+if [[ -n $ZELLIJ ]]; then
+    add-zsh-hook precmd set_tab_to_working_dir
+    add-zsh-hook preexec set_tab_to_command_line
+fi
+
+# Initialize the Starship prompt
+eval "$(starship init zsh)"
+
+# start fabric
+#if [ -f "/home/mathieu/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mathieu/.config/fabric/fabric-bootstrap.inc"; fi
+
+# run neofetch if installed
+if command -v neofetch >/dev/null 2>&1; then
+    neofetch
+fi

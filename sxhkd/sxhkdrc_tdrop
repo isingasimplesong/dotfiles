@@ -1,0 +1,15 @@
+# Scratchpads
+super + w
+  tdrop -am -w 1500 -h 950 -x 210 -y 65 kitty
+super + o
+  tdrop -am -w 1500 -h 950 -x 210 -y 65 keepassxc
+
+# Scratchpads :current:
+super + z; {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
+  tdrop -amr -n {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z} 'current'
+
+
+
+# # Clear current Scratchpad
+# super + z; shift + c
+#   tdrop --clear 'current'

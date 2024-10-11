@@ -1,0 +1,3 @@
+# zsh
+
+ma config zsh

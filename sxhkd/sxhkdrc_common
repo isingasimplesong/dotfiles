@@ -1,0 +1,70 @@
+# terminal emulator
+super + Return
+   kitty
+
+# program launcher
+super + space
+	rofi -show drun  -icon-theme "Papirus-Dark" -show-icons
+	#/home/mathieu/.config/rofi/scripts/launcher_t1
+
+# Rofi shortcuts
+#super + p; {r,a,e,c,f,w,q,x}
+  {~/.local/bin/rofi-beats-linux,rofi -show drun,rofi -show emoji,rofi -show calc,rofi -show filebrowser,rofi -show window,rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu,rofi -show run}
+
+# Rofi streams
+super + r
+  ~/.local/bin/rofi-beats-linux
+
+# Rofi exit menu
+super + shift + m
+  ~/.config/rofi/powermenu/type-3/powermenu.sh
+  #rofi -show power-menu -modi power-menu:/home/mathieu/.local/bin/rofi-power-menu
+
+# yazi
+super + e
+  kitty -e yazi
+
+# sxhkd reload config
+super + +shift+ Escape
+	pkill -USR1 -x sxhkd
+
+## find a way to toggle it
+super + shift + p
+    killall picom
+
+# volume control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+	amixer set Master toggle
+
+# # brightness control
+# XF86MonBrightnessDown
+# 	sudo xbacklight -dec 5
+# XF86MonBrightnessUp
+# 	sudo xbacklight -inc 5
+
+# lock screen
+super + x
+	betterlockscreen -l
+
+# Manage notifications
+super + n; {h,c,x,m}
+    dunstctl {history-pop,close,close-all,context}
+
+# change wallpaper
+#super + v
+#    feh --bg-fill --randomize ~/Images/walls/*
+
+# restore bluetooth
+#super + alt + b
+#  kitty -e sudo systemctl restart bluetooth.service
+
+# Applications
+super + a; {b,c,d,e,f,g,i,k,l,m,o,p,t,v,w,x,y}
+  {brave,galculator,transmission-remote-gtk,thunar,firefox --new-window https://facebook.com/,gimp,firefox --new-window https://claude.ai/,gcolor3,gcolor3,firefox --new-window https://messenger.com/,obsidian,bitwarden-desktop,torbrowser-launcher,kitty -e vim,firefox,firefox --new-window https://x.com/,kitty -e yazi}
+
+super + p
+	flameshot gui
