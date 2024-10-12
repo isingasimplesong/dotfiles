@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' }
 
 -- quit/close window/split
 vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>xx', '<cmd>q!<CR>', { desc = 'Force quit' })
 
 -- text wrap
 vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle text [W]rap' })
