@@ -102,7 +102,9 @@ alias sb="setxkbmap -option"
 
 # Python
 alias venv-mk="python3 -m venv venv"
+alias vmk="venv-mk"
 alias venv-activate="source venv/bin/activate"
+alias va="venv-activate"
 
 # pbcopy/paste like
 # alias cbcopy='xsel --clipboard --input'
