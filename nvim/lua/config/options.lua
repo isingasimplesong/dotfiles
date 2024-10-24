@@ -8,6 +8,12 @@ vim.opt.spell = false
 -- set nowrap
 vim.opt.wrap = false
 
+-- Tabs are space
+vim.opt.expandtab = true -- Remplacer les tabs par des espaces
+vim.opt.shiftwidth = 4 -- Indentation de 4 espaces lors des inserts automatiques (comme V-indent)
+vim.opt.tabstop = 4 -- Compte un tab comme 4 espaces pour l'affichage
+vim.opt.softtabstop = 4 -- Le nombre d'espaces qu'un tab vaut dans le mode insertion
+
 -- conceal
 vim.opt.conceallevel = 1
 
