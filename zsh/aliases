@@ -47,6 +47,8 @@ alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
 
 alias lg="lazygit"
+alias gn-priv="github-init-repo-priv.sh"
+alias gn-pub="github-init-repo-pub.sh"
 alias g="git status"
 alias ga="git add"
 alias gaa="git add ."
