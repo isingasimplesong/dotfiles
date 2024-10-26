@@ -1,0 +1,16 @@
+[user]
+	name = Mathieu Rousseau
+	email = mathieu@2027a.net
+[init]
+	defaultBranch = main
+[advice]
+	ignoredHook = true
+[core]
+	editor = nvim
+[mergetool "nvim"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE -c 'wincmd l' $MERGED
+    trustExitCode = false
+[merge]
+	tool = nvim
+[safe]
+	directory = /home/mathieu/Projets/docker-data/notebooks
