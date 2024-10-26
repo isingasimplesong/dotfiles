@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set the prompt based on user privilege level
-# (starship override this)
+# (powerlevel10k override this)
 if [ "`id -u`" -eq 0 ]; then
     # Root user prompt
     export PS1="%{[36;1m%}%T %{[34m%}%n%{[33m%}@%{[37m%}%m %{[32m%}%~ %{[33m%}%#%{[0m%} "
@@ -193,9 +193,13 @@ if [[ -n $ZELLIJ ]]; then
     add-zsh-hook preexec set_tab_to_command_line
 fi
 
-# Initialize the Starship prompt
-# eval "$(starship init zsh)"
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# initialise p10k
+if [[ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+    # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+    p10k="$HOME/dotfiles/zsh/p10k.zsh"
+    [[ ! -f $p10k ]] || source $p10k
+fi
 
 # start fabric
 #if [ -f "/home/mathieu/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mathieu/.config/fabric/fabric-bootstrap.inc"; fi
@@ -205,7 +209,3 @@ if command -v neofetch >/dev/null 2>&1; then
     neofetch
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-p10k=~/dotfiles/zsh/p10k.zsh
-[[ ! -f $p10k ]] || source $p10k
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
