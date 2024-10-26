@@ -110,8 +110,8 @@
   # Don't show context unless root or in SSH.
   typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
 
-  # Show previous command duration only if it's >= 5s.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=5
+  # Show previous command duration only if it's >= 2s.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=2
   # Don't show fractional seconds. Thus, 7s rather than 7.3s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Duration format: 1d 2h 3m 4s.
