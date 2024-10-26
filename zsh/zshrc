@@ -106,7 +106,9 @@ export DOTPATH="$HOME/dotfiles"
 source $DOTPATH/zsh/aliases
 source $DOTPATH/zsh/env
 #source $DOTPATH/zsh/zellij-completion
-source $DOTPATH/zsh/secrets
+if [[ -f $DOTPATH/zsh/secrets ]]; then
+    source $DOTPATH/zsh/secrets
+fi
 
 # Load and initialize the completion system
 autoload -Uz compinit
