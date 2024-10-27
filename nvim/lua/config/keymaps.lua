@@ -1,3 +1,7 @@
+-- swap : with ;
+vim.keymap.set('n', ';', ':')
+vim.keymap.set('n', ':', ';')
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
