@@ -111,3 +111,6 @@ alias va="venv-activate"
 # pbcopy/paste like
 # alias cbcopy='xsel --clipboard --input'
 # alias cbpaste='xsel --clipboard --output'
+
+alias copy="wl-copy"
+alias paste="wl-paste"
