@@ -32,6 +32,9 @@ vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle tex
 -- save
 vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
 
+-- copy
+vim.keymap.set('n', 'yc', '<cmd>%y<CR>', { desc = 'Yank [c]omplete file' })
+
 -- splits
 vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>')
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>')
