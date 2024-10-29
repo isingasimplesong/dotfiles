@@ -2,14 +2,14 @@
 [ -z "$PS1" ] && return
 
 # ====== CONFIGURATION DU PROMPT ======
-# 31m = rouge, 32m = vert, 33m = jaune, 34m = bleu, 36m = cyan, 37m = blanc
-if [ $(id -u) -eq 0 ]; then
-    # Prompt pour root
-    PS1="\[\e[36;1m\]\t \[\e[34m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]#\[\e[0m\] "
-else
-    # Prompt pour utilisateur normal
-    PS1="\[\e[36;1m\]\t \[\e[31m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]$\[\e[0m\] "
-fi
+# # 31m = rouge, 32m = vert, 33m = jaune, 34m = bleu, 36m = cyan, 37m = blanc
+# if [ $(id -u) -eq 0 ]; then
+#     # Prompt pour root
+#     PS1="\[\e[36;1m\]\t \[\e[34m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]#\[\e[0m\] "
+# else
+#     # Prompt pour utilisateur normal
+#     PS1="\[\e[36;1m\]\t \[\e[31m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]$\[\e[0m\] "
+# fi
 
 # ====== CONFIGURATION DU TERMINAL ======
 # Met à jour le titre du terminal
@@ -44,7 +44,6 @@ set -o vi
 # Désactive le bip
 bind "set bell-style none"
 
-# ====== COMPLETION ======
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
@@ -108,8 +107,16 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# ====== CONFIGURATION DU PATH ======
 # Ajoute ~/.local/bin au PATH si il existe
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+LP_PATH="$HOME/.local/share/liquidprompt"
+[[ $- = *i* ]] && source $LP_PATH/liquidprompt
+# [[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/powerline/powerline.theme
+# lp_theme powerline
+[[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/unfold/unfold.theme
+lp_theme unfold
+# [[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/alternate_vcs/alternate_vcs.theme
+# lp_theme alternate_vcs
