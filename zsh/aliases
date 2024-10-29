@@ -3,6 +3,7 @@
 alias c='clear'
 alias szsh='source ~/.zshrc'
 alias sbash='source ~/.bashrc'
+alias bsh='exec bash -l'
 alias w='which'
 alias ..='cd ..'
 alias cp='cp --interactive'

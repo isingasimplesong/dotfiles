@@ -1,17 +1,6 @@
 # Si bash n'est pas interactif, ne rien faire et sortir
 [ -z "$PS1" ] && return
 
-# ====== CONFIGURATION DU PROMPT ======
-# # 31m = rouge, 32m = vert, 33m = jaune, 34m = bleu, 36m = cyan, 37m = blanc
-# if [ $(id -u) -eq 0 ]; then
-#     # Prompt pour root
-#     PS1="\[\e[36;1m\]\t \[\e[34m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]#\[\e[0m\] "
-# else
-#     # Prompt pour utilisateur normal
-#     PS1="\[\e[36;1m\]\t \[\e[31m\]\u\[\e[33m\]@\[\e[37m\]\h \[\e[32m\]\w \[\e[33m\]$\[\e[0m\] "
-# fi
-
-# ====== CONFIGURATION DU TERMINAL ======
 # Met à jour le titre du terminal
 case "$TERM" in
 xterm* | rxvt*)
@@ -19,33 +8,25 @@ xterm* | rxvt*)
     ;;
 esac
 
-# ====== HISTORIQUE ======
-# Taille de l'historique
 HISTSIZE=50000
 HISTFILESIZE=50000
 HISTFILE=~/.bash_history
-
 # Ignore les commandes en double et les lignes commençant par un espace
 HISTCONTROL=ignoreboth:erasedups
-
 # Format de l'historique avec timestamp
 HISTTIMEFORMAT="%F %T "
-
 # Ajoute immédiatement les commandes à l'historique
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# ====== OPTIONS ======
-# Active le completion case-insensitive
+# completion case-insensitive
 bind "set completion-ignore-case on"
 
-# Active le mode vi pour l'édition de ligne
 set -o vi
 
-# Désactive le bip
 bind "set bell-style none"
 
 if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source /etc/bash_completion
 fi
 
 source ~/dotfiles/zsh/aliases
@@ -54,7 +35,6 @@ if [ -f ~/dotfiles/bash/secrets ]; then
     source ~/dotfiles/bash/secrets
 fi
 
-# ====== CONFIGURATION SPÉCIFIQUE AU SYSTÈME ======
 if [[ "$(uname)" == "Linux" ]]; then
     if [ -f /etc/os-release ]; then
         . /etc/os-release
@@ -78,11 +58,6 @@ fi
 if command -v neofetch >/dev/null 2>&1; then
     neofetch
 fi
-
-# Fonction pour créer et entrer dans un répertoire
-mkcd() {
-    mkdir -p "$1" && cd "$1"
-}
 
 # Fonction pour remonter dans l'arborescence avec ..
 up() {
@@ -114,9 +89,5 @@ fi
 
 LP_PATH="$HOME/.local/share/liquidprompt"
 [[ $- = *i* ]] && source $LP_PATH/liquidprompt
-# [[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/powerline/powerline.theme
-# lp_theme powerline
 [[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/unfold/unfold.theme
 lp_theme unfold
-# [[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/alternate_vcs/alternate_vcs.theme
-# lp_theme alternate_vcs
