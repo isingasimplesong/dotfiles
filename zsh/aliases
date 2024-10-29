@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 alias c='clear'
-alias s='source ~/.zshrc'
+alias szsh='source ~/.zshrc'
+alias sbash='source ~/.bashrc'
 alias w='which'
 alias ..='cd ..'
 alias cp='cp --interactive'
