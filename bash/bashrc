@@ -87,7 +87,4 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-LP_PATH="$HOME/.local/share/liquidprompt"
-[[ $- = *i* ]] && source $LP_PATH/liquidprompt
-[[ $- = *i* ]] && source $HOME/.local/share/liquidprompt/themes/unfold/unfold.theme
-lp_theme unfold
+eval "$(starship init bash)"
