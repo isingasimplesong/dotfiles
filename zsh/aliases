@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 alias c='clear'
-alias szsh='source ~/.zshrc'
-alias sbash='source ~/.bashrc'
+alias sz='source ~/.zshrc'
+alias source-bash='source ~/.bashrc'
 alias bsh='exec bash -l'
 alias w='which'
 alias ..='cd ..'
@@ -27,6 +27,7 @@ alias e='nvim .'
 alias td="nvim ~/Notes/all/Todo.md"
 alias nh="nvim ~/Notes/all/Home.md"
 alias or="nvim ~/Notes/inbox/*"
+
 alias on="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianNew' all/Todo.md"
 alias oj="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianToday' all/Todo.md"
 alias ow="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianDailies' all/Todo.md"
@@ -48,7 +49,9 @@ alias zs="zellij --session"
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
 
-alias lg="lazygit"
+alias lzd="lazydocker"
+
+alias lzg="lazygit"
 alias gn-priv="github-init-repo-priv.sh"
 alias gn-pub="github-init-repo-pub.sh"
 alias g="git status"
@@ -81,13 +84,12 @@ alias grmc="git rm -r --cached"
 
 # Pacman
 alias pu='paru'
-alias pi='paru -Si'
-alias pr='paru -Rs'
-alias pl='pacman -Q'
-alias ple='pacman -Qe'
+alias pi='paru -Si'    #       install
+alias pr='paru -Rs'    #       remove
+alias pl='pacman -Q'   #      list installed
+alias ple='pacman -Qe' #    list explicitly installed
 alias pla='pacman -Qem'
 alias pc='sudo pacman -Scc'
-alias pf="paruz"
 alias mon-ip="wget -qO- ifconfig.me"
 
 # Apt
