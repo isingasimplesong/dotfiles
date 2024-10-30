@@ -23,18 +23,17 @@ alias vim=nvim
 alias v=nvim
 alias e='nvim .'
 
-# obsidian
-alias td="nvim ~/Notes/all/Todo.md"
-alias nh="nvim ~/Notes/all/Home.md"
-alias or="nvim ~/Notes/inbox/*"
-
-alias on="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianNew' all/Todo.md"
-alias oj="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianToday' all/Todo.md"
-alias ow="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianDailies' all/Todo.md"
-alias oq="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianQuickSwitch' all/Todo.md"
-alias os="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianSearch' all/Todo.md"
-alias ot="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianNewFromTemplate' all/Todo.md"
-alias oa="cd ~/Notes && nvim +'autocmd VimEnter * ObsidianTags' all/Todo.md"
+# obsidian/notes
+alias td="note.sh todo"
+alias oh="note.sh home"
+alias or="note.sh inbox"
+alias on="note.sh new"
+alias oj="note.sh journal"
+alias ow="note.sh dailies"
+alias oq="note.sh quick-switch"
+alias os="note.sh grep"
+alias ot="note.sh new-from-template"
+alias oa="note.sh search-by-tags"
 
 alias pkglist="rm -f ~/Projets/paclist.txt && paru -Qqe > ~/Projets/paclist.txt"
 alias bkp="~/.local/bin/btrfs-backup.sh"
