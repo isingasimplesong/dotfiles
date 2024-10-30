@@ -12,5 +12,3 @@
     trustExitCode = false
 [merge]
 	tool = nvim
-[safe]
-	directory = /home/mathieu/Projets/docker-data/notebooks
