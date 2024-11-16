@@ -122,6 +122,14 @@ test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 # Set the keymap to vi mode
 bindkey -v
 
+# mkcd
+mkcd() {
+  if [ -z "$1" ]; then
+    echo "Erreur : spécifie un nom de répertoire."
+    return 1
+  fi
+  mkdir -p "$1" && cd "$1"
+}
 
 # load stuff depending on the OS
 if [[ "$(uname)" == "Linux" ]]; then
