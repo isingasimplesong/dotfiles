@@ -108,6 +108,9 @@ source $DOTPATH/zsh/env
 if [[ -f $DOTPATH/zsh/secrets ]]; then
     source $DOTPATH/zsh/secrets
 fi
+if [[ -f $DOTPATH/zsh/uv-zsh-completion ]]; then
+    source $DOTPATH/zsh/uv-zsh-completion
+fi
 
 # Load and initialize the completion system
 autoload -Uz compinit
