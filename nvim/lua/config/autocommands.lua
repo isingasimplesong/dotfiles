@@ -15,7 +15,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     }
   end,
 })
-
+-- Disable expandtab for Makefiles to ensure Makefile uses tabs, not spaces
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'make',
+  callback = function()
+    vim.opt_local.expandtab = false
+  end,
+})
 -- Crée un groupe et ajoute un autocmd qui supprime les espaces de fin
 local group = vim.api.nvim_create_augroup('TrimWhiteSpace', { clear = true })
 
