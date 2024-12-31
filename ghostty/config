@@ -1,0 +1,6 @@
+theme = nord
+window-decoration = false
+background-opacity = 0.9
+font-size = 13
+gtk-single-instance = true
+confirm-close-surface = false
