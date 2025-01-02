@@ -1,7 +1,9 @@
 theme = nord
 window-decoration = false
-background-opacity = 0.9
+#background-opacity = 0.9
 font-size = 13
 gtk-single-instance = true
 confirm-close-surface = false
 font-feature = -calt
+keybind = ctrl+shift+backslash=new_split:right
+keybind = ctrl+shift+minus=new_split:down
