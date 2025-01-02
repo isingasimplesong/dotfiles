@@ -3,6 +3,7 @@
 alias c='clear'
 alias sz='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
+alias ff="fastfetch"
 alias bsh='exec bash -l'
 alias w='which'
 alias ..='cd ..'
@@ -40,6 +41,11 @@ alias bkp="~/.local/bin/btrfs-backup.sh"
 alias etc-bkp="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
 
 alias t="tmux attach || tmux new -s $(uname --nodename)"
+alias tn="tmux new -s"
+alias ta="tmux attach"
+alias tl="tmux ls"
+alias ts="tmux attach -t"
+
 alias z="zellij attach || zellij"
 alias za="zellij attach"
 alias zl="zellij list-sessions"
