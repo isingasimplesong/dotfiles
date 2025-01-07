@@ -1,11 +1,11 @@
 # import = ["~/.local/share/alacritty/themes/themes/catppuccin.toml"]
 
 [env]
-TERM = "xterm-256color"
+TERM = "xterm-alacritty"
 
 [window]
 padding = { x = 4, y = 4 }
-# opacity = 0.9
+opacity = 0.9
 
 [cursor]
 style = { shape = "Underline", blinking = "Always" }
@@ -40,34 +40,27 @@ mouse.enabled = true
 binding = { key = "U", mods = "Control|Shift" }
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
-# Colors (Nord)
-
-# Default colors
+# Colors (One Dark)
 [colors.primary]
-background = '#2E3440'
-foreground = '#D8DEE9'
+background = '#282c34'
+foreground = '#abb2bf'
 
-# Normal colors
 [colors.normal]
-black   = '#3B4252'
-red     = '#BF616A'
-green   = '#A3BE8C'
-yellow  = '#EBCB8B'
-blue    = '#81A1C1'
-magenta = '#B48EAD'
-cyan    = '#88C0D0'
-white   = '#E5E9F0'
+black   = '#1e2127'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#abb2bf'
 
-# Bright colors
 [colors.bright]
-black   = '#4C566A'
-red     = '#BF616A'
-green   = '#A3BE8C'
-yellow  = '#EBCB8B'
-blue    = '#81A1C1'
-magenta = '#B48EAD'
-cyan    = '#8FBCBB'
-white   = '#ECEFF4'
-
-[colors.cursor]
-cursor 	= '#a3be8c'
+black   = '#5c6370'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#ffffff'
