@@ -19,10 +19,10 @@ alias ll='ls -l'
 alias lla='ls -la'
 alias ldot='ls -ld .*'
 alias untar='tar xvf'
+alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
 
 alias vim=nvim
-alias v=nvim
-alias e='nvim .'
+alias v='uv run vim'
 
 # obsidian/notes
 alias td="note.sh todo"
@@ -54,8 +54,10 @@ alias zs="zellij --session"
 alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
 alias date-human='date +"%A %d %B %Y, %H:%M"'
 
+# docker
 alias lzd="lazydocker"
 
+# git
 alias lzg="lazygit"
 alias gir="github-init-repo.sh"
 alias gn-priv="github-init-repo-priv.sh"
@@ -85,18 +87,16 @@ alias gps="git push"
 alias gpl="git pull"
 alias gk="gitk --all&"
 alias gx="gitx --all"
-alias gx="ign = ls-files -o -i --exclude-standard"
 alias grmc="git rm -r --cached"
 
 # Pacman
 alias pu='paru'
-alias pi='paru -Si'    #       install
-alias pr='paru -Rs'    #       remove
-alias pl='pacman -Q'   #      list installed
-alias ple='pacman -Qe' #    list explicitly installed
-alias pla='pacman -Qem'
-alias pc='sudo pacman -Scc'
-alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
+alias pi='paru -Si'         #   install
+alias pr='paru -Rs'         #   remove
+alias pl='pacman -Q'        #   list installed
+alias ple='pacman -Qe'      #   list explicitly installed
+alias pla='pacman -Qem'     #   list explicitly installed packages from the AUR
+alias pc='sudo pacman -Scc' #   clean cache
 
 # Apt
 alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
@@ -108,7 +108,7 @@ alias as="apt search"
 # Flatpak
 alias fp='flatpak'
 
-# swap esc & caps lock
+# swap esc & caps lock (Xorg)
 alias se="setxkbmap -option caps:swapescape"
 alias sb="setxkbmap -option"
 
@@ -118,7 +118,7 @@ alias sb="setxkbmap -option"
 alias venv-activate="source .venv/bin/activate"
 alias va="venv-activate"
 
-# pbcopy/paste like
+# pbcopy/paste like (Xorg)
 # alias cbcopy='xsel --clipboard --input'
 # alias cbpaste='xsel --clipboard --output'
 
