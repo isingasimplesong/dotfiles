@@ -21,6 +21,7 @@ alias ldot='ls -ld .*'
 alias untar='tar xvf'
 alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
 # alias llm="/home/mathieu/.local/.venv/bin/llm"
+alias olm="docker exec -it ollama ollama"
 
 alias vim=nvim
 alias v='vim'
