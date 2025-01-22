@@ -16,6 +16,7 @@ vim.keymap.set('n', '<leader>tc', function()
   local current = vim.wo.colorcolumn
   vim.wo.colorcolumn = current == '' and '88' or ''
 end, { desc = 'Toggle [C]olumn' })
+
 -- Spellcheck
 vim.keymap.set('n', '<localleader>sc', '<cmd>setlocal spell!<CR>', { desc = 'Toggle [S]pell check' })
 vim.keymap.set('n', '<localleader>sf', '<cmd>set spelllang=fr<CR>', { desc = '[S]pell check [F]R' })
@@ -56,9 +57,9 @@ vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', { desc = '[G
 vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame <CR>', { desc = 'Toggle [G]it [B]lame' })
 
 -- toggle term
-vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { desc = 'Set [T]erminal to [f]loat' })
-vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { desc = 'Set [T]erminal to [v]ertical' })
-vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set [T]erminal to [h]orizontal' })
+vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', { desc = 'Set Terminal to [f]loat' })
+vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', { desc = 'Set Terminal to [v]ertical' })
+vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', { desc = 'Set Terminal to [h]orizontal' })
 
 -- undotree
 vim.keymap.set('n', '<localleader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle to [U]ndoTree' })
@@ -66,7 +67,7 @@ vim.keymap.set('n', '<localleader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Toggl
 -- Markdown preview
 vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreview<CR>', { desc = '[Markdown] [P]review' })
 vim.keymap.set('n', '<leader>ms', '<cmd>MarkdownPreviewStop<CR>', { desc = '[Markdown] preview [S]top' })
-vim.keymap.set('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[Markdown] preview [T]oggle' })
+vim.keymap.set('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<CR>', { desc = '[Markdown] preview Toggle' })
 
 -- Obsidian
 -- Move to ~/Notes/all
@@ -115,7 +116,7 @@ vim.keymap.set('n', '<leader>oj', '<cmd>ObsidianToday<CR>', { desc = 'Note [J]ou
 vim.keymap.set('n', '<leader>ow', '<cmd>ObsidianDailies<CR>', { desc = '[W] Notes Journalières' })
 vim.keymap.set('n', '<leader>oq', '<cmd>ObsidianQuickSwitch<CR>', { desc = '[Q]uick switch' })
 vim.keymap.set('n', '<leader>os', '<cmd>ObsidianSearch<CR>', { desc = '[S]earch notes' })
-vim.keymap.set('n', '<leader>ot', '<cmd>ObsidianNewFromTemplate<CR>', { desc = 'new from [T]emplate ' })
+vim.keymap.set('n', '<leader>ot', '<cmd>ObsidianNewFromTemplate<CR>', { desc = 'new from Template ' })
 vim.keymap.set('n', '<leader>oa', '<cmd>ObsidianTags<CR>', { desc = 'T[a]gs picker' })
 vim.keymap.set('n', '<leader>oc', '<cmd>ObsidianTOC<CR>', { desc = 'Table of [C]ontent' })
 vim.keymap.set('n', '<leader>ob', '<cmd>ObsidianBacklinks<CR>', { desc = '[B]acklinks' })
