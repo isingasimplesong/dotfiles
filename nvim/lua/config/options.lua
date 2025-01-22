@@ -71,6 +71,4 @@ vim.opt.colorcolumn = ''
 -- vim.opt.scrolloff = 10
 
 -- theme stuff
--- vim.opt.termguicolors = false
--- vim.g.transparent_enabled = false
 vim.opt.background = 'dark'
