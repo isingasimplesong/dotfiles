@@ -3,6 +3,7 @@ vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#ebcb8b', bg = '#bf616a' })
 vim.api.nvim_set_hl(0, 'Folded', { fg = '#81a1c1' })
 vim.api.nvim_set_hl(0, 'Visual', { bg = '#b48ead', fg = '#4c566a' })
 vim.api.nvim_set_hl(0, 'YankHighlight', { bg = '#a3be8c', fg = '#4c566a' })
+
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -15,6 +16,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     }
   end,
 })
+
 -- Disable expandtab for Makefiles to ensure Makefile uses tabs, not spaces
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'make',
@@ -22,6 +24,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.expandtab = false
   end,
 })
+
 -- Crée un groupe et ajoute un autocmd qui supprime les espaces de fin
 local group = vim.api.nvim_create_augroup('TrimWhiteSpace', { clear = true })
 

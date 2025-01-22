@@ -1,6 +1,6 @@
 -- swap : with ;
-vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', ':', ';')
+-- vim.keymap.set('n', ';', ':')
+-- vim.keymap.set('n', ':', ';')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -23,7 +23,7 @@ vim.keymap.set('n', '<localleader>sf', '<cmd>set spelllang=fr<CR>', { desc = '[S
 vim.keymap.set('n', '<localleader>se', '<cmd>set spelllang=en<CR>', { desc = '[S]pell check [E]N' })
 
 -- Oil.nvim
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = '[E]xplorateur' })
+vim.keymap.set('n', '-', '<cmd>Oil<CR>')
 
 -- Close buffer
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', { desc = '[C]lose Buffer' })
@@ -38,7 +38,7 @@ vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle tex
 -- save
 vim.keymap.set('n', '<leader>w', '<cmd>write<CR>')
 
--- copy
+-- copy the complete buffer
 vim.keymap.set('n', 'yc', '<cmd>%y<CR>', { desc = 'Yank [c]omplete file' })
 
 -- splits

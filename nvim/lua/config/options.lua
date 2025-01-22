@@ -57,23 +57,20 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '│ ', trail = '·', nbsp = '␣' }
 
--- Preview substitutions live, as you type!
+-- Preview substitutions live, as you type
 vim.opt.inccommand = 'split'
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
 
 -- highlight cursor
 vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 
--- Show a vertical line at 80 characters
+-- Show a vertical line at 88 characters - start hidden
 vim.opt.colorcolumn = ''
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+-- vim.opt.scrolloff = 10
 
 -- theme stuff
-vim.opt.termguicolors = true
-vim.g.transparent_enabled = true
+-- vim.opt.termguicolors = false
+vim.g.transparent_enabled = false
 vim.opt.background = 'dark'
