@@ -72,5 +72,5 @@ vim.opt.colorcolumn = ''
 
 -- theme stuff
 -- vim.opt.termguicolors = false
-vim.g.transparent_enabled = false
+-- vim.g.transparent_enabled = false
 vim.opt.background = 'dark'
