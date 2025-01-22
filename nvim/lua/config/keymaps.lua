@@ -11,6 +11,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Numbers
 vim.keymap.set('n', '<localleader>n', '<cmd>set relativenumber! nonumber<CR>', { desc = 'Toggle relative [N]umbers' })
 
+-- colorcolumn
+vim.keymap.set('n', '<leader>tc', function()
+  local current = vim.wo.colorcolumn
+  vim.wo.colorcolumn = current == '' and '88' or ''
+end, { desc = 'Toggle [C]olumn' })
 -- Spellcheck
 vim.keymap.set('n', '<localleader>sc', '<cmd>setlocal spell!<CR>', { desc = 'Toggle [S]pell check' })
 vim.keymap.set('n', '<localleader>sf', '<cmd>set spelllang=fr<CR>', { desc = '[S]pell check [F]R' })
