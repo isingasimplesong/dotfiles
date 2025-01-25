@@ -68,7 +68,8 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = ''
 
 -- Minimal number of screen lines to keep above and below the cursor.
--- vim.opt.scrolloff = 10
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 -- theme stuff
 vim.opt.background = 'dark'
