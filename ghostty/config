@@ -1,6 +1,6 @@
 theme = GruvboxDark
 window-decoration = false
-background-opacity = 0.9
+background-opacity = 1
 font-size = 13
 gtk-single-instance = true
 confirm-close-surface = false
