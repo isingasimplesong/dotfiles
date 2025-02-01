@@ -116,6 +116,9 @@ fi
 autoload -Uz compinit
 compinit -C
 
+# tailscale completion
+source <(tailscale completion zsh)
+
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
 
