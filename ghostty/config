@@ -1,4 +1,4 @@
-theme = GruvboxDark
+theme = tokyonight
 window-decoration = false
 background-opacity = 1
 font-size = 13
