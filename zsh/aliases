@@ -27,7 +27,7 @@ alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
 alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
 # alias llm="/home/mathieu/.local/.venv/bin/llm"
 alias olm="docker exec -it ollama ollama"
-alis rkb-db-connect="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres"
+alias rkb-db-connect="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres"
 
 alias vim=nvim
 alias v='vim'
