@@ -30,7 +30,7 @@ alias olm="docker exec -it ollama ollama"
 alias rkb-db-connect="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres"
 
 alias vim=nvim
-alias v='vim'
+alias v='nvim $(fzf --multi)'
 
 # obsidian/notes
 alias td="note.sh todo"
