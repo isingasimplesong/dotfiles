@@ -67,9 +67,13 @@ vim.opt.cursorline = true
 -- Show a vertical line at 88 characters - start hidden
 vim.opt.colorcolumn = ''
 
+-- Limit completion menu height
+vim.opt.pumheight = 10
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 
 -- theme stuff
 vim.opt.background = 'dark'
+vim.opt.termguicolors = true -- For better color support
