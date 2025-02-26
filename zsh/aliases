@@ -49,7 +49,7 @@ alias bkp="~/.local/bin/btrfs-backup.sh"
 alias etc-bkp="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
 
 alias t="tmux attach || tmux new -s $(uname --nodename)"
-alias tn="tmux new -s"
+alias tn='export TMUX_SESSION_NAME="$(date +%d%H%M%S)" && tmux new-session -d -s "$TMUX_SESSION_NAME" && tmux switch-client -t "$TMUX_SESSION_NAME"'
 alias ta="tmux attach"
 alias tl="tmux ls"
 alias ts="tmux attach -t"
