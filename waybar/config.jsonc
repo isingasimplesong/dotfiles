@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
-     "layer": "bottom",
-     "position": "top",
+    "layer": "bottom",
+    "position": "top",
     "height": 20,
     // "width": 1280,
     "spacing": 0, // Gaps between modules (4px)
@@ -15,14 +15,14 @@
     ],
     "modules-right": [
         //"idle_inhibitor",
-//"tray",
+        //"tray",
         //"power-profiles-daemon",
         //"cpu",
         //"memory",
         //"temperature",
-       // "keyboard-state",
+        // "keyboard-state",
         //"backlight",
-        //"custom/pacman",
+        "custom/pacman",
         "pulseaudio",
         "battery",
         //"bluetooth",
@@ -32,20 +32,21 @@
     ],
     // Modules configuration
     "custom/pacman": {
-    "format": " {} 󰣇 ",
-    "interval": 3600,                     // every hour
-    "exec": "checkupdates | wc -l",       // # of updates
-    "exec-if": "exit 0",                  // always run; consider advanced run conditions
-    "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
-    "signal": 8
-},
+        "format": " {} 󰣇 ",
+        "interval": 3600, // every hour
+        "exec": "checkupdates | wc -l", // # of updates
+        "exec-if": "exit 0", // always run; consider advanced run conditions
+        "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
+    },
     "bluetooth": {
         "format": "{} 󰂯"
     },
     "wlr/taskbar": {
         "format": "{icon} {title}",
-        "all-outputs" : "false",
+        "all-outputs": "false",
         "icon-size": 14,
+        "icon-theme": "papirus",
         "tooltip-format": "{title}",
         "on-click": "activate"
     },
@@ -57,17 +58,17 @@
         }
     },
     "tray": {
-         "icon-size": 14,
-         "spacing": 8
+        "icon-size": 14,
+        "spacing": 8
     },
     "clock": {
         "format": "{:%H:%M  }",
         "tooltip-format": "{:L%A %d %B %Y}",
         "timezones": [
-        "America/Toronto",
-        "Europe/Paris",
-    ],
-        "actions":{
+            "America/Toronto",
+            "Europe/Paris"
+        ],
+        "actions": {
             "on-click": "tz_down"
         }
     },
@@ -84,12 +85,26 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery": {
         "states": {
@@ -104,19 +119,25 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
         //"format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -133,7 +154,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
-       // "format": "{volume}% {icon} {format_source}",
+        // "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -146,7 +167,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -163,15 +188,15 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/hypr/session-menu.sh",
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/hypr/session-menu.sh",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     }
 }
