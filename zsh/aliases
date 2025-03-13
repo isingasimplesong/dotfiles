@@ -98,6 +98,7 @@ alias gk="gitk --all&"
 alias gx="gitx --all"
 alias grmc="git rm -r --cached"
 
+alias up="pu"
 # Pacman
 alias pu='paru'
 alias pi='paru -Si'         #   install
