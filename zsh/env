@@ -7,8 +7,8 @@ export VISUAL="nvim"
 export PAGER="nvim +Man!"
 
 # term
-export TERM=xterm-kitty
-# export TERM=xterm-256color
+# export TERM=xterm-kitty
+export TERM=xterm-256color
 
 #sudo
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) password for %p: "
