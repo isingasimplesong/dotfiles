@@ -6,6 +6,9 @@ One-line description of the script's purpose.
 
 Longer description explaining what the script does, how it works,
 and any important details or assumptions.
+
+Version: 0.1.0
+Licence: MIT
 """
 
 

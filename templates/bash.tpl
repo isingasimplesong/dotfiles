@@ -4,7 +4,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Script name : purpose
-# Author: Mathieu R. - mathieu@2027a.net
-# Date: $(date +%Y-%m-%d)
+# Script name : brief description
+# Author: Mathieu Rousseau - mathieu@2027a.net
 # Version: 0.1.0
+# License: MIT
