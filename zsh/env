@@ -31,3 +31,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=30
+
+# templates directory
+export TPL_TEMPLATE_DIR="$HOME/dotfiles/templates"
