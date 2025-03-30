@@ -34,3 +34,6 @@ export REPORTTIME=30
 
 # templates directory
 export TPL_TEMPLATE_DIR="$HOME/dotfiles/templates"
+
+# FZF default
+export FZF_DEFAULT_OPTS="--layout=reverse --exact --border=bold --border=rounded --margin=3% --color=fg:#D8DEE9 --color=bg:#2E3440 --color=hl:#88C0D0 --color=fg+:#ECEFF4 --color=bg+:#3B4252 --color=hl+:#8FBCBB --color=info:#81A1C1 --color=prompt:#81A1C1 --color=pointer:#BF616A --color=marker:#A3BE8C --color=spinner:#B48EAD --color=header:#88C0D0 --color=border:#4C566A --color=query:#ECEFF4 --color=preview-bg:#3B4252"
