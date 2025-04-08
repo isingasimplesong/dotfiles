@@ -288,6 +288,14 @@ groups:
 
   - name: Asie
     watchlist:
+      - ^N225       # Nikkei 225 (Japan)
+      - EWJ         # Japan ETF
+      - AAXJ        # Asia ex-Japan ETF
+      - ^BSESN      # BSE Sensex (India)
+      - INDA        # India ETF
+      - ^HSI        # Hang Seng (Hong Kong)
+      - ^000001.SS  # Shanghai Composite (China)
+      - MCHI        # China ETF
       - TSM         # Taiwan Semiconductor – TW
       - BABA        # Alibaba – e-commerce, CN
       - BIDU        # Baidu – moteur de recherche, CN
@@ -415,6 +423,17 @@ groups:
 
   - name: Tech
     watchlist:
+      - AAPL        # Apple
+      - MSFT        # Microsoft
+      - AMZN        # Amazon
+      - GOOG        # Alphabet (Google)
+      - META        # Meta (Facebook)
+      - NVDA        # Nvidia
+      - TSLA        # Tesla
+      - CRM         # Salesforce
+      - ORCL        # Oracle
+      - IBM         # IBM
+      - INTU        # Intuit
       - AMD        # Advanced Micro Devices
       - INTC       # Intel
       - MU         # Micron Technology
