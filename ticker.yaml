@@ -1,143 +1,504 @@
-# ~/.ticker.yaml
-# show-summary: true
-show-tags: true
+# $XDG_CONFIG_HOME/.ticker.yaml
+show-summary: false
+show-tags: false
 show-fundamentals: true
 show-separator: true
 show-holdings: true
-interval: 30
+interval: 60
 currency: CAD
 currency-summary-only: false
 sort: percent
 watchlist:
-  - ^GSPC       # S&P 500
-  - ^DJI        # Dow Jones
-  - ^IXIC       # NASDAQ
-  - ^FCHI       # CAC 40 (france)
-  - ^N225       # Nikkei 225 (Japan)
-  - ^000001.SS  # Shangai Comp. (China)
-  - CL=F        # Crude Oil (WTI)
-  - GC=F        # Gold
-  - SHEL
-  - NVDA
-  - TSM
-groups:
-  - name: markets
-    watchlist:
-      - TIP         # Treasury Inflation-Protected Securities (inflation hedge)
-      - LQD         # Corporate Bonds (credit risk sentiment)
-      - ^GSPC       # S&P 500
-      - ^DJI        # Dow Jones
-      - ^IXIC       # NASDAQ
-      - ^STOXX50E   # euro stoxx
-      - ^FTSE       # FTSE 100 (uk)
-      - ^FCHI       # CAC 40 (france)
-      - ^GDAXI      # DAX (germany)
-      - ^N225       # Nikkei 225 (Japan)
-      - ^BSESN      # Sensex (India)
-      - ^000001.SS  # Shangai Comp. (China)
-      - VWO         # emerging markets
-      - URTH        # MSCI World Index
+  - ^VIX            # Volatility Index – stress de marché
+  - TIP             # Treasury Inflation-Protected Securities (inflation hedge)
+  - LQD             # Investment Grade Corporate Bonds (credit risk sentiment)
+  - XLF             # Financials
+  - XLE             # Energy
+  - CL=F            # Crude Oil (WTI)
+  - GC=F            # Gold – valeur refuge, couverture monétaire
+  - ^GSPC           # S&P 500
+  - ^IXIC           # NASDAQ
+  - ^STOXX50E       # Euro Stoxx 50 – sentiment zone euro
+  - ^FCHI           # CAC 40 (France)
+  - ^HSI            # Hang Seng (Hong Kong)
+  - URTH            # MSCI World ETF – actions pays développés
 
-  - name: commodities
+groups:
+  - name: Global
+    watchlist:
+      # Bonds & Inflation
+      - TIP         # Treasury Inflation-Protected Securities (inflation hedge)
+      - LQD         # Investment Grade Corporate Bonds (credit risk sentiment)
+      - HYG         # High-Yield Corporate Bonds (risk appetite)
+      - IEF         # 7-10 Year US Treasuries (interest rates)
+      - TLT         # 20+ Year US Treasuries (long-term rates)
+
+      # US Indices
+      - ^GSPC       # S&P 500
+      - ^DJI        # Dow Jones Industrial Average
+      - ^IXIC       # NASDAQ Composite
+      - RUT         # Russell 2000 (small caps)
+
+      # ETF sectoriels
+      - XLF         # Financials
+      - XLK         # Technology
+      - XLV         # Healthcare
+      - XLE         # Energy
+      - XLY         # Consumer Discretionary
+      - XLP         # Consumer Staples
+      - XLI         # Industrials
+      - XLRE        # Real Estate
+      - XLU         # Utilities
+      - SMH         # Semiconductors
+
+      # Europe
+      - ^STOXX50E   # Euro Stoxx 50
+      - ^FTSE       # FTSE 100 (UK)
+      - ^FCHI       # CAC 40 (France)
+      - ^GDAXI      # DAX (Germany)
+      - EWG         # Germany ETF
+      - EWQ         # France ETF
+
+      # Asia
+      - ^N225       # Nikkei 225 (Japan)
+      - EWJ         # Japan ETF
+      - ^BSESN      # BSE Sensex (India)
+      - INDA        # India ETF
+      - ^HSI        # Hang Seng (Hong Kong)
+      - ^000001.SS  # Shanghai Composite (China)
+      - MCHI        # China ETF
+      - AAXJ        # Asia ex-Japan ETF
+
+      # Global Markets
+      - VWO         # Emerging Markets ETF
+      - EEM         # Emerging Markets (alt)
+      - URTH        # MSCI World Index
+      - ACWI        # MSCI All Country World Index
+      - VT          # Vanguard Total World Stock ETF
+
+      # Currency & Crypto Proxies
+      - DXY         # US Dollar Index
+      - UUP         # Bullish Dollar ETF
+
+      # Volatility & Fear
+      - ^VIX        # Volatility Index (fear index)
+      - VXX         # VIX Futures ETF
+
+  - name: Ressources
     watchlist:
       # Precious Metals
-      - GC=F   # Gold
-      - SI=F   # Silver
-      - PL=F   # Platinum
-      - PA=F   # Palladium
+      - GC=F       # Gold
+      - SI=F       # Silver
+      - PL=F       # Platinum
+      - PA=F       # Palladium
 
       # Energy
-      - CL=F   # Crude Oil WTI
-      - BZ=F   # Brent Crude
-      - NG=F   # Natural Gas
-      - HO=F   # Heating Oil
-      - RB=F   # RBOB Gasoline
+      - CL=F       # Crude Oil WTI
+      - BZ=F       # Brent Crude
+      - NG=F       # Natural Gas
+      - HO=F       # Heating Oil
+      - RB=F       # RBOB Gasoline
 
       # Industrial Metals
-      - HG=F   # Copper
-      - ZN=F   # Zinc (ETF proxy: JJT)
-      - AL=F   # Aluminum (ETF proxy: JJU)
-      - NI=F   # Nickel (ETF proxy: JJN)
+      - HG=F       # Copper
+      - ZN=F       # Zinc (ETF proxy: JJT)
+      - AL=F       # Aluminum (ETF proxy: JJU)
+      - NI=F       # Nickel (ETF proxy: JJN)
 
       # Grains
-      - ZW=F   # Wheat (Chicago SRW)
-      - KE=F   # Wheat (Kansas HRW)
-      - MW=F   # Wheat (Minneapolis Spring)
-      - ZC=F   # Corn
-      - ZS=F   # Soybeans
-      - ZM=F   # Soybean Meal
-      - ZL=F   # Soybean Oil
-      - O=F    # Oats
-      - RR=F   # Rough Rice
+      - ZW=F       # Wheat (Chicago SRW)
+      - ZC=F       # Corn
+      - ZS=F       # Soybeans
+      - ZL=F       # Soybean Oil
+      - O=F        # Oats
+      - RR=F       # Rough Rice
 
       # Softs (Agricultural)
-      - KC=F   # Coffee
-      - SB=F   # Sugar
-      - CT=F   # Cotton
-      - CC=F   # Cocoa
-      - LB=F   # Lumber
-      - JO     # Coffee ETF (extra reference)
+      - KC=F       # Coffee
+      - SB=F       # Sugar
+      - CT=F       # Cotton
+      - CC=F       # Cocoa
+      - LB=F       # Lumber
 
       # Livestock
-      - LE=F   # Live Cattle
-      - HE=F   # Lean Hogs
-      - GF=F   # Feeder Cattle
+      - LE=F       # Live Cattle
+      - HE=F       # Lean Hogs
+      - GF=F       # Feeder Cattle
 
-      - ^VIX    # CBOE Volatility Index
+  - name: Crypto
+    watchlist:
+      - BTC-USD     # Bitcoin
+      - ETH-USD     # Ethereum – smart contracts, DeFi, NFT
+      - BNB-USD     # Binance Coin – token d’échange (BNB Chain)
+      - SOL-USD     # Solana – smart contracts rapide, très actif en NFT
+      - LTC-USD     # Litecoin – version légère de Bitcoin, plus rapide
+      - XMR-USD     # Monero – anonymat fort, transactions privées
 
-  - name: stocks
+      # Entreprises cotées liées à la crypto
+      - COIN        # Coinbase – plateforme d’échange US (NASDAQ)
+      - MSTR        # MicroStrategy – exposition massive au BTC
+      - RIOT        # Riot Platforms – minage de Bitcoin
+      - MARA        # Marathon Digital – minage de Bitcoin
+
+      #  Suivi général ou ETF liés
+      - BITO        # ProShares Bitcoin Strategy ETF (futures BTC)
+
+  - name: Actions
     watchlist:
-      - NVDA
-      - AMZN
-      - AAPL
-      - MSFT
-      - GOOG
-      - META
-      - TSLA
-      - WMT
-      - TSM
-      - JPM
-      - BABA
-      - AZN
-      - NVS
-      - SHEL
-      - HSBC
-      - RY
-      - DIS
-      - UBER
-      - TTE
-      - SNY
-      - BLK
-      - PFE
-      - TD
-      - LMT
-      - BA
-      - AF
-      - FR
-      - TF1
-      - UBI
-      - PEUG
-      - PLTR
-      - GME
-      - V
-      - JNJ
-      - NVO
-      - CRM
-      - MCD
-      - T
-      - GE
-  - name: crypto
+      - AAPL        # Apple
+      - MSFT        # Microsoft
+      - AMZN        # Amazon
+      - GOOG        # Alphabet (Google)
+      - META        # Meta (Facebook)
+      - NVDA        # Nvidia
+      - TSLA        # Tesla
+      - CRM         # Salesforce
+      - ORCL        # Oracle
+      - IBM         # IBM
+      - INTU        # Intuit
+      - AMD         # Advanced Micro Devices
+      - INTC        # Intel
+      - MU          # Micron Technology
+      - AVGO        # Broadcom
+      - QCOM        # Qualcomm
+      - TXN         # Texas Instruments
+      - JPM         # JPMorgan Chase
+      - GS          # Goldman Sachs
+      - MS          # Morgan Stanley
+      - BAC         # Bank of America
+      - C           # Citigroup
+      - WFC         # Wells Fargo
+      - BLK         # BlackRock
+      - V           # Visa
+      - MA          # Mastercard
+      - JNJ         # Johnson & Johnson
+      - PFE         # Pfizer
+      - MRK         # Merck & Co.
+      - LLY         # Eli Lilly
+      - UNH         # UnitedHealth
+      - BMY         # Bristol-Myers Squibb
+      - ABBV        # AbbVie
+      - WMT         # Walmart
+      - COST        # Costco
+      - MCD         # McDonald's
+      - DIS         # Disney
+      - HD          # Home Depot
+      - NKE         # Nike
+      - SBUX        # Starbucks
+      - UBER        # Uber
+      - TGT         # Target
+      - XOM         # ExxonMobil
+      - CVX         # Chevron
+      - LMT         # Lockheed Martin
+      - BA          # Boeing
+      - RTX         # RTX (Raytheon)
+      - GE          # General Electric
+      - CAT         # Caterpillar
+      - DE          # John Deere
+      - ASML.AS     # ASML – semi, NL
+      - STM.PA      # STMicroelectronics – semi, FR/IT
+      - AIR.PA      # Airbus – aérospatial, FR/EU
+      - AI.PA       # Air Liquide – industrie, FR
+      - SIE.DE      # Siemens – ingénierie, DE
+      - HSBC        # HSBC Holdings – banque, UK/HK
+      - BNP.PA      # BNP Paribas – banque, FR
+      - ACA.PA      # Crédit Agricole – banque, FR
+      - UBSG.SW     # UBS Group – banque privée, CH
+      - DBK.DE      # Deutsche Bank – banque, DE
+      - RY.TO       # Royal Bank of Canada – CA
+      - TD.TO       # Toronto Dominion – CA
+      - MC.PA       # LVMH – luxe, FR
+      - OR.PA       # L'Oréal – cosmétique, FR
+      - UL          # Unilever – conso, UK/NL
+      - NESN.SW     # Nestlé – conso, CH
+      - SAP.DE      # SAP – logiciels, DE
+      - SHEL        # Shell – énergie, UK
+      - TTE         # TotalEnergies – énergie, FR
+      - SNY         # Sanofi – pharma, FR
+      - NVS         # Novartis – pharma, CH
+      - NVO         # Novo Nordisk – pharma, DK
+      - AZN         # AstraZeneca – pharma, UK
+      - TSM         # Taiwan Semiconductor – TW
+      - BABA        # Alibaba – e-commerce, CN
+      - BIDU        # Baidu – moteur de recherche, CN
+      - 9988.HK     # Alibaba Group – HK listing
+      - 0700.HK     # Tencent – réseaux sociaux, HK
+      - SONY        # Sony – électronique, JP
+      - TM          # Toyota – automobile, JP
+      - HMC         # Honda – automobile, JP
+      - PLTR        # Palantir – IA & défense
+      - GME         # GameStop – action mème
+      - T           # AT&T – télécom
+      - SNAP        # Snap – réseaux sociaux
+      - COIN        # Coinbase – crypto platform
+      - ARKK        # ARK Innovation ETF (proxy tech spéculative)
+
+  - name: US
     watchlist:
-      - XMR-CAD
-      # - BTC-CAD # Bitcoin price via Yahoo
-    holdings:
-      - symbol: BTC-CAD
-        quantity: 0.03347191
+      - AAPL        # Apple
+      - MSFT        # Microsoft
+      - AMZN        # Amazon
+      - GOOG        # Alphabet (Google)
+      - META        # Meta (Facebook)
+      - NVDA        # Nvidia
+      - TSLA        # Tesla
+      - CRM         # Salesforce
+      - ORCL        # Oracle
+      - IBM         # IBM
+      - INTU        # Intuit
+      - AMD         # Advanced Micro Devices
+      - INTC        # Intel
+      - MU          # Micron Technology
+      - AVGO        # Broadcom
+      - QCOM        # Qualcomm
+      - TXN         # Texas Instruments
+      - JPM         # JPMorgan Chase
+      - GS          # Goldman Sachs
+      - MS          # Morgan Stanley
+      - BAC         # Bank of America
+      - C           # Citigroup
+      - WFC         # Wells Fargo
+      - BLK         # BlackRock
+      - V           # Visa
+      - MA          # Mastercard
+      - JNJ         # Johnson & Johnson
+      - PFE         # Pfizer
+      - MRK         # Merck & Co.
+      - LLY         # Eli Lilly
+      - UNH         # UnitedHealth
+      - BMY         # Bristol-Myers Squibb
+      - ABBV        # AbbVie
+      - WMT         # Walmart
+      - COST        # Costco
+      - MCD         # McDonald's
+      - DIS         # Disney
+      - HD          # Home Depot
+      - NKE         # Nike
+      - SBUX        # Starbucks
+      - UBER        # Uber
+      - TGT         # Target
+      - XOM         # ExxonMobil
+      - CVX         # Chevron
+      - LMT         # Lockheed Martin
+      - BA          # Boeing
+      - RTX         # RTX (Raytheon)
+      - GE          # General Electric
+      - CAT         # Caterpillar
+      - DE          # John Deere
+
+  - name: Asie
+    watchlist:
+      - TSM         # Taiwan Semiconductor – TW
+      - BABA        # Alibaba – e-commerce, CN
+      - BIDU        # Baidu – moteur de recherche, CN
+      - 9988.HK     # Alibaba Group – HK listing
+      - 0700.HK     # Tencent – réseaux sociaux, HK
+      - SONY        # Sony – électronique, JP
+      - TM          # Toyota – automobile, JP
+      - HMC         # Honda – automobile, JP
+
+  - name: Europe
+    watchlist:
+      # Pays-Bas
+      - ASML.AS    # ASML – semi, lithographie
+      - ADYEN.AS   # Adyen – paiements électroniques
+
+      # France (grands groupes)
+      - AIR.PA     # Airbus – aérospatial
+      - AI.PA      # Air Liquide – gaz industriels
+      - STM.PA     # STMicroelectronics – semi
+      - BNP.PA     # BNP Paribas – banque
+      - ACA.PA     # Crédit Agricole – banque
+      - MC.PA      # LVMH – luxe
+      - OR.PA      # L’Oréal – cosmétique
+      - SNY        # Sanofi – pharma
+      - TTE        # TotalEnergies – énergie
+      - PUB.PA     # Publicis – publicité
+      - VIE.PA     # Veolia – services environnementaux
+      - SU.PA      # Schneider Electric – automation & énergie
+      - EN.PA      # Bouygues – construction, télécoms
+
+      # Allemagne
+      - SIE.DE     # Siemens – ingénierie
+      - DBK.DE     # Deutsche Bank – banque
+      - ALV.DE     # Allianz – assurance
+      - DTE.DE     # Deutsche Telekom – télécoms
+      - BMW.DE     # BMW – automobile
+      - DAI.DE     # Mercedes-Benz – automobile
+      - BAS.DE     # BASF – chimie
+      - SAP.DE     # SAP – logiciels
+
+      # Suisse
+      - UBSG.SW    # UBS Group – banque privée
+      - NESN.SW    # Nestlé – alimentation
+      - NOVN.SW    # Novartis – pharma (équiv. NVS)
+      - ROG.SW     # Roche – pharma
+
+      # Danemark
+      - NVO        # Novo Nordisk – pharma
+
+      # Royaume-Uni
+      - SHEL       # Shell – énergie
+      - HSBA.L     # HSBC Holdings – banque (UK/HK)
+      - AZN        # AstraZeneca – pharma
+      - UL         # Unilever – conso (UK/NL)
+      - GSK.L      # GSK – pharma
+
+  - name: Canada
+    watchlist:
+      # Banques
+      - RY.TO      # Royal Bank of Canada
+      - TD.TO      # Toronto-Dominion Bank
+      - BNS.TO     # Bank of Nova Scotia
+      - BMO.TO     # Bank of Montreal
+      - CM.TO      # Canadian Imperial Bank of Commerce
+
+      # Énergie et mines
+      - SU.TO      # Suncor Energy – sables bitumineux
+      - CNQ.TO     # Canadian Natural Resources – pétrole/gaz
+      - ENB.TO     # Enbridge – pipelines
+      - TECK-B.TO  # Teck Resources – matières premières (cuivre, zinc)
+
+      # Transport & Industrie
+      - CP.TO      # Canadian Pacific Kansas City – chemins de fer
+      - CNR.TO     # Canadian National Railway – transport
+
+      # Technologie / e-commerce
+      - SHOP.TO    # Shopify – e-commerce
+      - OTEX.TO    # OpenText – logiciels entreprise
+
+  - name: France
+    watchlist:
+      - AIR.PA     # Airbus
+      - AI.PA      # Air Liquide
+      - OR.PA      # L’Oréal
+      - MC.PA      # LVMH
+      - RMS.PA     # Hermès
+      - SU.PA      # Schneider Electric
+      - VIE.PA     # Veolia
+      - PUB.PA     # Publicis
+      - SGEF.PA    # Société Générale (finance)
+      - BNP.PA     # BNP Paribas
+      - ACA.PA     # Crédit Agricole
+      - TTE        # TotalEnergies
+      - ENGIE.PA   # Engie (énergie)
+      - SNY        # Sanofi
+      - STM.PA     # STMicroelectronics
+      - ML.PA      # Michelin – pneus
+      - RNO.PA     # Renault – automobile
+      - UG.PA      # Unibail-Rodamco-Westfield – immobilier
+      - EN.PA      # Bouygues – BTP, télécoms
+
+  - name: Industrie & énergie
+    watchlist:
+      - XOM        # ExxonMobil
+      - CVX        # Chevron
+      - LMT        # Lockheed Martin
+      - BA         # Boeing
+      - RTX        # RTX (Raytheon)
+      - GE         # General Electric
+      - CAT        # Caterpillar
+      - DE         # John Deere
+      - AIR.PA     # Airbus – aérospatial, FR/EU
+      - AI.PA      # Air Liquide – industrie, FR
+      - SIE.DE     # Siemens – ingénierie, DE
+      - SHEL       # Shell – énergie, UK
+      - TTE        # TotalEnergies – énergie, FR
+      - TM         # Toyota – automobile, JP
+      - HMC        # Honda – automobile, JP
+      - SU.TO      # Suncor Energy – sables bitumineux
+      - CNQ.TO     # Canadian Natural Resources – pétrole/gaz
+      - ENB.TO     # Enbridge – pipelines
+      - TECK-B.TO  # Teck Resources – matières premières (cuivre, zinc)
+      - CP.TO      # Canadian Pacific Kansas City – chemins de fer
+      - CNR.TO     # Canadian National Railway – transport
+
+  - name: Tech
+    watchlist:
+      - AMD        # Advanced Micro Devices
+      - INTC       # Intel
+      - MU         # Micron Technology
+      - AVGO       # Broadcom
+      - QCOM       # Qualcomm
+      - TXN        # Texas Instruments
+      - ASML.AS    # ASML – semi, NL
+      - STM.PA     # STMicroelectronics – semi, FR/IT
+      - TSM        # Taiwan Semiconductor – TW
+      - BABA       # Alibaba – e-commerce, CN
+      - BIDU       # Baidu – moteur de recherche, CN
+      - 9988.HK    # Alibaba Group – HK listing
+      - 0700.HK    # Tencent – réseaux sociaux, HK
+      - SONY       # Sony – électronique, JP
+      - SAP.DE     # SAP – logiciels, DE
+      - PLTR       # Palantir – IA & défense
+      - GME        # GameStop – action mème
+      - T          # AT&T – télécom
+      - SNAP       # Snap – réseaux sociaux
+      - COIN       # Coinbase – crypto platform
+      - ARKK       # ARK Innovation ETF (proxy tech spéculative)
+      - SHOP.TO    # Shopify – e-commerce
+      - OTEX.TO    # OpenText – logiciels entreprise
+
+  - name: Finance
+    watchlist:
+      - JPM        # JPMorgan Chase
+      - GS         # Goldman Sachs
+      - MS         # Morgan Stanley
+      - BAC        # Bank of America
+      - C          # Citigroup
+      - WFC        # Wells Fargo
+      - BLK        # BlackRock
+      - V          # Visa
+      - MA         # Mastercard
+      - HSBC       # HSBC Holdings – banque, UK/HK
+      - BNP.PA     # BNP Paribas – banque, FR
+      - ACA.PA     # Crédit Agricole – banque, FR
+      - UBSG.SW    # UBS Group – banque privée, CH
+      - DBK.DE     # Deutsche Bank – banque, DE
+      - RY.TO      # Royal Bank of Canada – CA
+      - TD.TO      # Toronto Dominion – CA
+      - BNS.TO     # Bank of Nova Scotia
+      - BMO.TO     # Bank of Montreal
+      - CM.TO      # Canadian Imperial Bank of Commerce
+
+  - name: Santé/Pharma
+    watchlist:
+      - JNJ        # Johnson & Johnson
+      - PFE        # Pfizer
+      - MRK        # Merck & Co.
+      - LLY        # Eli Lilly
+      - UNH        # UnitedHealth
+      - BMY        # Bristol-Myers Squibb
+      - ABBV       # AbbVie
+      - SNY        # Sanofi – pharma, FR
+      - NVS        # Novartis – pharma, CH
+      - NVO        # Novo Nordisk – pharma, DK
+      - AZN        # AstraZeneca – pharma, UK
+
+  - name: Conso & Luxe
+    watchlist:
+      - WMT        # Walmart
+      - COST       # Costco
+      - MCD        # McDonald's
+      - DIS        # Disney
+      - HD         # Home Depot
+      - NKE        # Nike
+      - SBUX       # Starbucks
+      - UBER       # Uber
+      - TGT        # Target
+      - MC.PA      # LVMH – luxe, FR
+      - OR.PA      # L'Oréal – cosmétique, FR
+      - UL         # Unilever – conso, UK/NL
+      - NESN.SW    # Nestlé – conso, CH
+
+  - name: Misc
+    watchlist:
+      - GME        # GameStop – meme stock
 
 colors:
-   # text: "#eceff4"
-   # text-light: "#0087ff"
+    text: cyan
+    text-light: blue
     text-label: "#81a1c1"
     text-line: "#3b4252"
-    text-tag: "#b48ead"
+    text-tag: "#5e6577"
     background-tag: "#3b4252"
