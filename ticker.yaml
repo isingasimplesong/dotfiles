@@ -1,0 +1,143 @@
+# ~/.ticker.yaml
+# show-summary: true
+show-tags: true
+show-fundamentals: true
+show-separator: true
+show-holdings: true
+interval: 30
+currency: CAD
+currency-summary-only: false
+sort: percent
+watchlist:
+  - ^GSPC       # S&P 500
+  - ^DJI        # Dow Jones
+  - ^IXIC       # NASDAQ
+  - ^FCHI       # CAC 40 (france)
+  - ^N225       # Nikkei 225 (Japan)
+  - ^000001.SS  # Shangai Comp. (China)
+  - CL=F        # Crude Oil (WTI)
+  - GC=F        # Gold
+  - SHEL
+  - NVDA
+  - TSM
+groups:
+  - name: markets
+    watchlist:
+      - TIP         # Treasury Inflation-Protected Securities (inflation hedge)
+      - LQD         # Corporate Bonds (credit risk sentiment)
+      - ^GSPC       # S&P 500
+      - ^DJI        # Dow Jones
+      - ^IXIC       # NASDAQ
+      - ^STOXX50E   # euro stoxx
+      - ^FTSE       # FTSE 100 (uk)
+      - ^FCHI       # CAC 40 (france)
+      - ^GDAXI      # DAX (germany)
+      - ^N225       # Nikkei 225 (Japan)
+      - ^BSESN      # Sensex (India)
+      - ^000001.SS  # Shangai Comp. (China)
+      - VWO         # emerging markets
+      - URTH        # MSCI World Index
+
+  - name: commodities
+    watchlist:
+      # Precious Metals
+      - GC=F   # Gold
+      - SI=F   # Silver
+      - PL=F   # Platinum
+      - PA=F   # Palladium
+
+      # Energy
+      - CL=F   # Crude Oil WTI
+      - BZ=F   # Brent Crude
+      - NG=F   # Natural Gas
+      - HO=F   # Heating Oil
+      - RB=F   # RBOB Gasoline
+
+      # Industrial Metals
+      - HG=F   # Copper
+      - ZN=F   # Zinc (ETF proxy: JJT)
+      - AL=F   # Aluminum (ETF proxy: JJU)
+      - NI=F   # Nickel (ETF proxy: JJN)
+
+      # Grains
+      - ZW=F   # Wheat (Chicago SRW)
+      - KE=F   # Wheat (Kansas HRW)
+      - MW=F   # Wheat (Minneapolis Spring)
+      - ZC=F   # Corn
+      - ZS=F   # Soybeans
+      - ZM=F   # Soybean Meal
+      - ZL=F   # Soybean Oil
+      - O=F    # Oats
+      - RR=F   # Rough Rice
+
+      # Softs (Agricultural)
+      - KC=F   # Coffee
+      - SB=F   # Sugar
+      - CT=F   # Cotton
+      - CC=F   # Cocoa
+      - LB=F   # Lumber
+      - JO     # Coffee ETF (extra reference)
+
+      # Livestock
+      - LE=F   # Live Cattle
+      - HE=F   # Lean Hogs
+      - GF=F   # Feeder Cattle
+
+      - ^VIX    # CBOE Volatility Index
+
+  - name: stocks
+    watchlist:
+      - NVDA
+      - AMZN
+      - AAPL
+      - MSFT
+      - GOOG
+      - META
+      - TSLA
+      - WMT
+      - TSM
+      - JPM
+      - BABA
+      - AZN
+      - NVS
+      - SHEL
+      - HSBC
+      - RY
+      - DIS
+      - UBER
+      - TTE
+      - SNY
+      - BLK
+      - PFE
+      - TD
+      - LMT
+      - BA
+      - AF
+      - FR
+      - TF1
+      - UBI
+      - PEUG
+      - PLTR
+      - GME
+      - V
+      - JNJ
+      - NVO
+      - CRM
+      - MCD
+      - T
+      - GE
+  - name: crypto
+    watchlist:
+      - XMR-CAD
+      # - BTC-CAD # Bitcoin price via Yahoo
+    holdings:
+      - symbol: BTC-CAD
+        quantity: 0.03347191
+
+colors:
+   # text: "#eceff4"
+   # text-light: "#0087ff"
+    text-label: "#81a1c1"
+    text-line: "#3b4252"
+    text-tag: "#b48ead"
+    background-tag: "#3b4252"
