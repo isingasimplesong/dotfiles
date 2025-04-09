@@ -1,523 +1,547 @@
 # $XDG_CONFIG_HOME/.ticker.yaml
-show-summary: false
-show-tags: false
-show-fundamentals: true
-show-separator: true
-show-holdings: true
-interval: 60
-currency: CAD
-currency-summary-only: false
-sort: percent
+# designed for a broad overview of economic & market conditions
+
+show-summary: false             # No use without holdings
+show-tags: false                # Displays tickers metadata
+show-fundamentals: true         # Show fundamental data like P/E ratio, Market Cap where available
+show-separator: true            # Show a separator line between tickers
+show-holdings: true             # Display holdings information, if any
+interval: 60                    # in seconds
+currency: CAD                   # if set, convert to currency
+currency-summary-only: false    # Apply currency conversion to individual tickers, not just summary
+sort: percent                   # Sort tickers by percentage change (largest gainers first)
+
+# key global indicators for default dashboard
 watchlist:
-  - ^VIX            # Volatility Index – stress de marché
-  - TIP             # Treasury Inflation-Protected Securities (inflation hedge)
-  - LQD             # Investment Grade Corporate Bonds (credit risk sentiment)
-  - XLF             # Financials
-  - XLE             # Energy
-  - CL=F            # Crude Oil (WTI)
-  - GC=F            # Gold – valeur refuge, couverture monétaire
-  - ^GSPC           # S&P 500
-  - ^IXIC           # NASDAQ
-  - ^STOXX50E       # Euro Stoxx 50 – sentiment zone euro
-  - ^FCHI           # CAC 40 (France)
-  - ^HSI            # Hang Seng (Hong Kong)
-  - URTH            # MSCI World ETF – actions pays développés
+  - ^VIX          # CBOE Volatility Index: Market fear/uncertainty gauge. Higher = more fear/stress. Lower = complacency
+  - TIP           # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise suggests increasing inflation expectations. Fall, opposite. ETF = Exchange Traded Fund
+  - LQD           # iShares iBoxx $ Inv. Grade Corp Bond ETF: Tracks high-quality corporate bonds. Fall can indicate widening credit spreads, perceived higher corporate default risk. Rise suggests confidence
+  - XLF           # Financial Select Sector SPDR Fund: Tracks US financial stocks. Indicator of banking health, credit availability, and interest rate sensitivity. Rise = generally positive economic outlook.
+  - XLE           # Energy Select Sector SPDR Fund: Tracks US energy stocks. Reflects oil/gas price trends, global energy demand, and geopolitical risk in energy markets.
+  - CL=F          # Crude Oil Futures (WTI): West Texas Intermediate oil price benchmark. Rise = potential inflationary pressure, strong demand, or supply concerns.
+  - GC=F          # Gold Futures: Traditionally a safe-haven asset and inflation hedge. Rise often indicates risk aversion, geopolitical tension, or inflation fears.
+  - ^GSPC         # S&P 500 Index: Broad benchmark for large-cap US stocks. General US market health indicator. Index = Representative group of stocks.
+  - ^IXIC         # NASDAQ Composite Index: Tech-heavy US stock index. Indicator of growth/tech sector sentiment and risk appetite.
+  - ^STOXX50E     # EURO STOXX 50 Index: Blue-chip index for the Eurozone. Gauge of core European economic/market sentiment.
+  - ^FCHI         # CAC 40 Index: Benchmark French stock market index. Indicator for French economy.
+  - ^HSI          # Hang Seng Index: Benchmark Hong Kong stock market index. Reflects sentiment on Hong Kong and, indirectly, China.
+  - URTH          # iShares MSCI World ETF: Tracks developed market equities globally. Broad indicator of global equity sentiment and economic health.
 
+# Tab to switch groups
 groups:
-  - name: Global
+  - name: Global        # Broad overview across asset classes and regions
     watchlist:
-      # Bonds & Inflation
-      - TIP         # Treasury Inflation-Protected Securities (inflation hedge)
-      - LQD         # Investment Grade Corporate Bonds (credit risk sentiment)
-      - HYG         # High-Yield Corporate Bonds (risk appetite)
-      - IEF         # 7-10 Year US Treasuries (interest rates)
-      - TLT         # 20+ Year US Treasuries (long-term rates)
+      # Bonds & Inflation: Gauges interest rates, inflation expectations, and credit risk
+      - TIP           # US Treasury Inflation-Protected Securities ETF. Rise = higher inflation expectations.
+      - LQD           # US Investment Grade Corporate Bonds ETF. Fall = widening credit spreads, higher perceived risk.
+      - HYG           # US High-Yield Corporate Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion, fear of defaults.
+      - IEF           # US 7-10 Year Treasuries ETF. Reflects medium-term interest rate expectations. Price falls as rates rise.
+      - TLT           # US 20+ Year Treasuries ETF. Reflects long-term interest rate expectations and economic outlook. Price falls as rates rise.
 
-      # US Indices
-      - ^GSPC       # S&P 500
-      - ^DJI        # Dow Jones Industrial Average
-      - ^IXIC       # NASDAQ Composite
-      - RUT         # Russell 2000 (small caps)
+      # US Indices: Core US market performance
+      - ^GSPC         # S&P 500: Broad large-cap US market benchmark.
+      - ^DJI          # Dow Jones Industrial Average: 30 large US industrial/blue-chip companies.
+      - ^IXIC         # NASDAQ Composite: Tech-heavy, growth-oriented US index.
+      - RUT           # Russell 2000 Index (via ETF proxy): Tracks US small-cap stocks. Indicator of domestic economic health & risk appetite.
 
-      # ETF sectoriels
-      - XLF         # Financials
-      - XLK         # Technology
-      - XLV         # Healthcare
-      - XLE         # Energy
-      - XLY         # Consumer Discretionary
-      - XLP         # Consumer Staples
-      - XLI         # Industrials
-      - XLRE        # Real Estate
-      - XLU         # Utilities
-      - SMH         # Semiconductors
+      # Sector ETFs: Performance of key US economic sectors
+      - XLF           # Financials: Banks, insurance. Sensitive to rates and credit cycles.
+      - XLK           # Technology: Hardware, software, IT services. Growth driver, sensitive to rates.
+      - XLV           # Healthcare: Pharmaceuticals, biotech, healthcare providers. Often defensive.
+      - XLE           # Energy: Oil, gas, energy services. Tied to commodity prices.
+      - XLY           # Consumer Discretionary: Retail, media, auto. Reflects consumer confidence & spending on non-essentials.
+      - XLP           # Consumer Staples: Food, beverage, household goods. Defensive, reflects spending on essentials.
+      - XLI           # Industrials: Aerospace, machinery, construction. Reflects manufacturing & capital spending.
+      - XLRE          # Real Estate: REITs. Sensitive to interest rates and property markets.
+      - XLU           # Utilities: Electric, gas, water utilities. Defensive, sensitive to interest rates.
+      - SMH           # VanEck Semiconductor ETF: Key indicator for tech supply chain and global manufacturing cycle.
 
-      # Europe
-      - ^STOXX50E   # Euro Stoxx 50
-      - ^FTSE       # FTSE 100 (UK)
-      - ^FCHI       # CAC 40 (France)
-      - ^GDAXI      # DAX (Germany)
-      - EWG         # Germany ETF
-      - EWQ         # France ETF
+      # Europe: Major European market indices and country ETFs
+      - ^STOXX50E     # Euro Stoxx 50: Eurozone blue-chips.
+      - ^FTSE         # FTSE 100: Large-cap UK stock index.
+      - ^FCHI         # CAC 40: French benchmark index.
+      - ^GDAXI        # DAX: German benchmark index (major exporters).
+      - EWG           # iShares MSCI Germany ETF: Tracks German equities.
+      - EWQ           # iShares MSCI France ETF: Tracks French equities.
 
-      # Asia
-      - ^N225       # Nikkei 225 (Japan)
-      - EWJ         # Japan ETF
-      - ^BSESN      # BSE Sensex (India)
-      - INDA        # India ETF
-      - ^HSI        # Hang Seng (Hong Kong)
-      - ^000001.SS  # Shanghai Composite (China)
-      - MCHI        # China ETF
-      - AAXJ        # Asia ex-Japan ETF
+      # Asia: Major Asian market indices and country ETFs
+      - ^N225         # Nikkei 225: Japanese benchmark stock index.
+      - EWJ           # iShares MSCI Japan ETF: Tracks Japanese equities.
+      - ^BSESN        # BSE Sensex: Indian benchmark stock index.
+      - INDA          # iShares MSCI India ETF: Tracks Indian equities.
+      - ^HSI          # Hang Seng: Hong Kong benchmark index (influence from China).
+      - ^000001.SS    # Shanghai Composite: Main China mainland stock index.
+      - MCHI          # iShares MSCI China ETF: Tracks Chinese equities accessible to international investors.
+      - AAXJ          # iShares MSCI All Country Asia ex Japan ETF: Broad Asia (excluding Japan) exposure.
 
-      # Global Markets
-      - VWO         # Emerging Markets ETF
-      - EEM         # Emerging Markets (alt)
-      - URTH        # MSCI World Index
-      - ACWI        # MSCI All Country World Index
-      - VT          # Vanguard Total World Stock ETF
+      # Global Markets: Broader international equity ETFs
+      - VWO           # Vanguard FTSE Emerging Markets ETF: Tracks stocks in emerging economies. Indicator of global growth & risk appetite.
+      - EEM           # iShares MSCI Emerging Markets ETF: Alternative EM tracker.
+      - URTH          # iShares MSCI World ETF: Developed markets globally.
+      - ACWI          # iShares MSCI ACWI ETF: All Country World Index (Developed + Emerging). Broadest global equity view.
+      - VT            # Vanguard Total World Stock ETF: Alternative ACWI tracker.
 
-      # Currency & Crypto Proxies
-      - DXY         # US Dollar Index
-      - UUP         # Bullish Dollar ETF
+      # Currency & Proxies: US Dollar strength and related assets
+      - DXY         # US Dollar Index Futures (often ^DXY or DX-Y.NYB): Tracks USD vs. basket of major currencies. Rise = Stronger USD (can impact commodities, emerging markets, US exports). *Note: DXY ticker might not be standard on all providers, use index like ^DXY or ETF proxy.*
+      - UUP           # Invesco DB US Dollar Index Bullish Fund ETF: Tracks USD index. Easier ticker access than futures. Rise = Stronger USD.
 
-      # Volatility & Fear
-      - ^VIX        # Volatility Index (fear index)
-      - VXX         # VIX Futures ETF
+      # Volatility & Fear: Market stress indicators
+      - ^VIX          # CBOE Volatility Index: "Fear gauge". Based on S&P 500 options. Higher = more expected volatility/fear.
+      - VXX           # iPath Series B S&P 500 VIX Short-Term Futures ETN: Tracks VIX futures. Highly volatile, decays over time (contango). ETN = Exchange Traded Note.
 
-  - name: Ressources
+  - name: Ressources    # Commodities: Raw materials, energy, agriculture. Indicators of inflation, industrial demand, global supply chains.
     watchlist:
-      # Precious Metals
-      - GC=F       # Gold
-      - SI=F       # Silver
-      - PL=F       # Platinum
-      - PA=F       # Palladium
+      # Precious Metals: Safe haven, inflation hedge, industrial uses
+      - GC=F          # Gold Futures: Key safe haven, inflation hedge.
+      - SI=F          # Silver Futures: Precious metal with significant industrial use (electronics, solar).
+      - PL=F          # Platinum Futures: Industrial (auto catalysts), jewelry, investment.
+      - PA=F          # Palladium Futures: Primarily industrial (auto catalysts).
 
-      # Energy
-      - CL=F       # Crude Oil WTI
-      - BZ=F       # Brent Crude
-      - NG=F       # Natural Gas
-      - HO=F       # Heating Oil
-      - RB=F       # RBOB Gasoline
+      # Energy: Core energy benchmarks, global demand/supply indicators
+      - CL=F          # Crude Oil WTI Futures: US oil benchmark.
+      - BZ=F          # Brent Crude Futures: International oil benchmark.
+      - NG=F          # Natural Gas Futures: Key heating and power generation fuel. Volatile, weather-sensitive.
+      - HO=F          # Heating Oil Futures: Proxy for diesel and jet fuel demand.
+      - RB=F          # RBOB Gasoline Futures: Proxy for consumer driving demand.
 
-      # Industrial Metals
-      - HG=F       # Copper
-      - ZN=F       # Zinc (ETF proxy: JJT)
-      - AL=F       # Aluminum (ETF proxy: JJU)
-      - NI=F       # Nickel (ETF proxy: JJN)
+      # Industrial Metals: Reflect global manufacturing activity and construction
+      - HG=F          # Copper Futures: "Dr. Copper" - often seen as a barometer of global economic health.
+      - ZN=F          # Zinc Futures: Used for galvanizing steel. Proxy: JJT (iPath Bloomberg Zinc Subindex ETN).
+      - AL=F          # Aluminum Futures: Used in construction, transport, packaging. Proxy: JJU (iPath Bloomberg Aluminum Subindex ETN).
+      - NI=F          # Nickel Futures: Used in stainless steel, batteries. Proxy: JJN (iPath Bloomberg Nickel Subindex ETN).
 
-      # Grains
-      - ZW=F       # Wheat (Chicago SRW)
-      - ZC=F       # Corn
-      - ZS=F       # Soybeans
-      - ZL=F       # Soybean Oil
-      - O=F        # Oats
-      - RR=F       # Rough Rice
+      # Grains: Core food commodities, indicators of food inflation and agricultural markets
+      - ZW=F          # Wheat Futures (Chicago SRW): Major global food staple.
+      - ZC=F          # Corn Futures: Food, animal feed, ethanol production.
+      - ZS=F          # Soybeans Futures: Food, animal feed, biodiesel.
+      - ZL=F          # Soybean Oil Futures: Cooking oil, biodiesel.
+      - O=F           # Oats Futures: Food, animal feed.
+      - RR=F          # Rough Rice Futures: Major food staple, esp. Asia.
 
-      # Softs (Agricultural)
-      - KC=F       # Coffee
-      - SB=F       # Sugar
-      - CT=F       # Cotton
-      - CC=F       # Cocoa
-      - LB=F       # Lumber
+      # Softs (Agricultural): Non-grain agricultural commodities
+      - KC=F          # Coffee Futures: Consumer staple, sensitive to weather in producing regions.
+      - SB=F          # Sugar Futures: Food, ethanol (Brazil).
+      - CT=F          # Cotton Futures: Textiles, industrial uses. Reflects consumer demand for apparel.
+      - CC=F          # Cocoa Futures: Chocolate production. Sensitive to West African weather/politics.
+      - LB=F          # Lumber Futures: Key input for housing construction. Indicator of housing market activity.
 
-      # Livestock
-      - LE=F       # Live Cattle
-      - HE=F       # Lean Hogs
-      - GF=F       # Feeder Cattle
+      # Livestock: Meat prices, animal feed demand
+      - LE=F          # Live Cattle Futures: Beef prices.
+      - HE=F          # Lean Hogs Futures: Pork prices.
+      - GF=F          # Feeder Cattle Futures: Price of young cattle before feedlot. Reflects feed costs (corn).
 
-  - name: Crypto
+  - name: Crypto        # Cryptocurrencies and related equities: High-growth, high-risk asset class, reflects risk appetite and tech adoption.
     watchlist:
-      - BTC-USD     # Bitcoin
-      - ETH-USD     # Ethereum – smart contracts, DeFi, NFT
-      - BNB-USD     # Binance Coin – token d’échange (BNB Chain)
-      - SOL-USD     # Solana – smart contracts rapide, très actif en NFT
-      - LTC-USD     # Litecoin – version légère de Bitcoin, plus rapide
-      - XMR-USD     # Monero – anonymat fort, transactions privées
+      - BTC-USD       # Bitcoin: Largest crypto by market cap. Seen as digital store of value ("digital gold") or risk asset.
+      - ETH-USD       # Ethereum: Leading smart contract platform (DeFi, NFTs). Reflects activity in the broader crypto ecosystem.
+      - BNB-USD       # Binance Coin: Native token of Binance exchange/ecosystem (BNB Chain).
+      - SOL-USD       # Solana: High-speed smart contract platform, competitor to Ethereum.
+      - LTC-USD       # Litecoin: Early Bitcoin fork, aiming for faster/cheaper payments.
+      - XMR-USD       # Monero: Privacy-focused cryptocurrency.
 
-      # Entreprises cotées liées à la crypto
-      - COIN        # Coinbase – plateforme d’échange US (NASDAQ)
-      - MSTR        # MicroStrategy – exposition massive au BTC
-      - RIOT        # Riot Platforms – minage de Bitcoin
-      - MARA        # Marathon Digital – minage de Bitcoin
+      # Crypto-related Equities: Companies with significant crypto exposure. Performance often correlates with crypto prices.
+      - COIN          # Coinbase Global: Major US-based crypto exchange. Proxy for trading volume & adoption.
+      - MSTR          # MicroStrategy: Software company holding large amounts of Bitcoin on its balance sheet. Leveraged BTC play.
+      - RIOT          # Riot Platforms: Bitcoin mining company. Sensitive to BTC price and energy costs.
+      - MARA          # Marathon Digital Holdings: Another large Bitcoin mining company.
 
-      #  Suivi général ou ETF liés
-      - BITO        # ProShares Bitcoin Strategy ETF (futures BTC)
-
-  - name: Actions
+  - name: Actions       # Stocks: Individual companies, mostly large-cap bellwethers across various sectors and regions.
     watchlist:
-      - AAPL        # Apple
-      - MSFT        # Microsoft
-      - AMZN        # Amazon
-      - GOOG        # Alphabet (Google)
-      - META        # Meta (Facebook)
-      - NVDA        # Nvidia
-      - TSLA        # Tesla
-      - CRM         # Salesforce
-      - ORCL        # Oracle
-      - IBM         # IBM
-      - INTU        # Intuit
-      - AMD         # Advanced Micro Devices
-      - INTC        # Intel
-      - MU          # Micron Technology
-      - AVGO        # Broadcom
-      - QCOM        # Qualcomm
-      - TXN         # Texas Instruments
-      - JPM         # JPMorgan Chase
-      - GS          # Goldman Sachs
-      - MS          # Morgan Stanley
-      - BAC         # Bank of America
-      - C           # Citigroup
-      - WFC         # Wells Fargo
-      - BLK         # BlackRock
-      - V           # Visa
-      - MA          # Mastercard
-      - JNJ         # Johnson & Johnson
-      - PFE         # Pfizer
-      - MRK         # Merck & Co.
-      - LLY         # Eli Lilly
-      - UNH         # UnitedHealth
-      - BMY         # Bristol-Myers Squibb
-      - ABBV        # AbbVie
-      - WMT         # Walmart
-      - COST        # Costco
-      - MCD         # McDonald's
-      - DIS         # Disney
-      - HD          # Home Depot
-      - NKE         # Nike
-      - SBUX        # Starbucks
-      - UBER        # Uber
-      - TGT         # Target
-      - XOM         # ExxonMobil
-      - CVX         # Chevron
-      - LMT         # Lockheed Martin
-      - BA          # Boeing
-      - RTX         # RTX (Raytheon)
-      - GE          # General Electric
-      - CAT         # Caterpillar
-      - DE          # John Deere
-      - ASML.AS     # ASML – semi, NL
-      - STM.PA      # STMicroelectronics – semi, FR/IT
-      - AIR.PA      # Airbus – aérospatial, FR/EU
-      - AI.PA       # Air Liquide – industrie, FR
-      - SIE.DE      # Siemens – ingénierie, DE
-      - HSBC        # HSBC Holdings – banque, UK/HK
-      - BNP.PA      # BNP Paribas – banque, FR
-      - ACA.PA      # Crédit Agricole – banque, FR
-      - UBSG.SW     # UBS Group – banque privée, CH
-      - DBK.DE      # Deutsche Bank – banque, DE
-      - RY.TO       # Royal Bank of Canada – CA
-      - TD.TO       # Toronto Dominion – CA
-      - MC.PA       # LVMH – luxe, FR
-      - OR.PA       # L'Oréal – cosmétique, FR
-      - UL          # Unilever – conso, UK/NL
-      - NESN.SW     # Nestlé – conso, CH
-      - SAP.DE      # SAP – logiciels, DE
-      - SHEL        # Shell – énergie, UK
-      - TTE         # TotalEnergies – énergie, FR
-      - SNY         # Sanofi – pharma, FR
-      - NVS         # Novartis – pharma, CH
-      - NVO         # Novo Nordisk – pharma, DK
-      - AZN         # AstraZeneca – pharma, UK
-      - TSM         # Taiwan Semiconductor – TW
-      - BABA        # Alibaba – e-commerce, CN
-      - BIDU        # Baidu – moteur de recherche, CN
-      - 9988.HK     # Alibaba Group – HK listing
-      - 0700.HK     # Tencent – réseaux sociaux, HK
-      - SONY        # Sony – électronique, JP
-      - TM          # Toyota – automobile, JP
-      - HMC         # Honda – automobile, JP
-      - PLTR        # Palantir – IA & défense
-      - GME         # GameStop – action mème
-      - T           # AT&T – télécom
-      - SNAP        # Snap – réseaux sociaux
-      - COIN        # Coinbase – crypto platform
-      - ARKK        # ARK Innovation ETF (proxy tech spéculative)
+      # Major US Tech & Growth
+      - AAPL          # Apple: Consumer electronics, software, services. Bellwether for consumer spending & tech.
+      - MSFT          # Microsoft: Software, cloud (Azure), gaming, OS. Diversified tech giant.
+      - AMZN          # Amazon: E-commerce, cloud (AWS), advertising. Indicator of online retail & cloud growth.
+      - GOOG          # Alphabet (Google): Online search, advertising, cloud, Android. Digital ad market indicator.
+      - META          # Meta Platforms (Facebook): Social media, advertising. Digital ad market indicator.
+      - NVDA          # Nvidia: GPUs, AI chips, data centers. Leader in AI hardware, semiconductor cycle.
+      - TSLA          # Tesla: Electric vehicles, energy storage. Indicator for EV adoption, high-growth tech sentiment.
+      # Enterprise Software & Semis
+      - CRM           # Salesforce: Cloud-based CRM software. Indicator for enterprise IT spending.
+      - ORCL          # Oracle: Database software, cloud services. Enterprise IT spending.
+      - IBM           # IBM: IT services, software, consulting. Older tech / enterprise spending indicator.
+      - INTU          # Intuit: Financial software (QuickBooks, TurboTax). Small business & consumer finance indicator.
+      - AMD           # Advanced Micro Devices: CPUs, GPUs. Competitor to Intel & Nvidia. Semiconductor cycle.
+      - INTC          # Intel: CPUs, semiconductors. Major chip manufacturer. Semiconductor cycle.
+      - MU            # Micron Technology: Memory chips (DRAM, NAND). Sensitive to semiconductor cycle & pricing.
+      - AVGO          # Broadcom: Semiconductors, infrastructure software. Diversified tech/networking indicator.
+      - QCOM          # Qualcomm: Mobile chips, licensing. Smartphone market indicator.
+      - TXN           # Texas Instruments: Analog chips, embedded processors. Broad industrial/auto tech indicator.
+      # Major US Financials
+      - JPM           # JPMorgan Chase: Largest US bank. Bellwether for financial sector & economy.
+      - GS            # Goldman Sachs: Investment banking, trading. Capital markets activity indicator.
+      - MS            # Morgan Stanley: Investment banking, wealth management. Capital markets indicator.
+      - BAC           # Bank of America: Large diversified US bank. Financial sector health.
+      - C             # Citigroup: Global bank. International exposure.
+      - WFC           # Wells Fargo: Large US bank, focus on consumer/commercial banking.
+      - BLK           # BlackRock: Largest asset manager globally. Indicator of investment flows & market sentiment.
+      # Payments
+      - V             # Visa: Payment network. Consumer spending indicator.
+      - MA            # Mastercard: Payment network. Consumer spending indicator.
+      # Major US Healthcare/Pharma
+      - JNJ           # Johnson & Johnson: Diversified healthcare (pharma, medical devices, consumer health).
+      - PFE           # Pfizer: Major pharmaceutical company.
+      - MRK           # Merck & Co.: Major pharmaceutical company.
+      - LLY           # Eli Lilly: Major pharmaceutical company (esp. diabetes, weight loss).
+      - UNH           # UnitedHealth Group: Largest US health insurer. Healthcare spending/policy indicator.
+      - BMY           # Bristol-Myers Squibb: Major pharmaceutical company.
+      - ABBV          # AbbVie: Major pharmaceutical company (esp. Humira).
+      # Major US Consumer (Staples & Discretionary)
+      - WMT           # Walmart: Largest US retailer (discount). Consumer spending indicator (value focus).
+      - COST          # Costco: Warehouse retailer. Consumer spending indicator (bulk/value focus).
+      - MCD           # McDonald's: Fast food chain. Global consumer spending indicator.
+      - DIS           # Disney: Media, theme parks, streaming. Consumer discretionary spending.
+      - HD            # Home Depot: Home improvement retailer. Housing market & consumer spending indicator.
+      - NKE           # Nike: Athletic apparel & footwear. Global consumer brand health.
+      - SBUX          # Starbucks: Coffee chain. Global consumer spending.
+      - UBER          # Uber Technologies: Ride-sharing, food delivery. Gig economy & consumer mobility indicator.
+      - TGT           # Target: General merchandise retailer. Consumer spending patterns.
+      # Major US Energy & Industrials
+      - XOM           # ExxonMobil: Integrated oil & gas major. Energy prices & investment.
+      - CVX           # Chevron: Integrated oil & gas major. Energy prices & investment.
+      - LMT           # Lockheed Martin: Aerospace & defense contractor. Defense spending indicator.
+      - BA            # Boeing: Commercial aircraft, defense. Aerospace industry health, global travel.
+      - RTX           # RTX Corp (Raytheon): Aerospace & defense contractor. Defense spending.
+      - GE            # General Electric: Focus on aerospace, power, renewables. Industrial conglomerate evolution.
+      - CAT           # Caterpillar: Heavy machinery (construction, mining). Global industrial & resource activity indicator.
+      - DE            # John Deere: Agricultural & construction machinery. Agriculture & construction sector health.
+      # Key European Stocks
+      - ASML.AS       # ASML Holding (Netherlands): Crucial semiconductor lithography equipment maker. Global tech supply chain linchpin. (.AS = Amsterdam exchange)
+      - ALV.DE        # Allianz (DE Insurance)
+      - STM.PA        # STMicroelectronics (France/Italy): Semiconductor manufacturer. (.PA = Paris exchange)
+      - AIR.PA        # Airbus (France/EU): Major commercial aircraft manufacturer
+      - AI.PA         # Air Liquide (France): Industrial gases. Broad industrial activity indicator.
+      - SIE.DE        # Siemens (Germany): Industrial conglomerate (automation, healthcare, energy). (.DE = Deutsche Börse, XETRA)
+      - HSBC          # HSBC Holdings (UK/HK): Global bank with major Asia focus. Global trade & finance indicator. (Usually LSE:HSBA or NYSE:HSBC)
+      - BNP.PA        # BNP Paribas (France): Major European bank.
+      - ACA.PA        # Crédit Agricole (France): Large French bank.
+      - UBSG.SW       # UBS Group (Switzerland): Global wealth manager, investment bank. (.SW = SIX Swiss Exchange)
+      - DBK.DE        # Deutsche Bank (Germany): Major German bank.
+      - RY.TO         # Royal Bank of Canada (Canada): Largest Canadian bank. (.TO = Toronto Stock Exchange)
+      - TD.TO         # Toronto-Dominion Bank (Canada): Large Canadian bank with US presence.
+      # Luxury & Consumer Goods (Europe)
+      - MC.PA         # LVMH Moët Hennessy Louis Vuitton (France): World's largest luxury goods group. Global high-end consumer sentiment.
+      - OR.PA         # L'Oréal (France): Major cosmetics company. Global consumer spending on beauty.
+      - UL            # Unilever (UK/NL): Global consumer goods company (food, personal care). Defensive staple. (Usually LSE:ULVR or NYSE:UL)
+      - NESN.SW       # Nestlé (Switzerland): Largest food company globally. Defensive staple.
+      # Other Key Global Stocks
+      - SAP.DE        # SAP (Germany): Enterprise resource planning (ERP) software leader. Global IT spending.
+      - SHEL          # Shell plc (UK): Integrated oil & gas major. (Usually LSE:SHEL or NYSE:SHEL)
+      - TTE           # TotalEnergies (France): Integrated oil & gas major. (Usually EPA:TTE or NYSE:TTE)
+      - SNY           # Sanofi (France): Major pharmaceutical company. (Usually EPA:SAN or NYSE:SNY)
+      - NVS           # Novartis (Switzerland): Major pharmaceutical company. (Usually SIX:NOVN or NYSE:NVS)
+      - NVO           # Novo Nordisk (Denmark): Major pharmaceutical company (esp. diabetes/obesity). (Usually CPH:NOVO-B or NYSE:NVO)
+      - AZN           # AstraZeneca (UK): Major pharmaceutical company. (Usually LSE:AZN or NYSE:AZN)
+      - TSM           # Taiwan Semiconductor Manufacturing Co.: World's largest contract chip manufacturer. Critical tech supply chain indicator. (NYSE:TSM)
+      - BABA          # Alibaba Group (China): E-commerce, cloud, tech conglomerate. China consumer & tech indicator. (NYSE:BABA)
+      - BIDU          # Baidu (China): Search engine, AI. China tech indicator. (NASDAQ:BIDU)
+      - 9988.HK       # Alibaba Group (Hong Kong Listing): Alternative ticker for Alibaba. (.HK = Hong Kong exchange)
+      - 0700.HK       # Tencent Holdings (Hong Kong): Social media, gaming, payments. China tech & consumer indicator.
+      - SONY          # Sony Group (Japan): Electronics, gaming, entertainment. Global consumer electronics & media. (NYSE:SONY)
+      - TM            # Toyota Motor (Japan): Largest automaker globally. Auto industry health, manufacturing indicator. (NYSE:TM)
+      - HMC           # Honda Motor (Japan): Major automaker, motorcycles. Auto industry health. (NYSE:HMC)
+      # Speculative / Special Interest
+      - PLTR          # Palantir Technologies: Data analytics, AI software (govt & enterprise). Speculative tech.
+      - GME           # GameStop: Video game retailer, prominent "meme stock". Indicator of retail speculative fervor.
+      - T             # AT&T: Major US telecom company. Dividend focus, telecom sector health.
+      - SNAP          # Snap Inc.: Social media (Snapchat). Digital advertising, younger demographic trends.
+      # COIN          # Coinbase: Already listed under Crypto, duplicate here for Actions context.
+      - ARKK          # ARK Innovation ETF: Actively managed ETF focusing on disruptive innovation/tech. Proxy for speculative growth stock sentiment.
 
-  - name: US
+  - name: US           # Subset: Focus on major US-listed companies
     watchlist:
-      - AAPL        # Apple
-      - MSFT        # Microsoft
-      - AMZN        # Amazon
-      - GOOG        # Alphabet (Google)
-      - META        # Meta (Facebook)
-      - NVDA        # Nvidia
-      - TSLA        # Tesla
-      - CRM         # Salesforce
-      - ORCL        # Oracle
-      - IBM         # IBM
-      - INTU        # Intuit
-      - AMD         # Advanced Micro Devices
-      - INTC        # Intel
-      - MU          # Micron Technology
-      - AVGO        # Broadcom
-      - QCOM        # Qualcomm
-      - TXN         # Texas Instruments
-      - JPM         # JPMorgan Chase
-      - GS          # Goldman Sachs
-      - MS          # Morgan Stanley
-      - BAC         # Bank of America
-      - C           # Citigroup
-      - WFC         # Wells Fargo
-      - BLK         # BlackRock
-      - V           # Visa
-      - MA          # Mastercard
-      - JNJ         # Johnson & Johnson
-      - PFE         # Pfizer
-      - MRK         # Merck & Co.
-      - LLY         # Eli Lilly
-      - UNH         # UnitedHealth
-      - BMY         # Bristol-Myers Squibb
-      - ABBV        # AbbVie
-      - WMT         # Walmart
-      - COST        # Costco
-      - MCD         # McDonald's
-      - DIS         # Disney
-      - HD          # Home Depot
-      - NKE         # Nike
-      - SBUX        # Starbucks
-      - UBER        # Uber
-      - TGT         # Target
-      - XOM         # ExxonMobil
-      - CVX         # Chevron
-      - LMT         # Lockheed Martin
-      - BA          # Boeing
-      - RTX         # RTX (Raytheon)
-      - GE          # General Electric
-      - CAT         # Caterpillar
-      - DE          # John Deere
+      - AAPL
+      - MSFT
+      - AMZN
+      - GOOG
+      - META
+      - NVDA
+      - TSLA
+      - CRM
+      - ORCL
+      - IBM
+      - INTU
+      - AMD
+      - INTC
+      - MU
+      - AVGO
+      - QCOM
+      - TXN
+      - JPM
+      - GS
+      - MS
+      - BAC
+      - C
+      - WFC
+      - BLK
+      - V
+      - MA
+      - JNJ
+      - PFE
+      - MRK
+      - LLY
+      - UNH
+      - BMY
+      - ABBV
+      - WMT
+      - COST
+      - MCD
+      - DIS
+      - HD
+      - NKE
+      - SBUX
+      - UBER
+      - TGT
+      - XOM
+      - CVX
+      - LMT
+      - BA
+      - RTX
+      - GE
+      - CAT
+      - DE
 
-  - name: Asie
+  - name: Asie         # Subset: Focus on major Asian indices and companies
     watchlist:
-      - ^N225       # Nikkei 225 (Japan)
-      - EWJ         # Japan ETF
-      - AAXJ        # Asia ex-Japan ETF
-      - ^BSESN      # BSE Sensex (India)
-      - INDA        # India ETF
-      - ^HSI        # Hang Seng (Hong Kong)
-      - ^000001.SS  # Shanghai Composite (China)
-      - MCHI        # China ETF
-      - TSM         # Taiwan Semiconductor – TW
-      - BABA        # Alibaba – e-commerce, CN
-      - BIDU        # Baidu – moteur de recherche, CN
-      - 9988.HK     # Alibaba Group – HK listing
-      - 0700.HK     # Tencent – réseaux sociaux, HK
-      - SONY        # Sony – électronique, JP
-      - TM          # Toyota – automobile, JP
-      - HMC         # Honda – automobile, JP
+      - ^N225         # Japan Index
+      - EWJ           # Japan ETF
+      - AAXJ          # Asia ex-Japan ETF
+      - ^BSESN        # India Index
+      - INDA          # India ETF
+      - ^HSI          # Hong Kong Index
+      - ^000001.SS    # China Index
+      - MCHI          # China ETF
+      - TSM           # Taiwan Semi
+      - BABA          # Alibaba
+      - BIDU          # Baidu
+      - 9988.HK       # Alibaba (HK)
+      - 0700.HK       # Tencent
+      - SONY          # Sony
+      - TM            # Toyota
+      - HMC           # Honda
 
-  - name: Europe
+  - name: Europe       # Subset: Focus on major European indices and companies by country
     watchlist:
-      # Pays-Bas
-      - ASML.AS    # ASML – semi, lithographie
-      - ADYEN.AS   # Adyen – paiements électroniques
+      # Netherlands
+      - ASML.AS       # ASML: Critical semiconductor equipment. Global tech indicator.
+      - ADYEN.AS      # Adyen: Payment processing. Fintech/e-commerce growth indicator. (.AS = Amsterdam)
 
-      # France (grands groupes)
-      - AIR.PA     # Airbus – aérospatial
-      - AI.PA      # Air Liquide – gaz industriels
-      - STM.PA     # STMicroelectronics – semi
-      - BNP.PA     # BNP Paribas – banque
-      - ACA.PA     # Crédit Agricole – banque
-      - MC.PA      # LVMH – luxe
-      - OR.PA      # L’Oréal – cosmétique
-      - SNY        # Sanofi – pharma
-      - TTE        # TotalEnergies – énergie
-      - PUB.PA     # Publicis – publicité
-      - VIE.PA     # Veolia – services environnementaux
-      - SU.PA      # Schneider Electric – automation & énergie
-      - EN.PA      # Bouygues – construction, télécoms
+      # France (Major Groups)
+      - AIR.PA        # Airbus: Aerospace. Global travel, manufacturing. (.PA = Paris)
+      - AI.PA         # Air Liquide: Industrial gases. Broad industrial activity.
+      - STM.PA        # STMicroelectronics: Semiconductors. EU tech sector.
+      - BNP.PA        # BNP Paribas: Major bank. EU financial health.
+      - ACA.PA        # Crédit Agricole: Major bank. French economy focus.
+      - MC.PA         # LVMH: Luxury goods leader. Global high-end consumer sentiment.
+      - OR.PA         # L’Oréal: Cosmetics. Global consumer spending (beauty).
+      - SNY           # Sanofi: Pharmaceuticals. Global healthcare. (Usually EPA:SAN)
+      - TTE           # TotalEnergies: Energy major. Global energy markets. (Usually EPA:TTE)
+      - PUB.PA        # Publicis Groupe: Advertising agency. Global ad spending trends.
+      - VIE.PA        # Veolia Environnement: Utilities, waste management. Environmental services.
+      - SU.PA         # Schneider Electric: Energy management, automation. Industrial tech, electrification.
+      - EN.PA         # Bouygues: Construction, telecoms. Infrastructure spending, telecom market.
 
-      # Allemagne
-      - SIE.DE     # Siemens – ingénierie
-      - DBK.DE     # Deutsche Bank – banque
-      - ALV.DE     # Allianz – assurance
-      - DTE.DE     # Deutsche Telekom – télécoms
-      - BMW.DE     # BMW – automobile
-      - DAI.DE     # Mercedes-Benz – automobile
-      - BAS.DE     # BASF – chimie
-      - SAP.DE     # SAP – logiciels
+      # Germany
+      - SIE.DE        # Siemens: Industrial conglomerate. Global manufacturing, infrastructure. (.DE = XETRA)
+      - DBK.DE        # Deutsche Bank: Major bank. German/EU financial health.
+      - ALV.DE        # Allianz: Insurance, asset management. Global insurance market.
+      - DTE.DE        # Deutsche Telekom: Telecoms operator. EU telecom market.
+      - BMW.DE        # BMW: Premium automaker. Global auto market, luxury segment.
+      - DAI.DE        # Mercedes-Benz Group: Premium automaker. Global auto market, luxury segment. (*Note: Daimler ticker was DAI, now MBG.DE for Mercedes-Benz*) Use MBG.DE
+      - BAS.DE        # BASF: Chemical company giant. Global industrial/chemical demand.
+      - SAP.DE        # SAP: Enterprise software leader. Global IT spending.
 
-      # Suisse
-      - UBSG.SW    # UBS Group – banque privée
-      - NESN.SW    # Nestlé – alimentation
-      - NOVN.SW    # Novartis – pharma (équiv. NVS)
-      - ROG.SW     # Roche – pharma
+      # Switzerland
+      - UBSG.SW       # UBS Group: Global wealth manager/bank. Financial markets health. (.SW = Zurich)
+      - NESN.SW       # Nestlé: Global food giant. Consumer staples demand.
+      - NOVN.SW       # Novartis: Pharmaceuticals. Global healthcare. (Swiss listing for NVS)
+      - ROG.SW        # Roche Holding: Pharmaceuticals, diagnostics. Global healthcare.
 
-      # Danemark
-      - NVO        # Novo Nordisk – pharma
+      # Denmark
+      - NVO           # Novo Nordisk: Pharmaceuticals (diabetes/obesity leader). Global healthcare trends. (Usually CPH:NOVO-B or NYSE:NVO)
 
-      # Royaume-Uni
-      - SHEL       # Shell – énergie
-      - HSBA.L     # HSBC Holdings – banque (UK/HK)
-      - AZN        # AstraZeneca – pharma
-      - UL         # Unilever – conso (UK/NL)
-      - GSK.L      # GSK – pharma
+      # United Kingdom
+      - SHEL          # Shell: Energy major. Global energy markets. (Usually LSE:SHEL)
+      - HSBA.L        # HSBC Holdings: Global bank (UK/Asia focus). Global trade/finance. (.L = London)
+      - AZN           # AstraZeneca: Pharmaceuticals. Global healthcare. (Usually LSE:AZN)
+      - UL            # Unilever: Consumer goods. Global consumer staples. (Usually LSE:ULVR)
+      - GSK.L         # GSK plc: Pharmaceuticals. Global healthcare.
 
-  - name: Canada
+  - name: Canada       # Subset: Focus on major Canadian companies, often resource/finance heavy.
     watchlist:
-      # Banques
-      - RY.TO      # Royal Bank of Canada
-      - TD.TO      # Toronto-Dominion Bank
-      - BNS.TO     # Bank of Nova Scotia
-      - BMO.TO     # Bank of Montreal
-      - CM.TO      # Canadian Imperial Bank of Commerce
+      # Banks
+      - RY.TO         # Royal Bank of Canada: Largest Canadian bank. (.TO = Toronto)
+      - TD.TO         # Toronto-Dominion Bank: Significant US presence.
+      - BNS.TO        # Bank of Nova Scotia (Scotiabank): International focus (Latin America).
+      - BMO.TO        # Bank of Montreal: Significant US presence.
+      - CM.TO         # Canadian Imperial Bank of Commerce (CIBC): Primarily domestic focus.
 
-      # Énergie et mines
-      - SU.TO      # Suncor Energy – sables bitumineux
-      - CNQ.TO     # Canadian Natural Resources – pétrole/gaz
-      - ENB.TO     # Enbridge – pipelines
-      - TECK-B.TO  # Teck Resources – matières premières (cuivre, zinc)
+      # Energy & Mining
+      - SU.TO         # Suncor Energy: Integrated oil (oil sands focus).
+      - CNQ.TO        # Canadian Natural Resources: Major oil and gas producer.
+      - ENB.TO        # Enbridge: Energy infrastructure (pipelines). Dividend focus.
+      - TECK-B.TO     # Teck Resources: Diversified mining (copper, zinc, steelmaking coal). Global resource demand.
 
-      # Transport & Industrie
-      - CP.TO      # Canadian Pacific Kansas City – chemins de fer
-      - CNR.TO     # Canadian National Railway – transport
+      # Transport & Industrials
+      - CP.TO         # Canadian Pacific Kansas City: Major railway network (Canada, US, Mexico). North American trade indicator.
+      - CNR.TO        # Canadian National Railway: Major railway network. North American trade indicator.
 
-      # Technologie / e-commerce
-      - SHOP.TO    # Shopify – e-commerce
-      - OTEX.TO    # OpenText – logiciels entreprise
+      # Technology / E-commerce
+      - SHOP.TO       # Shopify: E-commerce platform provider. Global e-commerce trends.
+      - OTEX.TO       # OpenText: Enterprise information management software. Enterprise IT spending.
 
   - name: France
     watchlist:
-      - AIR.PA     # Airbus
-      - AI.PA      # Air Liquide
-      - OR.PA      # L’Oréal
-      - MC.PA      # LVMH
-      - RMS.PA     # Hermès
-      - SU.PA      # Schneider Electric
-      - VIE.PA     # Veolia
-      - PUB.PA     # Publicis
-      - SGEF.PA    # Société Générale (finance)
-      - BNP.PA     # BNP Paribas
-      - ACA.PA     # Crédit Agricole
-      - TTE        # TotalEnergies
-      - ENGIE.PA   # Engie (énergie)
-      - SNY        # Sanofi
-      - STM.PA     # STMicroelectronics
-      - ML.PA      # Michelin – pneus
-      - RNO.PA     # Renault – automobile
-      - UG.PA      # Unibail-Rodamco-Westfield – immobilier
-      - EN.PA      # Bouygues – BTP, télécoms
+      - AIR.PA        # Airbus
+      - AI.PA         # Air Liquide
+      - OR.PA         # L’Oréal
+      - MC.PA         # LVMH
+      - RMS.PA        # Hermès International: Luxury goods (high-end).
+      - SU.PA         # Schneider Electric
+      - VIE.PA        # Veolia
+      - PUB.PA        # Publicis
+      - GLE.PA        # Société Générale: Major French bank.
+      - BNP.PA        # BNP Paribas
+      - ACA.PA        # Crédit Agricole
+      - TTE           # TotalEnergies (EPA:TTE)
+      - ENGIE.PA      # Engie: Utility (electricity, gas). Energy transition focus.
+      - SNY           # Sanofi (EPA:SAN)
+      - STM.PA        # STMicroelectronics
+      - ML.PA         # Michelin: Tire manufacturer. Auto & industrial demand indicator.
+      - RNO.PA        # Renault: Automaker. European auto market.
+      - UG.PA         # Unibail-Rodamco-Westfield: Commercial real estate (shopping centers). Retail property market health.
+      - EN.PA         # Bouygues
+      - CA.PA         # Carrefour
+      - VIV.PA        # Vivendi
+      - EL.PA         # EssilorLuxottica
+      - CAP.PA        # Capgemini
+      - ATO.PA        # Atos
 
   - name: Industrie & énergie
     watchlist:
-      - XOM        # ExxonMobil
-      - CVX        # Chevron
-      - LMT        # Lockheed Martin
-      - BA         # Boeing
-      - RTX        # RTX (Raytheon)
-      - GE         # General Electric
-      - CAT        # Caterpillar
-      - DE         # John Deere
-      - AIR.PA     # Airbus – aérospatial, FR/EU
-      - AI.PA      # Air Liquide – industrie, FR
-      - SIE.DE     # Siemens – ingénierie, DE
-      - SHEL       # Shell – énergie, UK
-      - TTE        # TotalEnergies – énergie, FR
-      - TM         # Toyota – automobile, JP
-      - HMC        # Honda – automobile, JP
-      - SU.TO      # Suncor Energy – sables bitumineux
-      - CNQ.TO     # Canadian Natural Resources – pétrole/gaz
-      - ENB.TO     # Enbridge – pipelines
-      - TECK-B.TO  # Teck Resources – matières premières (cuivre, zinc)
-      - CP.TO      # Canadian Pacific Kansas City – chemins de fer
-      - CNR.TO     # Canadian National Railway – transport
+      - XOM           # ExxonMobil (US)
+      - CVX           # Chevron (US)
+      - LMT           # Lockheed Martin (US Defense)
+      - BA            # Boeing (US Aerospace)
+      - RTX           # RTX Corp (US Defense)
+      - GE            # General Electric (US Industrial/Aero)
+      - CAT           # Caterpillar (US Machinery)
+      - DE            # John Deere (US Machinery)
+      - AIR.PA        # Airbus (EU Aerospace)
+      - AI.PA         # Air Liquide (FR Industrial Gas)
+      - SIE.DE        # Siemens (DE Industrial Conglomerate)
+      - SHEL          # Shell (UK Energy)
+      - TTE           # TotalEnergies (FR Energy)
+      - TM            # Toyota (JP Auto)
+      - HMC           # Honda (JP Auto)
+      - SU.TO         # Suncor Energy (CA Energy)
+      - CNQ.TO        # Canadian Natural Resources (CA Energy)
+      - ENB.TO        # Enbridge (CA Pipeline)
+      - TECK-B.TO     # Teck Resources (CA Mining)
+      - CP.TO         # Canadian Pacific Railway (CA Rail)
+      - CNR.TO        # Canadian National Railway (CA Rail)
 
   - name: Tech
     watchlist:
-      - AAPL        # Apple
-      - MSFT        # Microsoft
-      - AMZN        # Amazon
-      - GOOG        # Alphabet (Google)
-      - META        # Meta (Facebook)
-      - NVDA        # Nvidia
-      - TSLA        # Tesla
-      - CRM         # Salesforce
-      - ORCL        # Oracle
-      - IBM         # IBM
-      - INTU        # Intuit
-      - AMD        # Advanced Micro Devices
-      - INTC       # Intel
-      - MU         # Micron Technology
-      - AVGO       # Broadcom
-      - QCOM       # Qualcomm
-      - TXN        # Texas Instruments
-      - ASML.AS    # ASML – semi, NL
-      - STM.PA     # STMicroelectronics – semi, FR/IT
-      - TSM        # Taiwan Semiconductor – TW
-      - BABA       # Alibaba – e-commerce, CN
-      - BIDU       # Baidu – moteur de recherche, CN
-      - 9988.HK    # Alibaba Group – HK listing
-      - 0700.HK    # Tencent – réseaux sociaux, HK
-      - SONY       # Sony – électronique, JP
-      - SAP.DE     # SAP – logiciels, DE
-      - PLTR       # Palantir – IA & défense
-      - GME        # GameStop – action mème
-      - T          # AT&T – télécom
-      - SNAP       # Snap – réseaux sociaux
-      - COIN       # Coinbase – crypto platform
-      - ARKK       # ARK Innovation ETF (proxy tech spéculative)
-      - SHOP.TO    # Shopify – e-commerce
-      - OTEX.TO    # OpenText – logiciels entreprise
+      - AAPL          # Apple (US)
+      - MSFT          # Microsoft (US)
+      - AMZN          # Amazon (US)
+      - GOOG          # Alphabet/Google (US)
+      - META          # Meta/Facebook (US)
+      - NVDA          # Nvidia (US)
+      - TSLA          # Tesla (US)
+      - CRM           # Salesforce (US)
+      - ORCL          # Oracle (US)
+      - IBM           # IBM (US)
+      - INTU          # Intuit (US)
+      - AMD           # AMD (US)
+      - INTC          # Intel (US)
+      - MU            # Micron (US)
+      - AVGO          # Broadcom (US)
+      - QCOM          # Qualcomm (US)
+      - TXN           # Texas Instruments (US)
+      - ASML.AS       # ASML (NL)
+      - STM.PA        # STMicroelectronics (FR/IT)
+      - TSM           # TSMC (TW)
+      - BABA          # Alibaba (CN)
+      - BIDU          # Baidu (CN)
+      - 9988.HK       # Alibaba (HK)
+      - 0700.HK       # Tencent (HK)
+      - SONY          # Sony (JP)
+      - SAP.DE        # SAP (DE)
+      - PLTR          # Palantir (US)
+      - T             # AT&T (US Telecom - infrastructure tech)
+      - SNAP          # Snap (US Social Media)
+      - COIN          # Coinbase (US Crypto Platform)
+      - ARKK          # ARK Innovation ETF (US Speculative Tech)
+      - SHOP.TO       # Shopify (CA E-commerce Platform)
+      - OTEX.TO       # OpenText (CA Enterprise Software)
 
   - name: Finance
     watchlist:
-      - JPM        # JPMorgan Chase
-      - GS         # Goldman Sachs
-      - MS         # Morgan Stanley
-      - BAC        # Bank of America
-      - C          # Citigroup
-      - WFC        # Wells Fargo
-      - BLK        # BlackRock
-      - V          # Visa
-      - MA         # Mastercard
-      - HSBC       # HSBC Holdings – banque, UK/HK
-      - BNP.PA     # BNP Paribas – banque, FR
-      - ACA.PA     # Crédit Agricole – banque, FR
-      - UBSG.SW    # UBS Group – banque privée, CH
-      - DBK.DE     # Deutsche Bank – banque, DE
-      - RY.TO      # Royal Bank of Canada – CA
-      - TD.TO      # Toronto Dominion – CA
-      - BNS.TO     # Bank of Nova Scotia
-      - BMO.TO     # Bank of Montreal
-      - CM.TO      # Canadian Imperial Bank of Commerce
+      - JPM           # JPMorgan Chase (US)
+      - GS            # Goldman Sachs (US)
+      - MS            # Morgan Stanley (US)
+      - BAC           # Bank of America (US)
+      - C             # Citigroup (US)
+      - WFC           # Wells Fargo (US)
+      - BLK           # BlackRock (US Asset Manager)
+      - V             # Visa (US Payments)
+      - MA            # Mastercard (US Payments)
+      - HSBC          # HSBC (UK/HK Bank) (LSE:HSBA or NYSE:HSBC)
+      - BNP.PA        # BNP Paribas (FR Bank)
+      - ACA.PA        # Crédit Agricole (FR Bank)
+      - UBSG.SW       # UBS Group (CH Bank/Wealth)
+      - DBK.DE        # Deutsche Bank (DE Bank)
+      - RY.TO         # Royal Bank of Canada (CA Bank)
+      - TD.TO         # Toronto Dominion (CA Bank)
+      - BNS.TO        # Bank of Nova Scotia (CA Bank)
+      - BMO.TO        # Bank of Montreal (CA Bank)
+      - CM.TO         # CIBC (CA Bank)
+      - ALV.DE        # Allianz (DE Insurance)
 
   - name: Santé/Pharma
     watchlist:
-      - JNJ        # Johnson & Johnson
-      - PFE        # Pfizer
-      - MRK        # Merck & Co.
-      - LLY        # Eli Lilly
-      - UNH        # UnitedHealth
-      - BMY        # Bristol-Myers Squibb
-      - ABBV       # AbbVie
-      - SNY        # Sanofi – pharma, FR
-      - NVS        # Novartis – pharma, CH
-      - NVO        # Novo Nordisk – pharma, DK
-      - AZN        # AstraZeneca – pharma, UK
+      - JNJ           # Johnson & Johnson (US)
+      - PFE           # Pfizer (US)
+      - MRK           # Merck & Co. (US)
+      - LLY           # Eli Lilly (US)
+      - UNH           # UnitedHealth (US Insurer)
+      - BMY           # Bristol-Myers Squibb (US)
+      - ABBV          # AbbVie (US)
+      - SNY           # Sanofi (FR) (EPA:SAN or NYSE:SNY)
+      - NVS           # Novartis (CH) (SIX:NOVN or NYSE:NVS)
+      - NVO           # Novo Nordisk (DK) (CPH:NOVO-B or NYSE:NVO)
+      - AZN           # AstraZeneca (UK) (LSE:AZN or NYSE:AZN)
+      - ROG.SW        # Roche (CH)
+      - GSK.L         # GSK (UK)
 
   - name: Conso & Luxe
     watchlist:
-      - WMT        # Walmart
-      - COST       # Costco
-      - MCD        # McDonald's
-      - DIS        # Disney
-      - HD         # Home Depot
-      - NKE        # Nike
-      - SBUX       # Starbucks
-      - UBER       # Uber
-      - TGT        # Target
-      - MC.PA      # LVMH – luxe, FR
-      - OR.PA      # L'Oréal – cosmétique, FR
-      - UL         # Unilever – conso, UK/NL
-      - NESN.SW    # Nestlé – conso, CH
+      - WMT           # Walmart (US Retail)
+      - COST          # Costco (US Retail)
+      - MCD           # McDonald's (US Fast Food)
+      - DIS           # Disney (US Media/Entertainment)
+      - HD            # Home Depot (US Home Improvement)
+      - NKE           # Nike (US Apparel)
+      - SBUX          # Starbucks (US Coffee Chain)
+      - UBER          # Uber (US Ride-share/Delivery)
+      - TGT           # Target (US Retail)
+      - MC.PA         # LVMH (FR Luxury)
+      - OR.PA         # L'Oréal (FR Cosmetics)
+      - UL            # Unilever (UK/NL Consumer Goods) (LSE:ULVR or NYSE:UL)
+      - NESN.SW       # Nestlé (CH Food/Beverage)
+      - RMS.PA      # Hermès (FR Luxury)
 
-  - name: Misc
+  - name: Misc         # Miscellaneous tickers of interest.
     watchlist:
-      - GME        # GameStop – meme stock
+      - GME           # GameStop: Retail investor sentiment, "meme stock" dynamics.
 
+# --- Color Scheme (Nord Theme) ---
+# Defines the colors used in the ticker display.
 colors:
-    text: cyan
-    text-light: blue
-    text-label: "#81a1c1"
-    text-line: "#3b4252"
-    text-tag: "#5e6577"
-    background-tag: "#3b4252"
+  text: cyan
+  text-light: blue
+  text-label: "#81a1c1"
+  text-line: "#3b4252"
+  text-tag: "#5e6577"
+  background-tag: "#3b4252"
