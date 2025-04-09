@@ -5,7 +5,7 @@ show-summary: false             # No use without specific holdings defined
 show-tags: false                # Don't display ticker metadata tags
 show-fundamentals: true         # Show fundamental data like P/E, Market Cap where available
 show-separator: true            # Show a separator line between tickers
-show-holdings: true             # Display holdings structure (even if zero)
+show-holdings: true             # Display holdings, if any
 interval: 60                    # Refresh interval in seconds
 currency: CAD                   # Display prices converted to Canadian Dollars
 currency-summary-only: false    # Apply currency conversion to individual tickers, not just summary
@@ -44,6 +44,7 @@ groups:
       - ^N225         # Nikkei 225: Japanese benchmark stock index.
       - ^STOXX50E     # Euro Stoxx 50: Eurozone blue-chips.
       - ^000001.SS    # Shanghai Composite: Main China mainland stock index.
+      - ^AXJO         # S&P/ASX 200: Australia benchmark
       # --- Bonds & Inflation ---
       - HYG           # US High-Yield Corp Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion.
       - IEF           # US 7-10 Year Treasuries ETF. Medium-term interest rate expectations. Price falls as rates rise.
@@ -122,6 +123,42 @@ groups:
       - LE=F          # Live Cattle Futures: Beef prices.
       # --- Other Materials ---
       - URNM          # Sprott Uranium Miners ETF: Tracks uranium miners, proxy for nuclear energy sentiment/demand.
+
+  - name: Devises        # Focus on major currency pairs and FX indicators
+    watchlist:
+      # --- Major Pairs (vs USD) ---
+      # For AAABBB=X: rise means the Base (AAA) is stronger.
+      - EURUSD=X      # Euro / US Dollar: Most traded pair, key EU/US barometer.
+      - USDJPY=X      # US Dollar / Japanese Yen: Risk sentiment indicator (Yen = safe haven).
+      - GBPUSD=X      # British Pound / US Dollar ("Cable"): UK/US sentiment indicator.
+      - USDCAD=X      # US Dollar / Canadian Dollar ("Loonie"): Commodity-sensitive (oil), relevant for Canada.
+      - AUDUSD=X      # Australian Dollar / US Dollar: Commodity and risk appetite proxy.
+      - USDCHF=X      # US Dollar / Swiss Franc: Risk indicator (Swiss Franc = safe haven).
+      - NZDUSD=X      # New Zealand Dollar / US Dollar: Another commodity/risk proxy.
+
+      # --- Dollar Index ---
+      - UUP           # Invesco DB US Dollar Index Bullish Fund: ETF tracking USD value against a basket of major currencies. Rising = strong USD.
+
+      # --- Key Crosses (no direct USD) ---
+      - EURGBP=X      # Euro / British Pound: Relative Eurozone / UK economic barometer.
+      - EURJPY=X      # Euro / Japanese Yen: Risk appetite indicator (often correlates with equities).
+      - GBPJPY=X      # British Pound / Japanese Yen: Often volatile, risk sentiment indicator.
+      - EURCHF=X      # Euro / Swiss Franc: Eurozone risk vs Swiss safe haven dynamic.
+      - AUDJPY=X      # Australian Dollar / Japanese Yen: Strong global risk appetite indicator.
+      - CADJPY=X      # Canadian Dollar / Japanese Yen: Commodity/risk blend vs safe haven.
+
+      # --- Emerging Markets / Special ---
+      - USDCNH=X      # US Dollar / Offshore Chinese Yuan: Key indicator for China and global trade.
+      - USDMXN=X      # US Dollar / Mexican Peso: Major Latin American currency.
+      - USDBRL=X      # US Dollar / Brazilian Real: Another key Latin American currency.
+      - USDZAR=X      # US Dollar / South African Rand: Key African currency, EM risk proxy.
+
+      # --- ETF Proxies (Optional/Alternative to spot pairs) ---
+      - FXE           # Invesco Euro Trust ETF (proxy for EUR/USD)
+      - FXY           # Invesco Japanese Yen Trust ETF (proxy for JPY/USD, inverse of USDJPY=X)
+      - FXC           # Invesco Canadian Dollar Trust ETF (proxy for CAD/USD, inverse of USDCAD=X)
+      - FXA           # Invesco Australian Dollar Trust ETF (proxy for AUD/USD)
+      - FXB           # Invesco British Pound Trust ETF (proxy for GBP/USD)
 
   - name: Crypto         # Cryptocurrencies & related equities/ETFs. Reflects risk appetite & tech adoption. ADA, DOT, Spot BTC ETF.
     watchlist:
@@ -321,6 +358,7 @@ groups:
       - ^N225         # Nikkei 225 (Japan)
       - ^TWII         # TAIEX (Taiwan).  -> regional breadth.
       - ^000001.SS    # Shanghai Composite (China)
+      - ^AXJO         # S&P/ASX 200: Australia benchmark
       # --- ETFs ---
       - AAXJ          # iShares MSCI All Country Asia ex Japan ETF
       - EWJ           # iShares MSCI Japan ETF
