@@ -155,11 +155,11 @@ groups:
       - USDZAR=X      # US Dollar / South African Rand: Key African currency, EM risk proxy.
 
       # --- ETF Proxies (Optional/Alternative to spot pairs) ---
-      - FXE           # Invesco Euro Trust ETF (proxy for EUR/USD)
-      - FXY           # Invesco Japanese Yen Trust ETF (proxy for JPY/USD, inverse of USDJPY=X)
-      - FXC           # Invesco Canadian Dollar Trust ETF (proxy for CAD/USD, inverse of USDCAD=X)
-      - FXA           # Invesco Australian Dollar Trust ETF (proxy for AUD/USD)
-      - FXB           # Invesco British Pound Trust ETF (proxy for GBP/USD)
+      # - FXE           # Invesco Euro Trust ETF (proxy for EUR/USD)
+      # - FXY           # Invesco Japanese Yen Trust ETF (proxy for JPY/USD, inverse of USDJPY=X)
+      # - FXC           # Invesco Canadian Dollar Trust ETF (proxy for CAD/USD, inverse of USDCAD=X)
+      # - FXA           # Invesco Australian Dollar Trust ETF (proxy for AUD/USD)
+      # - FXB           # Invesco British Pound Trust ETF (proxy for GBP/USD)
 
   - name: Crypto         # Cryptocurrencies & related equities/ETFs. Reflects risk appetite & tech adoption. ADA, DOT, Spot BTC ETF.
     watchlist:
