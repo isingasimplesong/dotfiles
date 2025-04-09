@@ -291,7 +291,6 @@ groups:
       - AVGO
       - BA
       - BAC
-      - BIDU          # Note: CN company, US listed
       - BLK
       - BRK-B
       - BMY
@@ -309,7 +308,6 @@ groups:
       - GOOG
       - GS
       - HD
-      - HMC           # Note: JP company, US listed
       - HON
       - IBM
       - INTC
@@ -334,21 +332,23 @@ groups:
       - RTX
       - SBUX
       - SNAP
-      - SONY          # Note: JP company, US listed
       - T
       - TGT
-      - TM            # Note: JP company, US listed
-      - TSM           # Note: TW company, US listed
       - TSLA
       - TXN
       - UBER
-      - UL            # Note: UK/NL company, US listed
       - UNH
       - UPS
       - V
       - WFC
       - WMT
       - XOM
+      # - UL            # Note: UK/NL company, US listed
+      # - HMC           # Note: JP company, US listed
+      # - TM            # Note: JP company, US listed
+      # - SONY          # Note: JP company, US listed
+      # - TSM           # Note: TW company, US listed
+      # - BIDU          # Note: CN company, US listed
 
   - name: Asie          # Subset: Focus on major Asian indices, ETFs and companies. indices, Samsung, SEA. Ordered by Type -> Alphabetical.
     watchlist:
