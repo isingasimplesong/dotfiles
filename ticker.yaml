@@ -47,7 +47,8 @@ groups:
       - ^AXJO         # S&P/ASX 200: Australia benchmark
       # --- Bonds & Inflation ---
       - HYG           # US High-Yield Corp Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion.
-      - IEF           # US 7-10 Year Treasuries ETF. Medium-term interest rate expectations. Price falls as rates rise.
+      - SHY           # US 1-3 Year Treasuries ETF. short-term interest rate expectations. Price falls as rates rise.
+      - IEF           # US 7-10 Year Treasuries ETF. Medium/long-term interest rate expectations. Price falls as rates rise.
       - LQD           # US Investment Grade Corporate Bonds ETF. Fall = widening credit spreads, higher perceived risk.
       - TLT           # US 20+ Year Treasuries ETF. Long-term rate expectations/economic outlook. Price falls as rates rise.
       - TIP           # US Treasury Inflation-Protected Securities ETF. Rise = higher inflation expectations.
