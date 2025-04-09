@@ -1,5 +1,6 @@
 # $XDG_CONFIG_HOME/.ticker.yaml
 # Configuration designed for a broad overview of economic & market conditions
+# doc : https://github.com/isingasimplesong/dotfiles/blob/main/ticker-doc.md
 
 show-summary: false             # No use without specific holdings defined
 show-tags: false                # Don't display ticker metadata tags
