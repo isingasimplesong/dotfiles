@@ -23,6 +23,7 @@ watchlist:
   - LQD           # iShares iBoxx $ Inv. Grade Corp Bond ETF: Tracks high-quality corporate bonds. Fall = widening credit spreads, higher perceived risk. Rise = confidence.
   - TIP           # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations. ETF = Exchange Traded Fund.
   - CL=F          # Crude Oil Futures (WTI): US oil benchmark. Rise = inflation pressure, demand/supply concerns. Futures = Contract for future delivery/price.
+  - RB=F          # RBOB Gasoline Futures: Proxy for consumer driving demand.
   - GC=F          # Gold Futures: Safe-haven asset, inflation hedge. Rise = risk aversion, inflation fears.
   - XLE           # Energy Select Sector SPDR Fund: US energy stocks. Reflects oil/gas trends, energy demand.
   - XLF           # Financial Select Sector SPDR Fund: US financial stocks. Indicator of banking health, credit conditions.
