@@ -284,73 +284,67 @@ groups:
 
   - name: US
     watchlist:
-      - AAPL
-      - ABBV
-      - ADBE
-      - AMD
-      - AMZN
-      - ARKK
-      - AVGO
-      - BA
-      - BAC
-      - BLK
-      - BRK-B
-      - BMY
-      - C
-      - CAT
-      - COIN
-      - COST
-      - CRM
-      - CVX
-      - DE
-      - DIS
-      - FDX
-      - GE
-      - GME
-      - GOOG
-      - GS
-      - HD
-      - HON
-      - IBM
-      - INTC
-      - INTU
-      - JNJ
-      - JPM
-      - LLY
-      - LMT
-      - MA
-      - MCD
-      - META
-      - MRK
-      - MS
-      - MSFT
-      - MU
-      - NKE
-      - NVDA
-      - ORCL
-      - PFE
-      - PLTR
-      - QCOM
-      - RTX
-      - SBUX
-      - SNAP
-      - T
-      - TGT
-      - TSLA
-      - TXN
-      - UBER
-      - UNH
-      - UPS
-      - V
-      - WFC
-      - WMT
-      - XOM
-      # - UL                                       # Note: UK/NL company, US listed
-      # - HMC                                      # Note: JP company, US listed
-      # - TM                                       # Note: JP company, US listed
-      # - SONY                                     # Note: JP company, US listed
-      # - TSM                                      # Note: TW company, US listed
-      # - BIDU                                     # Note: CN company, US listed
+      - AAPL                                     # Apple Inc.
+      - ABBV                                     # AbbVie Inc.
+      - ADBE                                     # Adobe Inc.
+      - AMD                                      # Advanced Micro Devices, Inc.
+      - AMZN                                     # Amazon.com, Inc.
+      - ARKK                                     # ARK Innovation ETF
+      - AVGO                                     # Broadcom Inc.
+      - BA                                       # The Boeing Company
+      - BAC                                      # Bank of America Corporation
+      - BLK                                      # BlackRock, Inc.
+      - BRK-B                                    # Berkshire Hathaway Inc. Class B
+      - BMY                                      # Bristol-Myers Squibb Company
+      - C                                        # Citigroup Inc.
+      - CAT                                      # Caterpillar Inc.
+      - COIN                                     # Coinbase Global, Inc.
+      - COST                                     # Costco Wholesale Corporation
+      - CRM                                      # Salesforce, Inc.
+      - CVX                                      # Chevron Corporation
+      - DE                                       # Deere & Company
+      - DIS                                      # The Walt Disney Company
+      - FDX                                      # FedEx Corporation
+      - GE                                       # General Electric Company
+      - GME                                      # GameStop Corp.
+      - GOOG                                     # Alphabet Inc. Class C
+      - GS                                       # The Goldman Sachs Group, Inc.
+      - HD                                       # The Home Depot, Inc.
+      - HON                                      # Honeywell International Inc.
+      - IBM                                      # International Business Machines Corporation
+      - INTC                                     # Intel Corporation
+      - INTU                                     # Intuit Inc.
+      - JNJ                                      # Johnson & Johnson
+      - JPM                                      # JPMorgan Chase & Co.
+      - LLY                                      # Eli Lilly and Company
+      - LMT                                      # Lockheed Martin Corporation
+      - MA                                       # Mastercard Incorporated
+      - MCD                                      # McDonald's Corporation
+      - META                                     # Meta Platforms, Inc.
+      - MRK                                      # Merck & Co., Inc.
+      - MS                                       # Morgan Stanley
+      - MSFT                                     # Microsoft Corporation
+      - MU                                       # Micron Technology, Inc.
+      - NKE                                      # NIKE, Inc.
+      - NVDA                                     # NVIDIA Corporation
+      - ORCL                                     # Oracle Corporation
+      - PFE                                      # Pfizer Inc.
+      - PLTR                                     # Palantir Technologies Inc.
+      - QCOM                                     # QUALCOMM Incorporated
+      - RTX                                      # Raytheon Technologies Corporation
+      - SBUX                                     # Starbucks Corporation
+      - SNAP                                     # Snap Inc.
+      - T                                        # AT&T Inc.
+      - TGT                                      # Target Corporation
+      - TSLA                                     # Tesla, Inc.
+      - TXN                                      # Texas Instruments Incorporated
+      - UBER                                     # Uber Technologies, Inc.
+      - UNH                                      # UnitedHealth Group Incorporated
+      - UPS                                      # United Parcel Service, Inc.
+      - V                                        # Visa Inc.
+      - WFC                                      # Wells Fargo & Company
+      - WMT                                      # Walmart Inc.
+      - XOM                                      # Exxon Mobil Corporation
 
   - name: Asie
     watchlist:
