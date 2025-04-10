@@ -6,7 +6,7 @@ show-tags: false                                 # Don't display ticker metadata
 show-fundamentals: true                          # Show fundamental data like P/E, Market Cap where available
 show-separator: true                             # Show a separator line between tickers
 show-holdings: true                              # Display holdings, if any
-interval: 60                                     # Refresh interval in seconds
+interval: 300                                    # Refresh interval in seconds
 currency: CAD                                    # Display prices converted to Canadian Dollars
 currency-summary-only: false                     # Apply currency conversion to individual tickers, not just summary
 sort: percent                                    # Sort tickers by percentage change (largest gainers first)
@@ -16,8 +16,8 @@ watchlist:
   - ^GSPC                                        # S&P 500 Index: Broad benchmark for large-cap US stocks. General US market health
   - ^IXIC                                        # NASDAQ Composite Index: Tech-heavy US stock index. Indicator of growth/tech sector sentiment
   - ^STOXX50E                                    # EURO STOXX 50 Index: Blue-chip index for the Eurozone. Gauge of core European economic/market sentiment
-  - ^FCHI                                        # CAC 40 Index: Benchmark French stock market index
   - ^HSI                                         # Hang Seng Index: Benchmark Hong Kong stock index. Reflects HK/China sentiment
+  - 000001.SS                                    # Shanghai Composite: Main China mainland stock index
   - ^VIX                                         # CBOE Volatility Index: Market fear/uncertainty gauge. Higher = more fear/stress. Lower = complacency
   - LQD                                          # iShares iBoxx $ Inv. Grade Corp Bond ETF: Tracks high-quality corporate bonds. Fall = widening credit spreads, higher perceived risk. Rise = confidence
   - TIP                                          # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations. ETF = Exchange Traded Fund
@@ -40,11 +40,11 @@ groups:
       - ^GDAXI                                   # DAX: German benchmark index (major exporters)
       - ^GSPC                                    # S&P 500: Broad large-cap US market benchmark
       - ^HSI                                     # Hang Seng: Hong Kong benchmark index (influence from China)
+      - 000001.SS                                # Shanghai Composite: Main China mainland stock index
       - ^IBEX                                    # IBEX 35: Spanish benchmark stock index.  -> broader EU view
       - ^IXIC                                    # NASDAQ Composite: Tech-heavy, growth-oriented US index
       - ^N225                                    # Nikkei 225: Japanese benchmark stock index
       - ^STOXX50E                                # Euro Stoxx 50: Eurozone blue-chips
-      - ^000001.SS                               # Shanghai Composite: Main China mainland stock index
       - ^AXJO                                    # S&P/ASX 200: Australia benchmark
       # --- Bonds & Inflation ---
       - HYG                                      # US High-Yield Corp Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion
@@ -161,25 +161,6 @@ groups:
       # - FXC                                     # Invesco Canadian Dollar Trust ETF (proxy for CAD/USD, inverse of USDCAD=X)
       # - FXA                                     # Invesco Australian Dollar Trust ETF (proxy for AUD/USD)
       # - FXB                                     # Invesco British Pound Trust ETF (proxy for GBP/USD)
-
-  - name: Crypto
-    watchlist:
-      # --- Major Cryptocurrencies ---
-      - ADA-USD                                  # Cardano: Another smart contract platform.  -> L1 diversity
-      - BTC-USD                                  # Bitcoin: Largest crypto, digital store of value / risk asset
-      - BNB-USD                                  # Binance Coin: Native token of Binance ecosystem
-      - DOT-USD                                  # Polkadot: Interoperability-focused blockchain platform.  -> L1 diversity
-      - ETH-USD                                  # Ethereum: Leading smart contract platform (DeFi, NFTs)
-      - LTC-USD                                  # Litecoin: Early Bitcoin fork, payments focus
-      - SOL-USD                                  # Solana: High-speed smart contract platform
-      - XMR-USD                                  # Monero: Privacy-focused cryptocurrency
-      # --- Crypto-related Equities ---
-      - COIN                                     # Coinbase Global: Major US crypto exchange. Proxy for trading volume & adoption
-      - MARA                                     # Marathon Digital Holdings: Large Bitcoin mining company
-      - MSTR                                     # MicroStrategy: Software company holding large BTC amounts. Leveraged BTC play
-      - RIOT                                     # Riot Platforms: Bitcoin mining company
-      # --- Crypto ETFs ---
-      - IBIT                                     # iShares Bitcoin Trust: Spot Bitcoin ETF (holds actual BTC). as key spot ETF example. (Alternative: FBTC, BITB, etc.)
 
   - name: Actions
     watchlist:
