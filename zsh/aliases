@@ -121,123 +121,123 @@ alias paste="wl-paste"
 # list_explicit                 Paquets installés manuellement
 # list_aur (Arch seulement)     AUR manuels
 # clean                         Nettoyage complet du système
-if command -v paru >/dev/null 2>&1; then
-    PKG_MGR="paru"
-    IS_ARCH=true
-elif command -v apt >/dev/null 2>&1; then
-    PKG_MGR="apt"
-    IS_ARCH=false
-else
-    echo "Aucun gestionnaire de paquets reconnu." >&2
-    return
-fi
-
-pkg_up() {
-    if [ "$IS_ARCH" = true ]; then
-        paru
-    else
-        sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
-        sudo apt autoremove && sudo apt autoclean && sudo apt clean
-        command -v flatpak >/dev/null && flatpak update
-    fi
-}
-
-pkg_install() {
-    if [ -z "$1" ]; then
-        echo "Usage: install <package>"
-        return 1
-    fi
-
-    if [ "$IS_ARCH" = true ]; then
-        paru -S "$@"
-    else
-        sudo apt install "$@"
-    fi
-}
-
-pkg_uninstall() {
-    if [ -z "$1" ]; then
-        echo "Usage: uninstall <package>"
-        return 1
-    fi
-
-    if [ "$IS_ARCH" = true ]; then
-        paru -Rs "$@"
-    else
-        sudo apt remove "$@"
-    fi
-}
-
-pkg_purge() {
-    if [ "$IS_ARCH" = true ]; then
-        echo "Pas d'équivalent direct à 'purge' avec pacman. Utiliser uninstall ou gérer manuellement les fichiers de config."
-    else
-        sudo apt purge "$@"
-    fi
-}
-
-pkg_search() {
-    if [ -z "$1" ]; then
-        echo "Usage: search <package>"
-        return 1
-    fi
-
-    if [ "$IS_ARCH" = true ]; then
-        paru -Ss "$@"
-    else
-        apt search "$@"
-    fi
-}
-
-pkg_list() {
-    if [ "$IS_ARCH" = true ]; then
-        pacman -Q
-    else
-        apt list --installed
-    fi
-}
-
-pkg_list_explicit() {
-    if [ "$IS_ARCH" = true ]; then
-        pacman -Qe
-    else
-        echo "APT ne fait pas de distinction explicite par défaut. Utilise 'apt-mark showmanual'."
-        apt-mark showmanual
-    fi
-}
-
-pkg_list_aur() {
-    if [ "$IS_ARCH" = true ]; then
-        pacman -Qem
-    else
-        echo "Pas de support AUR sur ce système."
-    fi
-}
-
-pkg_clean() {
-    if [ "$IS_ARCH" = true ]; then
-        sudo pacman -Sc
-    else
-        sudo apt autoremove && sudo apt autoclean && sudo apt clean
-    fi
-}
-
-# alias up="pu"
-# # Pacman
-# alias pu='paru'
-# alias pi='paru -Si'         #   install
-# alias pr='paru -Rs'         #   remove
-# alias pl='pacman -Q'        #   list installed
-# alias ple='pacman -Qe'      #   list explicitly installed
-# alias pla='pacman -Qem'     #   list explicitly installed packages from the AUR
-# alias pc='sudo pacman -Scc' #   clean cache
+# if command -v paru >/dev/null 2>&1; then
+#     PKG_MGR="paru"
+#     IS_ARCH=true
+# elif command -v apt >/dev/null 2>&1; then
+#     PKG_MGR="apt"
+#     IS_ARCH=false
+# else
+#     echo "Aucun gestionnaire de paquets reconnu." >&2
+#     return
+# fi
 #
-# # Apt
-# alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
-# alias ai="sudo apt install"
-# alias ap="sudo apt purge"
-# alias ar="sudo apt remove"
-# alias as="apt search"
+# pkg_up() {
+#     if [ "$IS_ARCH" = true ]; then
+#         paru
+#     else
+#         sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
+#         sudo apt autoremove && sudo apt autoclean && sudo apt clean
+#         command -v flatpak >/dev/null && flatpak update
+#     fi
+# }
+#
+# pkg_install() {
+#     if [ -z "$1" ]; then
+#         echo "Usage: install <package>"
+#         return 1
+#     fi
+#
+#     if [ "$IS_ARCH" = true ]; then
+#         paru -S "$@"
+#     else
+#         sudo apt install "$@"
+#     fi
+# }
+#
+# pkg_uninstall() {
+#     if [ -z "$1" ]; then
+#         echo "Usage: uninstall <package>"
+#         return 1
+#     fi
+#
+#     if [ "$IS_ARCH" = true ]; then
+#         paru -Rs "$@"
+#     else
+#         sudo apt remove "$@"
+#     fi
+# }
+#
+# pkg_purge() {
+#     if [ "$IS_ARCH" = true ]; then
+#         echo "Pas d'équivalent direct à 'purge' avec pacman. Utiliser uninstall ou gérer manuellement les fichiers de config."
+#     else
+#         sudo apt purge "$@"
+#     fi
+# }
+#
+# pkg_search() {
+#     if [ -z "$1" ]; then
+#         echo "Usage: search <package>"
+#         return 1
+#     fi
+#
+#     if [ "$IS_ARCH" = true ]; then
+#         paru -Ss "$@"
+#     else
+#         apt search "$@"
+#     fi
+# }
+#
+# pkg_list() {
+#     if [ "$IS_ARCH" = true ]; then
+#         pacman -Q
+#     else
+#         apt list --installed
+#     fi
+# }
+#
+# pkg_list_explicit() {
+#     if [ "$IS_ARCH" = true ]; then
+#         pacman -Qe
+#     else
+#         echo "APT ne fait pas de distinction explicite par défaut. Utilise 'apt-mark showmanual'."
+#         apt-mark showmanual
+#     fi
+# }
+#
+# pkg_list_aur() {
+#     if [ "$IS_ARCH" = true ]; then
+#         pacman -Qem
+#     else
+#         echo "Pas de support AUR sur ce système."
+#     fi
+# }
+#
+# pkg_clean() {
+#     if [ "$IS_ARCH" = true ]; then
+#         sudo pacman -Sc
+#     else
+#         sudo apt autoremove && sudo apt autoclean && sudo apt clean
+#     fi
+# }
+
+alias up="pu"
+# Pacman
+alias pu='paru'
+alias pi='paru -Si'         #   install
+alias pr='paru -Rs'         #   remove
+alias pl='pacman -Q'        #   list installed
+alias ple='pacman -Qe'      #   list explicitly installed
+alias pla='pacman -Qem'     #   list explicitly installed packages from the AUR
+alias pc='sudo pacman -Scc' #   clean cache
+
+# Apt
+alias au='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && flatpak update'
+alias ai="sudo apt install"
+alias ap="sudo apt purge"
+alias ar="sudo apt remove"
+alias as="apt search"
 
 # Flatpak
 alias fp='flatpak'
