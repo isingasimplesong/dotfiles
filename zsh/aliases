@@ -28,6 +28,7 @@ alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
 alias olm="docker exec -it ollama ollama"
 alias rkb-db-connect-prod="rainfrog --username postgres --database rkb_db --host 192.168.100.6 --port 5432 --driver postgres --password $RKB_DB_PASSWORD"
 alias rkb-db-connect-local="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres --password $RKB_DB_PASSWORD"
+alias portfolio="ticker --config ~/Coffre/portfolio.yaml"
 
 alias vim=nvim
 
