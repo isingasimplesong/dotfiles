@@ -545,10 +545,12 @@ groups:
       - AVGO                                     # Broadcom (US Semiconductors/Software)
       - BABA                                     # Alibaba (CN E-commerce/Cloud)
       - BIDU                                     # Baidu (CN Search/AI)
+      - BOTZ                                     # Global X Robotics & AI ETF
       - COIN                                     # Coinbase (US Crypto Platform)
       - CRM                                      # Salesforce (US Software)
       - DSY.PA                                   # Dassault Systèmes (FR Software)
       - GOOG                                     # Alphabet/Google (US)
+      - HACK                                     # ETFMG Prime Cyber Security ETF
       - IBM                                      # IBM (US IT Services/Software)
       - INTC                                     # Intel (US Semiconductors)
       - INTU                                     # Intuit (US Software)
@@ -569,6 +571,7 @@ groups:
       - SONY                                     # Sony (JP Electronics/Gaming)
       - STM.PA                                   # STMicroelectronics (EU Semiconductors)
       - T                                        # AT&T (US Telecom Infrastructure)
+      - TAN                                      # Invesco Solar ETF
       - TSM                                      # TSMC (TW Semiconductor Foundry)
       - TSLA                                     # Tesla (US EV/Tech)
       - TXN                                      # Texas Instruments (US Semiconductors)
@@ -662,16 +665,7 @@ groups:
       - NTDOY                                    # Nintendo
       - DJT                                      # Trump Media & tech group
       - TSLA                                     # Tesla (US EV/Tech)
-    holdings:
-      - symbol: "BTC-CAD"
-        quantity: 0.002493
-        unit_cost: 49133.57
-      - symbol: "BTC-CAD"
-        quantity: 0.005184
-        unit_cost: 37827.93
-      - symbol: "BTC-CAD"
-        quantity: 0.02579491
-        unit_cost: 37065.75
+      - ^EUVIX                                   # Euro VIX
 
 # --- Color Scheme (~Nord Theme) ---
 colors:
