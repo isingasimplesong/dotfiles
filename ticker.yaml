@@ -21,13 +21,13 @@ groups:
       - 000001.SS                                # Shanghai Composite: Main China mainland stock index
       - URTH                                     # iShares MSCI World ETF: Tracks developed market equities globally. Broad global equity sentiment
       - ^VIX                                     # CBOE Volatility Index: Market fear/uncertainty gauge. Higher = more fear/stress. Lower = complacency
-      - LQD                                      # iShares iBoxx $ Inv. Grade Corp Bond ETF: Tracks high-quality corporate bonds. Fall = widening credit spreads, higher perceived risk. Rise = confidence
-      - TIP                                      # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations. ETF = Exchange Traded Fund
+      - TIP                                      # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations
       - XLE                                      # Energy Select Sector SPDR Fund: US energy stocks. Reflects oil/gas trends, energy demand
-      - XLF                                      # Financial Select Sector SPDR Fund: US financial stocks. Indicator of banking health, credit conditions
+      - XLY                                      # Consumer Discretionary: Retail, media, auto. Reflects consumer confidence
       - GC=F                                     # Gold Futures: Safe-haven asset, inflation hedge. Rise = risk aversion, inflation fears
-      - CL=F                                     # Crude Oil Futures (WTI): US oil benchmark. Rise = inflation pressure, demand/supply concerns. Futures = Contract for future delivery/price
-      - RB=F                                     # RBOB Gasoline Futures: Proxy for consumer driving demand
+      - CL=F                                     # Crude Oil Futures (WTI): US oil benchmark. Rise = inflation pressure, demand/supply concerns
+      - SHY                                      # US 1-3 Year Treasuries ETF. short-term interest rate expectations. Price falls as rates rise
+      - IEF                                      # US 7-10 Year Treasuries ETF. Medium/long-term interest rate expectations. Price falls as rates rise
 
   - name: Global
     watchlist:
@@ -47,9 +47,9 @@ groups:
       - ^AXJO                                    # S&P/ASX 200: Australia benchmark
       # --- Bonds & Inflation ---
       - HYG                                      # US High-Yield Corp Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion
+      - LQD                                      # US Investment Grade Corporate Bonds ETF. Fall = widening credit spreads, higher perceived risk
       - SHY                                      # US 1-3 Year Treasuries ETF. short-term interest rate expectations. Price falls as rates rise
       - IEF                                      # US 7-10 Year Treasuries ETF. Medium/long-term interest rate expectations. Price falls as rates rise
-      - LQD                                      # US Investment Grade Corporate Bonds ETF. Fall = widening credit spreads, higher perceived risk
       - TLT                                      # US 20+ Year Treasuries ETF. Long-term rate expectations/economic outlook. Price falls as rates rise
       - TIP                                      # US Treasury Inflation-Protected Securities ETF. Rise = higher inflation expectations
       # --- Sector ETFs (US) ---
@@ -76,9 +76,6 @@ groups:
       - URTH                                     # iShares MSCI World ETF: Developed markets globally
       - VT                                       # Vanguard Total World Stock ETF: Alternative ACWI tracker
       - VWO                                      # Vanguard FTSE Emerging Markets ETF: Alternative EM tracker. Indicator of global growth & risk appetite
-      # --- Currency & Proxies ---
-      - EURUSD=X                                 # EUR/USD Exchange Rate: Key global currency pair, reflects relative EU/US economic outlook
-      - UUP                                      # Invesco DB US Dollar Index Bullish Fund ETF: Tracks USD index value. Rise = Stronger USD
       # --- Volatility & Fear ---
       - ^VIX                                     # CBOE Volatility Index: "Fear gauge". Higher = more expected volatility/fear
       - VXX                                      # iPath S&P 500 VIX Short-Term Futures ETN: Tracks VIX futures. Volatile, decays over time. ETN = Exchange Traded Note
@@ -125,41 +122,44 @@ groups:
       # --- Other Materials ---
       - URNM                                     # Sprott Uranium Miners ETF: Tracks uranium miners, proxy for nuclear energy sentiment/demand
 
-  - name: Devises                                # For AAABBB=X: rise means the Base (AAA) is stronger
+  - name: Dollar
     watchlist:
-      # --- Major Pairs (vs USD) ---
-      - EURUSD=X                                 # Euro / US Dollar: Most traded pair, key EU/US barometer
       - USDEUR=X
       - USDCAD=X                                 # US Dollar / Canadian Dollar ("Loonie"): Commodity-sensitive (oil), relevant for Canada
-      # - USDJPY=X                                 # US Dollar / Japanese Yen: Risk sentiment indicator (Yen = safe haven)
-      # - GBPUSD=X                                 # British Pound / US Dollar ("Cable"): UK/US sentiment indicator
-      # - AUDUSD=X                                 # Australian Dollar / US Dollar: Commodity and risk appetite proxy
-      # - USDCHF=X                                 # US Dollar / Swiss Franc: Risk indicator (Swiss Franc = safe haven)
-      # - NZDUSD=X                                 # New Zealand Dollar / US Dollar: Another commodity/risk proxy
-
-      # --- Dollar Index ---
-      - UUP                                      # Invesco DB US Dollar Index Bullish Fund: ETF tracking USD value against a basket of major currencies. Rising = strong USD
-
-      # --- Key Crosses (no direct USD) ---
-      - EURJPY=X                                 # Euro / Japanese Yen: Risk appetite indicator (often correlates with equities)
-      # - EURGBP=X                                # Euro / British Pound: Relative Eurozone / UK economic barometer
-      # - GBPJPY=X                                # British Pound / Japanese Yen: Often volatile, risk sentiment indicator
-      # - EURCHF=X                                # Euro / Swiss Franc: Eurozone risk vs Swiss safe haven dynamic
-      # - AUDJPY=X                                # Australian Dollar / Japanese Yen: Strong global risk appetite indicator
-      # - CADJPY=X                                # Canadian Dollar / Japanese Yen: Commodity/risk blend vs safe haven
-
-      # --- Emerging Markets / Special ---
+      - USDJPY=X                                 # US Dollar / Japanese Yen: Risk sentiment indicator (Yen = safe haven)
+      - USDCHF=X                                 # US Dollar / Swiss Franc: Risk indicator (Swiss Franc = safe haven)
       - USDCNH=X                                 # US Dollar / Offshore Chinese Yuan: Key indicator for China and global trade
       - USDMXN=X                                 # US Dollar / Mexican Peso: Major Latin American currency
       - USDBRL=X                                 # US Dollar / Brazilian Real: Another key Latin American currency
       - USDZAR=X                                 # US Dollar / South African Rand: Key African currency, EM risk proxy
+      - UUP                                      # Invesco DB US Dollar Index Bullish Fund: ETF tracking USD value against a basket of major currencies. Rising = strong USD
 
-      # --- ETF Proxies (Optional/Alternative to spot pairs) ---
-      # - FXE                                     # Invesco Euro Trust ETF (proxy for EUR/USD)
-      # - FXY                                     # Invesco Japanese Yen Trust ETF (proxy for JPY/USD, inverse of USDJPY=X)
-      # - FXC                                     # Invesco Canadian Dollar Trust ETF (proxy for CAD/USD, inverse of USDCAD=X)
-      # - FXA                                     # Invesco Australian Dollar Trust ETF (proxy for AUD/USD)
-      # - FXB                                     # Invesco British Pound Trust ETF (proxy for GBP/USD)
+  - name: Euro
+    watchlist:
+      - EURUSD=X                                 # Euro / US Dollar: Most traded pair, key EU/US barometer
+      - EURCHF=X                                 # Euro / Swiss Franc: Eurozone risk vs Swiss safe haven dynamic
+      - EURGBP=X                                 # Euro / British Pound: Relative Eurozone / UK economic barometer
+      - EURJPY=X                                 # Euro / Japanese Yen: Risk appetite indicator (often correlates with equities)
+      - EURCAD=X
+      - EURAUD=X
+      - EURMXN=X
+      - EURCNH=X
+      - EURBRL=X
+      - EURZAR=X
+
+  - name: CAD
+    watchlist:
+      - CADUSD=X
+      - CADEUR=X
+      - CADJPY=X
+      - CADCHF=X
+      - CADGBP=X
+      - CADJPY=X
+      - CADAUD=X
+      - CADMXN=X
+      - CADCNH=X
+      - CADBRL=X
+      - CADZAR=X
 
   - name: Actions
     watchlist:
@@ -195,6 +195,7 @@ groups:
       - DBK.DE                                   # Deutsche Bank (DE): Major German bank
       - DE                                       # John Deere (US): Agricultural & construction machinery. Ag/construction health
       - DIS                                      # Disney (US): Media, theme parks. Consumer discretionary spending
+      - DJT                                      # Trump Media & tech group
       - FDX                                      # FedEx (US): Logistics, delivery. Global trade/e-commerce volume indicator
       - GE                                       # General Electric (US): Aerospace, power, renewables. Industrial evolution
       - GME                                      # GameStop (US): "Meme stock". Retail speculative fervor
@@ -283,6 +284,7 @@ groups:
       - CRM                                      # Salesforce
       - CVX                                      # Chevron Corporation
       - DE                                       # Deere & Company
+      - DJT                                      # Trump Media & tech group
       - DIS                                      # The Walt Disney Company
       - FDX                                      # FedEx Corporation
       - GE                                       # General Electric Company
@@ -641,10 +643,20 @@ groups:
 
   - name: Misc
     watchlist:
-      - GME                                      # GameStop: Retail investor sentiment, "meme stock" dynamics
+      - AAPL                                     # Apple (US): Consumer electronics, services. Consumer spending, tech
+      - AMZN                                     # Amazon (US): E-commerce, cloud (AWS). Online retail, cloud growth
+      - COST                                     # Costco (US): Warehouse retailer. Consumer spending (bulk/value)
+      - DIS                                      # Disney (US Media/Entertainment)
+      - GOOG                                     # Alphabet (Google) (US): Search, advertising, cloud. Digital ad market
+      - MC.PA                                    # LVMH (FR): Luxury goods leader. Global high-end consumer sentiment
+      - META                                     # Meta Platforms (Facebook) (US): Social media, advertising. Digital ad market
+      - MSFT                                     # Microsoft (US): Software, cloud (Azure). Diversified tech giant
       - NTDOY                                    # Nintendo
-      - DJT                                      # Trump Media & tech group
+      - NVDA                                     # Nvidia (US): GPUs, AI chips. AI hardware leader, semi cycle
+      - PLTR                                     # Palantir Technologies (US): Data analytics, AI software. Speculative tech
       - TSLA                                     # Tesla (US EV/Tech)
+      - TSM                                      # TSMC (TW): Largest contract chip manufacturer. Critical tech supply chain. (NYSE:TSM)
+      - V                                        # Visa (US): Payment network. Consumer spending
 
 # --- Color Scheme (~Nord Theme) ---
 colors:
