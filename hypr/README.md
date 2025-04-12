@@ -2,7 +2,7 @@
 
 This configuration crafts a highly efficient, keyboard-centric, tiling desktop environment built around the [Hyprland](https://hyprland.org/) compositor, featuring the popular [Nord color scheme](https://www.nordtheme.com/), and overall a modern, minimalist and polished _look & feel_.
 
-[![Hyprland Nord desktop](hypr-nord.png)](hypr-nord.png)
+[![Hyprland Nord desktop](hyprnord.png)](hyprnord.png)
 
 Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces.
 
