@@ -146,7 +146,7 @@
 ### Submap: [I]nfo (`$mainMod + I` to enter)
 
 - `A`: Show Air Quality (`~/.local/bin/iq-air.sh`)
-- `B`: Show Firewall View (`~/.local/bin/pfview.sh`)
+- `B`: Show pfview (`~/.local/bin/pfview.sh`)
 - `C`: Copy from Clipboard History (`cliphist list | rofi ... | wl-copy`)
 - `D`: Delete from Clipboard History (`cliphist list | rofi ... | cliphist delete`)
 - `E`: Show CAD Exchange Rate (`~/.local/bin/cad.sh`)

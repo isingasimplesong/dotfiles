@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 alias c='clear'
 alias sz='source ~/.zshrc'
 alias source-bash='source ~/.bashrc'
