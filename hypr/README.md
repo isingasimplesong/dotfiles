@@ -25,7 +25,7 @@ monitor is (dis)connected.
 [cliphist](https://github.com/sentriz/cliphist), power management & auto lock
 _via_ `hypridle` and  `hyprlock`.
 
-It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset
+- It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset
 scratchpads.
 
 This configuration is best suited for **(neo)vim users, developers, power
