@@ -12,8 +12,8 @@ lazy = true
 
 [scratchpads.yazi]
 animation = ""
-command = "kitty --class kitty-yazy -e yazi"
-class = "kitty-yazy"
+command = "kitty --class kitty-yazi -e yazi"
+class = "kitty-yazi"
 size = "60% 70%"
 margin = 60
 #unfocus = "hide"
