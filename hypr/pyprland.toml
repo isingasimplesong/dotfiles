@@ -19,14 +19,14 @@ margin = 60
 #unfocus = "hide"
 lazy = true
 
-[scratchpads.explorer]
-animation = ""
-command = "thunar"
-class = "thunar"
-size = "60% 70%"
-margin = 60
-unfocus = "hide"
-lazy = true
+# [scratchpads.explorer]
+# animation = ""
+# command = "thunar"
+# class = "thunar"
+# size = "60% 70%"
+# margin = 60
+# unfocus = "hide"
+# lazy = true
 
 [scratchpads.bitwarden]
 animation = ""
