@@ -49,16 +49,12 @@ This environment relies on the following components to function properly. They m
 - `dbus-update-activation-environment` – ensures correct Wayland environment for GUI apps
 - `systemd` – required for `systemctl --user` entries in autostart
 
----
-
 ### Custom scripts
 
-These scripts are used for core desktop functionnalities. Other scripts are also used throughout submaps or utility bindings, but not required, therfore not mentionned here. You can replace them with your own, or refer to [this repository](https://github.com/isingasimplesong/duct-tape) for ready-made versions.
+These scripts are used for core desktop functionnalities. Other scripts are also used throughout submaps or utility bindings, but not required, therefore not mentionned here. You can replace them with your own, or refer to [this repository](https://github.com/isingasimplesong/duct-tape) for ready-made versions.
 
 - `~/.local/bin/waybar-toggle-tray.sh` toggle icons-tray visibility in waybar
 - `~/.local/bin/hypr-toggle-layouts.sh` toggle between available layouts (Masterstack/Dwindle)
-
----
 
 ## Keybinding Cheatsheet
 
