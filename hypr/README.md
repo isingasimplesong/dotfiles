@@ -4,7 +4,7 @@ This configuration crafts a highly efficient, keyboard-centric, tiling desktop e
 
 [![Hyprland Nord desktop](hyprnord.png)](hyprnord.png)
 
-Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (A/I/R/S) – which provide quick, context-specific access to \[A\]pplications, custom \[I\]nformation scripts, \[R\]ofi functions, and 26 instantly accessible "magic" \[S\]cratchpad workspaces.
+Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (A/I/R/S) – which provide quick, context-specific access to \[A\]pplications, custom \[I\]nformation scripts, \[R\]ofi functions, and 26 instantly accessible "magic" \[S\]cratchpads.
 
 The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that adapt their placement when the external monitor is (dis)connected. It includes clipboard history management _via_ [cliphist](https://github.com/sentriz/cliphist), power management & auto lock _via_ `hypridle` and  `hyprlock`. It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset scratchpads.
 
