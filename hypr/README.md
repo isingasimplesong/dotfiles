@@ -1,14 +1,14 @@
 # A keyboard-first hyprland config for nerds
 
-This configuration crafts a highly efficient, keyboard-centric, tiling desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, and overall a modern, minimalist and polished _look & feel_.
+This configuration crafts a highly efficient, keyboard-centric, tiling desktop environment built around the [Hyprland](https://hyprland.org/) compositor, featuring the popular [Nord color scheme](https://www.nordtheme.com/), and overall a modern, minimalist and polished _look & feel_.
 
 [![Hyprland Nord desktop](hypr-nord.png)](hypr-nord.png)
 
 Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces.
 
-The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that adapt their placement when the external monitor is (dis)connected. It also includes clipboard history management _via_ `cliphist`, power management & auto lock _via_ `hypridle` and  `hyprlock`.
+The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that adapt their placement when the external monitor is (dis)connected. It also includes clipboard history management _via_ [cliphist](https://github.com/sentriz/cliphist), power management & auto lock _via_ `hypridle` and  `hyprlock`. It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset scratchpads.
 
-This configuration is best suited for **(neo)vim users, developers, power users, sysadmins:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
+This configuration is best suited for **(neo)vim users, developers, power users, sysadmins and other CLI absolutists:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
 
 It's likely less suitable for users who strongly prefer mouse-driven interaction or those brand new to Linux who might find the initial learning curve for the keybindings steep.
 
