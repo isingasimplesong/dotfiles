@@ -1,14 +1,6 @@
 [pyprland]
 plugins = ["scratchpads"]
 
-#[layout_center]
-#margin = 60
-#offset = [0, 30]
-#next = "movefocus r"
-#prev = "movefocus l"
-#next2 = "movefocus d"
-#prev2 = "movefocus u"
-
 [scratchpads.term]
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
@@ -44,25 +36,3 @@ size = "60% 70%"
 margin = 60
 unfocus = "hide"
 lazy = true
-
-#[scratchpads.ai]
-#animation = ""
-#command = "firefox --new-window https://claude.ai"
-#class = "firefox"
-#match_by = "title"
-#title = "Claude — Mozilla Firefox"
-#size = "60% 70%"
-#margin = 80
-#unfocus = "hide"
-#lazy = true
-
-#[scratchpads.messenger]
-#animation = ""
-#command = "firefox --new-window https://messenger.com"
-#class = "messenger"
-#match_by = "initialTitle"
-#initialTitle = "Messenger — Mozilla Firefox"
-#size = "60% 70%"
-#margin = 80
-#unfocus = "hide"
-#lazy = true
