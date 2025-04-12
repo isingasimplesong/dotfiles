@@ -1,4 +1,4 @@
-# A keyboard first hyprland config for power users
+# A keyboard first hyprland config for nerds
 
 This configuration crafts a highly efficient, keyboard-centric desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, subtle window gaps (which disappear when only one window is present), rounded corners, and smooth animations with a touch of background blur for depth. The overall feel is minimalist but visually polished.
 
