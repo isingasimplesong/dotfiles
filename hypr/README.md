@@ -1,25 +1,12 @@
 # A keyboard first hyprland config for power users
 
-This configuration crafts a highly efficient, keyboard-centric desktop environment built around the Hyprland Wayland compositor. Visually, it presents a clean, modern aesthetic featuring the popular Nord color scheme, subtle window gaps (which disappear when only one window is present), rounded corners, and smooth animations with a touch of background blur for depth. The overall feel is minimalist but visually polished.
+This configuration crafts a highly efficient, keyboard-centric desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, subtle window gaps (which disappear when only one window is present), rounded corners, and smooth animations with a touch of background blur for depth. The overall feel is minimalist but visually polished.
 
-Functionally, it's designed for speed and organization through tiling window management (primarily using a master-stack layout, but easily switchable). Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and an impressive system of 26 instantly accessible "magic" scratchpad workspaces. This is further supplemented by more traditional persistent scratchpads (managed by Pyprland) for a terminal, file manager (Yazi), and Bitwarden. The setup explicitly configures dual monitors (laptop screen `eDP-1` and external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that dynamically adapt when the external monitor is disconnected. It includes integrated clipboard history management, power management via `hypridle` for laptops, and lock screen styling via `hyprlock`.
+Functionally, it's designed for speed and organization through tiling window management (primarily using a master-stack layout, but easily switchable). Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces. The setup explicitly configures dual monitors (laptop screen `eDP-1` and external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that dynamically adapt when the external monitor is disconnected. It includes integrated clipboard history management, power management via `hypridle` for laptops, and lock screen styling via `hyprlock`.
 
-This configuration is best suited for:
-
-1. **Developers, Power Users, Sysadmins:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
-2. **Tiling Window Manager Enthusiasts:** Users already comfortable with or eager to learn tiling concepts and keyboard-heavy workflows, coming from environments like i3, Sway, or qtile.
-3. **Vim/Neovim Users:** The HJKL navigation bindings will feel immediately familiar.
-4. **Linux Customizers:** People who enjoy fine-tuning their environment and appreciate a modular, well-organized configuration structure they can build upon.
-5. **Users Needing High Organization:** Anyone juggling numerous tasks, projects, or temporary windows will appreciate the extensive workspace and scratchpad system.
+This configuration is best suited for: **(neo)vim users, developers, power users, sysadmins:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
 
 It's likely less suitable for users who strongly prefer mouse-driven interaction or those brand new to Linux who might find the initial learning curve for the keybindings steep.
-
-**Why would you use this Config ?**
-
-* **Efficiency:** The combination of tiling, extensive keyboard shortcuts, submaps, and multiple scratchpad systems minimizes mouse usage and speeds up virtually every common computing task.
-* **Highly Customized Workflow:** It's not a generic setup; it integrates specific user scripts (weather, timezones, notes, web search) directly into easily accessible keybindings via submaps.
-* **Modern Wayland Experience:** It leverages Hyprland's features like smooth animations, blur, and uses Wayland-native tools for system functions.
-* **Pre-configured Essentials:** It includes setup for clipboard history, notifications, power management, lock screen, application launcher (Rofi), multiple terminals, and Wayland compatibility settings out-of-the-box.
 
 If someone were to adopt this configuration, they would likely want to personalize:
 
@@ -202,7 +189,7 @@ If someone were to adopt this configuration, they would likely want to personali
 * `W`: Show Rofi Window Switcher (`rofi -show window`)
 * `escape`: Exit Submap
 
-#### Submap: [S]pecial Workspaces (`$mainMod + S` to enter)
+#### Submap: [S]cratchpads (`$mainMod + S` to enter)
 
 *(These use Hyprland's "special" named workspaces for quick scratchpads)*
 
