@@ -1,28 +1,70 @@
 # A keyboard-first hyprland config for nerds
 
-This configuration crafts a highly efficient, keyboard-centric, tiling desktop environment built around the [Hyprland](https://hyprland.org/) compositor, featuring the popular [Nord color scheme](https://www.nordtheme.com/), and overall a modern, minimalist and polished _look & feel_.
+This configuration crafts a highly efficient, keyboard-centric, tiling desktop
+environment built around the [Hyprland](https://hyprland.org/) compositor,
+featuring the popular [Nord color scheme](https://www.nordtheme.com/), and
+overall a modern, minimalist and polished _look & feel_.
 
 [![Hyprland Nord desktop](hyprnord.png)](hyprnord.png)
 
-Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (A/I/R/S) – which provide quick, context-specific access to \[A\]pplications, custom \[I\]nformation scripts, \[R\]ofi functions, and 26 instantly accessible "magic" \[S\]cratchpads.
+Functionally, it's designed for speed and organization through tiling window
+management. Interaction heavily relies on keyboard shortcuts, including
+Vim-style navigation (HJKL) for moving focus and swapping windows.
 
-The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that adapt their placement when the external monitor is (dis)connected. It includes clipboard history management _via_ [cliphist](https://github.com/sentriz/cliphist), power management & auto lock _via_ `hypridle` and  `hyprlock`. It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset scratchpads.
+- There is an extensive use of "submaps" – modal keybinding layers triggered by
+`Super + <Letter>` (A/I/R/S) – which provide quick, context-specific access to
+\[A\]pplications, custom \[I\]nformation scripts, \[R\]ofi functions, and 26
+instantly accessible "magic" \[S\]cratchpads.
 
-This configuration is best suited for **(neo)vim users, developers, power users, sysadmins and other CLI absolutists:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
+- The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1`
+and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to
+22, mapped to 0-9 and F1-F12) that adapt their placement when the external
+monitor is (dis)connected.
 
-It's likely less suitable for users who strongly prefer mouse-driven interaction or those brand new to Linux who might find the initial learning curve for the keybindings steep.
+- It includes clipboard history management _via_
+[cliphist](https://github.com/sentriz/cliphist), power management & auto lock
+_via_ `hypridle` and  `hyprlock`.
+
+It also use [pyperland](https://github.com/hyprland-community/pyprland) for preset
+scratchpads.
+
+This configuration is best suited for **(neo)vim users, developers, power
+users, sysadmins and other CLI absolutists:** Individuals who spend significant
+time in terminals, IDEs, and browsers, and benefit immensely from rapid,
+keyboard-driven context switching and command execution.
+
+It's likely less suitable for users who strongly prefer mouse-driven
+interaction or those brand new to Linux who might find the initial learning
+curve for the keybindings steep.
 
 **If someone were to adopt this configuration, they would likely want to personalize:**
 
-1. **Keybindings:** Review _all_ bindings, especially within the submaps (`submap-a/i/r/s.conf`). Change bindings that conflict with muscle memory, reassign the placeholder `notify-send` bindings to useful commands. The default placeholder notification is there to make available keys easy to discover.
-2. **Core Applications:** Adapt the `$terminal`, `$webBrowser`, `$fileManager` variables in `envvar.conf` to your own preferences. Update bindings in `submap-a.conf` and `pyprland.toml` to launch your preferred applications.
-3. **Custom Scripts:** The various scripts called within submaps (`notes-dmenu.sh`, `weather.sh`, etc.) are specific. Most of them [are available here](https://github.com/isingasimplesong/duct-tape/). These need to be reviewed, potentially rewritten to adjust for your environment, replaced with different tools, or removed entirely.
-4. **Appearance:** Change the color scheme in `colors.conf`, adjust fonts, gaps, borders, rounding in `look.conf` and `envvar.conf`. Customize the associated Rofi theme(s) and Waybar configuration ([available here](https://github.com/isingasimplesong/dotfiles/tree/main/waybar) and [here](https://github.com/isingasimplesong/dotfiles/tree/main/rofi)). Modify the `hyprlock.conf` background and styling.
-6. **Input Settings:** Modify keyboard layout, variant, or options (like `caps:swapescape`) in `inputs.conf` to match personal hardware and preferences. Adjust touchpad settings like `natural_scroll`.
+1. **Keybindings:** Review _all_ bindings, especially within the submaps
+   (`submap-a/i/r/s.conf`). Change bindings that conflict with muscle memory,
+reassign the placeholder `notify-send` bindings to useful commands. The default
+placeholder notification is there to make available keys easy to discover.
+2. **Core Applications:** Adapt the `$terminal`, `$webBrowser`, `$fileManager`
+   variables in `envvar.conf` to your own preferences. Update bindings in
+`submap-a.conf` and `pyprland.toml` to launch your preferred applications.
+3. **Custom Scripts:** The various scripts called within submaps
+   (`notes-dmenu.sh`, `weather.sh`, etc.) are specific. Most of them [are
+available here](https://github.com/isingasimplesong/duct-tape/). These need to
+be reviewed, potentially rewritten to adjust for your environment, replaced
+with different tools, or removed entirely.
+4. **Appearance:** Change the color scheme in `colors.conf`, adjust fonts,
+   gaps, borders, rounding in `look.conf` and `envvar.conf`. Customize the
+associated Rofi theme(s) and Waybar configuration ([available
+here](https://github.com/isingasimplesong/dotfiles/tree/main/waybar) and
+[here](https://github.com/isingasimplesong/dotfiles/tree/main/rofi)). Modify
+the `hyprlock.conf` background and styling.
+6. **Input Settings:** Modify keyboard layout, variant, or options (like
+   `caps:swapescape`) in `inputs.conf` to match personal hardware and
+preferences. Adjust touchpad settings like `natural_scroll`.
 
 ## Dependencies
 
-This environment relies on the following components to function properly. They must be installed and available in your `$PATH`.
+This environment relies on the following components to function properly. They
+must be installed and available in your `$PATH`.
 
 ### Hyprland ecosystem & system utilities
 
@@ -39,7 +81,9 @@ This environment relies on the following components to function properly. They m
 - `nm-applet` – network manager tray icon
 - `udiskie` – auto-mounting of removable drives
 - `notify-send` – desktop notifications via `libnotify`
-- `rofi` – application launcher (used with modules like `emoji`, `file-browser`, `ssh`, etc.). The main rofi implementation is `X11`-only, so i use [that wayland compatible fork](https://github.com/in0ni/rofi-wayland)
+- `rofi` – application launcher (used with modules like `emoji`,
+`file-browser`, `ssh`, etc.). The main rofi implementation is `X11`-only, so i
+use [that wayland compatible fork](https://github.com/in0ni/rofi-wayland)
 - `brightnessctl` – screen brightness control
 - `pamixer` – volume and mic control
 - `playerctl` – multimedia control
@@ -51,7 +95,11 @@ This environment relies on the following components to function properly. They m
 
 ### Custom scripts
 
-These scripts are used for core desktop functionnalities. Other scripts are also used throughout submaps or utility bindings, but not required, therefore not mentionned here. You can replace them with your own, or refer to [this repository](https://github.com/isingasimplesong/duct-tape) for ready-made versions.
+These scripts are used for core desktop functionnalities. Other scripts are
+also used throughout submaps or utility bindings, but not required, therefore
+not mentionned here. You can replace them with your own, or refer to [this
+repository](https://github.com/isingasimplesong/duct-tape) for ready-made
+versions.
 
 - `~/.local/bin/waybar-toggle-tray.sh` toggle icons-tray visibility in waybar
 - `~/.local/bin/hypr-toggle-layouts.sh` toggle between available layouts (Masterstack/Dwindle)
