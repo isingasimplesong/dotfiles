@@ -1,22 +1,22 @@
-# A keyboard first hyprland config for nerds
+# A keyboard-first hyprland config for nerds
 
-This configuration crafts a highly efficient, keyboard-centric desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, subtle window gaps (which disappear when only one window is present), rounded corners, and smooth animations with a touch of background blur for depth. The overall feel is minimalist but visually polished.
+This configuration crafts a highly efficient, keyboard-centric, tiling desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, and overall a modern, minimalist and polished _look & feel_.
 
 [![Hyprland Nord desktop](hypr-nord.png)](hypr-nord.png)
 
-Functionally, it's designed for speed and organization through tiling window management (primarily using a master-stack layout, but easily switchable). Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces.
+Functionally, it's designed for speed and organization through tiling window management. Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces.
 
-The setup explicitly configures dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that dynamically adapt their placement when the external monitor is (dis)connected. It also includes clipboard history management, power management via `hypridle` for laptops, and lock screen styling via `hyprlock`.
+The setup explicitly configures dynamic dual monitors (a laptop screen `eDP-1` and an external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that adapt their placement when the external monitor is (dis)connected. It also includes clipboard history management _via_ `cliphist`, power management & auto lock _via_ `hypridle` and  `hyprlock`.
 
 This configuration is best suited for **(neo)vim users, developers, power users, sysadmins:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
 
 It's likely less suitable for users who strongly prefer mouse-driven interaction or those brand new to Linux who might find the initial learning curve for the keybindings steep.
 
-If someone were to adopt this configuration, they would likely want to personalize:
+**If someone were to adopt this configuration, they would likely want to personalize:**
 
-1. **Keybindings:** This is the most crucial area. Review *all* bindings, especially within the submaps (`submap-a/i/r/s.conf`). Change bindings that conflict with muscle memory, reassign the placeholder `notify-send` bindings to useful commands, and potentially simplify the workspace/scratchpad bindings if 22+26 options feel excessive. The default placeholder notification is there to easily discover available keys to bind new shortcuts.
-2. **Core Applications:** Modify the `$terminal`, `$webBrowser`, `$fileManager` variables in `envvar.conf`. Update bindings in `submap-a.conf` and `pyprland.toml` to launch your preferred applications.
-3. **Custom Scripts:** The various scripts called within submaps (`notes-dmenu.sh`, `weather.sh`, etc.) are specific. Most of them [are available here](https://github.com/isingasimplesong/duct-tape/). These need to be reviewed, potentially rewritten, replaced with different tools, or removed entirely.
+1. **Keybindings:** Review _all_ bindings, especially within the submaps (`submap-a/i/r/s.conf`). Change bindings that conflict with muscle memory, reassign the placeholder `notify-send` bindings to useful commands. The default placeholder notification is there to make available keys easy to discover.
+2. **Core Applications:** Adapt the `$terminal`, `$webBrowser`, `$fileManager` variables in `envvar.conf` to your own preferences. Update bindings in `submap-a.conf` and `pyprland.toml` to launch your preferred applications.
+3. **Custom Scripts:** The various scripts called within submaps (`notes-dmenu.sh`, `weather.sh`, etc.) are specific. Most of them [are available here](https://github.com/isingasimplesong/duct-tape/). These need to be reviewed, potentially rewritten to adjust for your environment, replaced with different tools, or removed entirely.
 4. **Appearance:** Change the color scheme in `colors.conf`, adjust fonts, gaps, borders, rounding in `look.conf` and `envvar.conf`. Customize the associated Rofi theme(s) and Waybar configuration ([available here](https://github.com/isingasimplesong/dotfiles/tree/main/waybar)). Modify the `hyprlock.conf` background and styling.
 6. **Input Settings:** Modify keyboard layout, variant, or options (like `caps:swapescape`) in `inputs.conf` to match personal hardware and preferences. Adjust touchpad settings like `natural_scroll`.
 
@@ -195,7 +195,7 @@ If someone were to adopt this configuration, they would likely want to personali
 
 #### Submap: [S]cratchpads (`$mainMod + S` to enter)
 
-*(These use Hyprland's "special" named workspaces for quick scratchpads)*
+_(These use Hyprland's "special" named workspaces for quick scratchpads)_
 
 * `[A-Z]`: Toggle Special Workspace `special:magic-[a-z]`
 * `SHIFT + [A-Z]`: Move Active Window to Special Workspace `special:magic-[a-z]`
