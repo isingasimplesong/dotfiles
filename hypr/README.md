@@ -2,6 +2,8 @@
 
 This configuration crafts a highly efficient, keyboard-centric desktop environment built around the Hyprland Wayland compositor, featuring the popular Nord color scheme, subtle window gaps (which disappear when only one window is present), rounded corners, and smooth animations with a touch of background blur for depth. The overall feel is minimalist but visually polished.
 
+[![Hyprland Nord desktop](hypr-nord.png)](hypr-nord.png)
+
 Functionally, it's designed for speed and organization through tiling window management (primarily using a master-stack layout, but easily switchable). Interaction heavily relies on keyboard shortcuts, including Vim-style navigation (HJKL) for moving focus and swapping windows. There is an extensive use of "submaps" – modal keybinding layers triggered by `Super + <Letter>` (for \[A\]pps, \[I\]nfo, \[R\]ofi, \[S\]cratchpads) – which provide quick, context-specific access to applications, custom information scripts, Rofi functions (like clipboard history access, emoji selection, SSH), and 26 instantly accessible "magic" scratchpad workspaces. The setup explicitly configures dual monitors (laptop screen `eDP-1` and external `HDMI-A-1`) with a large number of workspaces (22 total: 1 to 22, mapped to 0-9 and F1-F12) that dynamically adapt when the external monitor is disconnected. It includes integrated clipboard history management, power management via `hypridle` for laptops, and lock screen styling via `hyprlock`.
 
 This configuration is best suited for: **(neo)vim users, developers, power users, sysadmins:** Individuals who spend significant time in terminals, IDEs, and browsers, and benefit immensely from rapid, keyboard-driven context switching and command execution.
