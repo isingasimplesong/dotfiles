@@ -15,7 +15,7 @@
     ],
     "modules-right": [
         //"idle_inhibitor",
-        //"tray",
+//"tray",
         //"power-profiles-daemon",
         //"cpu",
         //"memory",
@@ -34,7 +34,7 @@
     // Modules configuration
     "custom/keepawake": {
         "exec": "~/.local/bin/keepawake_status.sh",
-        "interval": 5,
+        "interval": 2,
         "return-type": "json",
         "tooltip": true
     },
