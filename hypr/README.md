@@ -76,12 +76,12 @@ must be installed and available in your `$PATH`.
 - [`pyprland`](https://github.com/hyprland-community/pyprland) – for scratchpads
 - `waybar` – status bar
 - `waypaper` – wallpaper setter
-- `cliphist` – Wayland clipboard manager
-- `wl-copy` / `wl-paste` – clipboard interaction
+- `rofi` – application launcher (used with modules like `emoji`,
+- `clipboard-wl` – Wayland clipboard interaction
+- `cliphist` – Wayland clipboard history manager
 - `nm-applet` – network manager tray icon
 - `udiskie` – auto-mounting of removable drives
 - `notify-send` – desktop notifications via `libnotify`
-- `rofi` – application launcher (used with modules like `emoji`,
 `file-browser`, `ssh`, etc.). The main rofi implementation is `X11`-only, so i
 use [that wayland compatible fork](https://github.com/in0ni/rofi-wayland)
 - `brightnessctl` – screen brightness control
@@ -91,7 +91,6 @@ use [that wayland compatible fork](https://github.com/in0ni/rofi-wayland)
 - `satty` – screenshot annotator/editor (used in `$screenshotModify`, configured [like this](../satty/))
 - `xrdb` – loads `.Xresources` (for legacy compatibility)
 - `dbus-update-activation-environment` – ensures correct Wayland environment for GUI apps
-- `systemd` – required for `systemctl --user` entries in autostart
 
 ### Custom scripts
 
