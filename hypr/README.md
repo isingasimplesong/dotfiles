@@ -112,7 +112,7 @@ versions.
 
 ### I. Application Launchers & Basic Actions
 
-- `$mainMod + return`: Launch Terminal (`kitty`)
+- `$mainMod + return`: Launch Terminal (`$terminal`)
 - `$mainMod + space`: Launch Application Menu (`~/.config/rofi/launchers/type-2/launcher.sh`)
 - `$mainMod + N`: Launch Notes Script (`~/.local/bin/notes-dmenu.sh`)
 
@@ -236,16 +236,16 @@ versions.
 - `C`: Launch `galculator`
 - `D`: Launch `transmission-remote-gtk`
 - `E`: Launch File Manager (`thunar`)
-- `F`: Launch `librewolf` (Facebook)
+- `F`: Launch `$webBrowser` (Facebook)
 - `G`: Launch `ghostty`
-- `I`: Launch `librewolf` (Claude, ai.2027a.net, ChatGPT URLs)
-- `M`: Launch `librewolf` (mm.2027a.net URL)
+- `I`: Launch `$webBrowser` (Claude, ai.2027a.net, ChatGPT URLs)
+- `M`: Launch `$webBrowser` (mm.2027a.net URL)
 - `N`: Launch Notes Script (`notes-dmenu.sh`)
 - `T`: Launch `brave --tor`
 - `U`: Unmount All Disks (`udiskie-umount -ad`)
-- `V`: Launch `kitty -e vim`
-- `W`: Launch `librewolf`
-- `Y`: Launch `kitty -e yazi`
+- `V`: Launch `$terminal -e vim`
+- `W`: Launch `$webBrowser`
+- `Y`: Launch `$terminal -e yazi`
 - `Z`: Launch Tor Browser (`torBrowser-launcher %u`)
 - `escape`: Exit Submap
 
@@ -257,10 +257,10 @@ versions.
 - `D`: Delete from Clipboard History (`cliphist list | rofi ... | cliphist delete`)
 - `E`: Show CAD Exchange Rate (`~/.local/bin/cad.sh`)
 - `M`: Show Weather (`~/.local/bin/weather.sh`)
-- `O`: Launch `librewolf` (ChatGPT URL)
-- `P`: Launch `librewolf` (Claude.ai URL)
-- `Q`: Launch `librewolf` (ai.2027a.net URL)
-- `R`: Launch `librewolf` (Deepseek Chat URL)
+- `O`: Launch `$webBrowser` (ChatGPT URL)
+- `P`: Launch `$webBrowser` (Claude.ai URL)
+- `Q`: Launch `$webBrowser` (ai.2027a.net URL)
+- `R`: Launch `$webBrowser` (Deepseek Chat URL)
 - `S`: Web Search via Rofi (`~/.local/bin/web-search.sh`)
 - `T`: Show Today's Agenda (`~/.local/bin/today.sh`)
 - `Z`: Show Time Zones (`~/.local/bin/zones-time.sh`)
