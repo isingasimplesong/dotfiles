@@ -117,6 +117,7 @@ versions.
 
 ### System & Session Control
 
+- `$mainMod + M` : Toogle hypridle (`~/.local/bin/keepawake.sh -t`)
 - `$mainMod + SHIFT + M`: Power menu (`~/.config/rofi/powermenu/type-3/powermenu.sh`)
 - `Lid Switch Close`: Lock screen and suspend (`hyprlock --immediate-render & systemctl suspend`)
 
