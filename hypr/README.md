@@ -110,123 +110,108 @@ versions.
 
 - `$mainMod`: SUPER (Windows/Command key)
 
-### I. Application Launchers & Basic Actions
+### Application Launchers & Basic Actions
 
-- `$mainMod + return`: Launch Terminal (`$terminal`)
-- `$mainMod + space`: Launch Application Menu (`~/.config/rofi/launchers/type-2/launcher.sh`)
-- `$mainMod + N`: Launch Notes Script (`~/.local/bin/notes-dmenu.sh`)
+- `$mainMod + return`: Terminal (`$terminal`)
+- `$mainMod + space`: Application menu (`~/.config/rofi/launchers/type-2/launcher.sh`)
+- `$mainMod + N`: Notes (`~/.local/bin/notes-dmenu.sh`)
 
-### II. System & Session Control
+### System & Session Control
 
-- `$mainMod + SHIFT + M`: Launch Power Menu (`~/.config/rofi/powermenu/type-3/powermenu.sh`)
-- `Lid Switch Close`: Lock Screen and Suspend (`hyprlock --immediate-render & systemctl suspend`)
+- `$mainMod + SHIFT + M`: Power menu (`~/.config/rofi/powermenu/type-3/powermenu.sh`)
+- `Lid Switch Close`: Lock screen and suspend (`hyprlock --immediate-render & systemctl suspend`)
 
-### III. Waybar Control
+### Waybar Control
 
-- `$mainMod + B`: Send SIGUSR1 to Waybar (often used to toggle modules/visibility)
-- `$mainMod + SHIFT + B`: Send SIGUSR2 to Waybar (often used for alternative toggle/reload)
-- `$mainMod + T`: Toggle Waybar Tray (`~/.local/bin/waybar-toggle-tray.sh`)
+- `$mainMod + B`: Toggle waybar visibility
+- `$mainMod + SHIFT + B`: Reload waybar config
+- `$mainMod + T`: Toggle tray visibility (`~/.local/bin/waybar-toggle-tray.sh`)
 
-### IV. Scratchpads (Pyprland)
+### Scratchpads (Pyprland)
 
-- `$mainMod + W`: Toggle Terminal Scratchpad (`pypr toggle term` -> `kitty-dropterm`)
-- `$mainMod + E`: Toggle File Manager Scratchpad (`pypr toggle yazi` -> `kitty-yazi`)
-- `$mainMod + O`: Toggle Bitwarden Scratchpad (`pypr toggle bitwarden` -> `Bitwarden`)
+- `$mainMod + W`: Toggle Terminal
+- `$mainMod + E`: Toggle File Manager
+- `$mainMod + O`: Toggle Bitwarden
 
-### V. Screenshots & Utilities
+### Screenshots & Utilities
 
-- `$mainMod + P`: Screenshot Active Monitor & Edit (`grim -o "$active_monitor" - | satty -f -`)
-- `$mainMod + SHIFT + P`: Screenshot Active Monitor & Save (`grim $HOME/Images/Screenshots/screenshot-...png`)
-- `$mainMod + ALT + P`: Launch Color Picker (`hyprpicker -aln`)
+- `$mainMod + P`: Screenshot active monitor & edit (`grim -o "$active_monitor" - | satty -f -`)
+- `$mainMod + SHIFT + P`: Screenshot full desktop & Save (`grim $HOME/Images/Screenshots/screenshot-...png`)
+- `$mainMod + ALT + P`: Launch color picker (`hyprpicker -aln`)
 
-### VI. Hardware Keys (Volume / Media / Brightness)
+### Hardware Keys (Volume / Media / Brightness)
 
-- `XF86AudioRaiseVolume`: Increase Volume 5% (`pamixer -i 5`)
-- `XF86AudioLowerVolume`: Decrease Volume 5% (`pamixer -d 5`)
-- `XF86AudioMicMute`: Toggle Microphone Mute (`pamixer --default-source -m`)
-- `XF86AudioMute`: Toggle Speaker/Output Mute (`pamixer -t`)
-- `XF86AudioPlay` / `XF86AudioPause`: Toggle Media Play/Pause (`playerctl play-pause`)
-- `XF86AudioNext`: Media Next Track (`playerctl next`)
-- `XF86AudioPrev`: Media Previous Track (`playerctl previous`)
-- `XF86MonBrightnessUp`: Increase Screen Brightness 5% (`brightnessctl s +5%`)
-- `XF86MonBrightnessDown`: Decrease Screen Brightness 5% (`brightnessctl s 5%-`)
+Should work as expected with `pamixer`, `playerctl` & `brightnessctl`
 
-### VII. Window Management
+### Window management
 
-#### Closing / Killing Windows
+#### Closing windows
 
 - `$mainMod + Q`: Close Active Window (graceful) (`killactive`)
-- `$mainMod + SHIFT + X`: Force Kill Active Window (`hyprctl kill`)
 
-#### Window State & Position
+#### Window state & position
 
 - `$mainMod + F`: Toggle Floating State
-- `$mainMod + ALT + F11`: Toggle Fullscreen (Mode 1)
-- `$mainMod + C`: Center Active Window
-- `$mainMod + ALT + p`: Pin Active Floating Window (Toggle)
+- `$mainMod + ALT + F11`: Toggle fullscreen (monocle layout)
+- `$mainMod + C`: Center active floating window
+- `$mainMod + ALT + p`: Pin active floating window (toggle)
 
-#### Focus Control (Vim Keys)
+#### Focus control
 
-- `$mainMod + H`: Focus Window Left (`movefocus l`)
-- `$mainMod + L`: Focus Window Right (`movefocus r`)
-- `$mainMod + K`: Focus Window Up (`movefocus u`)
-- `$mainMod + J`: Focus Window Down (`movefocus d`)
+- `$mainMod + H`: Focus left
+- `$mainMod + L`: Focus right
+- `$mainMod + K`: Focus up
+- `$mainMod + J`: Focus down
 
-#### Window Swapping (Vim Keys)
+#### Window swapping
 
-- `$mainMod + SHIFT + H`: Swap Active Window Left (`swapwindow l`)
-- `$mainMod + SHIFT + L`: Swap Active Window Right (`swapwindow r`)
-- `$mainMod + SHIFT + K`: Swap Active Window Up (`swapwindow u`)
-- `$mainMod + SHIFT + J`: Swap Active Window Down (`swapwindow d`)
+- `$mainMod + SHIFT + H`: Swap active window left
+- `$mainMod + SHIFT + L`: Swap active window right
+- `$mainMod + SHIFT + K`: Swap active window up
+- `$mainMod + SHIFT + J`: Swap active window down
 
-#### Resizing Windows (Arrows)
+#### Resizing windows
 
-- `$mainMod + Left Arrow`: Decrease Width by 25px (`resizeactive -25 0`)
-- `$mainMod + Right Arrow`: Increase Width by 25px (`resizeactive 25 0`)
-- `$mainMod + Up Arrow`: Decrease Height by 25px (`resizeactive 0 -25`)
-- `$mainMod + Down Arrow`: Increase Height by 25px (`resizeactive 0 25`)
+- `$mainMod + Left Arrow`: Decrease width
+- `$mainMod + Right Arrow`: Increase width
+- `$mainMod + Up Arrow`: Decrease height
+- `$mainMod + Down Arrow`: Increase height
 
-#### Moving Floating Windows (Arrows)
+#### Moving floating windows
 
-- `$mainMod + ALT + Left Arrow`: Move Left by 25px (`moveactive -25 0`)
-- `$mainMod + ALT + Right Arrow`: Move Right by 25px (`moveactive 25 0`)
-- `$mainMod + ALT + Up Arrow`: Move Up by 25px (`moveactive 0 -25`)
-- `$mainMod + ALT + Down Arrow`: Move Down by 25px (`moveactive 0 25`)
+- `$mainMod + ALT + Left Arrow`: Move left
+- `$mainMod + ALT + Right Arrow`: Move right
+- `$mainMod + ALT + Up Arrow`: Move up
+- `$mainMod + ALT + Down Arrow`: Move down
 
-#### Mouse Actions
+#### Mouse actions
 
-- `$mainMod + Mouse Button 1 Drag`: Move Window (`movewindow`)
-- `$mainMod + Mouse Button 3 Drag`: Resize Window (`resizewindow`)
+- `$mainMod + Mouse Button 1 Drag`: Move window
+- `$mainMod + Mouse Button 3 Drag`: Resize window
 
-### VIII. Layout Management
+### Layout management
 
-- `$mainMod + G`: Toggle Layouts (`~/.local/bin/hypr-toggle-layouts.sh`)
-- `$mainMod + SHIFT + G`: Cycle Master Orientation (Master Layout) (`layoutmsg orientationcycle`)
-- `$mainMod + SHIFT + D`: Toggle Pseudo Tiling (Dwindle Layout) (`pseudo`)
-- `$mainMod + TAB`: Roll Next Window into Master Position (Master Layout) (`layoutmsg rollnext`)
-- `$mainMod + BACKSPACE`: Roll Previous Window into Master Position (Master Layout) (`layoutmsg rollprev`)
+- `$mainMod + G`: Toggle layouts (`~/.local/bin/hypr-toggle-layouts.sh`)
+- `$mainMod + SHIFT + G`: Cycle master orientation
+- `$mainMod + TAB`: Roll next window into master position
+- `$mainMod + BACKSPACE`: Roll previous window into master position
+- `$mainMod + SHIFT + D`: Toggle pseudo tiling (dwindle layout)
 
-### IX. Workspace Management
+### Workspace management
 
-#### Switching Workspaces
+#### Switching workspaces
 
-- `$mainMod + [1-9]`: Switch to Workspace 1-9
-- `$mainMod + 0`: Switch to Workspace 10
-- `$mainMod + F[1-12]`: Switch to Workspace 11-22
+- `$mainMod + [0-9] | [F1-F12]`: Switch to workspace 1-22
 
-#### Moving Windows to Workspaces (and Follow Focus)
+#### Moving windows to workspaces and follow focus
 
-- `$mainMod + SHIFT + [1-9]`: Move Active Window to Workspace 1-9
-- `$mainMod + SHIFT + 0`: Move Active Window to Workspace 10
-- `$mainMod + SHIFT + F[1-12]`: Move Active Window to Workspace 11-22
+- `$mainMod + SHIFT + [0-9] | [F1-F12]`: Move active window to workspace 1-22
 
-#### Moving Windows to Workspaces (Silently - No Focus Change)
+#### Moving windows to workspaces (silently - no focus change)
 
-- `$mainMod + SHIFT + CTRL + [1-9]`: Move Active Window Silently to Workspace 1-9
-- `$mainMod + SHIFT + CTRL + 0`: Move Active Window Silently to Workspace 10
-- `$mainMod + SHIFT + CTRL + F[1-12]`: Move Active Window Silently to Workspace 11-22
+- `$mainMod + SHIFT + CTRL + [0-9] | [F1-F12]`: Move active window silently to workspace 1-22
 
-### X. Submaps
+### Submaps
 
 #### Submap: [A]pplications (`$mainMod + A` to enter)
 
@@ -236,51 +221,51 @@ versions.
 - `C`: Launch `galculator`
 - `D`: Launch `transmission-remote-gtk`
 - `E`: Launch File Manager (`thunar`)
-- `F`: Launch `$webBrowser` (Facebook)
+- `F`: Launch `$webBrowser` (facebook)
 - `G`: Launch `ghostty`
-- `I`: Launch `$webBrowser` (Claude, ai.2027a.net, ChatGPT URLs)
+- `I`: Launch `$webBrowser` (claude, ai.2027a.net, chatGPT URLs)
 - `M`: Launch `$webBrowser` (mm.2027a.net URL)
 - `N`: Launch Notes Script (`notes-dmenu.sh`)
 - `T`: Launch `brave --tor`
-- `U`: Unmount All Disks (`udiskie-umount -ad`)
+- `U`: Unmount all removable disk
 - `V`: Launch `$terminal -e vim`
 - `W`: Launch `$webBrowser`
 - `Y`: Launch `$terminal -e yazi`
-- `Z`: Launch Tor Browser (`torBrowser-launcher %u`)
-- `escape`: Exit Submap
+- `Z`: Launch tor browser (`torBrowser-launcher %u`)
+- `escape`: Exit submap
 
 #### Submap: [I]nfo (`$mainMod + I` to enter)
 
-- `A`: Show Air Quality (`~/.local/bin/iq-air.sh`)
+- `A`: Show air quality (`~/.local/bin/iq-air.sh`)
 - `B`: Show pfview (`~/.local/bin/pfview.sh`)
-- `C`: Copy from Clipboard History (`cliphist list | rofi ... | wl-copy`)
-- `D`: Delete from Clipboard History (`cliphist list | rofi ... | cliphist delete`)
-- `E`: Show CAD Exchange Rate (`~/.local/bin/cad.sh`)
-- `M`: Show Weather (`~/.local/bin/weather.sh`)
+- `C`: Copy from clipboard history
+- `D`: Delete from clipboard history
+- `E`: Show CAD exchange rate (`~/.local/bin/cad.sh`)
+- `M`: Show weather (`~/.local/bin/weather.sh`)
 - `O`: Launch `$webBrowser` (ChatGPT URL)
 - `P`: Launch `$webBrowser` (Claude.ai URL)
 - `Q`: Launch `$webBrowser` (ai.2027a.net URL)
 - `R`: Launch `$webBrowser` (Deepseek Chat URL)
-- `S`: Web Search via Rofi (`~/.local/bin/web-search.sh`)
-- `T`: Show Today's Agenda (`~/.local/bin/today.sh`)
-- `Z`: Show Time Zones (`~/.local/bin/zones-time.sh`)
-- `escape`: Exit Submap
+- `S`: Web search via rofi (`~/.local/bin/web-search.sh`)
+- `T`: Show date (`~/.local/bin/today.sh`)
+- `Z`: Show selected time zones (`~/.local/bin/zones-time.sh`)
+- `escape`: Exit submap
 
 #### Submap: [R]ofi (`$mainMod + R` to enter)
 
-- `C`: Copy from Clipboard History (`cliphist list | rofi ... | wl-copy`)
-- `D`: Delete from Clipboard History (`cliphist list | rofi ... | cliphist delete`)
-- `E`: Show Rofi Emoji Selector (`rofi -modi emoji -show emoji`)
-- `F`: Show Rofi File Browser (`rofi -show filebrowser`)
-- `R`: Launch Radio Script (`~/.local/bin/radios.sh`)
-- `S`: Show Rofi SSH Launcher (`rofi -show ssh`)
-- `W`: Show Rofi Window Switcher (`rofi -show window`)
-- `escape`: Exit Submap
+- `C`: Copy from clipboard history
+- `D`: Delete from clipboard history
+- `E`: Show rofi emoji selector
+- `F`: Show rofi file browser
+- `R`: Launch radio script (`~/.local/bin/radios.sh`)
+- `S`: Show rofi SSH launcher
+- `W`: Show rofi window switcher
+- `escape`: Exit submap
 
 #### Submap: [S]cratchpads (`$mainMod + S` to enter)
 
 _(These use Hyprland's "special" named workspaces for quick scratchpads)_
 
-- `[A-Z]`: Toggle Special Workspace `special:magic-[a-z]`
-- `SHIFT + [A-Z]`: Move Active Window to Special Workspace `special:magic-[a-z]`
-- `escape`: Exit Submap
+- `[A-Z]`: Toggle special workspace `[A-Z]`
+- `SHIFT + [A-Z]`: Move active window to special workspace `[A-Z]`
+- `escape`: Exit submap
