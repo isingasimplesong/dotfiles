@@ -87,7 +87,10 @@
     },
     "custom/pacman": {
         "format": "{}",
-        "exec": "n=$(checkupdates 2> /dev/null | wc -l); [ \"$n\" -gt 0 ] && echo \"$n 󰣇\" || echo ''",
+        // with number
+        // "exec": "n=$(checkupdates 2> /dev/null | wc -l); [ \"$n\" -gt 0 ] && echo \"$n 󰣇\" || echo ''",
+        // just an icon
+        "exec": "checkupdates > /dev/null 2>&1 && echo '󰣇' || echo ''",
         "interval": 30,
         "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
         "signal": 8
@@ -139,9 +142,9 @@
         //"format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
     },
     "network": {
-        "format-wifi": "",
+        "format-wifi": "{essid} ",
         "format-ethernet": "{ifname} 󱚿",
-        "tooltip-format": "essid : {essid}\nip : {ipaddr}/{cidr}\ngateway : {gwaddr}",
+        "tooltip-format": "{ipaddr}/{cidr}\n{gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "nm-connection-editor"

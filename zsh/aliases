@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 alias c='clear'
-alias sz='source ~/.zshrc'
+alias zz='exec $SHELL'
 alias source-bash='source ~/.bashrc'
 alias ff="fastfetch"
 alias bsh='exec bash -l'
