@@ -52,6 +52,7 @@ groups:
       - IEF                                      # US 7-10 Year Treasuries ETF. Medium/long-term interest rate expectations. Price falls as rates rise
       - TLT                                      # US 20+ Year Treasuries ETF. Long-term rate expectations/economic outlook. Price falls as rates rise
       - TIP                                      # US Treasury Inflation-Protected Securities ETF. Rise = higher inflation expectations
+      - ^TNX                                     # US 10y yield
       # --- Sector ETFs (US) ---
       - SMH                                      # VanEck Semiconductor ETF: Key indicator for tech supply chain, manufacturing cycle
       - XLE                                      # Energy: Oil, gas, services. Tied to commodity prices
@@ -79,6 +80,7 @@ groups:
       # --- Volatility & Fear ---
       - ^VIX                                     # CBOE Volatility Index: "Fear gauge". Higher = more expected volatility/fear
       - VXX                                      # iPath S&P 500 VIX Short-Term Futures ETN: Tracks VIX futures. Volatile, decays over time. ETN = Exchange Traded Note
+      - ^MOVE                                    # Treasury bonds volatility
 
   - name: Ressources                             # Commodities: Raw materials, energy, agriculture. Indicators of inflation, industrial demand
     watchlist:
@@ -121,6 +123,7 @@ groups:
       - LE=F                                     # Live Cattle Futures: Beef prices
       # --- Other Materials ---
       - URNM                                     # Sprott Uranium Miners ETF: Tracks uranium miners, proxy for nuclear energy sentiment/demand
+      - UX=F                                     # Uranium futures
 
   - name: Dollar
     watchlist:
