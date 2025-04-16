@@ -91,8 +91,8 @@
         // "exec": "n=$(checkupdates 2> /dev/null | wc -l); [ \"$n\" -gt 0 ] && echo \"$n 󰣇\" || echo ''",
         // just an icon
         "exec": "checkupdates > /dev/null 2>&1 && echo '󰣇' || echo ''",
-        "interval": 30,
-        "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
+        "interval": 600,
+        // "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
     "pulseaudio": {
@@ -122,8 +122,8 @@
     "battery": {
         "states": {
             // "good": 95,
-            "warning": 20,
-            "critical": 10
+            "warning": 25,
+            "critical": 20
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",

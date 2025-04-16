@@ -73,7 +73,6 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -117,7 +116,6 @@ button:hover {
     padding: 0 6px;
     padding-left: 8px;
     color: #3b4252;
-    /* color: #ebcb8b; */
     background-color: #81a1c1;
     font-size: 14px;
 }
@@ -149,7 +147,7 @@ button:hover {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: #d08770;
         color: #000000;
     }
 }
@@ -163,29 +161,6 @@ button:hover {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-label:focus {
-    background-color: #000000;
 }
 
 #network {
@@ -249,15 +224,6 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-/*#idle_inhibitor {
-    background-color: #2d3436;
-}*/
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
 }
 
 #language {
