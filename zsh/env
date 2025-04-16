@@ -23,8 +23,8 @@ export GOPATH="$HOME/.local/share/go"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Qt theme settings
-export QT_STYLE_OVERRIDE="gtk2"
-export QT_QPA_PLATFORMTHEME=qt5ct
+# export QT_STYLE_OVERRIDE="gtk2"
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 # ssh-agent settings
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
