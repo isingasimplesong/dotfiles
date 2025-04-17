@@ -1,33 +1,46 @@
 #!/usr/bin/env bash
+
 alias c='clear'
 alias zz='exec $SHELL'
 alias source-bash='source ~/.bashrc'
 alias ff="fastfetch"
-alias bsh='exec bash -l'
 alias wh='which'
 alias ..='cd ..'
+alias less='less --quiet'
+alias untar='tar xvf'
+alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
+alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
+
+# --- File Operations ---
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
-alias less='less --quiet'
+
+# --- Disk Usage ---
 alias df='df --human-readable'
 alias du='du --human-readable'
+
+# --- ls / exa ---
 alias ls='exa --group-directories-first --icons'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias ldot='ls -ld .*'
-alias untar='tar xvf'
+
+# --- Networking ---
 alias t-down="sudo tailscale down && sudo systemctl restart autofs.service"
 alias t-up="sudo tailscale up"
 alias ip4='ip -br -c -4 a'
 alias ip6='ip -br -c -6 a'
-alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
-alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
-alias olm="docker exec -it ollama ollama"
-alias rkb-db-connect-prod="rainfrog --username postgres --database rkb_db --host 192.168.100.6 --port 5432 --driver postgres --password $RKB_DB_PASSWORD"
-alias rkb-db-connect-local="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres --password $RKB_DB_PASSWORD"
+
+# --- Database Connections ---
+alias rkb-db-connect-prod="rainfrog --username postgres --database rkb_db --host 192.168.100.6 --port 5432 --driver postgres --password \$RKB_DB_PASSWORD"
+alias rkb-db-connect-local="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres --password \$RKB_DB_PASSWORD"
+
+# --- Ticker ---
 alias portfolio="ticker --config ~/Coffre/portfolio.yaml"
+
+# --- Clipboard Management ---
 alias ppc="cliphist list | fzf --no-sort | cliphist decode | wl-copy"
 alias ppd="cliphist list | fzf --no-sort | cliphist delete"
 
@@ -53,25 +66,26 @@ alias os="note.sh grep"
 alias ot="note.sh new-from-template"
 alias oa="note.sh search-by-tags"
 
-alias pkglist="rm -f ~/Projets/paclist.txt && paru -Qqe > ~/Projets/paclist.txt"
+# backups
 alias bkp="~/.local/bin/btrfs-backup.sh"
+alias pkglist="rm -f ~/Projets/paclist.txt && paru -Qqe > ~/Projets/paclist.txt"
 alias etc-bkp="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
 
+# tmux
 alias t="tmux attach || tmux new -s $(uname --nodename)"
 alias tn='export TMUX_SESSION_NAME="$(date +%d%H%M%S)" && tmux new-session -d -s "$TMUX_SESSION_NAME" && tmux switch-client -t "$TMUX_SESSION_NAME"'
 alias ta="tmux attach"
 alias tl="tmux ls"
 alias ts="tmux attach -t"
 
+# zellij
 alias z="zellij attach || zellij"
 alias za="zellij attach"
 alias zl="zellij list-sessions"
 alias zs="zellij --session"
 
-alias date-computer='date +"%Y-%m-%d_%H:%M:%S"'
-alias date-human='date +"%A %d %B %Y, %H:%M"'
-
-# docker
+# --- Docker ---
+alias olm="docker exec -it ollama ollama"
 alias lzd="lazydocker"
 
 # git
