@@ -1,7 +1,7 @@
 -- Highlight groups
 vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#ebcb8b', bg = '#bf616a' })
 vim.api.nvim_set_hl(0, 'Folded', { fg = '#81a1c1' })
-vim.api.nvim_set_hl(0, 'Visual', { bg = '#b48ead', fg = '#4c566a' })
+vim.api.nvim_set_hl(0, 'Visual', { bg = '#81a1c1', fg = '#4c566a' })
 vim.api.nvim_set_hl(0, 'YankHighlight', { bg = '#a3be8c', fg = '#4c566a' })
 
 -- Highlight when yanking (copying) text
