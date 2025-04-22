@@ -1,4 +1,4 @@
-theme = nord
+theme = catppuccin-mocha
 window-decoration = false
 background-opacity = 1
 font-size = 13

@@ -142,7 +142,7 @@
         //"format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
     },
     "network": {
-        "format-wifi": "{essid} ",
+        "format-wifi": "{essid}  ",
         "format-ethernet": "{ifname} 󱚿",
         "tooltip-format": "{ipaddr}/{cidr}\n{gwaddr}",
         "format-linked": "{ifname} (No IP) ",
