@@ -5,8 +5,6 @@ return {
 
   opts = {
     provider = 'openai', -- default provider
-    -- provider = 'gemini25pro', -- default provider
-    -- auto_suggestions_provider = 'gemini',
 
     -- models
     openai = {
