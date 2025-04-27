@@ -1,14 +1,91 @@
 [user]
 	name = Mathieu Rousseau
 	email = mathieu@2027a.net
+
 [init]
 	defaultBranch = main
+
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	editor = nvim
+
 [advice]
 	ignoredHook = true
-[core]
-	editor = nvim
+	addEmptyPathspec = false
+	pushNonFastForward = false
+	statusHints = false
+
 [mergetool "nvim"]
     cmd = nvim -d $LOCAL $BASE $REMOTE -c 'wincmd l' $MERGED
     trustExitCode = false
+
 [merge]
 	tool = nvim
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[pager]
+	diff = diff-so-fancy | less
+	log = diff-so-fancy | less
+	branch = false
+	tag = false
+
+[diff-so-fancy]
+	markEmptyLines = false
+
+[diff]
+	context = 3
+	renames = copies
+	interHunkContext = 10
+
+[color "diff"]
+	meta		= blue
+	frag		= magenta
+	context		= white
+	whitespace	= yellow
+	old		= red
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+	singleKey = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitCheck = warn
+
+[log]
+	abbrevCommit = true
+	graphColors = blue,yellow,cyan,magenta,green,red
+
+[color "decorate"]
+	HEAD = red
+	branch = blue
+	tag = yellow
+	remoteBranch = magenta
+
+[color "branch"]
+	current		= magenta
+	local		= default
+	remote		= yellow
+	upstream	= green
+	plain		= blue
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = -taggerdate

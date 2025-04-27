@@ -1,0 +1,34 @@
+# Build
+build/
+dist/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# virtual env
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# misc
+.DS_Store
+*.bak
+*.log
+*.log.*
+tmp/
+perso/
+local/
+.coverage
