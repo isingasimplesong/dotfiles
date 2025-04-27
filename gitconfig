@@ -18,7 +18,7 @@
 	statusHints = false              # Ne pas afficher de "hints" supplémentaires dans `git status`
 
 [commit]
-	template = ~/.config/git/commit-template.txt
+	template = ~/.config/git/template
 
 [merge]
 	tool = nvim                      # Définir nvim comme outil de merge visuel
