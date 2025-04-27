@@ -1,13 +1,13 @@
-# ♻️ changes:
-# ✨ feature:
-# 🐛 bugfix:
-# 🛠️ config:
-# 📝 docs:
-# 🔧 chore:
-# ⚡ performance:
-# 🔒 security:
-# 🧹 refactor:
-# ⏪ revert:
-# ✅ test:
+# changes: ♻️
+# feature: ✨
+# bugfix: 🐛
+# config: 🛠️
+# docs: 📝
+# chore: 🔧
+# performance: ⚡
+# security: 🔒
+# refactor: 🧹
+# revert: ⏪
+# test: ✅
 
 # Corps du message (optionnel)
