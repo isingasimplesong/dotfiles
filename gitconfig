@@ -1,91 +1,100 @@
 [user]
-	name = Mathieu Rousseau
-	email = mathieu@2027a.net
+	name = Mathieu Rousseau          # Nom d'utilisateur global
+	email = mathieu@2027a.net        # Email global (utilisé pour les commits)
 
 [init]
-	defaultBranch = main
+	defaultBranch = main             # Branche par défaut lors d'un nouveau dépôt (main au lieu de master)
 
 [core]
-	compression = 9
-	whitespace = error
-	preloadindex = true
-	editor = nvim
+	compression = 9                  # Niveau maximal de compression des objets Git (économie disque, +CPU)
+	whitespace = error               # Traiter les erreurs de whitespaces comme bloquantes (fin de ligne, tabulations, etc.)
+	preloadindex = true              # Optimisation : précharger l'index pour accélérer les commandes
+	editor = nvim                    # Éditeur par défaut pour Git (nvim)
 
 [advice]
-	ignoredHook = true
-	addEmptyPathspec = false
-	pushNonFastForward = false
-	statusHints = false
+	ignoredHook = true               # Ne pas afficher d'avertissement si un hook est ignoré
+	addEmptyPathspec = false         # Ne pas avertir si `git add` reçoit une sélection vide
+	pushNonFastForward = false       # Interdire les push non fast-forward sans confirmation explicite
+	statusHints = false              # Ne pas afficher de "hints" supplémentaires dans `git status`
 
-[mergetool "nvim"]
-    cmd = nvim -d $LOCAL $BASE $REMOTE -c 'wincmd l' $MERGED
-    trustExitCode = false
+[commit]
+	template = ~/.config/git/commit-template.txt
 
 [merge]
-	tool = nvim
+	tool = nvim                      # Définir nvim comme outil de merge visuel
+
+[mergetool "nvim"]
+	cmd = nvim -d "$LOCAL" "$REMOTE" -c 'wincmd l'   # Commande d'ouverture de diff dans nvim, vue côte-à-côte
+	trustExitCode = false             # Ne pas faire confiance au code de sortie de nvim pour valider le merge
 
 [status]
-	branch = true
-	showStash = true
-	showUntrackedFiles = all
+	branch = true                     # Afficher la branche active dans `git status`
+	showStash = true                  # Indiquer la présence de stash dans `git status`
+	showUntrackedFiles = all          # Lister tous les fichiers non suivis
 
 [pager]
-	diff = diff-so-fancy | less
-	log = diff-so-fancy | less
-	branch = false
-	tag = false
-
-[diff-so-fancy]
-	markEmptyLines = false
+	diff = diff-so-fancy | less --tabs=4 -RFX   # Pipeline de rendu diff : joli + rapide
+	log = diff-so-fancy | less --tabs=4 -RFX    # Même pipeline pour `git log`
+	branch = false                   # Désactiver le pager pour `git branch`
+	tag = false                      # Désactiver le pager pour `git tag`
+	show = less                      # Utiliser less simple pour `git show`
 
 [diff]
-	context = 3
-	renames = copies
-	interHunkContext = 10
+	context = 3                      # Nombre de lignes de contexte avant/après une différence
+	renames = copies                 # Traiter un renommage massif comme un copie/rename
+	interHunkContext = 10            # Relier les petits changements proches dans un seul bloc de diff
 
-[color "diff"]
-	meta		= blue
-	frag		= magenta
-	context		= white
-	whitespace	= yellow
-	old		= red
+[diff-so-fancy]
+	markEmptyLines = false           # Ne pas ajouter de marquage spécial sur les lignes vides dans les diffs
 
 [interactive]
-	diffFilter = diff-so-fancy --patch
-	singleKey = true
+	diffFilter = diff-so-fancy --patch # Utiliser diff-so-fancy aussi en mode interactif
+	singleKey = true                  # Autoriser la sélection par frappe d'une seule touche en mode interactif
 
 [push]
-	autoSetupRemote = true
-	default = current
-	followTags = true
+	autoSetupRemote = true           # Lors d'un push d'une nouvelle branche locale : configurer automatiquement son remote
+	default = current                # Pousser uniquement la branche courante par défaut
+	followTags = true                # Pousser les tags associés aux commits poussés
 
 [pull]
-	default = current
-	rebase = true
+	default = current                # Tirer uniquement la branche courante
+	rebase = true                    # Utiliser rebase plutôt que merge pour synchroniser
 
 [rebase]
-	autoStash = true
-	missingCommitCheck = warn
+	autoStash = true                 # Stash automatique avant un rebase si nécessaire
+	missingCommitCheck = warn        # Avertir si des commits manquent avant rebase (sécurité)
 
 [log]
-	abbrevCommit = true
-	graphColors = blue,yellow,cyan,magenta,green,red
-
-[color "decorate"]
-	HEAD = red
-	branch = blue
-	tag = yellow
-	remoteBranch = magenta
-
-[color "branch"]
-	current		= magenta
-	local		= default
-	remote		= yellow
-	upstream	= green
-	plain		= blue
+	abbrevCommit = true              # Utiliser des IDs de commits abrégés dans les logs
+	graphColors = blue,yellow,cyan,magenta,green,red  # Couleurs de graphe personnalisées pour `git log --graph`
 
 [branch]
-	sort = -committerdate
+	sort = -committerdate            # Trier les branches locales par date du dernier commit (récent d'abord)
 
 [tag]
-	sort = -taggerdate
+	sort = -taggerdate               # Trier les tags par date de création (récent d'abord)
+
+[color "decorate"]
+	HEAD = red                       # Couleur de HEAD (référence détachée)
+	branch = blue                    # Couleur des branches locales
+	tag = yellow                     # Couleur des tags
+	remoteBranch = magenta            # Couleur des branches distantes
+
+[color "branch"]
+	current = magenta                # Branche actuelle : magenta
+	local = default                  # Branches locales : couleur par défaut
+	remote = yellow                  # Branches distantes : jaune
+	upstream = green                 # Branche upstream (suivie) : verte
+	plain = blue                     # Autres branches : bleu
+
+[color "diff"]
+	meta = blue                      # Métadonnées de diff (ex : fichier renommé) : bleu
+	frag = magenta                   # Fragments de patch (ex : @@ -x,y +a,b @@) : magenta
+	context = white                  # Contexte inchangé dans les diffs : blanc
+	whitespace = yellow              # Différences d'espaces/indentations : jaune
+	old = red                        # Anciennes lignes supprimées : rouge
+
+[color "show"]
+	commit = yellow                  # SHA1 du commit dans `git show` : jaune
+	tag = green                      # Tag dans `git show` : vert
+	graft = cyan                     # Grafts (rare, patchs historiques) : cyan
