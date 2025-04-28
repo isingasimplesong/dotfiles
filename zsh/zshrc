@@ -161,7 +161,7 @@ fi
 
 # run Tmux if in a ssh session
 if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
-    tmux -u attach || tmux -u new -s $(uname --nodename)
+    tmux -u attach || tmux -u new -s "$(uname -n)"
 fi
 
 # initialise p10k if installed

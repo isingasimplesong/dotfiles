@@ -12,7 +12,7 @@
         "hyprland/window"
     ],
     "modules-right": [
-        //"tray",
+//"tray",
         "custom/keepawake",
         // "cpu",
         // "memory",
