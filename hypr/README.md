@@ -30,7 +30,7 @@ scratchpads.
 
 This configuration is best suited for **(neo)vim users, developers, power
 users, sysadmins and other CLI absolutists:** Individuals who spend significant
-time in terminals, IDEs, and browsers, and benefit immensely from rapid,
+time in terminals, text editors, and browsers, and benefit immensely from rapid,
 keyboard-driven context switching and command execution.
 
 It's likely less suitable for users who strongly prefer mouse-driven
