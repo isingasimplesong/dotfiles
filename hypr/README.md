@@ -51,7 +51,7 @@ For the full _desktop_ experience, you need these installed and in your `$PATH`:
 
 ### Custom scripts
 
-Used for _desktop_ features (others are external, see [duct-tape repo](https://github.com/isingasimplesong/duct-tape):
+Used for _desktop_ features (others are external, see [duct-tape repo](https://github.com/isingasimplesong/duct-tape)):
 
 - `~/.local/bin/waybar-toggle-tray.sh` (toggle tray in waybar)
 - `~/.local/bin/hypr-toggle-layouts.sh` (toggle layouts)
