@@ -35,7 +35,7 @@ For the full _desktop_ experience, you need these installed and in your `$PATH`:
 - [`pyprland`](https://github.com/hyprland-community/pyprland)
 - [`waybar`](https://github.com/Alexays/Waybar)
 - `waypaper`
-- `rofi` (I use [rofi-wayland fork](https://github.com/in0ni/rofi-wayland))
+- `rofi` (I use [rofi-wayland fork](https://github.com/in0ni/rofi-wayland) with [adi1090x rofi applets](https://github.com/adi1090x/rofi))
 - `clipboard-wl`
 - [`cliphist`](https://github.com/sentriz/cliphist)
 - `nm-applet`
