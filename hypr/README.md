@@ -33,19 +33,19 @@ For the full _desktop_ experience, you need these installed and in your `$PATH`:
 - `hypridle`
 - `hyprpicker`
 - [`pyprland`](https://github.com/hyprland-community/pyprland)
-- `waybar`
+- [`waybar`](https://github.com/Alexays/Waybar)
 - `waypaper`
 - `rofi` (I use [rofi-wayland fork](https://github.com/in0ni/rofi-wayland))
 - `clipboard-wl`
-- `cliphist`
+- [`cliphist`](https://github.com/sentriz/cliphist)
 - `nm-applet`
-- `udiskie`
+- [`udiskie`](https://pypi.org/project/udiskie/)
 - `notify-send`
 - `brightnessctl`
 - `pamixer`
 - `playerctl`
-- `grim`
-- `satty` (see [satty config](../satty/))
+- [`grim`](https://gitlab.freedesktop.org/emersion/grim)
+- [`satty`](https://github.com/gabm/Satty) (see [satty config](../satty/))
 - `xrdb`
 - `dbus-update-activation-environment`
 
