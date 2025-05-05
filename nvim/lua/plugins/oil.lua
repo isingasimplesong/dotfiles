@@ -5,9 +5,9 @@ return {
       default_file_explorer = true,
       -- See :help oil-columns
       columns = {
-        'icon',
         -- 'permissions',
         -- 'size',
+        'icon',
       },
       -- Buffer-local options to use for oil buffers
       buf_options = {
@@ -26,7 +26,7 @@ return {
         concealcursor = 'nvic',
       },
       delete_to_trash = false,
-      skip_confirm_for_simple_edits = false,
+      skip_confirm_for_simple_edits = true,
       prompt_save_on_select_new_entry = true,
       -- Oil will automatically delete hidden buffers after this delay
       cleanup_delay_ms = 2000,
@@ -41,7 +41,7 @@ return {
       -- Set to `false` to disable, or "name" to keep it on the file names
       constrain_cursor = 'editable',
       -- Set to true to watch the filesystem for changes and reload oil
-      experimental_watch_for_changes = false,
+      experimental_watch_for_changes = true,
       -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
       -- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
       -- Additionally, if it is a string that matches "actions.<name>",
