@@ -6,8 +6,8 @@ show-tags: false                                 # Don't display ticker metadata
 show-fundamentals: true                          # Show fundamental data like P/E, Market Cap where available
 show-separator: true                             # Show a separator line between tickers
 show-holdings: true                              # Display holdings, if any
-# currency: CAD                                    # Display prices converted to Canadian Dollars
-# currency-summary-only: false                     # Apply currency conversion to individual tickers, not just summary
+# currency: CAD                                  # Display prices converted to Canadian Dollars
+# currency-summary-only: false                   # Apply currency conversion to individual tickers, not just summary
 sort: percent                                    # Sort tickers by percentage change (largest gainers first)
 interval: 300                                    # Refresh interval in seconds
 
