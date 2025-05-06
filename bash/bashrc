@@ -87,4 +87,5 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export GOPATH="$HOME/.local/share/go"
 eval "$(starship init bash)"
