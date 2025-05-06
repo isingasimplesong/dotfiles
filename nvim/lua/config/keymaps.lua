@@ -60,7 +60,7 @@ vim.keymap.set('n', 'yc', '<cmd>%y<CR>', vim.tbl_extend('force', { desc = 'Yank 
 -- splits
 vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>', opts)
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>', opts)
-vim.keymap.set('n', '<leader>xs', ':close<CR>', vim.tbl_extend('force', { desc = 'Close split' }, opts))
+vim.keymap.set('n', '<leader>xs', '<cmd>close<CR>', vim.tbl_extend('force', { desc = 'Close split' }, opts))
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
@@ -113,10 +113,10 @@ vim.api.nvim_create_user_command('MoveNoteToAll', function()
       -- Fermer le buffer après déplacement si le fichier a bien été déplacé
       vim.cmd 'bdelete!'
     else
-      print "Erreur : Le fichier n'a pas été déplacé."
+      vim.notify("Erreur : Le fichier n'a pas été déplacé.", vim.log.levels.ERROR)
     end
   else
-    print 'Impossible de déplacer : fichier non valide.'
+    vim.notify('Impossible de déplacer : fichier non valide.', vim.log.levels.ERROR)
   end
 end, { nargs = 0 })
 
@@ -133,7 +133,7 @@ vim.api.nvim_create_user_command('DeleteNote', function()
     -- Fermer le buffer après suppression
     vim.cmd 'bdelete!'
   else
-    print 'Impossible de supprimer : fichier non valide.'
+    vim.notify('Impossible de supprimer : fichier non valide.', vim.log.levels.ERROR)
   end
 end, { nargs = 0 })
 
@@ -169,7 +169,7 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>', opts)
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>', opts)
 
 -- Resize splits with arrows
--- vim.keymap.set('n', '<Up>', ':resize -2<CR>', opts)
--- vim.keymap.set('n', '<Down>', ':resize +2<CR>', opts)
--- vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
--- vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
+-- vim.keymap.set('n', '<Up>', '<cmd>resize -2<CR>', opts)
+-- vim.keymap.set('n', '<Down>', '<cmd>resize +2<CR>', opts)
+-- vim.keymap.set('n', '<Left>', '<cmd>vertical resize -2<CR>', opts)
+-- vim.keymap.set('n', '<Right>', '<cmd>vertical resize +2<CR>', opts)

@@ -3,9 +3,6 @@ vim.opt.relativenumber = true
 
 -- only one status bar
 vim.opt.laststatus = 3
--- spellcheck
--- vim.opt.spelllang = { 'fr', 'en' }
--- vim.opt.spell = false
 
 -- set nowrap
 vim.opt.wrap = false
