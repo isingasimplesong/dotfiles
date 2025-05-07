@@ -59,20 +59,6 @@ if command -v neofetch >/dev/null 2>&1; then
     neofetch
 fi
 
-# Fonction pour remonter dans l'arborescence avec ..
-up() {
-    local d=""
-    limit=$1
-    for ((i = 1; i <= limit; i++)); do
-        d=$d/..
-    done
-    d=$(echo $d | sed 's/^\///')
-    if [ -z "$d" ]; then
-        d=..
-    fi
-    cd $d
-}
-
 # Active les couleurs pour ls et grep
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -88,4 +74,3 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 export GOPATH="$HOME/.local/share/go"
-eval "$(starship init bash)"
