@@ -49,12 +49,12 @@ alias ppd="cliphist list | fzf --no-sort | cliphist delete"
 alias vim=nvim
 
 # quick vim
-alias eda="cd $HOME/dotfile; nvim $HOME/dotfiles/zsh/aliases"
-alias edd='cd $HOME/dotfiles; nvim -c "lua require(\"user.telescope_dot\")"'
-alias edv='cd $HOME/dotfile; nvim -c "lua require(\"user.telescope_nvim\")"'
-alias edb='cd $HOME/.local/bin/; nvim -c "lua require(\"user.telescope_bin\")"'
-alias edc='cd $HOME/Projets/rkb/crawler; nvim -c "lua require(\"user.telescope_crawler\")"'
-alias ed="nvim -c \"lua require('telescope.builtin').find_files()\""
+alias vva="cd $HOME/dotfile; nvim $HOME/dotfiles/zsh/aliases"
+alias vvd='cd $HOME/dotfiles; nvim -c "lua require(\"user.telescope_dot\")"'
+alias vvv='cd $HOME/dotfile; nvim -c "lua require(\"user.telescope_nvim\")"'
+alias vvb='cd $HOME/.local/bin/; nvim -c "lua require(\"user.telescope_bin\")"'
+alias vvc='cd $HOME/Projets/rkb/crawler; nvim -c "lua require(\"user.telescope_crawler\")"'
+alias vv="nvim -c \"lua require('telescope.builtin').find_files()\""
 
 # obsidian/notes
 alias td="note.sh todo"
