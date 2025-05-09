@@ -148,4 +148,4 @@ Used for _desktop_ features (others are external, see [duct-tape repo](https://g
 
 ### Submaps
 
-- See `modules/submap-*.conf` for details on submap bindings (A/I/R/S/Z)
+- See `modules/submap-*.conf` for details on submap bindings, and more personalization (A/I/R/S/Z)
