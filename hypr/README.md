@@ -63,32 +63,38 @@ Used for _desktop_ features (others are external, see [duct-tape repo](https://g
 - `$mainMod`: SUPER (Windows/Command key)
 
 ### Application Launchers & Basics
+
 - `$mainMod + return`: Terminal (`$terminal`)
 - `$mainMod + space`: Application menu (`$menu`)
 - `$mainMod + N`: Notes (`~/.local/bin/notes-dmenu.sh`)
 
 ### System & Session Control
+
 - `$mainMod + M`: Toggle hypridle (`~/.local/bin/keepawake.sh -t`)
 - `$mainMod + SHIFT + M`: Power menu (`$powerMenu`)
 - `Lid Switch Close`: Lock screen and suspend (`$switchLock`)
 
 ### Waybar Control
+
 - `$mainMod + B`: Toggle waybar visibility
 - `$mainMod + SHIFT + B`: Reload waybar config
 - `$mainMod + T`: Toggle tray visibility (`~/.local/bin/waybar-toggle-tray.sh`)
 
 ### Scratchpads (Pyprland)
+
 - `$mainMod + W`: Toggle Terminal
 - `$mainMod + E`: Toggle Yazi
 - `$mainMod + O`: Toggle Bitwarden
 
 ### Screenshots & Utilities
+
 - `$mainMod + P`: Screenshot (modify)
 - `$mainMod + SHIFT + P`: Screenshot (modify area)
 - `$mainMod + SHIFT + CTRL + P`: Screenshot (plain)
 - `$mainMod + ALT + C`: Color picker (`hyprpicker -aln`)
 
 ### Hardware Keys (Volume / Media / Brightness)
+
 - `XF86AudioRaiseVolume`: Volume up
 - `XF86AudioLowerVolume`: Volume down
 - `XF86AudioMicMute`: Mute mic
@@ -98,6 +104,7 @@ Used for _desktop_ features (others are external, see [duct-tape repo](https://g
 - `XF86MonBrightnessUp/Down`: Screen brightness
 
 ### Window Management
+
 - `$mainMod + Q`: Close active window
 - `$mainMod + ALT + F`: Toggle floating state
 - `$mainMod + F`: Toggle fullscreen
@@ -105,22 +112,28 @@ Used for _desktop_ features (others are external, see [duct-tape repo](https://g
 - `$mainMod + ALT + P`: Pin active floating window
 
 #### Focus control
+
 - `$mainMod + H/J/K/L`: Focus left/down/up/right
 
 #### Window swapping
+
 - `$mainMod + SHIFT + H/J/K/L`: Swap window left/down/up/right
 
 #### Resizing windows
+
 - `$mainMod + ←/→/↑/↓`: Resize window (width/height)
 
 #### Moving floating windows
+
 - `$mainMod + ALT + ←/→/↑/↓`: Move floating window
 
 #### Mouse actions
+
 - `$mainMod + Mouse Button 1 Drag`: Move window
 - `$mainMod + Mouse Button 3 Drag`: Resize window
 
 ### Layout Management
+
 - `$mainMod + G`: Toggle layouts (`~/.local/bin/hypr-toggle-layouts.sh`)
 - `$mainMod + SHIFT + G`: Cycle master orientation
 - `$mainMod + TAB`: Roll next window into master position
@@ -128,9 +141,11 @@ Used for _desktop_ features (others are external, see [duct-tape repo](https://g
 - `$mainMod + SHIFT + D`: Toggle pseudo tiling (dwindle layout)
 
 ### Workspace Management
+
 - `$mainMod + [0-9]` / `F1-F12`: Switch to workspace 1-22
 - `$mainMod + SHIFT + [0-9]` / `F1-F12`: Move active window to workspace 1-22
 - `$mainMod + SHIFT + CTRL + [0-9]` / `F1-F12`: Move active window silently to workspace 1-22
 
 ### Submaps
+
 - See `modules/submap-*.conf` for details on submap bindings (A/I/R/S/Z)
