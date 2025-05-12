@@ -21,6 +21,7 @@ alias ..='cd ..'
 # --- Disk Usage ---
 alias df='df --human-readable'
 alias du='du --human-readable'
+alias dy="touch /mnt/NAS/NFS_MOUNT && touch /mnt/backups/NFS_MOUNT && dysk -c mp+type+size+free+used+use -s size-asc"
 
 # --- ls / exa ---
 alias ls='eza --group-directories-first --icons'
