@@ -39,7 +39,7 @@ vim.keymap.set('n', '<localleader>se', '<cmd>set spelllang=en<CR>', vim.tbl_exte
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', opts)
 
 -- Avante
-vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'Avante [C]lear' }, opts))
+vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'avante: clear' }, opts))
 
 -- Close buffer
 vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', opts) -- close buffer
