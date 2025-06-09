@@ -139,3 +139,4 @@ alias as="apt search"
 
 # Flatpak
 alias fp='flatpak'
+alias compress_photos="find . -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -exec mogrify -resize 1920x1080\> -quality 85 {} +"

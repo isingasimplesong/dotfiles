@@ -32,3 +32,5 @@ tmp/
 perso/
 local/
 .coverage
+
+**/.claude/settings.local.json
