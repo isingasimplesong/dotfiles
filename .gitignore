@@ -7,3 +7,5 @@ nvim/lazy-lock.json
 nvim/plugin/.*
 .nextcloudsync.log
 .sync*
+OpenCode.md
+AGENTS.md
