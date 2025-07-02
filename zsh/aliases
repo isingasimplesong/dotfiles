@@ -11,6 +11,7 @@ alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
 alias mon-ip="curl -s ifconfig.me | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'"
 alias copy="wl-copy"
 alias paste="wl-paste"
+alias gemini-cli="npx https://github.com/google-gemini/gemini-cli"
 
 # --- File Operations ---
 alias cp='cp --interactive'
