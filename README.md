@@ -20,7 +20,7 @@ See [hypr/README.md](hypr/README.md) for detailed setup and keybindings.
 
 Python-based and minimal tiling window managers. No longer actively maintained but functional starting points.
 
-## 🛠️ Development Tools
+## Development Tools
 
 ### [Neovim](nvim/)
 
@@ -67,7 +67,7 @@ Status bar for Wayland with system monitoring and workspace indicators.
 - **Primary**: Nord theme across all applications
 - **Alternatives**: Catppuccin, Gruvbox, Tokyo Night configurations
 
-## 📁 Other Tools
+## Other Tools
 
 - **[Dunst](dunst/)**: Notification daemon
 - **[Picom](picom/)**: X11 compositor for transparency/effects
@@ -75,7 +75,7 @@ Status bar for Wayland with system monitoring and workspace indicators.
 - **[Satty](satty/)**: Screenshot annotation tool
 - **[Zellij](zellij/)**: Terminal workspace manager
 
-## 🚀 Installation
+## Installation
 
 1. **Clone repository**:
 
