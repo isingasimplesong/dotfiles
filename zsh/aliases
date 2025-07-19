@@ -77,7 +77,8 @@ alias etc-bkp="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
 
 # tmux
 alias t="tmux attach || tmux new -s $(uname -n)"
-alias tn='export TMUX_SESSION_NAME="$(date +%d%H%M%S)" && tmux new-session -d -s "$TMUX_SESSION_NAME" && tmux switch-client -t "$TMUX_SESSION_NAME"'
+# alias tn='export TMUX_SESSION_NAME="$(date +%d%H%M%S)" && tmux new-session -d -s "$TMUX_SESSION_NAME" && tmux switch-client -t "$TMUX_SESSION_NAME"'
+# alias tn='read -p "Session name: " TMUX_SESSION_NAME && tmux new-session -d -s "$TMUX_SESSION_NAME" && tmux switch-client -t "$TMUX_SESSION_NAME"'
 alias ta="tmux attach"
 alias tl="tmux ls"
 alias ts="tmux attach -t"

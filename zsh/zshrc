@@ -128,6 +128,33 @@ test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 # Set the keymap to vi mode
 bindkey -v
 
+# interactive new session in tmux
+
+tn() {
+    printf "Session name: "
+    read session_name
+    session_name=${session_name:-$(date +%d%H%M%S)}
+    tmux new-session -d -s "$session_name" && tmux switch-client -t "$session_name"
+}
+
+# sesh
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list | fzf --height 60% --reverse --border-label ' sesh ' --border )
+    zle reset-prompt > /dev/null 2>&1 || true
+    [[ -z "$session" ]] && return
+    sesh connect $session
+  }
+}
+
+zle     -N             sesh-sessions
+bindkey -M emacs '\eo' sesh-sessions
+bindkey -M vicmd '\eo' sesh-sessions
+bindkey -M viins '\eo' sesh-sessions
+
 # mkcd
 mkcd() {
   if [ -z "$1" ]; then
@@ -181,3 +208,5 @@ fi
 if command -v neofetch >/dev/null 2>&1; then
     neofetch
 fi
+
+
