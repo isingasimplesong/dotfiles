@@ -2,7 +2,8 @@
 plugins = ["scratchpads"]
 
 [scratchpads.term]
-command = "kitty --class kitty-dropterm"
+command = "kitty --class kitty-dropterm -e sh -c 'tmux attach -t radium || tmux new -s radium'"
+# command = "kitty --class kitty-dropterm -e 'tmux attach -t radium || tmux new -s radium'"
 class = "kitty-dropterm"
 animation = ""
 size = "60% 70%"
@@ -34,5 +35,5 @@ command = "bitwarden-desktop"
 class = "Bitwarden"
 size = "60% 70%"
 margin = 60
-unfocus = "hide"
+# unfocus = "hide"
 lazy = true
