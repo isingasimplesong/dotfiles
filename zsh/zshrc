@@ -151,9 +151,9 @@ function sesh-sessions() {
 }
 
 zle     -N             sesh-sessions
-bindkey -M emacs '\eo' sesh-sessions
-bindkey -M vicmd '\eo' sesh-sessions
-bindkey -M viins '\eo' sesh-sessions
+bindkey -M emacs '\es' sesh-sessions
+bindkey -M vicmd '\es' sesh-sessions
+bindkey -M viins '\es' sesh-sessions
 
 # mkcd
 mkcd() {
