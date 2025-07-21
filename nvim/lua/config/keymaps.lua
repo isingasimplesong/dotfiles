@@ -41,21 +41,31 @@ vim.keymap.set('n', '-', '<cmd>Oil<CR>', opts)
 -- Avante
 vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'avante: clear' }, opts))
 
--- Close buffer
-vim.keymap.set('n', '<leader>c', '<cmd>bdelete<CR>', opts) -- close buffer
+-- buffers
+
+local function smart_close()
+  -- Check if there are multiple windows (splits)
+  if vim.fn.winnr '$' > 1 then
+    vim.cmd 'close' -- Close the current split
+  else
+    vim.cmd 'bdelete' -- Close the buffer if no splits
+  end
+end
+
+vim.keymap.set('n', '<leader>c', smart_close, opts) -- smartclose split then buffer
 vim.keymap.set('n', '<leader>e', '<cmd> enew <CR>', opts) -- new buffer
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 
 -- quit/close
-vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', vim.tbl_extend('force', { desc = 'Quit' }, opts))
-vim.keymap.set('n', '<leader>xx', '<cmd>q!<CR>', vim.tbl_extend('force', { desc = 'Force quit' }, opts))
+-- vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', vim.tbl_extend('force', { desc = 'Quit' }, opts))
+-- vim.keymap.set('n', '<leader>xx', '<cmd>q!<CR>', vim.tbl_extend('force', { desc = 'Force quit' }, opts))
 
 -- text wrap
 vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', vim.tbl_extend('force', { desc = 'Toggle text [W]rap' }, opts))
 
 -- save
-vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', opts)
+-- vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', opts)
 
 -- copy the complete buffer
 vim.keymap.set('n', 'yc', '<cmd>%y<CR>', vim.tbl_extend('force', { desc = 'Yank [c]omplete file' }, opts))
@@ -63,7 +73,6 @@ vim.keymap.set('n', 'yc', '<cmd>%y<CR>', vim.tbl_extend('force', { desc = 'Yank 
 -- splits
 vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>', opts)
 vim.keymap.set('n', '<leader>-', '<cmd>split<CR>', opts)
-vim.keymap.set('n', '<leader>xs', '<cmd>close<CR>', vim.tbl_extend('force', { desc = 'Close split' }, opts))
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
@@ -172,7 +181,7 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>', opts)
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>', opts)
 
 -- Resize splits with arrows
--- vim.keymap.set('n', '<Up>', '<cmd>resize -2<CR>', opts)
--- vim.keymap.set('n', '<Down>', '<cmd>resize +2<CR>', opts)
--- vim.keymap.set('n', '<Left>', '<cmd>vertical resize -2<CR>', opts)
--- vim.keymap.set('n', '<Right>', '<cmd>vertical resize +2<CR>', opts)
+vim.keymap.set('n', '<Up>', '<cmd>resize +2<CR>', opts)
+vim.keymap.set('n', '<Down>', '<cmd>resize -2<CR>', opts)
+vim.keymap.set('n', '<Left>', '<cmd>vertical resize +2<CR>', opts)
+vim.keymap.set('n', '<Right>', '<cmd>vertical resize -2<CR>', opts)
