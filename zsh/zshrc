@@ -116,9 +116,6 @@ fi
 autoload -Uz compinit
 compinit -C
 
-# tailscale completion
-source <(tailscale completion zsh)
-
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
 
@@ -129,7 +126,6 @@ test -r /etc/dir_colors && eval $(dircolors /etc/dir_colors)
 bindkey -v
 
 # interactive new session in tmux
-
 tn() {
     printf "Session name: "
     read session_name
@@ -203,10 +199,3 @@ elif [[ -f ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme ]]; then
     p10k="$HOME/dotfiles/zsh/p10k.zsh"
     [[ ! -f $p10k ]] || source $p10k
 fi
-
-# run neofetch if installed
-if command -v neofetch >/dev/null 2>&1; then
-    neofetch
-fi
-
-
