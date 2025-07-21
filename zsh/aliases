@@ -75,11 +75,33 @@ alias ot="note.sh new-from-template"
 alias oa="note.sh search-by-tags"
 
 # --- Backups ---
-alias bkp-pkglist="rm -f ~/Projets/paclist.txt && paru -Qqe > ~/Projets/paclist.txt"
-alias bkp-etc="sudo tar -czf ~/Projets/etc/etc_backup-$(date +%F).tar.gz /etc"
-alias bkp-etc-clean="find ~/Projets/etc/ -name 'etc_backup-*.tar.gz' -type f -printf '%T@ %p\n' | sort -rn | tail -n +4 | cut -d' ' -f2- | xargs -r rm -v"
+
+# Create /etc backup with timestamp
+alias bkp-etc="sudo tar -czf ~/Coffre/etc/etc_backup-\$(date +%F).tar.gz /etc 2>/dev/null \
+    && echo '🟢 Etc backup saved to ~/Coffre/etc/etc_backup-\$(date +%F).tar.gz'"
+
+# Export installed packages list
+alias bkp-pkglist="rm -f ~/Coffre/paclist.txt \
+    && paru -Qqe > ~/Coffre/paclist.txt \
+    && echo '🟢 Packages list saved to ~/Coffre/paclist.txt'"
+
+# Clean old /etc backups (keep only 3 most recent)
+alias bkp-etc-clean="find ~/Coffre/etc/ -name 'etc_backup-*.tar.gz' -type f -printf '%T@ %p\\n' \
+    | sort -rn \
+    | tail -n +4 \
+    | cut -d' ' -f2- \
+    | xargs -r rm -v \
+    && echo '🟢 Etc backups cleaned'"
+
+# BTRFS home backup script
 alias bkp-home-btrfs="~/.local/bin/btrfs-backup.sh"
-alias bkp="bkp-pkglist && bkp-etc && bkp-etc-clean && bkp-home-btrfs"
+
+# Run all backup tasks
+alias bkp="bkp-etc \
+    && bkp-pkglist \
+    && bkp-etc-clean \
+    && bkp-home-btrfs \
+    && echo '🟢 Backups done'"
 
 # --- Tmux ---
 alias t="tmux attach || tmux new -s $(uname -n)"
