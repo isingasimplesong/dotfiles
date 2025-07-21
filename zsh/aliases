@@ -3,9 +3,8 @@
 # --- Shell & System ---
 alias c='clear'
 alias zz='exec $SHELL'
-alias source-bash='source ~/.bashrc'
 alias wh='which'
-alias line-count="find . -type f ! -path '*/.git/*' | xargs cat | wc -l"
+alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc -l"
 
 # --- System Info & Monitoring ---
 alias ff="fastfetch"
@@ -48,9 +47,9 @@ alias vim=nvim
 alias vv="nvim -c \"lua require('telescope.builtin').find_files()\""
 
 # --- Quick Vim (dotfiles & projects) ---
-alias vva="cd $HOME/dotfile; nvim $HOME/dotfiles/zsh/aliases"
+alias vva="cd $HOME/dotfiles; nvim $HOME/dotfiles/zsh/aliases"
 alias vvd='cd $HOME/dotfiles; nvim -c "lua require(\"user.telescope_dot\")"'
-alias vvv='cd $HOME/dotfile; nvim -c "lua require(\"user.telescope_nvim\")"'
+alias vvv='cd $HOME/dotfiles; nvim -c "lua require(\"user.telescope_nvim\")"'
 alias vvb='cd $HOME/.local/bin/; nvim -c "lua require(\"user.telescope_bin\")"'
 alias vvc='cd $HOME/Projets/rkb/crawler; nvim -c "lua require(\"user.telescope_crawler\")"'
 
@@ -74,37 +73,8 @@ alias os="note.sh grep"
 alias ot="note.sh new-from-template"
 alias oa="note.sh search-by-tags"
 
-# --- Backups ---
-
-# Create /etc backup with timestamp
-alias bkp-etc="sudo tar -czf ~/Coffre/etc/etc_backup-\$(date +%F).tar.gz /etc 2>/dev/null \
-    && echo '🟢 Etc backup saved to ~/Coffre/etc/etc_backup-\$(date +%F).tar.gz'"
-
-# Export installed packages list
-alias bkp-pkglist="rm -f ~/Coffre/paclist.txt \
-    && paru -Qqe > ~/Coffre/paclist.txt \
-    && echo '🟢 Packages list saved to ~/Coffre/paclist.txt'"
-
-# Clean old /etc backups (keep only 3 most recent)
-alias bkp-etc-clean="find ~/Coffre/etc/ -name 'etc_backup-*.tar.gz' -type f -printf '%T@ %p\\n' \
-    | sort -rn \
-    | tail -n +4 \
-    | cut -d' ' -f2- \
-    | xargs -r rm -v \
-    && echo '🟢 Etc backups cleaned'"
-
-# BTRFS home backup script
-alias bkp-home-btrfs="~/.local/bin/btrfs-backup.sh"
-
-# Run all backup tasks
-alias bkp="bkp-etc \
-    && bkp-pkglist \
-    && bkp-etc-clean \
-    && bkp-home-btrfs \
-    && echo '🟢 Backups done'"
-
 # --- Tmux ---
-alias t="tmux attach || tmux new -s $(uname -n)"
+t() { tmux attach || tmux new -s "$(uname -n)"; }
 
 # --- Docker ---
 alias olm="docker exec -it ollama ollama"
@@ -174,3 +144,60 @@ alias as="apt search"
 
 # Flatpak
 alias fp='flatpak'
+
+# --- Backups
+# Create /etc backup with timestamp
+bkp-etc() {
+    if [ ! -d ~/Coffre/etc ]; then
+        echo "❌ Error: ~/Coffre/etc directory does not exist"
+        return 1
+    fi
+
+    if sudo tar -czf ~/Coffre/etc/etc_backup-$(date +%F).tar.gz /etc 2>/dev/null; then
+        echo "🟢 Etc backup saved to ~/Coffre/etc/etc_backup-$(date +%F).tar.gz"
+    else
+        echo "❌ Error: Failed to create etc backup"
+        return 1
+    fi
+}
+
+# Export installed packages list
+bkp-pkglist() {
+    if ! command -v paru >/dev/null 2>&1; then
+        echo "❌ Error: paru not found"
+        return 1
+    fi
+
+    if [ ! -d ~/Coffre ]; then
+        echo "❌ Error: ~/Coffre directory does not exist"
+        return 1
+    fi
+
+    if rm -f ~/Coffre/paclist.txt && paru -Qqe >~/Coffre/paclist.txt 2>/dev/null; then
+        echo "🟢 Packages list saved to ~/Coffre/paclist.txt"
+    else
+        echo "❌ Error: Failed to export packages list"
+        return 1
+    fi
+}
+
+# Clean old /etc backups (keep only 3 most recent)
+bkp-etc-clean() {
+    if [ ! -d ~/Coffre/etc ]; then
+        echo "❌ Error: ~/Coffre/etc directory does not exist"
+        return 1
+    fi
+
+    cd ~/Coffre/etc/ &&
+        ls -t etc_backup-*.tar.gz 2>/dev/null | tail -n +4 | xargs rm -v 2>/dev/null &&
+        echo '🟢 Etc backups cleaned' || echo '⚠️ No old backups to clean'
+}
+
+# Run all backup tasks
+bkp() {
+    bkp-etc &&
+        bkp-pkglist &&
+        bkp-etc-clean &&
+        ~/.local/bin/btrfs-backup.sh &&
+        echo '🟢 All backups completed successfully'
+}
