@@ -29,8 +29,8 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 # ssh-agent settings
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# Say how long a command took, if it took more than 30 seconds
-export REPORTTIME=30
+# Say how long a command took, if it took more than 10 seconds
+export REPORTTIME=10
 
 # templates directory
 export TPL_TEMPLATE_DIR="$HOME/dotfiles/templates"
