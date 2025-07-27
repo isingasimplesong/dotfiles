@@ -1,4 +1,8 @@
 [[session]]
+name = "radium"
+path = "~"
+
+[[session]]
 name = "monitoring"
 path = "~"
 windows = [ "btop", "htop", "ticker", "portfolio" ]

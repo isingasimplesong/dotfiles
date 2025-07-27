@@ -2,7 +2,7 @@
 plugins = ["scratchpads"]
 
 [scratchpads.term]
-command = "kitty --class kitty-dropterm -e sh -c 'tmux attach || tmux new -s $(uname -n)'"
+command = "kitty --class kitty-dropterm -e sh -c 'tmux attach -t $(uname -n) || tmux new -s $(uname -n)'"
 class = "kitty-dropterm"
 animation = ""
 size = "60% 70%"

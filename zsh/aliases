@@ -199,5 +199,6 @@ bkp() {
         bkp-pkglist &&
         bkp-etc-clean &&
         ~/.local/bin/btrfs-backup.sh &&
+        cd $HOME &&
         echo '🟢 All backups completed successfully'
 }
