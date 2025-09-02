@@ -42,7 +42,6 @@ vim.keymap.set('n', '-', '<cmd>Oil<CR>', opts)
 vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'avante: clear' }, opts))
 
 -- buffers
-
 local function smart_close()
   -- Check if there are multiple windows (splits)
   if vim.fn.winnr '$' > 1 then
@@ -57,15 +56,15 @@ vim.keymap.set('n', '<leader>e', '<cmd> enew <CR>', opts) -- new buffer
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 
--- quit/close
--- vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', vim.tbl_extend('force', { desc = 'Quit' }, opts))
--- vim.keymap.set('n', '<leader>xx', '<cmd>q!<CR>', vim.tbl_extend('force', { desc = 'Force quit' }, opts))
-
 -- text wrap
 vim.keymap.set('n', '<localleader>w', '<cmd>set wrap!<CR>', vim.tbl_extend('force', { desc = 'Toggle text [W]rap' }, opts))
 
 -- save
--- vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', opts)
+vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', opts)
+
+-- quit/close
+vim.keymap.set('n', '<leader>x', '<cmd>q<CR>', vim.tbl_extend('force', { desc = 'Quit' }, opts))
+vim.keymap.set('n', '<leader>xx', '<cmd>q!<CR>', vim.tbl_extend('force', { desc = 'Force quit' }, opts))
 
 -- copy the complete buffer
 vim.keymap.set('n', 'yc', '<cmd>%y<CR>', vim.tbl_extend('force', { desc = 'Yank [c]omplete file' }, opts))
