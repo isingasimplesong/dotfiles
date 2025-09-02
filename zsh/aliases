@@ -12,6 +12,7 @@ alias dy="touch /mnt/NAS/NFS_MOUNT && touch /mnt/backups/NFS_MOUNT && dysk -c mp
 alias zsh-255-colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
 
 # --- File Operations ---
+alias y='yazi'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
