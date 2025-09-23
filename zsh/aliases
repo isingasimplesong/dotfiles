@@ -8,7 +8,7 @@ alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc 
 
 # --- System Info & Monitoring ---
 alias ff="fastfetch"
-alias dy="touch /mnt/NAS/NFS_MOUNT && touch /mnt/backups/NFS_MOUNT && dysk -c mp+type+size+free+used+use -s size-asc"
+alias disk="touch /mnt/NAS/NFS_MOUNT && touch /mnt/backups/NFS_MOUNT && duf --hide-mp /home,/.snapshots,/var/log,/var/cache/pacman/pkg --hide special"
 alias zsh-255-colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
 
 # --- File Operations ---
@@ -155,7 +155,7 @@ bkp-etc() {
     fi
 
     if sudo tar -czf ~/Coffre/etc/etc_backup-$(date +%F).tar.gz /etc 2>/dev/null; then
-        echo "🟢 Etc backup saved to ~/Coffre/etc/etc_backup-$(date +%F).tar.gz"
+        echo "Etc backup saved to ~/Coffre/etc/etc_backup-$(date +%F).tar.gz"
     else
         echo "❌ Error: Failed to create etc backup"
         return 1
@@ -175,7 +175,7 @@ bkp-pkglist() {
     fi
 
     if rm -f ~/Coffre/paclist.txt && paru -Qqe >~/Coffre/paclist.txt 2>/dev/null; then
-        echo "🟢 Packages list saved to ~/Coffre/paclist.txt"
+        echo "Packages list saved to ~/Coffre/paclist.txt"
     else
         echo "❌ Error: Failed to export packages list"
         return 1
@@ -191,7 +191,7 @@ bkp-etc-clean() {
 
     cd ~/Coffre/etc/ &&
         ls -t etc_backup-*.tar.gz 2>/dev/null | tail -n +4 | xargs rm -v 2>/dev/null &&
-        echo '🟢 Etc backups cleaned' || echo '⚠️ No old backups to clean'
+        echo 'Etc backups cleaned' || echo 'No old backups to clean'
 }
 
 # Run all backup tasks

@@ -28,9 +28,9 @@ lazy = true
 # unfocus = "hide"
 # lazy = true
 
-[scratchpads.bitwarden]
+[scratchpads.proton-pass]
 animation = ""
-command = "bitwarden-desktop"
+command = "proton-pass"
 class = "Bitwarden"
 size = "60% 70%"
 margin = 60
