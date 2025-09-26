@@ -76,6 +76,7 @@ alias oa="note.sh search-by-tags"
 
 # --- Tmux ---
 t() { tmux attach || tmux new -s "$(uname -n)"; }
+alias ts='session=$(sesh list | fzf --height=90% --layout=reverse --border --border-label " sesh ") && sesh connect "$session" || read'
 
 # --- Docker ---
 alias olm="docker exec -it ollama ollama"
