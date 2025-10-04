@@ -10,7 +10,7 @@ margin = 60
 #unfocus = "hide"
 lazy = true
 
-[scratchpads.yazi]
+[scratchpads.files]
 animation = ""
 command = "kitty --class kitty-yazi -e yazi"
 class = "kitty-yazi"
@@ -28,9 +28,9 @@ lazy = true
 # unfocus = "hide"
 # lazy = true
 
-[scratchpads.proton-pass]
+[scratchpads.passwords]
 animation = ""
-command = "proton-pass"
+command = "bitwarden-desktop"
 class = "Bitwarden"
 size = "60% 70%"
 margin = 60
