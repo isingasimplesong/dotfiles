@@ -1,24 +1,16 @@
-[[session]]
-name = "radium"
-path = "~"
-
-[[session]]
-name = "monitoring"
-path = "~"
-windows = [ "btop", "htop", "ticker", "portfolio" ]
-
-[[window]]
-name = "ticker"
-startup_script = "ticker"
-
-[[window]]
-name = "portfolio"
-startup_script = "portfolio"
-
-[[window]]
-name = "htop"
-startup_script = "htop"
-
-[[window]]
-name = "btop"
-startup_script = "btop"
+# [[session]]
+# name = "radium"
+# path = "~"
+#
+# [[session]]
+# name = "monitoring"
+# path = "~"
+# windows = [, "ticker", "portfolio" ]
+#
+# [[window]]
+# name = "ticker"
+# startup_script = "ticker"
+#
+# [[window]]
+# name = "portfolio"
+# startup_script = "portfolio"
