@@ -9,7 +9,7 @@ show-holdings: true # Display holdings, if any
 # currency: CAD # Display prices converted to Canadian Dollars
 # currency-summary-only: false                   # Apply currency conversion to individual tickers, not just summary
 sort: percent # Sort tickers by percentage change (largest gainers first)
-interval: 300 # Refresh interval in seconds
+interval: 30 # Refresh interval in seconds
 
 groups:
   - name: Dashboard # Key indicators
@@ -190,6 +190,7 @@ groups:
       - BRK-B # Berkshire Hathaway (US): Conglomerate (insurance, rail, energy, investments). Broad economic proxy
       - C # Citigroup (US): Global bank. International exposure
       - CAT # Caterpillar (US): Heavy machinery. Global industrial & resource activity
+      - CATL.SZ # Contemporary Amperex Tech - World’s largest EV battery producer
       - COIN # Coinbase Global (US): Crypto exchange. Crypto adoption/volume proxy
       - COST # Costco (US): Warehouse retailer. Consumer spending (bulk/value)
       - CRM # Salesforce (US): Cloud CRM software. Enterprise IT spending
@@ -198,6 +199,7 @@ groups:
       - DE # John Deere (US): Agricultural & construction machinery. Ag/construction health
       - DIS # Disney (US): Media, theme parks. Consumer discretionary spending
       - DJT # Trump Media & tech group
+      - ENPH # Enphase Energy - Solar inverters — residential solar adoption
       - FDX # FedEx (US): Logistics, delivery. Global trade/e-commerce volume indicator
       - GE # General Electric (US): Aerospace, power, renewables. Industrial evolution
       - GME # GameStop (US): "Meme stock". Retail speculative fervor
@@ -210,6 +212,7 @@ groups:
       - IBM # IBM (US): IT services, software. Enterprise spending
       - INTC # Intel (US): CPUs, semiconductors. Chip manufacturer cycle
       - INTU # Intuit (US): Financial software. Small business/consumer finance
+      - ISRG # Intuitive Surgical - Surgical robotics adoption proxy
       - JNJ # Johnson & Johnson (US): Diversified healthcare
       - JPM # JPMorgan Chase (US): Largest US bank. Financial sector/economy bellwether
       - LLY # Eli Lilly (US): Pharma (esp. diabetes, weight loss)
@@ -223,7 +226,9 @@ groups:
       - MS # Morgan Stanley (US): Investment banking, wealth management. Capital markets
       - MSFT # Microsoft (US): Software, cloud (Azure). Diversified tech giant
       - MU # Micron Technology (US): Memory chips. Semiconductor cycle sensitivity
+      - NEE # NextEra Energy - Clean energy leader, proxy for renewables
       - NESN.SW # Nestlé (CH): Largest food company. Defensive staple. (.SW = Zurich)
+      - NET # Cloudflare
       - NKE # Nike (US): Athletic apparel. Global consumer brand health
       - NTDOY # Nintendo
       - NVO # Novo Nordisk (DK): Pharma (diabetes/obesity leader). (CPH:NOVO-B or NYSE:NVO)
@@ -247,10 +252,12 @@ groups:
       - SONY # Sony Group (JP): Electronics, gaming, entertainment. Global consumer tech/media. (NYSE:SONY)
       - STM.PA # STMicroelectronics (EU): Semiconductors. EU tech sector
       - T # AT&T (US): Telecom. Dividend focus, telecom health
+      - TCS.NS # Tata Consultancy - India tech service bellwether
       - TD.TO # Toronto-Dominion Bank (CA): Large Canadian bank (US presence)
       - TGT # Target (US): General merchandise retailer. Consumer spending patterns
       - TM # Toyota Motor (JP): Largest automaker globally. Auto industry, manufacturing. (NYSE:TM)
       - TSM # TSMC (TW): Largest contract chip manufacturer. Critical tech supply chain. (NYSE:TSM)
+      - TSLA # Tesla
       - TTE # TotalEnergies (FR): Integrated oil & gas major. (EPA:TTE or NYSE:TTE)
       - TXN # Texas Instruments (US): Analog chips. Broad industrial/auto tech
       - UBSG.SW # UBS Group (CH): Global wealth manager/bank. Financial markets health
@@ -735,18 +742,25 @@ groups:
       - ASML.AS
       - BABA
       - BIDU
+      - BTC-CAD
+      - CATL.SZ
+      - ENPH
       - GME
       - GOOG
+      - ISRG
       - LMT
       - MSFT
       - META
+      - MU
+      - NEE
+      - NET
       - NVDA
       - PLTR
       - SHOP.TO
       - TSM
+      - TCS.NS
       - UNH
       - VFV.TO
-      - BTC-CAD
       - XMR-CAD
 
 # --- Color Scheme (~Nord Theme) ---
