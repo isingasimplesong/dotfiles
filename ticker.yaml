@@ -9,7 +9,7 @@ show-holdings: true # Display holdings, if any
 # currency: CAD # Display prices converted to Canadian Dollars
 # currency-summary-only: false                   # Apply currency conversion to individual tickers, not just summary
 sort: percent # Sort tickers by percentage change (largest gainers first)
-interval: 30 # Refresh interval in seconds
+interval: 10 # Refresh interval in seconds
 
 groups:
   - name: Dashboard # Key indicators
@@ -735,33 +735,90 @@ groups:
       - TSM # TSMC (TW): Largest contract chip manufacturer. Critical tech supply chain. (NYSE:TSM)
       - V # Visa (US): Payment network. Consumer spending
   - name: Watchlist
-    watchlist:
-      - AAPL
-      - AMD
-      - AMZN
-      - ASML.AS
-      - BABA
-      - BIDU
-      - BTC-CAD
-      - CATL.SZ
-      - ENPH
-      - GME
-      - GOOG
-      - ISRG
-      - LMT
-      - MSFT
-      - META
-      - MU
-      - NEE
-      - NET
-      - NVDA
-      - PLTR
-      - SHOP.TO
-      - TSM
-      - TCS.NS
-      - UNH
-      - VFV.TO
-      - XMR-CAD
+    # mockup / index
+    # 2025-10-08
+    holdings:
+      - symbol: "AAPL"
+        quantity: 1
+        unit_cost: 257.50
+      - symbol: "AMD"
+        quantity: 1
+        unit_cost: 222.16
+      - symbol: "AMZN"
+        quantity: 1
+        unit_cost: 223.60
+      - symbol: "ASML.AS"
+        quantity: 1
+        unit_cost: 849.10
+      - symbol: "AVGO"
+        quantity: 1
+        unit_cost: 345.70
+      - symbol: "BABA"
+        quantity: 1
+        unit_cost: 179.12
+      - symbol: "BIDU"
+        quantity: 1
+        unit_cost: 137.88
+      - symbol: "ENPH"
+        quantity: 1
+        unit_cost: 35.97
+      - symbol: "GME"
+        quantity: 1
+        unit_cost: 24.92
+      - symbol: "GOOG"
+        quantity: 1
+        unit_cost: 245.67
+      - symbol: "INTC"
+        quantity: 1
+        unit_cost: 37.49
+      - symbol: "ISRG"
+        quantity: 1
+        unit_cost: 445.72
+      - symbol: "LLY"
+        quantity: 1
+        unit_cost: 845
+      - symbol: "LMT"
+        quantity: 1
+        unit_cost: 514.20
+      - symbol: "MSFT"
+        quantity: 1
+        unit_cost: 525
+      - symbol: "META"
+        quantity: 1
+        unit_cost: 716
+      - symbol: "MU"
+        quantity: 1
+        unit_cost: 194.80
+      - symbol: "NEE"
+        quantity: 1
+        unit_cost: 83.38
+      - symbol: "NET"
+        quantity: 1
+        unit_cost: 218.56
+      - symbol: "NVDA"
+        quantity: 1
+        unit_cost: 188.49
+      - symbol: "PLTR"
+        quantity: 1
+        unit_cost: 181.67
+      - symbol: "SHOP.TO"
+        quantity: 1
+        unit_cost: 230.80
+      - symbol: "TCS.NS"
+        quantity: 1
+        unit_cost: 3027.20
+      - symbol: "TSM"
+        quantity: 1
+        unit_cost: 303.45
+      - symbol: "TXN"
+        quantity: 1
+        unit_cost: 181.49
+      - symbol: "UNH"
+        quantity: 1
+        unit_cost: 374.25
+      - symbol: "VFV.TO"
+        quantity: 1
+        unit_cost: 168.80
 
 # --- Color Scheme (~Nord Theme) ---
 colors:
