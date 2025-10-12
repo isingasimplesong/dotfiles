@@ -736,90 +736,53 @@ groups:
       - V # Visa (US): Payment network. Consumer spending
   - name: Watchlist
     # mockup / index
-    # 2025-10-08
+    # 2025-10-09
     holdings:
       - symbol: "AAPL"
         quantity: 1
-        unit_cost: 257.50
-      - symbol: "AMD"
-        quantity: 1
-        unit_cost: 222.16
+        unit_cost: 254.0399932861328
       - symbol: "AMZN"
         quantity: 1
-        unit_cost: 223.60
-      - symbol: "ASML.AS"
-        quantity: 1
-        unit_cost: 849.10
-      - symbol: "AVGO"
-        quantity: 1
-        unit_cost: 345.70
-      - symbol: "BABA"
-        quantity: 1
-        unit_cost: 179.12
-      - symbol: "BIDU"
-        quantity: 1
-        unit_cost: 137.88
-      - symbol: "ENPH"
-        quantity: 1
-        unit_cost: 35.97
-      - symbol: "GME"
-        quantity: 1
-        unit_cost: 24.92
+        unit_cost: 227.74000549316406
       - symbol: "GOOG"
         quantity: 1
-        unit_cost: 245.67
+        unit_cost: 242.2100067138672
+      - symbol: "HXQ.TO"
+        quantity: 1
+        unit_cost: 100.9800033569336
       - symbol: "INTC"
         quantity: 1
-        unit_cost: 37.49
-      - symbol: "ISRG"
-        quantity: 1
-        unit_cost: 445.72
+        unit_cost: 37.79999923706055
       - symbol: "LLY"
         quantity: 1
-        unit_cost: 845
+        unit_cost: 855.3499755859375
       - symbol: "LMT"
         quantity: 1
-        unit_cost: 514.20
-      - symbol: "MSFT"
-        quantity: 1
-        unit_cost: 525
-      - symbol: "META"
-        quantity: 1
-        unit_cost: 716
+        unit_cost: 507.760009765625
       - symbol: "MU"
         quantity: 1
-        unit_cost: 194.80
+        unit_cost: 192.3300018310547
       - symbol: "NEE"
         quantity: 1
-        unit_cost: 83.38
+        unit_cost: 83.70999908447266
       - symbol: "NET"
         quantity: 1
-        unit_cost: 218.56
+        unit_cost: 220.9499969482422
       - symbol: "NVDA"
         quantity: 1
-        unit_cost: 188.49
+        unit_cost: 192.57000732421875
       - symbol: "PLTR"
         quantity: 1
-        unit_cost: 181.67
+        unit_cost: 185.47000122070312
       - symbol: "SHOP.TO"
         quantity: 1
-        unit_cost: 230.80
-      - symbol: "TCS.NS"
-        quantity: 1
-        unit_cost: 3027.20
+        unit_cost: 229.8800048828125
       - symbol: "TSM"
         quantity: 1
-        unit_cost: 303.45
-      - symbol: "TXN"
-        quantity: 1
-        unit_cost: 181.49
+        unit_cost: 299.8800048828125
       - symbol: "UNH"
         quantity: 1
-        unit_cost: 374.25
-      - symbol: "VFV.TO"
-        quantity: 1
-        unit_cost: 168.80
-
+        unit_cost: 367.69000244140625
 # --- Color Scheme (~Nord Theme) ---
 colors:
   text: cyan
