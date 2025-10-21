@@ -39,7 +39,7 @@ vim.keymap.set('n', '<localleader>se', '<cmd>set spelllang=en<CR>', vim.tbl_exte
 vim.keymap.set('n', '-', '<cmd>Oil<CR>', opts)
 
 -- Avante
-vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'avante: clear' }, opts))
+-- vim.keymap.set('n', '<leader>aC', '<cmd>AvanteToggle<CR><cmd>AvanteClear<CR><cmd>AvanteToggle<CR>', vim.tbl_extend('force', { desc = 'avante: clear' }, opts))
 
 -- buffers
 local function smart_close()
@@ -87,8 +87,8 @@ vim.keymap.set('n', 'x', '"_x', opts)
 vim.keymap.set('n', '<localleader>f', 'za', vim.tbl_extend('force', { desc = 'Toggle [F]old under the cursor' }, opts))
 
 -- notifications
-vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', vim.tbl_extend('force', { desc = '[N]otifications [D]ismiss' }, opts))
-vim.keymap.set('n', '<leader>nh', '<cmd>Noice<CR>', vim.tbl_extend('force', { desc = '[N]otifications [H]istory' }, opts))
+vim.keymap.set('n', '<localleader>d', '<cmd>NoiceDismiss<CR>', vim.tbl_extend('force', { desc = '[N]otifications [D]ismiss' }, opts))
+vim.keymap.set('n', '<localleader>h', '<cmd>Noice<CR>', vim.tbl_extend('force', { desc = '[N]otifications [H]istory' }, opts))
 
 -- git stuff
 vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', vim.tbl_extend('force', { desc = '[G]it [p]review hunk' }, opts))
@@ -149,23 +149,23 @@ vim.api.nvim_create_user_command('DeleteNote', function()
 end, { nargs = 0 })
 
 -- Obsidian keymaps
-vim.keymap.set('n', '<leader>on', '<cmd>ObsidianNew<CR>', vim.tbl_extend('force', { desc = '[N]ouvelle note' }, opts))
-vim.keymap.set('n', '<leader>oj', '<cmd>ObsidianToday<CR>', vim.tbl_extend('force', { desc = 'Note [J]ournalière' }, opts))
-vim.keymap.set('n', '<leader>ow', '<cmd>ObsidianDailies<CR>', vim.tbl_extend('force', { desc = '[W] Notes Journalières' }, opts))
-vim.keymap.set('n', '<leader>oq', '<cmd>ObsidianQuickSwitch<CR>', vim.tbl_extend('force', { desc = '[Q]uick switch' }, opts))
-vim.keymap.set('n', '<leader>os', '<cmd>ObsidianSearch<CR>', vim.tbl_extend('force', { desc = '[S]earch notes' }, opts))
-vim.keymap.set('n', '<leader>ot', '<cmd>ObsidianNewFromTemplate<CR>', vim.tbl_extend('force', { desc = 'new from Template ' }, opts))
-vim.keymap.set('n', '<leader>oa', '<cmd>ObsidianTags<CR>', vim.tbl_extend('force', { desc = 'T[a]gs picker' }, opts))
-vim.keymap.set('n', '<leader>oc', '<cmd>ObsidianTOC<CR>', vim.tbl_extend('force', { desc = 'Table of [C]ontent' }, opts))
-vim.keymap.set('n', '<leader>ob', '<cmd>ObsidianBacklinks<CR>', vim.tbl_extend('force', { desc = '[B]acklinks' }, opts))
-vim.keymap.set('n', '<leader>oi', '<cmd>ObsidianLinks<CR>', vim.tbl_extend('force', { desc = 'L[i]nks' }, opts))
-vim.keymap.set('n', '<leader>or', '<cmd>ObsidianRename<CR>', vim.tbl_extend('force', { desc = '[R]enomer la note' }, opts))
-vim.keymap.set('n', '<leader>od', '<cmd>DeleteNote<CR>', vim.tbl_extend('force', { desc = '[D]elete note' }, opts))
-vim.keymap.set('n', '<leader>ov', '<cmd>MoveNoteToAll<CR>', vim.tbl_extend('force', { desc = '[V]alider la note' }, opts))
+vim.keymap.set('n', '<leader>nn', '<cmd>ObsidianNew<CR>', vim.tbl_extend('force', { desc = '[N]ouvelle note' }, opts))
+vim.keymap.set('n', '<leader>nj', '<cmd>ObsidianToday<CR>', vim.tbl_extend('force', { desc = 'Note [J]ournalière' }, opts))
+vim.keymap.set('n', '<leader>nw', '<cmd>ObsidianDailies<CR>', vim.tbl_extend('force', { desc = '[W] Notes Journalières' }, opts))
+vim.keymap.set('n', '<leader>nq', '<cmd>ObsidianQuickSwitch<CR>', vim.tbl_extend('force', { desc = '[Q]uick switch' }, opts))
+vim.keymap.set('n', '<leader>ns', '<cmd>ObsidianSearch<CR>', vim.tbl_extend('force', { desc = '[S]earch notes' }, opts))
+vim.keymap.set('n', '<leader>nt', '<cmd>ObsidianNewFromTemplate<CR>', vim.tbl_extend('force', { desc = 'new from Template ' }, opts))
+vim.keymap.set('n', '<leader>na', '<cmd>ObsidianTags<CR>', vim.tbl_extend('force', { desc = 'T[a]gs picker' }, opts))
+vim.keymap.set('n', '<leader>nc', '<cmd>ObsidianTOC<CR>', vim.tbl_extend('force', { desc = 'Table of [C]ontent' }, opts))
+vim.keymap.set('n', '<leader>nb', '<cmd>ObsidianBacklinks<CR>', vim.tbl_extend('force', { desc = '[B]acklinks' }, opts))
+vim.keymap.set('n', '<leader>ni', '<cmd>ObsidianLinks<CR>', vim.tbl_extend('force', { desc = 'L[i]nks' }, opts))
+vim.keymap.set('n', '<leader>nr', '<cmd>ObsidianRename<CR>', vim.tbl_extend('force', { desc = '[R]enomer la note' }, opts))
+vim.keymap.set('n', '<leader>nd', '<cmd>DeleteNote<CR>', vim.tbl_extend('force', { desc = '[D]elete note' }, opts))
+vim.keymap.set('n', '<leader>nv', '<cmd>MoveNoteToAll<CR>', vim.tbl_extend('force', { desc = '[V]alider la note' }, opts))
 -- visual mode obsidian
-vim.keymap.set('v', '<leader>ol', '<cmd>ObsidianLink<CR>', vim.tbl_extend('force', { desc = '[L]ien' }, opts))
-vim.keymap.set('v', '<leader>oo', '<cmd>ObsidianLinkNew<CR>', vim.tbl_extend('force', { desc = '[O]bs. nouveau lien' }, opts))
-vim.keymap.set('v', '<leader>oe', '<cmd>ObsidianExtractNote<CR>', vim.tbl_extend('force', { desc = '[E]xtraire la note' }, opts))
+vim.keymap.set('v', '<leader>nl', '<cmd>ObsidianLink<CR>', vim.tbl_extend('force', { desc = '[L]ien' }, opts))
+vim.keymap.set('v', '<leader>no', '<cmd>ObsidianLinkNew<CR>', vim.tbl_extend('force', { desc = '[O]bs. nouveau lien' }, opts))
+vim.keymap.set('v', '<leader>ne', '<cmd>ObsidianExtractNote<CR>', vim.tbl_extend('force', { desc = '[E]xtraire la note' }, opts))
 
 --  Use CTRL+<hjkl> to switch between windows
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', vim.tbl_extend('force', { desc = 'Move focus to the left window' }, opts))
