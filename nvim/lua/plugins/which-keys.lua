@@ -43,13 +43,12 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>a', group = '[A]vante AI' },
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>g', group = '[G]it' },
         { '<leader>m', group = '[M]arkdown' },
         { '<leader>n', group = '[N]otifications' },
-        { '<leader>o', group = '[O]bsidian' },
+        { '<leader>o', group = '[O]pen Code' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]erminal & [T]oggle' },
