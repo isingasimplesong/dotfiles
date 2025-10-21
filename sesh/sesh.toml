@@ -2,15 +2,15 @@
 # name = "radium"
 # path = "~"
 #
-# [[session]]
-# name = "monitoring"
-# path = "~"
-# windows = [, "ticker", "portfolio" ]
-#
-# [[window]]
-# name = "ticker"
-# startup_script = "ticker"
-#
-# [[window]]
-# name = "portfolio"
-# startup_script = "portfolio"
+[[session]]
+name = "monitoring"
+path = "~"
+windows = ["ticker", "portfolio" ]
+
+[[window]]
+name = "ticker"
+startup_script = "ticker"
+
+[[window]]
+name = "portfolio"
+startup_script = "portfolio"
