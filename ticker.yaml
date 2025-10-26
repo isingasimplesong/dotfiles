@@ -9,17 +9,17 @@ show-holdings: true # Display holdings, if any
 # currency: CAD # Display prices converted to Canadian Dollars
 # currency-summary-only: false                   # Apply currency conversion to individual tickers, not just summary
 sort: percent # Sort tickers by percentage change (largest gainers first)
-interval: 10 # Refresh interval in seconds
+interval: 300 # Refresh interval in seconds
 
 groups:
   - name: Dashboard # Key indicators
     watchlist:
       - ^GSPC # S&P 500 Index: Broad benchmark for large-cap US stocks. General US market health
+      - ^GSPTSE # TSX : ~70% of the Toronto Stock Exchange capitalization
       - ^IXIC # NASDAQ Composite Index: Tech-heavy US stock index. Indicator of growth/tech sector sentiment
       - ^STOXX50E # EURO STOXX 50 Index: Blue-chip index for the Eurozone. Gauge of core European economic/market sentiment
       - ^HSI # Hang Seng Index: Benchmark Hong Kong stock index. Reflects HK/China sentiment
       - 000001.SS # Shanghai Composite: Main China mainland stock index
-      - URTH # iShares MSCI World ETF: Tracks developed market equities globally. Broad global equity sentiment
       - ^VIX # CBOE Volatility Index: Market fear/uncertainty gauge. Higher = more fear/stress. Lower = complacency
       - TIP # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations
       - XLE # Energy Select Sector SPDR Fund: US energy stocks. Reflects oil/gas trends, energy demand
@@ -28,22 +28,29 @@ groups:
       - CL=F # Crude Oil Futures (WTI): US oil benchmark. Rise = inflation pressure, demand/supply concerns
       - SHY # US 1-3 Year Treasuries ETF. short-term interest rate expectations. Price falls as rates rise
       - IEF # US 7-10 Year Treasuries ETF. Medium/long-term interest rate expectations. Price falls as rates rise
-  - name: Global
+
+  - name: Indices
     watchlist:
       # --- Indices ---
-      - ^BSESN # BSE Sensex: Indian benchmark stock index
+      - ^GSPC # S&P 500: Broad large-cap US market benchmark
       - ^DJI # Dow Jones Industrial Average: 30 large US blue-chip companies
+      - ^IXIC # NASDAQ Composite: Tech-heavy, growth-oriented US index
+      - ^GSPTSE # TSX : ~70% of the Toronto Stock Exchange capitalization
+      - ^STOXX50E # Euro Stoxx 50: Eurozone blue-chips
       - ^FCHI # CAC 40: French benchmark index
       - ^FTSE # FTSE 100: Large-cap UK stock index
       - ^GDAXI # DAX: German benchmark index (major exporters)
-      - ^GSPC # S&P 500: Broad large-cap US market benchmark
+      - ^IBEX # IBEX 35: Spanish benchmark stock index
       - ^HSI # Hang Seng: Hong Kong benchmark index (influence from China)
       - 000001.SS # Shanghai Composite: Main China mainland stock index
-      - ^IBEX # IBEX 35: Spanish benchmark stock index
-      - ^IXIC # NASDAQ Composite: Tech-heavy, growth-oriented US index
-      - ^N225 # Nikkei 225: Japanese benchmark stock index
-      - ^STOXX50E # Euro Stoxx 50: Eurozone blue-chips
+      - ^N225 # Nikkei 225 (Japan)
+      - ^KS11 # KOSPI (South Korea)
+      - ^TWII # TAIEX (Taiwan)
+      - ^BSESN # BSE Sensex: Indian benchmark stock index
       - ^AXJO # S&P/ASX 200: Australia benchmark
+
+  - name: Bonds, risk & inflation
+    watchlist:
       # --- Bonds & Inflation ---
       - HYG # US High-Yield Corp Bonds ETF ("Junk Bonds"). Rise = increased risk appetite. Fall = risk aversion
       - LQD # US Investment Grade Corporate Bonds ETF. Fall = widening credit spreads, higher perceived risk
@@ -52,6 +59,11 @@ groups:
       - TLT # US 20+ Year Treasuries ETF. Long-term rate expectations/economic outlook. Price falls as rates rise
       - TIP # US Treasury Inflation-Protected Securities ETF. Rise = higher inflation expectations
       - ^TNX # US 10y yield
+      - ^MOVE # Treasury bonds volatility
+      - ^VIX # CBOE Volatility Index: "Fear gauge". Higher = more expected volatility/fear
+
+  - name: ETFs
+    watchlist:
       # --- Sector ETFs (US) ---
       - SMH # VanEck Semiconductor ETF: Key indicator for tech supply chain, manufacturing cycle
       - XLE # Energy: Oil, gas, services. Tied to commodity prices
@@ -76,10 +88,6 @@ groups:
       - URTH # iShares MSCI World ETF: Developed markets globally
       - VT # Vanguard Total World Stock ETF: Alternative ACWI tracker
       - VWO # Vanguard FTSE Emerging Markets ETF: Alternative EM tracker. Indicator of global growth & risk appetite
-      # --- Volatility & Fear ---
-      - ^VIX # CBOE Volatility Index: "Fear gauge". Higher = more expected volatility/fear
-      - VXX # iPath S&P 500 VIX Short-Term Futures ETN: Tracks VIX futures. Volatile, decays over time. ETN = Exchange Traded Note
-      - ^MOVE # Treasury bonds volatility
 
   - name: Ressources # Commodities: Raw materials, energy, agriculture. Indicators of inflation, industrial demand
     watchlist:
@@ -124,7 +132,7 @@ groups:
       - URNM # Sprott Uranium Miners ETF: Tracks uranium miners, proxy for nuclear energy sentiment/demand
       - UX=F # Uranium futures
 
-  - name: Dollar
+  - name: Monnaie
     watchlist:
       - USDEUR=X
       - USDCAD=X # US Dollar / Canadian Dollar ("Loonie"): Commodity-sensitive (oil), relevant for Canada
@@ -135,366 +143,1230 @@ groups:
       - USDBRL=X # US Dollar / Brazilian Real: Another key Latin American currency
       - USDZAR=X # US Dollar / South African Rand: Key African currency, EM risk proxy
       - UUP # Invesco DB US Dollar Index Bullish Fund: ETF tracking USD value against a basket of major currencies. Rising = strong USD
-
-  - name: Euro
-    watchlist:
       - EURUSD=X # Euro / US Dollar: Most traded pair, key EU/US barometer
       - EURCHF=X # Euro / Swiss Franc: Eurozone risk vs Swiss safe haven dynamic
       - EURGBP=X # Euro / British Pound: Relative Eurozone / UK economic barometer
       - EURJPY=X # Euro / Japanese Yen: Risk appetite indicator (often correlates with equities)
       - EURCAD=X
-      - EURAUD=X
-      - EURMXN=X
-      - EURCNH=X
-      - EURBRL=X
-      - EURZAR=X
-
-  - name: CAD
-    watchlist:
       - CADUSD=X
       - CADEUR=X
-      - CADJPY=X
-      - CADCHF=X
-      - CADGBP=X
-      - CADJPY=X
-      - CADAUD=X
-      - CADMXN=X
-      - CADCNH=X
-      - CADBRL=X
-      - CADZAR=X
 
-  - name: Actions
-    watchlist:
-      - AAPL # Apple (US): Consumer electronics, services. Consumer spending, tech
-      - ABBV # AbbVie (US): Pharma (esp. Humira)
-      - ACA.PA # Crédit Agricole (FR): Large French bank. (.PA = Paris)
-      - ADBE # Adobe (US): Creative/document software
-      - AI.PA # Air Liquide (FR): Industrial gases. Broad industrial activity
-      - AIR.PA # Airbus (EU): Major aircraft manufacturer. Global travel, manufacturing
-      - ALV.DE # Allianz (DE): Insurance, asset management. Global insurance market. (.DE = XETRA)
-      - AMD # Advanced Micro Devices (US): CPUs, GPUs. Semiconductor cycle
-      - AMZN # Amazon (US): E-commerce, cloud (AWS). Online retail, cloud growth
-      - ARKK # ARK Innovation ETF (US): Proxy for speculative growth stock sentiment
-      - ASML.AS # ASML Holding (NL): Crucial semiconductor lithography equipment. Global tech supply chain. (.AS = Amsterdam)
-      - AVGO # Broadcom (US): Semiconductors, software. Diversified tech/networking
-      - AZN # AstraZeneca (UK): Pharma. Global healthcare. (LSE:AZN or NYSE:AZN)
-      - BA # Boeing (US): Aircraft, defense. Aerospace, global travel
-      - BABA # Alibaba Group (CN): E-commerce, cloud. China consumer & tech. (NYSE:BABA)
-      - BAC # Bank of America (US): Large diversified US bank. Financial sector health
-      - BAS.DE # BASF (DE): Chemical giant. Global industrial/chemical demand
-      - BIDU # Baidu (CN): Search engine, AI. China tech indicator. (NASDAQ:BIDU)
-      - BLK # BlackRock (US): Largest asset manager. Investment flows, market sentiment
-      - BMW.DE # BMW (DE): Premium automaker. Global auto market, luxury segment
-      - BMY # Bristol-Myers Squibb (US): Pharma
-      - BNP.PA # BNP Paribas (FR): Major European bank
-      - BRK-B # Berkshire Hathaway (US): Conglomerate (insurance, rail, energy, investments). Broad economic proxy
-      - C # Citigroup (US): Global bank. International exposure
-      - CAT # Caterpillar (US): Heavy machinery. Global industrial & resource activity
-      - CATL.SZ # Contemporary Amperex Tech - World’s largest EV battery producer
-      - COIN # Coinbase Global (US): Crypto exchange. Crypto adoption/volume proxy
-      - COST # Costco (US): Warehouse retailer. Consumer spending (bulk/value)
-      - CRM # Salesforce (US): Cloud CRM software. Enterprise IT spending
-      - CVX # Chevron (US): Integrated oil & gas major. Energy prices/investment
-      - DBK.DE # Deutsche Bank (DE): Major German bank
-      - DE # John Deere (US): Agricultural & construction machinery. Ag/construction health
-      - DIS # Disney (US): Media, theme parks. Consumer discretionary spending
-      - DJT # Trump Media & tech group
-      - ENPH # Enphase Energy - Solar inverters — residential solar adoption
-      - FDX # FedEx (US): Logistics, delivery. Global trade/e-commerce volume indicator
-      - GE # General Electric (US): Aerospace, power, renewables. Industrial evolution
-      - GME # GameStop (US): "Meme stock". Retail speculative fervor
-      - GOOG # Alphabet (Google) (US): Search, advertising, cloud. Digital ad market
-      - GS # Goldman Sachs (US): Investment banking, trading. Capital markets activity
-      - HD # Home Depot (US): Home improvement retailer. Housing market, consumer spending
-      - HMC # Honda Motor (JP): Automaker, motorcycles. Auto industry health. (NYSE:HMC)
-      - HON # Honeywell (US): Industrial conglomerate (aerospace, buildings, safety)
-      - HSBC # HSBC Holdings (UK/HK): Global bank (Asia focus). Global trade/finance. (LSE:HSBA or NYSE:HSBC)
-      - IBM # IBM (US): IT services, software. Enterprise spending
-      - INTC # Intel (US): CPUs, semiconductors. Chip manufacturer cycle
-      - INTU # Intuit (US): Financial software. Small business/consumer finance
-      - ISRG # Intuitive Surgical - Surgical robotics adoption proxy
-      - JNJ # Johnson & Johnson (US): Diversified healthcare
-      - JPM # JPMorgan Chase (US): Largest US bank. Financial sector/economy bellwether
-      - LLY # Eli Lilly (US): Pharma (esp. diabetes, weight loss)
-      - LMT # Lockheed Martin (US): Aerospace & defense. Defense spending
-      - MA # Mastercard (US): Payment network. Consumer spending
-      - MBG.DE # Mercedes-Benz Group (DE): Premium automaker (formerly DAI.DE). Auto market, luxury segment
-      - MC.PA # LVMH (FR): Luxury goods leader. Global high-end consumer sentiment
-      - MCD # McDonald's (US): Fast food chain. Global consumer spending
-      - META # Meta Platforms (Facebook) (US): Social media, advertising. Digital ad market
-      - MRK # Merck & Co. (US): Pharma
-      - MS # Morgan Stanley (US): Investment banking, wealth management. Capital markets
-      - MSFT # Microsoft (US): Software, cloud (Azure). Diversified tech giant
-      - MU # Micron Technology (US): Memory chips. Semiconductor cycle sensitivity
-      - NEE # NextEra Energy - Clean energy leader, proxy for renewables
-      - NESN.SW # Nestlé (CH): Largest food company. Defensive staple. (.SW = Zurich)
-      - NET # Cloudflare
-      - NKE # Nike (US): Athletic apparel. Global consumer brand health
-      - NTDOY # Nintendo
-      - NVO # Novo Nordisk (DK): Pharma (diabetes/obesity leader). (CPH:NOVO-B or NYSE:NVO)
-      - NVS # Novartis (CH): Pharma. Global healthcare. (SIX:NOVN or NYSE:NVS)
-      - NVDA # Nvidia (US): GPUs, AI chips. AI hardware leader, semi cycle
-      - OR.PA # L'Oréal (FR): Cosmetics. Global consumer spending (beauty)
-      - ORCL # Oracle (US): Database software, cloud. Enterprise IT spending
-      - PFE # Pfizer (US): Pharma
-      - PLTR # Palantir Technologies (US): Data analytics, AI software. Speculative tech
-      - QCOM # Qualcomm (US): Mobile chips. Smartphone market indicator
-      - RELIANCE.NS # Reliance Industries (IN): Conglomerate (energy, retail, telecom). India economy proxy
-      - RTX # RTX Corp (Raytheon) (US): Aerospace & defense. Defense spending
-      - RY.TO # Royal Bank of Canada (CA): Largest Canadian bank. (.TO = Toronto)
-      - SAP.DE # SAP (DE): ERP software leader. Global IT spending
-      - SBUX # Starbucks (US): Coffee chain. Global consumer spending
-      - SHEL # Shell plc (UK): Integrated oil & gas major. (LSE:SHEL or NYSE:SHEL)
-      - SHOP.TO # Shopify (E-commerce Platform)
-      - SIE.DE # Siemens (DE): Industrial conglomerate. Global manufacturing, infrastructure
-      - SNAP # Snap Inc. (US): Social media (Snapchat). Digital ads, youth trends
-      - SNY # Sanofi (FR): Pharma. Global healthcare. (EPA:SAN or NYSE:SNY)
-      - SONY # Sony Group (JP): Electronics, gaming, entertainment. Global consumer tech/media. (NYSE:SONY)
-      - STM.PA # STMicroelectronics (EU): Semiconductors. EU tech sector
-      - T # AT&T (US): Telecom. Dividend focus, telecom health
-      - TCS.NS # Tata Consultancy - India tech service bellwether
-      - TD.TO # Toronto-Dominion Bank (CA): Large Canadian bank (US presence)
-      - TGT # Target (US): General merchandise retailer. Consumer spending patterns
-      - TM # Toyota Motor (JP): Largest automaker globally. Auto industry, manufacturing. (NYSE:TM)
-      - TSM # TSMC (TW): Largest contract chip manufacturer. Critical tech supply chain. (NYSE:TSM)
-      - TSLA # Tesla
-      - TTE # TotalEnergies (FR): Integrated oil & gas major. (EPA:TTE or NYSE:TTE)
-      - TXN # Texas Instruments (US): Analog chips. Broad industrial/auto tech
-      - UBSG.SW # UBS Group (CH): Global wealth manager/bank. Financial markets health
-      - UBER # Uber Technologies (US): Ride-sharing, delivery. Gig economy, mobility
-      - UL # Unilever (UK/NL): Global consumer goods. Defensive staple. (LSE:ULVR or NYSE:UL)
-      - UNH # UnitedHealth Group (US): Largest US health insurer. Healthcare spending/policy
-      - UPS # United Parcel Service (US): Logistics, delivery. Global trade/e-commerce volume
-      - V # Visa (US): Payment network. Consumer spending
-      - WFC # Wells Fargo (US): Large US bank (consumer/commercial focus)
-      - WMT # Walmart (US): Largest retailer (discount). Consumer spending (value focus)
-      - XOM # ExxonMobil (US): Integrated oil & gas major. Energy prices/investment
-      - 005930.KS # Samsung Electronics (KR): Electronics, memory chips, phones. Global tech bellwether
-      - 0700.HK # Tencent Holdings (HK): Social media, gaming. China tech/consumer. (.HK = Hong Kong)
-      - 9988.HK # Alibaba Group (HK Listing): Alternative ticker for Alibaba
+  - name: S&P 100
+    # mockup / index
+    # 2025-10-20
+    holdings:
+      - symbol: "AAPL"
+        quantity: 1
+        unit_cost: 262.239990234375
+      - symbol: "ABBV"
+        quantity: 1
+        unit_cost: 232.05999755859375
+      - symbol: "ABT"
+        quantity: 1
+        unit_cost: 129.50999450683594
+      - symbol: "ACN"
+        quantity: 1
+        unit_cost: 242.17999267578125
+      - symbol: "ADBE"
+        quantity: 1
+        unit_cost: 343.3999938964844
+      - symbol: "AIG"
+        quantity: 1
+        unit_cost: 77.69000244140625
+      - symbol: "AMD"
+        quantity: 1
+        unit_cost: 240.55999755859375
+      - symbol: "AMGN"
+        quantity: 1
+        unit_cost: 303.3299865722656
+      - symbol: "AMT"
+        quantity: 1
+        unit_cost: 193.0800018310547
+      - symbol: "AMZN"
+        quantity: 1
+        unit_cost: 216.47999572753906
+      - symbol: "AVGO"
+        quantity: 1
+        unit_cost: 349.239990234375
+      - symbol: "AXP"
+        quantity: 1
+        unit_cost: 349.4800109863281
+      - symbol: "BA"
+        quantity: 1
+        unit_cost: 216.82000732421875
+      - symbol: "BAC"
+        quantity: 1
+        unit_cost: 52.040000915527344
+      - symbol: "BK"
+        quantity: 1
+        unit_cost: 108.5
+      - symbol: "BKNG"
+        quantity: 1
+        unit_cost: 5141.8798828125
+      - symbol: "BLK"
+        quantity: 1
+        unit_cost: 1160.0
+      - symbol: "BMY"
+        quantity: 1
+        unit_cost: 43.59000015258789
+      - symbol: "C"
+        quantity: 1
+        unit_cost: 99.30000305175781
+      - symbol: "CAT"
+        quantity: 1
+        unit_cost: 531.1799926757812
+      - symbol: "CL"
+        quantity: 1
+        unit_cost: 78.75
+      - symbol: "CMCSA"
+        quantity: 1
+        unit_cost: 29.56999969482422
+      - symbol: "COF"
+        quantity: 1
+        unit_cost: 214.8699951171875
+      - symbol: "COP"
+        quantity: 1
+        unit_cost: 87.05999755859375
+      - symbol: "COST"
+        quantity: 1
+        unit_cost: 936.1099853515625
+      - symbol: "CRM"
+        quantity: 1
+        unit_cost: 254.27999877929688
+      - symbol: "CSCO"
+        quantity: 1
+        unit_cost: 70.6500015258789
+      - symbol: "CVS"
+        quantity: 1
+        unit_cost: 82.4800033569336
+      - symbol: "CVX"
+        quantity: 1
+        unit_cost: 154.47999572753906
+      - symbol: "DE"
+        quantity: 1
+        unit_cost: 462.44000244140625
+      - symbol: "DHR"
+        quantity: 1
+        unit_cost: 208.38999938964844
+      - symbol: "DIS"
+        quantity: 1
+        unit_cost: 111.95999908447266
+      - symbol: "DUK"
+        quantity: 1
+        unit_cost: 128.94000244140625
+      - symbol: "EMR"
+        quantity: 1
+        unit_cost: 130.35000610351562
+      - symbol: "FDX"
+        quantity: 1
+        unit_cost: 239.80999755859375
+      - symbol: "GD"
+        quantity: 1
+        unit_cost: 337.19000244140625
+      - symbol: "GE"
+        quantity: 1
+        unit_cost: 302.67999267578125
+      - symbol: "GILD"
+        quantity: 1
+        unit_cost: 123.11000061035156
+      - symbol: "GM"
+        quantity: 1
+        unit_cost: 58.0
+      - symbol: "GOOG"
+        quantity: 1
+        unit_cost: 257.0199890136719
+      - symbol: "GOOGL"
+        quantity: 1
+        unit_cost: 256.54998779296875
+      - symbol: "GS"
+        quantity: 1
+        unit_cost: 763.3200073242188
+      - symbol: "HD"
+        quantity: 1
+        unit_cost: 388.8900146484375
+      - symbol: "HON"
+        quantity: 1
+        unit_cost: 206.02999877929688
+      - symbol: "IBM"
+        quantity: 1
+        unit_cost: 283.6499938964844
+      - symbol: "INTC"
+        quantity: 1
+        unit_cost: 38.099998474121094
+      - symbol: "INTU"
+        quantity: 1
+        unit_cost: 664.77001953125
+      - symbol: "ISRG"
+        quantity: 1
+        unit_cost: 458.4700012207031
+      - symbol: "JNJ"
+        quantity: 1
+        unit_cost: 193.72000122070312
+      - symbol: "JPM"
+        quantity: 1
+        unit_cost: 302.3599853515625
+      - symbol: "KO"
+        quantity: 1
+        unit_cost: 68.44000244140625
+      - symbol: "LIN"
+        quantity: 1
+        unit_cost: 451.55999755859375
+      - symbol: "LLY"
+        quantity: 1
+        unit_cost: 808.9600219726562
+      - symbol: "LMT"
+        quantity: 1
+        unit_cost: 505.8999938964844
+      - symbol: "LOW"
+        quantity: 1
+        unit_cost: 242.27000427246094
+      - symbol: "MA"
+        quantity: 1
+        unit_cost: 566.3599853515625
+      - symbol: "MCD"
+        quantity: 1
+        unit_cost: 307.7699890136719
+      - symbol: "MDLZ"
+        quantity: 1
+        unit_cost: 62.810001373291016
+      - symbol: "MDT"
+        quantity: 1
+        unit_cost: 95.91999816894531
+      - symbol: "MET"
+        quantity: 1
+        unit_cost: 78.73999786376953
+      - symbol: "META"
+        quantity: 1
+        unit_cost: 732.1699829101562
+      - symbol: "MMM"
+        quantity: 1
+        unit_cost: 154.77999877929688
+      - symbol: "MO"
+        quantity: 1
+        unit_cost: 64.4000015258789
+      - symbol: "MRK"
+        quantity: 1
+        unit_cost: 86.31999969482422
+      - symbol: "MS"
+        quantity: 1
+        unit_cost: 161.97000122070312
+      - symbol: "MSFT"
+        quantity: 1
+        unit_cost: 516.7899780273438
+      - symbol: "NEE"
+        quantity: 1
+        unit_cost: 84.7699966430664
+      - symbol: "NFLX"
+        quantity: 1
+        unit_cost: 1238.56005859375
+      - symbol: "NKE"
+        quantity: 1
+        unit_cost: 67.62000274658203
+      - symbol: "NOW"
+        quantity: 1
+        unit_cost: 917.5499877929688
+      - symbol: "NVDA"
+        quantity: 1
+        unit_cost: 182.63999938964844
+      - symbol: "ORCL"
+        quantity: 1
+        unit_cost: 277.17999267578125
+      - symbol: "PEP"
+        quantity: 1
+        unit_cost: 153.63999938964844
+      - symbol: "PFE"
+        quantity: 1
+        unit_cost: 24.690000534057617
+      - symbol: "PG"
+        quantity: 1
+        unit_cost: 151.9600067138672
+      - symbol: "PLTR"
+        quantity: 1
+        unit_cost: 181.58999633789062
+      - symbol: "PM"
+        quantity: 1
+        unit_cost: 158.05999755859375
+      - symbol: "PYPL"
+        quantity: 1
+        unit_cost: 69.19999694824219
+      - symbol: "QCOM"
+        quantity: 1
+        unit_cost: 167.0399932861328
+      - symbol: "RTX"
+        quantity: 1
+        unit_cost: 160.7100067138672
+      - symbol: "SBUX"
+        quantity: 1
+        unit_cost: 84.52999877929688
+      - symbol: "SCHW"
+        quantity: 1
+        unit_cost: 94.94999694824219
+      - symbol: "SO"
+        quantity: 1
+        unit_cost: 97.69000244140625
+      - symbol: "SPG"
+        quantity: 1
+        unit_cost: 178.47000122070312
+      - symbol: "T"
+        quantity: 1
+        unit_cost: 26.100000381469727
+      - symbol: "TGT"
+        quantity: 1
+        unit_cost: 91.52999877929688
+      - symbol: "TMO"
+        quantity: 1
+        unit_cost: 543.8400268554688
+      - symbol: "TMUS"
+        quantity: 1
+        unit_cost: 230.08999633789062
+      - symbol: "TSLA"
+        quantity: 1
+        unit_cost: 447.42999267578125
+      - symbol: "TXN"
+        quantity: 1
+        unit_cost: 179.58999633789062
+      - symbol: "UBER"
+        quantity: 1
+        unit_cost: 93.69999694824219
+      - symbol: "UNH"
+        quantity: 1
+        unit_cost: 364.4800109863281
+      - symbol: "UNP"
+        quantity: 1
+        unit_cost: 227.3000030517578
+      - symbol: "UPS"
+        quantity: 1
+        unit_cost: 86.91000366210938
+      - symbol: "USB"
+        quantity: 1
+        unit_cost: 47.099998474121094
+      - symbol: "V"
+        quantity: 1
+        unit_cost: 344.4100036621094
+      - symbol: "VZ"
+        quantity: 1
+        unit_cost: 40.79999923706055
+      - symbol: "WFC"
+        quantity: 1
+        unit_cost: 86.0199966430664
+      - symbol: "WMT"
+        quantity: 1
+        unit_cost: 107.05000305175781
+      - symbol: "XOM"
+        quantity: 1
+        unit_cost: 112.69999694824219
 
-  - name: US
+  - name: TSX Composite
+    # retrieved on 2025-10-23
     watchlist:
-      - AAPL # Apple
-      - ABBV # AbbVie
-      - ADBE # Adobe
-      - AMD # Advanced Micro Devices
-      - AMZN # Amazon.com
-      - ARKK # ARK Innovation ETF
-      - AVGO # Broadcom
-      - BA # The Boeing Company
-      - BAC # Bank of America Corporation
-      - BLK # BlackRock
-      - BRK-B # Berkshire Hathaway Inc. Class B
-      - BMY # Bristol-Myers Squibb Company
-      - C # Citigroup
-      - CAT # Caterpillar
-      - COIN # Coinbase Global
-      - COST # Costco Wholesale Corporation
-      - CRM # Salesforce
-      - CVX # Chevron Corporation
-      - DE # Deere & Company
-      - DJT # Trump Media & tech group
-      - DIS # The Walt Disney Company
-      - FDX # FedEx Corporation
-      - GE # General Electric Company
-      - GME # GameStop Corp
-      - GOOG # Alphabet Inc. Class C
-      - GS # The Goldman Sachs Group
-      - HD # The Home Depot
-      - HON # Honeywell International
-      - IBM # International Business Machines Corporation
-      - INTC # Intel Corporation
-      - INTU # Intuit
-      - JNJ # Johnson & Johnson
-      - JPM # JPMorgan Chase & Co
-      - LLY # Eli Lilly and Company
-      - LMT # Lockheed Martin Corporation
-      - MA # Mastercard Incorporated
-      - MCD # McDonald's Corporation
-      - META # Meta Platforms
-      - MRK # Merck & Co
-      - MS # Morgan Stanley
-      - MSFT # Microsoft Corporation
-      - MU # Micron Technology
-      - NKE # NIKE
-      - NVDA # NVIDIA Corporation
-      - ORCL # Oracle Corporation
-      - PFE # Pfizer
-      - PLTR # Palantir Technologies
-      - QCOM # QUALCOMM Incorporated
-      - RTX # Raytheon Technologies Corporation
-      - SBUX # Starbucks Corporation
-      - SNAP # Snap
-      - T # AT&T
-      - TGT # Target Corporation
-      - TSLA # Tesla
-      - TXN # Texas Instruments Incorporated
-      - UBER # Uber Technologies
-      - UNH # UnitedHealth Group Incorporated
-      - UPS # United Parcel Service
-      - V # Visa
-      - WFC # Wells Fargo & Company
-      - WMT # Walmart
-      - XOM # Exxon Mobil Corporation
+      - AAV
+      - AEM
+      - AC
+      - AGI
+      - ASTL
+      - AQN
+      - ATD
+      - AP.UN
+      - ALA
+      - AIF
+      - ARX
+      - ATZ
+      - ACO.X
+      - ATH
+      - ATRL
+      - ATS
+      - AYA
+      - BTO
+      - BDGI
+      - BMO
+      - BNS
+      - ABX
+      - BHC
+      - BTE
+      - BCE
+      - BIR
+      - BDT
+      - BB
+      - BEI.UN
+      - BBD.B
+      - BLX
+      - BYD
+      - BAM
+      - BBU.UN
+      - BN
+      - BIP.UN
+      - BEP.UN
+      - DOO
+      - CAE
+      - CXB
+      - CCO
+      - CAR.UN
+      - CM
+      - CNR
+      - CNQ
+      - CP
+      - CTC.A
+      - CU
+      - CWB
+      - CPX
+      - CS
+      - CJT
+      - CCL.B
+      - CLS
+      - CVE
+      - CG
+      - CEU
+      - GIB.A
+      - CSH.UN
+      - CHP.UN
+      - CIX
+      - CCA
+      - CIGI
+      - CSU
+      - CRR.UN
+      - CRT.UN
+      - DFY
+      - DML
+      - DSG
+      - DOL
+      - DIR.UN
+      - DPM
+      - ELD
+      - EFN
+      - EMA
+      - EMP.A
+      - ENB
+      - EFR
+      - ENGH
+      - EQB
+      - EQX
+      - ERO
+      - EIF
+      - FFH
+      - FIL
+      - FTT
+      - FCR.UN
+      - AG
+      - FM
+      - FSV
+      - FTS
+      - FVI
+      - FNV
+      - FRU
+      - WN
+      - GFL
+      - GEI
+      - GIL
+      - GSY
+      - GRT.UN
+      - GWO
+      - HR.UN
+      - HWX
+      - HBM
+      - H
+      - IAG
+      - IMG
+      - IGM
+      - IMO
+      - INE
+      - IFC
+      - IFP
+      - IPCO
+      - IIP.UN
+      - IVN
+      - JWEL
+      - KNT
+      - KEL
+      - KEY
+      - KMP.UN
+      - KXS
+      - K
+      - LIF
+      - LB
+      - LSPD
+      - LNR
+      - L
+      - LUG
+      - LUN
+      - MAG
+      - MG
+      - MFC
+      - MFI
+      - MATR
+      - MDA
+      - MEG
+      - MX
+      - MRU
+      - MTY
+      - MTL
+      - NGD
+      - NXE
+      - NFI
+      - NWC
+      - NPI
+      - NWH.UN
+      - NG
+      - NTR
+      - NVEI
+      - NVA
+      - OGC
+      - ONEX
+      - OTEX
+      - OLA
+      - OR
+      - OSK
+      - PAAS
+      - POU
+      - PXT
+      - PKI
+      - PSI
+      - PPL
+      - PET
+      - PEY
+      - POW
+      - PSK
+      - PD
+      - PBH
+      - PMZ.UN
+      - PRMW
+      - QBR.B
+      - QSR
+      - RCH
+      - REI.UN
+      - RCI.B
+      - RY
+      - RUS
+      - SSL
+      - SAP
+      - SEA
+      - SES
+      - SHOP
+      - SIA
+      - SIL
+      - SRU.UN
+      - SOBO
+      - TOY
+      - SII
+      - SSRM
+      - STN
+      - STLC
+      - SJ
+      - SVI
+      - SLF
+      - SU
+      - SPB
+      - TVE
+      - TRP
+      - TECK.B
+      - T
+      - TFII
+      - TRI
+      - TLRY
+      - X
+      - TPZ
+      - TXG
+      - TIH
+      - TD
+      - TOU
+      - TA
+      - TCL.A
+      - TFPM
+      - TSU
+      - VRN
+      - VET
+      - WCN
+      - WDO
+      - WFG
+      - WPM
+      - WCP
+      - WPK
+      - WSP
 
-  - name: Asie
+  - name: CSI 100 Index (China Securities Index)
+    # retrieved on 2025-10-22
     watchlist:
-      # --- Indices ---
-      - 000001.SS # Shanghai Composite: Main China mainland stock index
-      - ^HSI # Hang Seng (Hong Kong)
-      - ^N225 # Nikkei 225 (Japan)
-      - ^KS11 # KOSPI (South Korea)
-      - ^TWII # TAIEX (Taiwan)
-      - ^BSESN # BSE Sensex (India)
-      - ^AXJO # S&P/ASX 200: Australia benchmark
-      # --- ETFs ---
-      - AAXJ # iShares MSCI All Country Asia ex Japan ETF
-      - EWJ # iShares MSCI Japan ETF
-      - INDA # iShares MSCI India ETF
-      - MCHI # iShares MSCI China ETF
-      # --- Stocks ---
-      - BABA # Alibaba (CN, US ADR)
-      - BIDU # Baidu (CN, US ADR)
-      - HMC # Honda (JP, US ADR)
-      - RELIANCE.NS # Reliance Industries (IN)
-      - SE # Sea Ltd (SG, US ADR - Ecomm, Gaming, Fintech)
-      - SONY # Sony (JP, US ADR)
-      - TM # Toyota (JP, US ADR)
-      - TSM # TSMC (TW, US ADR)
-      - 005930.KS # Samsung Electronics (KR)
-      - 0700.HK # Tencent (HK)
-      - 9988.HK # Alibaba (HK)
-      - NTDOY # Nintendo
+      - 600519.SS
+      - 601318.SS
+      - 300750.SS
+      - 600036.SS
+      - 000333.SS
+      - 600900.SS
+      - 601899.SS
+      - 002714.SS
+      - 600030.SS
+      - 600276.SS
+      - 601398.SS
+      - 000651.SS
+      - 300760.SS
+      - 002594.SS
+      - 600309.SS
+      - 000725.SS
+      - 002475.SS
+      - 300124.SS
+      - 002415.SS
+      - 601012.SS
+      - 601088.SS
+      - 601816.SS
+      - 600028.SS
+      - 601668.SS
+      - 603259.SS
+      - 601857.SS
+      - 601225.SS
+      - 300308.SS
+      - 688981.SS
+      - 000063.SS
+      - 002352.SS
+      - 600406.SS
+      - 600941.SS
+      - 000338.SS
+      - 600050.SS
+      - 002230.SS
+      - 600690.SS
+      - 601728.SS
+      - 300274.SS
+      - 000792.SS
+      - 000100.SS
+      - 601888.SS
+      - 600031.SS
+      - 601985.SS
+      - 601766.SS
+      - 002371.SS
+      - 600089.SS
+      - 600438.SS
+      - 600048.SS
+      - 603501.SS
+      - 000002.SS
+      - 300015.SS
+      - 600436.SS
+      - 601919.SS
+      - 600905.SS
+      - 601390.SS
+      - 300122.SS
+      - 002027.SS
+      - 688012.SS
+      - 688111.SS
+      - 600019.SS
+      - 600585.SS
+      - 002466.SS
+      - 000938.SS
+      - 603986.SS
+      - 002049.SS
+      - 601600.SS
+      - 600111.SS
+      - 688008.SS
+      - 300014.SS
+      - 600893.SS
+      - 002460.SS
+      - 002129.SS
+      - 603993.SS
+      - 000661.SS
+      - 600426.SS
+      - 002241.SS
+      - 600547.SS
+      - 603799.SS
+      - 600570.SS
+      - 600010.SS
+      - 002271.SS
+      - 001979.SS
+      - 600989.SS
+      - 600745.SS
+      - 002601.SS
+      - 002493.SS
+      - 002555.SS
+      - 300142.SS
+      - 002648.SS
+      - 000301.SS
+      - 688599.SS
+      - 002812.SS
+      - 600346.SS
+      - 600588.SS
+      - 600176.SS
+      - 002709.SS
+      - 300347.SS
+      - 300413.SS
+      - 002410.SS
 
-  - name: Europe
+  - name: SSE 50 Index - Shanghai Stock Exchange
+    # retrieved on 2025-10-22
     watchlist:
-      # --- Indices ---
-      - ^FCHI # CAC 40 (France)
-      - ^FTSE # FTSE 100 (UK)
-      - ^GDAXI # DAX (Germany)
-      - ^IBEX # IBEX 35 (Spain)
-      - ^STOXX50E # Euro Stoxx 50 (Eurozone)
-      # --- ETFs ---
-      - EWG # iShares MSCI Germany ETF
-      - EWQ # iShares MSCI France ETF
-      # --- Stocks (by country) ---
-      # Denmark
-      - NVO # Novo Nordisk (Pharma)
-      # France
-      - ACA.PA # Crédit Agricole (Bank)
-      - AI.PA # Air Liquide (Industrial Gas)
-      - AIR.PA # Airbus (Aerospace)
-      - BNP.PA # BNP Paribas (Bank)
-      - CS.PA # AXA (Insurance)
-      - DSY.PA # Dassault Systèmes (Software)
-      - EN.PA # Bouygues (Construction, Telecom)
-      - MC.PA # LVMH (Luxury)
-      - OR.PA # L'Oréal (Cosmetics)
-      - PUB.PA # Publicis Groupe (Advertising)
-      - RI.PA # Pernod Ricard (Beverages)
-      - SAF.PA # Safran (Aerospace, Defense)
-      - SNY # Sanofi (Pharma)
-      - STM.PA # STMicroelectronics (Semiconductors)
-      - SU.PA # Schneider Electric (Energy Mgmt)
-      - TTE # TotalEnergies (Energy)
-      - VIE.PA # Veolia (Utilities)
-      # Germany
-      - ALV.DE # Allianz (Insurance)
-      - BAS.DE # BASF (Chemicals)
-      - BMW.DE # BMW (Auto)
-      - DBK.DE # Deutsche Bank (Bank)
-      - DTE.DE # Deutsche Telekom (Telecom)
-      - MBG.DE # Mercedes-Benz Group (Auto)
-      - SAP.DE # SAP (Software)
-      - SIE.DE # Siemens (Industrial Conglomerate)
-      # Italy
-      - ENEL.MI # Enel (Utility)
-      - ISP.MI # Intesa Sanpaolo (Bank)
-      # Netherlands
-      - ADYEN.AS # Adyen (Payments)
-      - ASML.AS # ASML (Semiconductor Equip.)
-      # Norway
-      - EQNR # Equinor (Energy)
-      # Spain
-      - IBE.MC # Iberdrola (Utility)
-      - SAN.MC # Banco Santander (Bank)
-      # Switzerland
-      - NESN.SW # Nestlé (Food)
-      - NOVN.SW # Novartis (Pharma - Swiss listing)
-      - ROG.SW # Roche Holding (Pharma)
-      - UBSG.SW # UBS Group (Bank/Wealth)
-      # United Kingdom
-      - AZN # AstraZeneca (Pharma)
-      - GSK.L # GSK plc (Pharma)
-      - HSBA.L # HSBC Holdings (Bank)
-      - SHEL # Shell (Energy)
-      - UL # Unilever (Consumer Goods)
+      - 600028.SS
+      - 600030.SS
+      - 600031.SS
+      - 600036.SS
+      - 600048.SS
+      - 600050.SS
+      - 600089.SS
+      - 600104.SS
+      - 600111.SS
+      - 600150.SS
+      - 600276.SS
+      - 600309.SS
+      - 600406.SS
+      - 600436.SS
+      - 600438.SS
+      - 600519.SS
+      - 600690.SS
+      - 600809.SS
+      - 600887.SS
+      - 600893.SS
+      - 600900.SS
+      - 600905.SS
+      - 601012.SS
+      - 601088.SS
+      - 601166.SS
+      - 601225.SS
+      - 601288.SS
+      - 601318.SS
+      - 601390.SS
+      - 601398.SS
+      - 601601.SS
+      - 601628.SS
+      - 601633.SS
+      - 601668.SS
+      - 601669.SS
+      - 601728.SS
+      - 601857.SS
+      - 601888.SS
+      - 601899.SS
+      - 601919.SS
+      - 601988.SS
+      - 603259.SS
+      - 603288.SS
+      - 603501.SS
+      - 603799.SS
+      - 603986.SS
+      - 688111.SS
+      - 688041.SS
+      - 688599.SS
+      - 688981.SS
 
-  - name: Canada
+  - name: Hang Seng Index (HSI)
+    # retrieved on 2025-10-22
     watchlist:
-      # --- Index ETF ---
-      - XIC.TO # iShares Core S&P/TSX Capped Composite Index ETF
-      - VCN.TO # Vanguard FTSE Canada All Cap Index ETF : broad CA market view
-      - VAB.TO # Vanguard Canadian Aggregate Bond Index ETF : broad Canadian bonds view
-      # --- Banks ---
-      - BMO.TO # Bank of Montreal
-      - BNS.TO # Bank of Nova Scotia (Scotiabank)
-      - CM.TO # CIBC
-      - RY.TO # Royal Bank of Canada
-      - TD.TO # Toronto-Dominion Bank
-      # --- Energy & Mining ---
-      - CNQ.TO # Canadian Natural Resources
-      - ENB.TO # Enbridge (Pipelines)
-      - SU.TO # Suncor Energy
-      - TECK-B.TO # Teck Resources (Mining)
-      # --- Industrials / Transport ---
-      - CNR.TO # Canadian National Railway
-      - CP.TO # Canadian Pacific Kansas City Railway
-      # --- Technology / E-commerce ---
-      - OTEX.TO # OpenText (Software)
-      - SHOP.TO # Shopify (E-commerce Platform)
-      # --- Telecom ---
-      - BCE.TO # BCE Inc. (Bell)
-      - RCI-B.TO # Rogers Communications
-      - T.TO # Telus Corp
-      # --- Utilities ---
-      - EMA.TO # Emera Inc
-      - FTS.TO # Fortis Inc
+      - 0005.HK
+      - 0011.HK
+      - 0388.HK
+      - 0939.HK
+      - 1299.HK
+      - 1398.HK
+      - 2318.HK
+      - 2388.HK
+      - 2628.HK
+      - 3968.HK
+      - 3988.HK
+      - 0002.HK
+      - 0003.HK
+      - 0006.HK
+      - 0836.HK
+      - 1038.HK
+      - 2688.HK
+      - 0012.HK
+      - 0016.HK
+      - 0017.HK
+      - 0101.HK
+      - 0688.HK
+      - 0823.HK
+      - 0960.HK
+      - 1109.HK
+      - 1113.HK
+      - 1209.HK
+      - 1997.HK
+      - 6098.HK
+      - 0001.HK
+      - 0027.HK
+      - 0066.HK
+      - 0175.HK
+      - 0241.HK
+      - 0267.HK
+      - 0288.HK
+      - 0291.HK
+      - 0316.HK
+      - 0322.HK
+      - 0386.HK
+      - 0669.HK
+      - 0700.HK
+      - 0762.HK
+      - 0857.HK
+      - 0868.HK
+      - 0881.HK
+      - 0883.HK
+      - 0941.HK
+      - 0968.HK
+      - 0981.HK
+      - 0992.HK
+      - 1044.HK
+      - 1088.HK
+      - 1093.HK
+      - 1099.HK
+      - 1177.HK
+      - 1211.HK
+      - 1378.HK
+      - 1810.HK
+      - 1876.HK
+      - 1928.HK
+      - 1929.HK
+      - 2015.HK
+      - 2020.HK
+      - 2269.HK
+      - 2313.HK
+      - 2319.HK
+      - 2331.HK
+      - 2359.HK
+      - 2382.HK
+      - 2899.HK
+      - 3690.HK
+      - 3692.HK
+      - 6618.HK
+      - 6690.HK
+      - 6862.HK
+      - 9618.HK
+      - 9633.HK
+      - 9888.HK
+      - 9961.HK
+      - 9988.HK
+      - 9999.HK
 
-  - name: France
+  - name: SENSEX (Bombay)
+    # retrieved on 2025-10-22
     watchlist:
-      - ACA.PA # Crédit Agricole
-      - AI.PA # Air Liquide
-      - AIR.PA # Airbus
-      - ATO.PA # Atos (IT Services)
-      - BNP.PA # BNP Paribas
-      - CA.PA # Carrefour (Retail)
-      - CAP.PA # Capgemini (IT Consulting)
-      - CS.PA # AXA (Insurance)
-      - DG.PA # Vinci (Construction/Concessions)
-      - DSY.PA # Dassault Systèmes (Software)
-      - EL.PA # EssilorLuxottica (Eyewear)
-      - EN.PA # Bouygues
-      - ENGIE.PA # Engie (Utility)
-      - GLE.PA # Société Générale (Bank)
-      - KER.PA # Kering (Luxury)
-      - MC.PA # LVMH
-      - ML.PA # Michelin (Tires)
-      - OR.PA # L’Oréal
-      - PUB.PA # Publicis
-      - RI.PA # Pernod Ricard (Beverages)
-      - RMS.PA # Hermès International (Luxury)
-      - RNO.PA # Renault (Auto)
-      - SAF.PA # Safran (Aerospace/Defense)
-      - SGO.PA # Saint-Gobain (Construction Materials)
-      - SNY # Sanofi (Pharma)
-      - STM.PA # STMicroelectronics
-      - SU.PA # Schneider Electric
-      - TTE # TotalEnergies
-      - UG.PA # Unibail-Rodamco-Westfield (Real Estate)
-      - VIE.PA # Veolia
-      - VIV.PA # Vivendi (Media)
+      - ADANIPORTS.BO
+      - ASIANPAINT.BO
+      - AXISBANK.BO
+      - BAJFINANCE.BO
+      - BAJAJFINSV.BO
+      - BEL.BO
+      - BHARTIARTL.BO
+      - ETERNAL.BO
+      - HCLTECH.BO
+      - HDFCBANK.BO
+      - HINDUNILVR.BO
+      - ICICIBANK.BO
+      - INFY.BO
+      - ITC.BO
+      - KOTAKBANK.BO
+      - LT.BO
+      - M&M.BO
+      - MARUTI.BO
+      - NTPC.BO
+      - POWERGRID.BO
+      - RELIANCE.BO
+      - SBIN.BO
+      - SUNPHARMA.BO
+      - TCS.BO
+      - TATAMOTORS.BO
+      - TATASTEEL.BO
+      - TECHM.BO
+      - TITAN.BO
+      - TRENT.BO
+      - ULTRACEMCO.BO
+
+  - name: EURO STOXX 50
+    # mockup / index
+    # 2025-10-20
+    holdings:
+      - symbol: "ABI.BR"
+        quantity: 1
+        unit_cost: 53.47999954223633
+      - symbol: "AD.AS"
+        quantity: 1
+        unit_cost: 36.7400016784668
+      - symbol: "ADS.DE"
+        quantity: 1
+        unit_cost: 194.89999389648438
+      - symbol: "ADYEN.AS"
+        quantity: 1
+        unit_cost: 1464.0
+      - symbol: "AI.PA"
+        quantity: 1
+        unit_cost: 173.24000549316406
+      - symbol: "AIR.PA"
+        quantity: 1
+        unit_cost: 203.6999969482422
+      - symbol: "ALV.DE"
+        quantity: 1
+        unit_cost: 351.1000061035156
+      - symbol: "ASML.AS"
+        quantity: 1
+        unit_cost: 899.0
+      - symbol: "BAS.DE"
+        quantity: 1
+        unit_cost: 43.779998779296875
+      - symbol: "BAYN.DE"
+        quantity: 1
+        unit_cost: 27.43000030517578
+      - symbol: "BBVA.MC"
+        quantity: 1
+        unit_cost: 17.295000076293945
+      - symbol: "BMW.DE"
+        quantity: 1
+        unit_cost: 81.16000366210938
+      - symbol: "BN.PA"
+        quantity: 1
+        unit_cost: 77.69999694824219
+      - symbol: "BNP.PA"
+        quantity: 1
+        unit_cost: 69.0999984741211
+      - symbol: "CS.PA"
+        quantity: 1
+        unit_cost: 39.119998931884766
+      - symbol: "DB1.DE"
+        quantity: 1
+        unit_cost: 223.8000030517578
+      - symbol: "DG.PA"
+        quantity: 1
+        unit_cost: 121.44999694824219
+      - symbol: "DHL.DE"
+        quantity: 1
+        unit_cost: 39.90999984741211
+      - symbol: "DTE.DE"
+        quantity: 1
+        unit_cost: 30.010000228881836
+      - symbol: "EL.PA"
+        quantity: 1
+        unit_cost: 313.8999938964844
+      - symbol: "ENEL.MI"
+        quantity: 1
+        unit_cost: 8.54800033569336
+      - symbol: "ENI.MI"
+        quantity: 1
+        unit_cost: 14.87600040435791
+      - symbol: "FLTR.L"
+        quantity: 1
+        unit_cost: 18580.0
+      - symbol: "IBE.MC"
+        quantity: 1
+        unit_cost: 17.06999969482422
+      - symbol: "IFX.DE"
+        quantity: 1
+        unit_cost: 34.099998474121094
+      - symbol: "INGA.AS"
+        quantity: 1
+        unit_cost: 20.600000381469727
+      - symbol: "ISP.MI"
+        quantity: 1
+        unit_cost: 5.461999893188477
+      - symbol: "ITX.MC"
+        quantity: 1
+        unit_cost: 48.77000045776367
+      - symbol: "KER.PA"
+        quantity: 1
+        unit_cost: 324.5
+      - symbol: "MBG.DE"
+        quantity: 1
+        unit_cost: 53.83000183105469
+      - symbol: "MC.PA"
+        quantity: 1
+        unit_cost: 612.0999755859375
+      - symbol: "MUV2.DE"
+        quantity: 1
+        unit_cost: 543.2000122070312
+      - symbol: "NDA-FI.HE"
+        quantity: 1
+        unit_cost: 14.579999923706055
+      - symbol: "NOKIA.HE"
+        quantity: 1
+        unit_cost: 4.870999813079834
+      - symbol: "OR.PA"
+        quantity: 1
+        unit_cost: 395.3500061035156
+      - symbol: "PRX.AS"
+        quantity: 1
+        unit_cost: 58.630001068115234
+      - symbol: "RACE.MI"
+        quantity: 1
+        unit_cost: 340.0
+      - symbol: "RI.PA"
+        quantity: 1
+        unit_cost: 89.5999984741211
+      - symbol: "RMS.PA"
+        quantity: 1
+        unit_cost: 2218.0
+      - symbol: "SAF.PA"
+        quantity: 1
+        unit_cost: 303.1000061035156
+      - symbol: "SAN.MC"
+        quantity: 1
+        unit_cost: 8.4399995803833
+      - symbol: "SAN.PA"
+        quantity: 1
+        unit_cost: 86.58000183105469
+      - symbol: "SAP.DE"
+        quantity: 1
+        unit_cost: 238.60000610351562
+      - symbol: "SGO.PA"
+        quantity: 1
+        unit_cost: 90.44000244140625
+      - symbol: "SIE.DE"
+        quantity: 1
+        unit_cost: 243.1999969482422
+      - symbol: "STLAM.MI"
+        quantity: 1
+        unit_cost: 9.116999626159668
+      - symbol: "SU.PA"
+        quantity: 1
+        unit_cost: 248.25
+      - symbol: "TTE.PA"
+        quantity: 1
+        unit_cost: 52.5
+      - symbol: "UCG.MI"
+        quantity: 1
+        unit_cost: 63.34000015258789
+      - symbol: "VOW.DE"
+        quantity: 1
+        unit_cost: 92.8499984741211
+
+  - name: DAX
+    # mockup / index
+    # 2025-10-20
+    holdings:
+      - symbol: "1COV.DE"
+        quantity: 1
+        unit_cost: 60.220001220703125
+      - symbol: "ADS.DE"
+        quantity: 1
+        unit_cost: 194.89999389648438
+      - symbol: "AIR.PA"
+        quantity: 1
+        unit_cost: 203.6999969482422
+      - symbol: "ALV.DE"
+        quantity: 1
+        unit_cost: 351.1000061035156
+      - symbol: "BAS.DE"
+        quantity: 1
+        unit_cost: 43.779998779296875
+      - symbol: "BAYN.DE"
+        quantity: 1
+        unit_cost: 27.43000030517578
+      - symbol: "BEI.DE"
+        quantity: 1
+        unit_cost: 96.13999938964844
+      - symbol: "BMW.DE"
+        quantity: 1
+        unit_cost: 81.16000366210938
+      - symbol: "BNR.DE"
+        quantity: 1
+        unit_cost: 50.31999969482422
+      - symbol: "CBK.DE"
+        quantity: 1
+        unit_cost: 30.299999237060547
+      - symbol: "CON.DE"
+        quantity: 1
+        unit_cost: 62.2400016784668
+      - symbol: "DB1.DE"
+        quantity: 1
+        unit_cost: 223.8000030517578
+      - symbol: "DBK.DE"
+        quantity: 1
+        unit_cost: 29.020000457763672
+      - symbol: "DHL.DE"
+        quantity: 1
+        unit_cost: 39.90999984741211
+      - symbol: "DTE.DE"
+        quantity: 1
+        unit_cost: 30.010000228881836
+      - symbol: "DTG.DE"
+        quantity: 1
+        unit_cost: 34.810001373291016
+      - symbol: "ENR.DE"
+        quantity: 1
+        unit_cost: 101.94999694824219
+      - symbol: "EOAN.DE"
+        quantity: 1
+        unit_cost: 16.395000457763672
+      - symbol: "FME.DE"
+        quantity: 1
+        unit_cost: 46.599998474121094
+      - symbol: "FRE.DE"
+        quantity: 1
+        unit_cost: 48.20000076293945
+      - symbol: "HEI.DE"
+        quantity: 1
+        unit_cost: 194.14999389648438
+      - symbol: "HEN3.DE"
+        quantity: 1
+        unit_cost: 71.77999877929688
+      - symbol: "HNR1.DE"
+        quantity: 1
+        unit_cost: 253.39999389648438
+      - symbol: "IFX.DE"
+        quantity: 1
+        unit_cost: 34.099998474121094
+      - symbol: "MBG.DE"
+        quantity: 1
+        unit_cost: 53.83000183105469
+      - symbol: "MRK.DE"
+        quantity: 1
+        unit_cost: 112.94999694824219
+      - symbol: "MTX.DE"
+        quantity: 1
+        unit_cost: 365.1000061035156
+      - symbol: "MUV2.DE"
+        quantity: 1
+        unit_cost: 543.2000122070312
+      - symbol: "P911.DE"
+        quantity: 1
+        unit_cost: 43.040000915527344
+      - symbol: "PAH3.DE"
+        quantity: 1
+        unit_cost: 34.52000045776367
+      - symbol: "QIA.DE"
+        quantity: 1
+        unit_cost: 41.86000061035156
+      - symbol: "RHM.DE"
+        quantity: 1
+        unit_cost: 1759.5
+      - symbol: "RWE.DE"
+        quantity: 1
+        unit_cost: 41.0099983215332
+      - symbol: "SAP.DE"
+        quantity: 1
+        unit_cost: 238.60000610351562
+      - symbol: "SHL.DE"
+        quantity: 1
+        unit_cost: 48.369998931884766
+      - symbol: "SIE.DE"
+        quantity: 1
+        unit_cost: 243.1999969482422
+      - symbol: "SRT3.DE"
+        quantity: 1
+        unit_cost: 230.5
+      - symbol: "SY1.DE"
+        quantity: 1
+        unit_cost: 79.80000305175781
+      - symbol: "VNA.DE"
+        quantity: 1
+        unit_cost: 27.540000915527344
+      - symbol: "VOW3.DE"
+        quantity: 1
+        unit_cost: 91.62000274658203
+      - symbol: "ZAL.DE"
+        quantity: 1
+        unit_cost: 26.639999389648438
+
+  - name: CAC 40
+    # mockup / index
+    # 2025-10-20
+    holdings:
+      - symbol: "AC.PA"
+        quantity: 1
+        unit_cost: 42.40999984741211
+      - symbol: "ACA.PA"
+        quantity: 1
+        unit_cost: 16.354999542236328
+      - symbol: "AI.PA"
+        quantity: 1
+        unit_cost: 173.24000549316406
+      - symbol: "AIR.PA"
+        quantity: 1
+        unit_cost: 203.6999969482422
+      - symbol: "BN.PA"
+        quantity: 1
+        unit_cost: 77.69999694824219
+      - symbol: "BNP.PA"
+        quantity: 1
+        unit_cost: 69.0999984741211
+      - symbol: "BVI.PA"
+        quantity: 1
+        unit_cost: 27.420000076293945
+      - symbol: "CA.PA"
+        quantity: 1
+        unit_cost: 13.399999618530273
+      - symbol: "CAP.PA"
+        quantity: 1
+        unit_cost: 123.4000015258789
+      - symbol: "CS.PA"
+        quantity: 1
+        unit_cost: 39.119998931884766
+      - symbol: "DG.PA"
+        quantity: 1
+        unit_cost: 121.44999694824219
+      - symbol: "DSY.PA"
+        quantity: 1
+        unit_cost: 29.780000686645508
+      - symbol: "EDEN.PA"
+        quantity: 1
+        unit_cost: 20.829999923706055
+      - symbol: "EL.PA"
+        quantity: 1
+        unit_cost: 313.8999938964844
+      - symbol: "EN.PA"
+        quantity: 1
+        unit_cost: 41.15999984741211
+      - symbol: "ENGI.PA"
+        quantity: 1
+        unit_cost: 19.575000762939453
+      - symbol: "ERF.PA"
+        quantity: 1
+        unit_cost: 63.900001525878906
+      - symbol: "GLE.PA"
+        quantity: 1
+        unit_cost: 53.0
+      - symbol: "HO.PA"
+        quantity: 1
+        unit_cost: 254.5
+      - symbol: "KER.PA"
+        quantity: 1
+        unit_cost: 324.5
+      - symbol: "LR.PA"
+        quantity: 1
+        unit_cost: 146.10000610351562
+      - symbol: "MC.PA"
+        quantity: 1
+        unit_cost: 612.0999755859375
+      - symbol: "ML.PA"
+        quantity: 1
+        unit_cost: 27.31999969482422
+      - symbol: "MT.AS"
+        quantity: 1
+        unit_cost: 33.349998474121094
+      - symbol: "OR.PA"
+        quantity: 1
+        unit_cost: 395.3500061035156
+      - symbol: "ORA.PA"
+        quantity: 1
+        unit_cost: 14.15999984741211
+      - symbol: "PUB.PA"
+        quantity: 1
+        unit_cost: 86.0999984741211
+      - symbol: "RI.PA"
+        quantity: 1
+        unit_cost: 89.5999984741211
+      - symbol: "RMS.PA"
+        quantity: 1
+        unit_cost: 2218.0
+      - symbol: "RNO.PA"
+        quantity: 1
+        unit_cost: 34.939998626708984
+      - symbol: "SAF.PA"
+        quantity: 1
+        unit_cost: 303.1000061035156
+      - symbol: "SAN.PA"
+        quantity: 1
+        unit_cost: 86.58000183105469
+      - symbol: "SGO.PA"
+        quantity: 1
+        unit_cost: 90.44000244140625
+      - symbol: "STLAP.PA"
+        quantity: 1
+        unit_cost: 9.11299991607666
+      - symbol: "STMPA.PA"
+        quantity: 1
+        unit_cost: 25.959999084472656
+      - symbol: "SU.PA"
+        quantity: 1
+        unit_cost: 248.25
+      - symbol: "TEP.PA"
+        quantity: 1
+        unit_cost: 63.560001373291016
+      - symbol: "TTE.PA"
+        quantity: 1
+        unit_cost: 52.5
+      - symbol: "URW.PA"
+        quantity: 1
+        unit_cost: 89.54000091552734
+      - symbol: "VIE.PA"
+        quantity: 1
+        unit_cost: 29.579999923706055
 
   - name: Industrie & énergie
     watchlist:
@@ -549,6 +1421,7 @@ groups:
       - META # Meta/Facebook (US Social Media/Ads)
       - MSFT # Microsoft (US Software/Cloud)
       - MU # Micron (US Memory Chips)
+      - NET # Cloudflare
       - NOW # ServiceNow (US IT Workflows Software)
       - NVDA # Nvidia (US Semiconductors/AI)
       - ORCL # Oracle (US Software/Cloud)
@@ -567,6 +1440,7 @@ groups:
       - TSM # TSMC (TW Semiconductor Foundry)
       - TSLA # Tesla (US EV/Tech)
       - TXN # Texas Instruments (US Semiconductors)
+      - WDC # Western digital
       - 005930.KS # Samsung Electronics (KR)
       - 0700.HK # Tencent (HK Social Media/Gaming)
       - 9988.HK # Alibaba (HK Listing)
@@ -610,6 +1484,7 @@ groups:
       - BMY # Bristol-Myers Squibb (US)
       - GSK.L # GSK plc (UK)
       - IBB # iShares Biotechnology ETF (US)
+      - ISRG
       - JNJ # Johnson & Johnson (US)
       - LLY # Eli Lilly (US)
       - MDT # Medtronic (US Med Devices)
@@ -718,71 +1593,7 @@ groups:
       - ETHE # Grayscale Ethereum Trust: Trust holding ETH (Not an ETF, often trades at premium/discount). -> ETH Exposure (Trust)
       - GBTC # Grayscale Bitcoin Trust: Converted to a spot Bitcoin ETF, formerly largest BTC trust. -> Spot BTC ETF / Legacy Trust
       - IBIT # iShares Bitcoin Trust: Major Spot Bitcoin ETF (holds actual BTC). -> Spot BTC ETF
-  - name: Misc
-    watchlist:
-      - AAPL # Apple (US): Consumer electronics, services. Consumer spending, tech
-      - AMZN # Amazon (US): E-commerce, cloud (AWS). Online retail, cloud growth
-      - COST # Costco (US): Warehouse retailer. Consumer spending (bulk/value)
-      - DIS # Disney (US Media/Entertainment)
-      - GOOG # Alphabet (Google) (US): Search, advertising, cloud. Digital ad market
-      - MC.PA # LVMH (FR): Luxury goods leader. Global high-end consumer sentiment
-      - META # Meta Platforms (Facebook) (US): Social media, advertising. Digital ad market
-      - MSFT # Microsoft (US): Software, cloud (Azure). Diversified tech giant
-      - NTDOY # Nintendo
-      - NVDA # Nvidia (US): GPUs, AI chips. AI hardware leader, semi cycle
-      - PLTR # Palantir Technologies (US): Data analytics, AI software. Speculative tech
-      - TSLA # Tesla (US EV/Tech)
-      - TSM # TSMC (TW): Largest contract chip manufacturer. Critical tech supply chain. (NYSE:TSM)
-      - V # Visa (US): Payment network. Consumer spending
-  - name: Watchlist
-    # mockup / index
-    # 2025-10-09
-    holdings:
-      - symbol: "AAPL"
-        quantity: 1
-        unit_cost: 254.0399932861328
-      - symbol: "AMZN"
-        quantity: 1
-        unit_cost: 227.74000549316406
-      - symbol: "GOOG"
-        quantity: 1
-        unit_cost: 242.2100067138672
-      - symbol: "HXQ.TO"
-        quantity: 1
-        unit_cost: 100.9800033569336
-      - symbol: "INTC"
-        quantity: 1
-        unit_cost: 37.79999923706055
-      - symbol: "LLY"
-        quantity: 1
-        unit_cost: 855.3499755859375
-      - symbol: "LMT"
-        quantity: 1
-        unit_cost: 507.760009765625
-      - symbol: "MU"
-        quantity: 1
-        unit_cost: 192.3300018310547
-      - symbol: "NEE"
-        quantity: 1
-        unit_cost: 83.70999908447266
-      - symbol: "NET"
-        quantity: 1
-        unit_cost: 220.9499969482422
-      - symbol: "NVDA"
-        quantity: 1
-        unit_cost: 192.57000732421875
-      - symbol: "PLTR"
-        quantity: 1
-        unit_cost: 185.47000122070312
-      - symbol: "SHOP.TO"
-        quantity: 1
-        unit_cost: 229.8800048828125
-      - symbol: "TSM"
-        quantity: 1
-        unit_cost: 299.8800048828125
-      - symbol: "UNH"
-        quantity: 1
-        unit_cost: 367.69000244140625
+
 # --- Color Scheme (~Nord Theme) ---
 colors:
   text: cyan
