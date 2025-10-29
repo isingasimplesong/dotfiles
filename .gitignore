@@ -9,3 +9,5 @@ nvim/plugin/.*
 .sync*
 OpenCode.md
 AGENTS.md
+AGENTS/
+TODO.md
