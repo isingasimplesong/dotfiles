@@ -83,6 +83,7 @@ alias olm="docker exec -it ollama ollama"
 alias lzd="lazydocker"
 
 # --- Git ---
+alias sc="sesh clone -c ~/Projets"
 alias lzg="lazygit"
 alias g="git status"
 alias ga="git add"
