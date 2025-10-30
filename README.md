@@ -2,6 +2,18 @@
 
 Personal configuration files for Linux desktop environments and development tools.
 
+## Documentation
+
+Detailed documentation for main configurations:
+
+- [Hyprland](doc/hyprland.md) - Wayland compositor configuration
+- [Neovim](doc/neovim.md) - Editor setup with LSP and plugins
+- [Zsh](doc/zsh.md) - Shell configuration and customization
+- [Tmux](doc/tmux.md) - Terminal multiplexer setup
+- [Git](doc/git.md) - Git configuration and workflows
+- [Qtile](doc/qtile.md) - Python-based window manager (legacy)
+- [Bash](doc/bash.md) - Fallback shell configuration
+
 ## Desktop Environments
 
 ### [Hyprland](hypr/) (Primary)
