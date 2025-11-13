@@ -105,8 +105,8 @@ setopt hist_find_no_dups
 export DOTPATH="$HOME/dotfiles"
 source $DOTPATH/zsh/aliases
 source $DOTPATH/zsh/env
-if [[ -f $DOTPATH/zsh/secrets ]]; then
-    source $DOTPATH/zsh/secrets
+if [[ -f "$HOME/.secrets" ]]; then
+    source "$HOME/.secrets"
 fi
 if [[ -f $DOTPATH/zsh/uv-zsh-completion ]]; then
     source $DOTPATH/zsh/uv-zsh-completion

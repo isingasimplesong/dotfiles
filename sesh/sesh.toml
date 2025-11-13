@@ -7,6 +7,12 @@ name = "monitoring"
 path = "~"
 windows = ["ticker", "portfolio" ]
 
+
+[[session]]
+name = "Clankers"
+path = "~/Projets/Clankers"
+windows = ["opencode"]
+
 [[window]]
 name = "ticker"
 startup_script = "ticker"
@@ -14,3 +20,7 @@ startup_script = "ticker"
 [[window]]
 name = "portfolio"
 startup_script = "portfolio"
+
+[[window]]
+name = "opencode"
+startup_script = "opencode --agent chat"

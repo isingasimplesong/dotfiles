@@ -6,6 +6,10 @@ alias zz='exec $SHELL'
 alias wh='which'
 alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc -l"
 
+# --- AI stuff
+
+alias oc="opencode --agent chat"
+
 # --- System Info & Monitoring ---
 alias ff="fastfetch"
 alias disk="touch /mnt/NAS/NFS_MOUNT && touch /mnt/backups/NFS_MOUNT && duf --hide-mp /home,/.snapshots,/var/log,/var/cache/pacman/pkg --hide special"
@@ -60,7 +64,7 @@ alias rkb-db-connect-local="rainfrog --username postgres --database rkb_db --hos
 
 # --- External Tools ---
 alias portfolio="ticker --config ~/Coffre/portfolio.yaml"
-alias gemini-cli="npx https://github.com/google-gemini/gemini-cli"
+alias gemini="npx https://github.com/google-gemini/gemini-cli"
 
 # --- Notes/Obsidian ---
 alias td="note.sh todo"
