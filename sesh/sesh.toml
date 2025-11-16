@@ -1,17 +1,30 @@
-# [[session]]
-# name = "radium"
-# path = "~"
-#
 [[session]]
-name = "monitoring"
+name = "Radium"
+path = "~"
+windows = ["btop"]
+
+[[session]]
+name = "Ticker"
 path = "~"
 windows = ["ticker", "portfolio" ]
-
 
 [[session]]
 name = "Clankers"
 path = "~/Projets/Clankers"
 windows = ["opencode"]
+
+[[session]]
+name = "Notes"
+path = "~/Notes"
+windows = ["notes"]
+
+[[window]]
+name = "btop"
+startup_script = "btop"
+
+[[window]]
+name = "notes"
+startup_script = "oq"
 
 [[window]]
 name = "ticker"
