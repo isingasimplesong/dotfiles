@@ -1,0 +1,319 @@
+servers = (
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6697";
+    use_tls = "yes";
+    tls_cert = "~/.irssi/certs/nick.pem";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.oftc.net";
+    chatnet = "OFTC";
+    port = "6697";
+    use_tls = "yes";
+    tls_cert = "~/.irssi/certs/nick.pem";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  LiberaChat = {
+    type = "IRC";
+    nick = "effraie";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+    sasl_mechanism = "EXTERNAL";
+  };
+  OFTC = {
+    type = "IRC";
+    nick = "unheimlich";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+};
+
+channels = (
+  { name = "#linux"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#archlinux"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#debian"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#neovim"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#python"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#news"; chatnet = "LiberaChat"; autojoin = "Yes"; },
+  { name = "#2027"; chatnet = "LiberaChat"; autojoin = "Yes"; }
+);
+
+
+statusbar = {
+  items = {
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+    topicbarstart = "[%y$winref{topicsbstart}";
+    topicbarend = "{topicsbend}";
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+    window = "{sb %y$itemname%n@$tag{sbmode $M}}";
+    #window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb %y@$tag %n(ctrl+x)}";
+
+    prompt = "%y>>> ";
+    prompt_empty = "%y>>> ";
+
+    topic = "] $topic";
+    topic_empty = "] Irssi v$J ";
+
+    lag = "{sb Lag: $0-}";
+    act = "{sb $0-%n}";
+    more = "-- more --";
+  };
+
+  default = {
+    window = {
+      disabled = "no";
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "active";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        #act = { priority = "100"; };
+        lag = { priority = "-1"; };
+        user = { alignment = "right"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        #time = { };
+      };
+    };
+
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+    };
+
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        topicbarstart = { priority = "10"; };
+        act = { priority = "10"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    real_name = "effraie";
+    user_name = "effraie";
+    nick = "effraie";
+    timestamp_format = "%H:%M";
+  };
+  "fe-common/core" = {
+    theme = "my";
+    autolog = "yes";
+    autolog_colors = "no";
+  };
+  "perl/core/scripts" = {
+    nicklist_color = "yes";
+    neat_colors = "rX5EX3CgcX3HbX4NX3AX42m";
+    neat_global_colors = "yes";
+  };
+  "fe-text" = { autostick_split_windows = "yes"; };
+};
+
+logs = { };
+
+aliases = {
+  ATAG = "WINDOW SERVER";
+  ADDALLCHANS = "SCRIPT EXEC foreach my \\$channel (Irssi::channels()) { Irssi::command(\"CHANNEL ADD -auto \\$channel->{visible_name} \\$channel->{server}->{tag} \\$channel->{key}\")\\;}";
+  B = "BAN";
+  BACK = "AWAY";
+  BANS = "BAN";
+  BYE = "QUIT";
+  C = "CLEAR";
+  CALC = "EXEC - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  CHAT = "DCC CHAT";
+  CS = "QUOTE CS";
+  DATE = "TIME";
+  DEHIGHLIGHT = "DEHILIGHT";
+  DESCRIBE = "ACTION";
+  DHL = "DEHILIGHT";
+  EXEMPTLIST = "MODE $C +e";
+  EXIT = "QUIT";
+  GOTO = "SCROLLBACK GOTO";
+  HIGHLIGHT = "HILIGHT";
+  HL = "HILIGHT";
+  HOST = "USERHOST";
+  INVITELIST = "MODE $C +I";
+  J = "JOIN";
+  K = "KICK";
+  KB = "KICKBAN";
+  KN = "KNOCKOUT";
+  LAST = "LASTLOG";
+  LEAVE = "PART";
+  M = "MSG";
+  MS = "QUOTE MS";
+  MUB = "UNBAN *";
+  N = "NAMES";
+  NMSG = "^MSG";
+  NS = "QUOTE NS";
+  OS = "QUOTE OS";
+  P = "PART";
+  Q = "QUERY";
+  RESET = "SET -default";
+  RUN = "SCRIPT LOAD";
+  SAY = "MSG *";
+  SB = "SCROLLBACK";
+  SBAR = "STATUSBAR";
+  SHELP = "QUOTE HELP";
+  SIGNOFF = "QUIT";
+  SV = "MSG * Irssi $J ($V) - https://irssi.org";
+  T = "TOPIC";
+  UB = "UNBAN";
+  UMODE = "MODE $N";
+  UNSET = "SET -clear";
+  W = "WHO";
+  WC = "WINDOW CLOSE";
+  WG = "WINDOW GOTO";
+  WJOIN = "JOIN -window";
+  WI = "WHOIS";
+  WII = "WHOIS $0 $0";
+  WL = "WINDOW LIST";
+  WN = "WINDOW NEW HIDDEN";
+  WQUERY = "QUERY -window";
+  WW = "WHOWAS";
+  OP = "/msg ChanServ OP";
+  DEOP = "/msg ChanServ DEOP";
+};
+windows = {
+  1 = {
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#linux";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#archlinux";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#neovim";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#python";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#news";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#2027";
+        tag = "LiberaChat";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+};
+mainwindows = {
+  1 = {
+    first_line = "1";
+    lines = "42";
+    first_column = "0";
+    columns = "191";
+  };
+};
+ignores = ( { level = "JOINS PARTS QUITS MODES NICKS"; } );
