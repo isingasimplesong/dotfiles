@@ -139,14 +139,14 @@ settings = {
     nick = "effraie";
     timestamp_format = "%H:%M";
   };
-  "fe-common/core" = { 
+  "fe-common/core" = {
     theme = "my";
     autolog = "yes";
     autolog_colors = "no";
   };
   "perl/core/scripts" = {
     nicklist_color = "yes";
-    neat_colors = "rX5EX3CgcCX3HbX4Nm";
+    neat_colors = "rX5EgcCX3HbX4Nm";
     neat_global_colors = "yes";
   };
   "fe-text" = { autostick_split_windows = "yes"; };
@@ -217,7 +217,7 @@ aliases = {
   DEOP = "/msg ChanServ DEOP";
 };
 windows = {
-  1 = { 
+  1 = {
     immortal = "yes";
     name = "(status)";
     level = "ALL";
@@ -309,7 +309,7 @@ windows = {
   };
 };
 mainwindows = {
-  1 = { 
+  1 = {
     first_line = "1";
     lines = "42";
     first_column = "0";
