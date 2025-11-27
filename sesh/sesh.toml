@@ -36,4 +36,4 @@ startup_script = "portfolio"
 
 [[window]]
 name = "opencode"
-startup_script = "opencode --agent chat"
+startup_script = "opencode"

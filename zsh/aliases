@@ -8,7 +8,7 @@ alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc 
 
 # --- AI stuff
 
-alias oc="opencode --agent chat"
+alias oc="opencode"
 
 # --- System Info & Monitoring ---
 alias ff="fastfetch"
