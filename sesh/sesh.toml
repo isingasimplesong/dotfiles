@@ -1,5 +1,5 @@
 [[session]]
-name = "Radium"
+name = "radium"
 path = "~"
 windows = ["btop"]
 

@@ -2,7 +2,7 @@
 plugins = ["scratchpads"]
 
 [scratchpads.term]
-command = "kitty --class kitty-dropterm -e sh -c 'tmux attach -t Radium || tmux new -s Radium'"
+command = "kitty --class kitty-dropterm -e sh -c 'tmux attach -t radium || tmux new -s radium'"
 class = "kitty-dropterm"
 animation = ""
 size = "60% 70%"
