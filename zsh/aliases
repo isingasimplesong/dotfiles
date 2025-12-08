@@ -6,8 +6,10 @@ alias zz='exec $SHELL'
 alias wh='which'
 alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc -l"
 
-# --- AI stuff
+# --- commands
+alias st='uv run --project /home/mathieu/Projets/stocks_machine stocks'
 
+# --- AI stuff
 alias oc="opencode"
 
 # --- System Info & Monitoring ---
