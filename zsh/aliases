@@ -7,7 +7,7 @@ alias wh='which'
 alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc -l"
 
 # --- commands
-alias st='uv run --project /home/mathieu/Projets/stocks_machine stocks'
+alias st='uv run --project /home/mathieu/Projets/stocks stocks'
 
 # --- AI stuff
 alias oc="opencode"
@@ -61,8 +61,6 @@ alias vvb='cd $HOME/.local/bin/; nvim -c "lua require(\"user.telescope_bin\")"'
 alias vvc='cd $HOME/Projets/rkb/crawler; nvim -c "lua require(\"user.telescope_crawler\")"'
 
 # --- Database Connections ---
-alias rkb-db-connect-prod="rainfrog --username postgres --database rkb_db --host 192.168.100.6 --port 5432 --driver postgres --password \$RKB_DB_PASSWORD"
-alias rkb-db-connect-local="rainfrog --username postgres --database rkb_db --host localhost --port 5432 --driver postgres --password \$RKB_DB_PASSWORD"
 
 # --- External Tools ---
 alias portfolio="ticker --config ~/Coffre/portfolio.yaml"
