@@ -29,6 +29,10 @@ case "$TERM" in
         ;;
 esac
 
+# Load and initialize the completion system
+autoload -Uz compinit
+compinit -C
+
 # Disable beeping on various events
 unsetopt beep
 unsetopt hist_beep
@@ -112,9 +116,6 @@ if [[ -f $DOTPATH/zsh/uv-zsh-completion ]]; then
     source $DOTPATH/zsh/uv-zsh-completion
 fi
 
-# Load and initialize the completion system
-autoload -Uz compinit
-compinit -C
 
 # Load and initialize the prompt system
 autoload -U promptinit; promptinit
@@ -188,6 +189,8 @@ if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
     host="$(hostname)"
     tmux -u attach || tmux -u new -s "${host}"
 fi
+
+eval "$(_STOCKS_COMPLETE=zsh_source stocks)"
 
 # initialise p10k if installed
 if [[ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then

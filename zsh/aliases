@@ -7,7 +7,7 @@ alias wh='which'
 alias line-count="find . -type f ! -path '*/.git/*' -print0 | xargs -0 cat | wc -l"
 
 # --- commands
-alias stocks='uv run --project /home/mathieu/Projets/stocks-cli/stocks stocks'
+# alias stocks='uv run --project /home/mathieu/Projets/stocks-cli/stocks stocks'
 alias st='uv run --project /home/mathieu/Projets/stocks-cli/dev stocks'
 
 # --- AI stuff
