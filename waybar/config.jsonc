@@ -19,7 +19,7 @@
         // "temperature",
         // "backlight",
         // "bluetooth",
-        "custom/pacman",
+        // "custom/pacman",
         "pulseaudio",
         "battery",
         "network",
@@ -85,16 +85,16 @@
     "bluetooth": {
         "format": "{} 󰂯"
     },
-    "custom/pacman": {
-        "format": "{}",
-        // with number
-        // "exec": "n=$(checkupdates 2> /dev/null | wc -l); [ \"$n\" -gt 0 ] && echo \"$n 󰣇\" || echo ''",
-        // just an icon
-        "exec": "checkupdates > /dev/null 2>&1 && echo '󰣇' || echo ''",
-        "interval": 600,
-        // "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
-        "signal": 8
-    },
+    // "custom/pacman": {
+    //     "format": "{}",
+    //     // with number
+    //     // "exec": "n=$(checkupdates 2> /dev/null | wc -l); [ \"$n\" -gt 0 ] && echo \"$n 󰣇\" || echo ''",
+    //     // just an icon
+    //     "exec": "checkupdates > /dev/null 2>&1 && echo '󰣇' || echo ''",
+    //     "interval": 600,
+    //     // "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
+    //     "signal": 8
+    // },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
