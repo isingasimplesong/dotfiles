@@ -15,11 +15,11 @@ groups:
   - name: Dashboard # Key indicators
     watchlist:
       - ^GSPC # S&P 500 Index: Broad benchmark for large-cap US stocks. General US market health
+      - ^SP100
       - ^GSPTSE # TSX : ~70% of the Toronto Stock Exchange capitalization
       - ^IXIC # NASDAQ Composite Index: Tech-heavy US stock index. Indicator of growth/tech sector sentiment
       - ^STOXX50E # EURO STOXX 50 Index: Blue-chip index for the Eurozone. Gauge of core European economic/market sentiment
       - ^HSI # Hang Seng Index: Benchmark Hong Kong stock index. Reflects HK/China sentiment
-      - 000001.SS # Shanghai Composite: Main China mainland stock index
       - ^VIX # CBOE Volatility Index: Market fear/uncertainty gauge. Higher = more fear/stress. Lower = complacency
       - TIP # iShares TIPS Bond ETF: Tracks inflation-protected US Treasuries. Rise = increasing inflation expectations
       - XLE # Energy Select Sector SPDR Fund: US energy stocks. Reflects oil/gas trends, energy demand
@@ -33,6 +33,7 @@ groups:
     watchlist:
       # --- Indices ---
       - ^GSPC # S&P 500: Broad large-cap US market benchmark
+      - ^SP100
       - ^DJI # Dow Jones Industrial Average: 30 large US blue-chip companies
       - ^IXIC # NASDAQ Composite: Tech-heavy, growth-oriented US index
       - ^GSPTSE # TSX : ~70% of the Toronto Stock Exchange capitalization
