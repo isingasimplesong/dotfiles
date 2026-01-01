@@ -15,8 +15,8 @@ groups:
   - name: Dashboard # Key indicators
     watchlist:
       - ^GSPC # S&P 500 Index: Broad benchmark for large-cap US stocks. General US market health
-      - ^SP100
-      - ^GSPTSE # TSX : ~70% of the Toronto Stock Exchange capitalization
+      - ^SP100 # S&P 100
+      - DJIA # Dow Jones
       - ^IXIC # NASDAQ Composite Index: Tech-heavy US stock index. Indicator of growth/tech sector sentiment
       - ^STOXX50E # EURO STOXX 50 Index: Blue-chip index for the Eurozone. Gauge of core European economic/market sentiment
       - ^HSI # Hang Seng Index: Benchmark Hong Kong stock index. Reflects HK/China sentiment
