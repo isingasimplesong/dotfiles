@@ -103,6 +103,11 @@ $lock)
 	fi
 	;;
 $suspend)
+	if [[ -x '/usr/bin/betterlockscreen' ]]; then
+		betterlockscreen -l
+		sleep 2
+		run_cmd --suspend
+	fi
 	run_cmd --suspend
 	;;
 $logout)
